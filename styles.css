@@ -144,10 +144,106 @@ body::before {
     margin-bottom: 20px;
 }
 
-.hero-signup-form iframe {
-    border-radius: 8px;
-    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
-    border: 1px solid rgba(255, 255, 255, 0.1);
+/* Brevo Form Styling */
+.brevo-form-wrapper {
+    max-width: 500px;
+    margin: 0 auto;
+}
+
+.brevo-form {
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(0, 204, 0, 0.3);
+    border-radius: 10px;
+    padding: 25px;
+    text-align: center;
+}
+
+.form-title {
+    font-size: 24px;
+    font-weight: 700;
+    color: #ffffff;
+    margin-bottom: 10px;
+    font-family: 'Helvetica', sans-serif;
+}
+
+.form-description {
+    font-size: 16px;
+    color: #c0c0c0;
+    margin-bottom: 20px;
+    font-family: 'Helvetica', sans-serif;
+}
+
+.form-field {
+    margin-bottom: 20px;
+}
+
+.form-label {
+    display: block;
+    font-size: 16px;
+    font-weight: 700;
+    color: #ffffff;
+    margin-bottom: 8px;
+    text-align: center;
+    font-family: 'Helvetica', sans-serif;
+}
+
+.form-input {
+    width: 100%;
+    max-width: 300px;
+    padding: 12px 15px;
+    background-color: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(0, 204, 0, 0.3);
+    border-radius: 5px;
+    color: #ffffff;
+    font-size: 16px;
+    font-family: 'Helvetica', sans-serif;
+    text-align: center;
+    transition: all 0.3s ease;
+}
+
+.form-input:focus {
+    outline: none;
+    border-color: #00cc00;
+    background-color: rgba(255, 255, 255, 0.15);
+    box-shadow: 0 0 10px rgba(0, 204, 0, 0.2);
+}
+
+.form-input::placeholder {
+    color: #b0b0b0;
+    text-align: center;
+}
+
+.form-hint {
+    font-size: 12px;
+    color: #b0b0b0;
+    margin-top: 5px;
+    text-align: center;
+    font-family: 'Helvetica', sans-serif;
+}
+
+.form-submit {
+    background: linear-gradient(135deg, #00cc00 0%, #00b300 100%);
+    color: #000000;
+    border: none;
+    border-radius: 5px;
+    padding: 12px 30px;
+    font-size: 16px;
+    font-weight: 700;
+    font-family: 'Helvetica', sans-serif;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.form-submit:hover {
+    background: linear-gradient(135deg, #00e600 0%, #00cc00 100%);
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(0, 204, 0, 0.3);
+}
+
+.form-submit:active {
+    transform: translateY(0);
 }
 
 .hero::before {
@@ -3733,9 +3829,27 @@ body::before {
         font-size: 1rem;
     }
     
-    .hero-signup-form iframe {
-        width: 100% !important;
-        height: 250px !important;
+    /* Brevo Form Mobile */
+    .brevo-form {
+        padding: 20px;
+    }
+    
+    .form-title {
+        font-size: 20px;
+    }
+    
+    .form-description {
+        font-size: 14px;
+    }
+    
+    .form-input {
+        max-width: 100%;
+        font-size: 14px;
+    }
+    
+    .form-submit {
+        padding: 10px 25px;
+        font-size: 14px;
     }
     
     /* Keyword Tool Mobile */
@@ -3891,8 +4005,27 @@ body::before {
         font-size: 0.9rem;
     }
     
-    .hero-signup-form iframe {
-        height: 200px !important;
+    /* Brevo Form Small Mobile */
+    .brevo-form {
+        padding: 15px;
+    }
+    
+    .form-title {
+        font-size: 18px;
+    }
+    
+    .form-description {
+        font-size: 13px;
+    }
+    
+    .form-input {
+        font-size: 13px;
+        padding: 10px 12px;
+    }
+    
+    .form-submit {
+        padding: 10px 20px;
+        font-size: 13px;
     }
     
     .feature-card {
