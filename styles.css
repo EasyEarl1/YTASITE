@@ -117,6 +117,38 @@ body::before {
     position: relative;
 }
 
+/* Hero Signup Form */
+.hero-signup-form {
+    margin: 40px auto 60px;
+    max-width: 600px;
+    padding: 30px;
+    background: rgba(15, 15, 15, 0.9);
+    border: 1px solid rgba(0, 204, 0, 0.3);
+    border-radius: 20px;
+    backdrop-filter: blur(15px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+.hero-signup-form h3 {
+    color: #ffffff;
+    font-size: 1.8rem;
+    font-weight: 700;
+    margin-bottom: 15px;
+    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+}
+
+.hero-signup-form p {
+    color: #b0b0b0;
+    font-size: 1.1rem;
+    line-height: 1.6;
+    margin-bottom: 25px;
+}
+
+.hero-signup-form iframe {
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
 .hero::before {
     content: '';
     position: absolute;
@@ -3685,6 +3717,26 @@ body::before {
         padding: 80px 0 60px;
     }
     
+    /* Hero Signup Form Mobile */
+    .hero-signup-form {
+        margin: 30px auto 40px;
+        padding: 20px;
+        max-width: 90%;
+    }
+    
+    .hero-signup-form h3 {
+        font-size: 1.5rem;
+    }
+    
+    .hero-signup-form p {
+        font-size: 1rem;
+    }
+    
+    .hero-signup-form iframe {
+        width: 100% !important;
+        height: 250px !important;
+    }
+    
     /* Keyword Tool Mobile */
     .kw-tool-title {
         font-size: 1.8rem;
@@ -3821,6 +3873,25 @@ body::before {
     
     .hero-video {
         margin: 20px auto;
+    }
+    
+    /* Hero Signup Form Small Mobile */
+    .hero-signup-form {
+        margin: 20px auto 30px;
+        padding: 15px;
+        max-width: 95%;
+    }
+    
+    .hero-signup-form h3 {
+        font-size: 1.3rem;
+    }
+    
+    .hero-signup-form p {
+        font-size: 0.9rem;
+    }
+    
+    .hero-signup-form iframe {
+        height: 200px !important;
     }
     
     .feature-card {
