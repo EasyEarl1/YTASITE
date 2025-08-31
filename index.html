@@ -278,7 +278,7 @@
                                     </div>
                                 </div>
                                 <div style="padding: 8px 0;">
-                                    <div class="sib-form-block" style="font-size:16px; text-align:center; font-family:Helvetica, sans-serif; color:#c0c0c0; background-color:transparent; text-align:center">
+                                    <div class="sib-form-block" style="font-size:16px; text-align:left; font-family:Helvetica, sans-serif; color:#ffffff; background-color:transparent; text-align:left">
                                         <div class="sib-text-form-block">
                                             <p>Be the first to know when YTA Chads goes live. Get early access and exclusive launch bonuses.</p>
                                         </div>
@@ -297,7 +297,7 @@
 
                                             <label class="entry__error entry__error--primary" style="font-size:16px; text-align:left; font-family:Helvetica, sans-serif; color:#661d1d; background-color:#ffeded; border-radius:3px; border-color:#ff4949;">
                                             </label>
-                                            <label class="entry__specification" style="font-size:12px; text-align:left; font-family:Helvetica, sans-serif; color:#c0c0c0; text-align:left">
+                                            <label class="entry__specification" style="font-size:12px; text-align:left; font-family:Helvetica, sans-serif; color:#ffffff; text-align:left">
                                                 Customize this optional help text before publishing your form.
                                             </label>
                                         </div>
@@ -316,28 +316,77 @@
 
                                             <label class="entry__error entry__error--primary" style="font-size:16px; text-align:left; font-family:Helvetica, sans-serif; color:#661d1d; background-color:#ffeded; border-radius:3px; border-color:#ff4949;">
                                             </label>
-                                            <label class="entry__specification" style="font-size:12px; text-align:left; font-family:Helvetica, sans-serif; color:#c0c0c0; text-align:left">
+                                            <label class="entry__specification" style="font-size:12px; text-align:left; font-family:Helvetica, sans-serif; color:#ffffff; text-align:left">
                                                 Provide your email address to subscribe. For e.g abc@xyz.com
                                             </label>
                                         </div>
                                     </div>
                                 </div>
                                 <div style="padding: 8px 0;">
-                                    <div class="sib-sms-field sib-form-block">
+                                    <div class="sib-input sib-form-block">
                                         <div class="form__entry entry_block">
                                             <div class="form__label-row ">
-                                                <label class="entry__label" style="font-weight: 700; text-align:left; font-size:16px; text-align:left; font-weight:700; font-family:Helvetica, sans-serif; color:#000000;" for="SMS" data-required="*">Enter your SMS</label>
+                                                <label class="entry__label" style="font-weight: 700; text-align:left; font-size:16px; text-align:left; font-weight:700; font-family:Helvetica, sans-serif; color:#ffffff;" for="SMS_NUMBER">Enter your SMS NUMBER</label>
 
-                                                <div class="sib-sms-input-wrapper" style="direction:ltr">
-                                                    <div class="sib-sms-input" data-placeholder="SMS" data-required="1" data-country-code="GB" data-whatsapp-country-code="GB" data-value="" data-whatsappvalue="" data-attributename="SMS">
-                                                        <div class="entry__field">
-                                                            <select class="input" name="SMS__COUNTRY_CODE" data-required="true">
-                                                                <option value="+93">+93 AF</option>
-                                                                <option value="+358">+358 AX</option>
-                                                                <option value="+355">+355 AL</option>
-                                                                <option value="+213">+213 DZ</option>
-                                                                <option value="+1684">+1684 AS</option>
-                                                                <option value="+376">+376 AD</option>
+                                                <div class="entry__field">
+                                                    <input class="input " maxlength="200" type="text" id="SMS_NUMBER" name="SMS_NUMBER" autocomplete="off" placeholder="SMS Number" />
+                                                </div>
+                                            </div>
+
+                                            <label class="entry__error entry__error--primary" style="font-size:16px; text-align:left; font-family:Helvetica, sans-serif; color:#661d1d; background-color:#ffeded; border-radius:3px; border-color:#ff4949;">
+                                            </label>
+                                            <label class="entry__specification" style="font-size:12px; text-align:left; font-family:Helvetica, sans-serif; color:#ffffff; text-align:left">
+                                                Please add country code before e.g. +44
+                                            </label>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div style="padding: 8px 0;">
+                                    <div class="sib-form-block" style="text-align: center">
+                                        <button class="sib-form-block__button sib-form-block__button-with-loader" style="font-size:21px; text-align:center; font-weight:700; font-family:Helvetica, sans-serif; color:#121111; background-color:#00ff53; border-radius:3px; border-width:0px;" form="sib-form" type="submit">
+                                            <svg class="icon clickable__icon progress-indicator__icon sib-hide-loader-icon" viewBox="0 0 512 512" style="">
+                                                <path d="M460.116 373.846l-20.823-12.022c-5.541-3.199-7.54-10.159-4.663-15.874 30.137-59.886 28.343-131.652-5.386-189.946-33.641-58.394-94.896-95.833-161.827-99.676C261.028 55.961 256 50.751 256 44.352V20.309c0-6.904 5.808-12.337 12.703-11.982 83.556 4.306 160.163 50.864 202.11 123.677 42.063 72.696 44.079 162.316 6.031 236.832-3.14 6.148-10.75 8.461-16.728 5.01z" />
+                                            </svg>
+                                            Sign Up To Be Notified
+                                        </button>
+                                    </div>
+                                </div>
+
+                                <input type="text" name="email_address_check" value="" class="input--hidden">
+                                <input type="hidden" name="locale" value="en">
+                            </form>
+                        </div>
+                    </div>
+                </div>
+                <!-- End Brevo Form -->
+            </div>
+
+            <!-- Feature Cards -->
+            <div class="feature-cards">
+                <div class="feature-card">
+                    <i class="fas fa-check"></i>
+                    <span>Hit $5K+/Month Without Filming Yourself</span>
+                </div>
+                <div class="feature-card">
+                    <i class="fas fa-check"></i>
+                    <span>Publish Ready-to-Rank Videos in Minutes</span>
+                </div>
+                <div class="feature-card">
+                    <i class="fas fa-check"></i>
+                    <span>Turn Each Upload Into a Long-Term Asset</span>
+                </div>
+            </div>
+
+    <!-- Dashboard Section -->
+    <section class="dashboard-section">
+        <div class="container">
+            <div class="dashboard">
+                <div class="keyword-dashboard">
+                    <div class="kw-tool-icon">
+                        <i class="fas fa-search"></i>
+                    </div>
+                    <h3 class="kw-tool-title">AI Keyword Research Tool</h3>
+                    <p class="kw-tool-tagline">Generate high-paying keywords on autopilot.</p>
                                                                 <option value="+244">+244 AO</option>
                                                                 <option value="+1264">+1264 AI</option>
                                                                 <option value="+672">+672 AQ</option>
