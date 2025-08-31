@@ -193,9 +193,15 @@ document.addEventListener('DOMContentLoaded', function() {
 
 // Brevo Form Modal Functions
 function openBrevoForm() {
+    console.log('Opening Brevo form...'); // Debug log
     const modal = document.getElementById('brevoModal');
-    modal.style.display = 'flex';
-    document.body.style.overflow = 'hidden'; // Prevent background scrolling
+    if (modal) {
+        modal.style.display = 'flex';
+        document.body.style.overflow = 'hidden'; // Prevent background scrolling
+        console.log('Modal opened successfully'); // Debug log
+    } else {
+        console.error('Modal not found!'); // Debug log
+    }
 }
 
 function closeBrevoForm() {
