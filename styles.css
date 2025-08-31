@@ -121,12 +121,12 @@ body::before {
 .hero-signup-form {
     margin: 20px auto 40px;
     max-width: 500px;
-    padding: 25px;
-    background: rgba(10, 10, 10, 0.95);
-    border: 1px solid rgba(0, 204, 0, 0.4);
-    border-radius: 15px;
-    backdrop-filter: blur(20px);
-    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.4);
+    padding: 0;
+    background: transparent;
+    border: none;
+    border-radius: 0;
+    backdrop-filter: none;
+    box-shadow: none;
 }
 
 .hero-signup-form h3 {
