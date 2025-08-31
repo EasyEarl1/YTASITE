@@ -108,6 +108,59 @@ document.addEventListener('DOMContentLoaded', function() {
         }, 20);
     };
 
+    // Launch Countdown Timer
+    function updateCountdown() {
+        // Set launch date: September 3rd, 2025 at 10:00 AM ET
+        const launchDate = new Date('2025-09-03T10:00:00-04:00'); // ET timezone
+        const now = new Date();
+        
+        const timeLeft = launchDate - now;
+        
+        if (timeLeft > 0) {
+            const days = Math.floor(timeLeft / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((timeLeft % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((timeLeft % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((timeLeft % (1000 * 60)) / 1000);
+            
+            // Update the countdown display
+            const daysEl = document.getElementById('days');
+            const hoursEl = document.getElementById('hours');
+            const minutesEl = document.getElementById('minutes');
+            const secondsEl = document.getElementById('seconds');
+            
+            if (daysEl) daysEl.textContent = days.toString().padStart(3, '0');
+            if (hoursEl) hoursEl.textContent = hours.toString().padStart(2, '0');
+            if (minutesEl) minutesEl.textContent = minutes.toString().padStart(2, '0');
+            if (secondsEl) secondsEl.textContent = seconds.toString().padStart(2, '0');
+        } else {
+            // Launch time reached
+            const daysEl = document.getElementById('days');
+            const hoursEl = document.getElementById('hours');
+            const minutesEl = document.getElementById('minutes');
+            const secondsEl = document.getElementById('seconds');
+            
+            if (daysEl) daysEl.textContent = '000';
+            if (hoursEl) hoursEl.textContent = '00';
+            if (minutesEl) minutesEl.textContent = '00';
+            if (secondsEl) secondsEl.textContent = '00';
+            
+            // Optionally hide countdown and show launch message
+            const countdownSection = document.querySelector('.countdown-section');
+            if (countdownSection) {
+                countdownSection.innerHTML = `
+                    <div class="countdown-container">
+                        <h3 class="countdown-title">🎉 YTA Chads Has Launched!</h3>
+                        <p class="countdown-subtitle">Welcome to the future of YouTube automation!</p>
+                    </div>
+                `;
+            }
+        }
+    }
+
+    // Initialize countdown and update every second
+    updateCountdown();
+    setInterval(updateCountdown, 1000);
+
     // Trigger counter animation when dashboard comes into view
     const dashboardObserver = new IntersectionObserver(function(entries) {
         entries.forEach(entry => {

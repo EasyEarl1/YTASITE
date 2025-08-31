@@ -117,6 +117,114 @@ body::before {
     position: relative;
 }
 
+/* Launch Countdown Timer */
+.countdown-section {
+    margin: 40px auto;
+    max-width: 800px;
+    text-align: center;
+}
+
+.countdown-container {
+    background: rgba(0, 0, 0, 0.8);
+    border: 2px solid rgba(0, 204, 0, 0.6);
+    border-radius: 20px;
+    padding: 40px 20px;
+    backdrop-filter: blur(15px);
+    box-shadow: 0 10px 30px rgba(0, 204, 0, 0.2);
+}
+
+.countdown-title {
+    color: #ffffff;
+    font-size: 2.2rem;
+    font-weight: 700;
+    margin-bottom: 30px;
+    text-shadow: 0 2px 10px rgba(0, 204, 0, 0.5);
+}
+
+.countdown-timer {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-bottom: 20px;
+    flex-wrap: wrap;
+}
+
+.countdown-item {
+    background: rgba(0, 204, 0, 0.1);
+    border: 2px solid rgba(0, 204, 0, 0.4);
+    border-radius: 15px;
+    padding: 20px 15px;
+    min-width: 120px;
+    text-align: center;
+    backdrop-filter: blur(10px);
+    box-shadow: 0 5px 15px rgba(0, 204, 0, 0.2);
+}
+
+.countdown-number {
+    display: block;
+    color: #00ff00;
+    font-size: 2.5rem;
+    font-weight: 700;
+    font-family: 'Courier New', monospace;
+    text-shadow: 0 0 10px rgba(0, 255, 0, 0.8);
+    margin-bottom: 5px;
+}
+
+.countdown-label {
+    display: block;
+    color: #ffffff;
+    font-size: 0.9rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.countdown-subtitle {
+    color: #c0c0c0;
+    font-size: 1.1rem;
+    margin-top: 20px;
+    font-weight: 500;
+}
+
+/* Responsive countdown */
+@media (max-width: 768px) {
+    .countdown-timer {
+        gap: 15px;
+    }
+    
+    .countdown-item {
+        min-width: 100px;
+        padding: 15px 10px;
+    }
+    
+    .countdown-number {
+        font-size: 2rem;
+    }
+    
+    .countdown-title {
+        font-size: 1.8rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .countdown-timer {
+        gap: 10px;
+    }
+    
+    .countdown-item {
+        min-width: 80px;
+        padding: 12px 8px;
+    }
+    
+    .countdown-number {
+        font-size: 1.5rem;
+    }
+    
+    .countdown-title {
+        font-size: 1.5rem;
+    }
+}
+
 /* Hero Signup Form */
 .hero-signup-form {
     margin: 20px auto 40px;
