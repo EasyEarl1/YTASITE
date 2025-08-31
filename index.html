@@ -245,7 +245,7 @@
 
             <!-- Signup Form -->
             <div id="signup-form" class="hero-signup-form">
-                <!-- Brevo Form -->
+                <!-- Begin Brevo Form -->
                 <div class="sib-form" style="text-align: center; background-color: transparent;">
                     <div id="sib-form-container" class="sib-form-container">
                         <div id="error-message" class="sib-form-message-panel" style="font-size:16px; text-align:left; font-family:Helvetica, sans-serif; color:#661d1d; background-color:#ffeded; border-radius:3px; border-color:#ff4949;max-width:540px;">
@@ -271,7 +271,7 @@
                         </div>
                         <div></div>
                         <div id="sib-container" class="sib-container--large sib-container--vertical" style="text-align:center; background-color:rgba(26,25,12,1); max-width:540px; border-radius:3px; border-width:1px; border-color:#adff00; border-style:solid; direction:ltr">
-                            <form id="sib-form" method="POST" action="https://78342737.sibforms.com/serve/MUIFAPmj3aAUMbwITnmMltswIUOy-_J248WlTFflfCPWukG4pujM0XmiUG_bfOFTt9EOqpK6-txQXcurow-zYifaKmITgtG5PWypmc6aWCeR0cFhSsqXCI4hgCIJ_qYp_MtEQKJkplWy89DePFTpz9ZXfuP9dYK-RXmywRsd2n0vVA1nN720y_IEcrHMaCfDJyYfCdaKzb0KRRyE" data-type="subscription">
+                            <form id="sib-form" method="POST" action="https://78342737.sibforms.com/serve/MUIFAO_c-AXvqwg0DNElkL_8neS-RxBroO8uVfhScenKMvYogSs-q6y3TEbMJFm5JNyoP-CNN57dMmv3fJwi9_X6cR43VDAzLPeAqDi497nBcEugobxjEn5VdfmRJY-CKBc-3zz8DELwEQtk1cYXJVvvKOi_DwrI0cRnVTnbBGOYqoqncOUfZIPxiVlR0uxLGgPiSyBV32TZ-let" data-type="subscription">
                                 <div style="padding: 8px 0;">
                                     <div class="sib-form-block" style="font-size:32px; text-align:center; font-weight:700; font-family:Helvetica, sans-serif; color:#ffffff; background-color:transparent; text-align:center">
                                         <p>Get Notified When We Launch</p>
@@ -1859,5 +1859,32 @@
     </script>
     
     <script src="script.js"></script>
+    
+    <!-- Brevo Form JavaScript -->
+    <script>
+      window.REQUIRED_CODE_ERROR_MESSAGE = 'Please choose a country code';
+      window.LOCALE = 'en';
+      window.EMAIL_INVALID_MESSAGE = window.SMS_INVALID_MESSAGE = "The information provided is invalid. Please review the field format and try again.";
+
+      window.REQUIRED_ERROR_MESSAGE = "This field cannot be left blank. ";
+
+      window.GENERIC_INVALID_MESSAGE = "The information provided is invalid. Please review the field format and try again.";
+
+
+
+
+      window.translation = {
+        common: {
+          selectedList: '{quantity} list selected',
+          selectedLists: '{quantity} lists selected',
+          selectedOption: '{quantity} selected',
+          selectedOptions: '{quantity} selected',
+        }
+      };
+
+      var AUTOHIDE = Boolean(0);
+    </script>
+
+    <script defer src="https://sibforms.com/forms/end-form/build/main.js"></script>
 </body>
 </html>
