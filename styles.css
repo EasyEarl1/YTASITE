@@ -1663,7 +1663,8 @@ body::before {
     }
     
     .production-content {
-        grid-template-columns: 1fr;
+        display: grid;
+        grid-template-columns: 1fr !important;
         gap: 40px;
     }
     
