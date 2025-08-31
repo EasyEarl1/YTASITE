@@ -96,9 +96,27 @@
       #sib-container .entry__field input { color: #000000 !important; }
       #sib-container .sib-form-block input { color: #000000 !important; }
       
-      /* Make country selector background black */
-      #sib-container .sib-sms-input-wrapper select { background-color: #000000 !important; color: #ffffff !important; }
-      #sib-container .sib-sms-input-wrapper select option { background-color: #000000 !important; color: #ffffff !important; }
+      /* Make country selector background black - multiple selectors for override */
+      #sib-container .sib-sms-input-wrapper select { 
+        background-color: #000000 !important; 
+        color: #ffffff !important; 
+        background: #000000 !important;
+      }
+      #sib-container .sib-sms-input-wrapper select option { 
+        background-color: #000000 !important; 
+        color: #ffffff !important; 
+        background: #000000 !important;
+      }
+      #sib-container select { 
+        background-color: #000000 !important; 
+        color: #ffffff !important; 
+        background: #000000 !important;
+      }
+      #sib-container select option { 
+        background-color: #000000 !important; 
+        color: #ffffff !important; 
+        background: #000000 !important;
+      }
 
     </style>
     <link rel="stylesheet" href="https://sibforms.com/forms/end-form/build/sib-styles.css">
