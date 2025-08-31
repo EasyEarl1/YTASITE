@@ -6,6 +6,19 @@
     <title>YTA Chads - The Predictable Path to $5K/Month on YouTube</title>
     <link rel="stylesheet" href="styles.css">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    
+    <!-- Brevo SDK -->
+    <script src="https://cdn.brevo.com/js/sdk-loader.js" async></script>
+    <script>
+        // Version: 2.0
+        window.Brevo = window.Brevo || [];
+        Brevo.push([
+            "init",
+            {
+            client_key: "1cx8e55oajvz6i1qnc5tq1v0"
+            }
+        ]);
+    </script>
 </head>
 <body>
     <!-- Header -->
@@ -15,9 +28,9 @@
                 <i class="fas fa-arrow-up"></i>
                 <span>YTA Chads</span>
             </div>
-            <a href="https://calendly.com/sigmayt/ytachads" target="_blank" class="cta-button header-cta">
-                <i class="fas fa-rocket"></i>
-                JOIN YTA CHADS
+            <a href="#" class="cta-button header-cta" onclick="openBrevoForm()">
+                <i class="fas fa-bell"></i>
+                GET LAUNCH NOTIFICATIONS
             </a>
         </div>
     </header>
@@ -59,8 +72,8 @@
             </div>
 
             <!-- Main CTA -->
-            <a href="https://calendly.com/sigmayt/ytachads" target="_blank" class="main-cta">
-                START YOUR $5K/MONTH EMPIRE
+            <a href="#" class="main-cta" onclick="openBrevoForm()">
+                NOTIFY ME WHEN WE LAUNCH
             </a>
 
             <!-- Trust Indicators -->
@@ -1015,8 +1028,8 @@
                     <div class="cta-benefit">✓ Advanced AI Tools Included</div>
                     <div class="cta-benefit">✓ Expert Mentorship</div>
                 </div>
-                <a href="https://calendly.com/sigmayt/ytachads" target="_blank" class="cta-button">
-                    <span class="button-text">JOIN THE COMMUNITY NOW</span>
+                <a href="#" class="cta-button" onclick="openBrevoForm()">
+                    <span class="button-text">GET EARLY ACCESS</span>
                     <div class="button-shimmer"></div>
                 </a>
                 <p class="cta-guarantee">✓ Instant Telegram access • ✓ Next mastermind this Wednesday • ✓ Proven system</p>
@@ -1213,6 +1226,21 @@
         </div>
     </section>
 
+    <!-- Brevo Form Modal -->
+    <div id="brevoModal" class="brevo-modal" style="display: none;">
+        <div class="brevo-modal-content">
+            <span class="brevo-close" onclick="closeBrevoForm()">&times;</span>
+            <div id="brevo-form-container">
+                <h3>Get Notified When We Launch!</h3>
+                <p>Be the first to know when YTA Chads goes live. Get early access and exclusive launch bonuses.</p>
+                <iframe id="brevo-form" src="brevo-frame.html" width="100%" height="400" frameborder="0"></iframe>
+            </div>
+        </div>
+    </div>
+
+    <!-- Brevo SDK -->
+    <script id="brevo-sdk" src="https://cdn.brevo.com/js/sdk-loader.js"></script>
+    
     <script src="script.js"></script>
 </body>
 </html>

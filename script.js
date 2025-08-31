@@ -191,6 +191,34 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 });
 
+// Brevo Form Modal Functions
+function openBrevoForm() {
+    const modal = document.getElementById('brevoModal');
+    modal.style.display = 'flex';
+    document.body.style.overflow = 'hidden'; // Prevent background scrolling
+}
+
+function closeBrevoForm() {
+    const modal = document.getElementById('brevoModal');
+    modal.style.display = 'none';
+    document.body.style.overflow = 'auto'; // Restore scrolling
+}
+
+// Close modal when clicking outside of it
+document.addEventListener('click', function(event) {
+    const modal = document.getElementById('brevoModal');
+    if (event.target === modal) {
+        closeBrevoForm();
+    }
+});
+
+// Close modal with Escape key
+document.addEventListener('keydown', function(event) {
+    if (event.key === 'Escape') {
+        closeBrevoForm();
+    }
+});
+
 // Add CSS for ripple effect
 const style = document.createElement('style');
 style.textContent = `

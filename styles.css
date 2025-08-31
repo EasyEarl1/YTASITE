@@ -1310,7 +1310,8 @@ body::before {
     }
     
     .production-content {
-        gap: 30px;
+        grid-template-columns: 1fr;
+        gap: 40px;
     }
     
     .production-description {
@@ -1381,10 +1382,10 @@ body::before {
 
 /* Production Content Grid (Flipped Layout) */
 .production-content {
-    display: flex;
-    flex-direction: column;
-    gap: 40px;
-    align-items: center;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    align-items: start;
 }
 
 /* Left Column - Pipeline Diagram */
@@ -3926,5 +3927,92 @@ body::before {
     
     .trust-item {
         font-size: 0.8rem;
+    }
+}
+
+/* Brevo Modal Styles */
+.brevo-modal {
+    position: fixed;
+    z-index: 10000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    backdrop-filter: blur(10px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.brevo-modal-content {
+    background: linear-gradient(135deg, #0a0a0a 0%, #1a1a1a 100%);
+    border: 1px solid rgba(0, 204, 0, 0.3);
+    border-radius: 20px;
+    padding: 30px;
+    max-width: 500px;
+    width: 90%;
+    max-height: 80vh;
+    overflow-y: auto;
+    position: relative;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+}
+
+.brevo-close {
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    font-size: 28px;
+    font-weight: bold;
+    color: #00cc00;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.brevo-close:hover {
+    color: #ffffff;
+    transform: scale(1.1);
+}
+
+#brevo-form-container h3 {
+    color: #ffffff;
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+#brevo-form-container p {
+    color: #b0b0b0;
+    font-size: 1rem;
+    line-height: 1.5;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+#brevo-form {
+    border-radius: 10px;
+    background: rgba(255, 255, 255, 0.05);
+}
+
+/* Mobile Brevo Modal */
+@media (max-width: 768px) {
+    .brevo-modal-content {
+        padding: 20px;
+        margin: 20px;
+        max-width: none;
+        width: calc(100% - 40px);
+    }
+    
+    #brevo-form-container h3 {
+        font-size: 1.3rem;
+    }
+    
+    #brevo-form-container p {
+        font-size: 0.9rem;
+    }
+    
+    #brevo-form {
+        height: 350px;
     }
 }
