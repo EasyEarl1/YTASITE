@@ -48,6 +48,24 @@ body {
     align-items: center;
 }
 
+.header .nav {
+    display: flex;
+    gap: 15px;
+    align-items: center;
+}
+
+@media (max-width: 768px) {
+    .header .nav {
+        flex-direction: column;
+        gap: 10px;
+    }
+    
+    .header .nav .btn-secondary {
+        font-size: 12px;
+        padding: 10px 20px;
+    }
+}
+
 .logo {
     font-size: 24px;
     font-weight: 800;
@@ -102,11 +120,13 @@ body {
     font-size: 14px;
     transition: all 0.3s ease;
     border: 1px solid var(--border-color);
+    white-space: nowrap;
 }
 
 .btn-secondary:hover {
     background-color: var(--bg-secondary);
     border-color: var(--accent-blue);
+    transform: translateY(-2px);
 }
 
 .btn-secondary.btn-large {
@@ -836,6 +856,37 @@ section {
 .module-content p {
     color: var(--text-secondary);
     line-height: 1.8;
+}
+
+/* Book a Call Section */
+.book-call-section {
+    padding: 100px 0;
+    background-color: var(--bg-secondary);
+    text-align: center;
+}
+
+.book-call-buttons {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    align-items: center;
+    margin-top: 40px;
+    flex-wrap: wrap;
+}
+
+.book-call-buttons .btn-large {
+    min-width: 200px;
+}
+
+@media (max-width: 768px) {
+    .book-call-buttons {
+        flex-direction: column;
+    }
+    
+    .book-call-buttons .btn-large {
+        width: 100%;
+        max-width: 400px;
+    }
 }
 
 /* Pricing Section */
