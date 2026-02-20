@@ -1145,6 +1145,85 @@ section {
     }
 }
 
+/* Lead Magnet Section */
+.lead-magnet-section {
+    padding: 120px 0;
+    min-height: calc(100vh - 200px);
+    display: flex;
+    align-items: center;
+    background: radial-gradient(ellipse at top, rgba(59, 130, 246, 0.1), transparent);
+}
+
+.lead-magnet-content {
+    max-width: 700px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.lead-magnet-title {
+    font-size: clamp(32px, 5vw, 48px);
+    font-weight: 800;
+    margin-bottom: 20px;
+    letter-spacing: -1px;
+    line-height: 1.2;
+    color: var(--text-primary);
+}
+
+.lead-magnet-subtitle {
+    font-size: 18px;
+    color: var(--text-secondary);
+    margin-bottom: 40px;
+    line-height: 1.8;
+}
+
+.lead-magnet-image {
+    margin: 40px auto;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.playbook-image {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+}
+
+.lead-magnet-form-container {
+    margin-top: 40px;
+}
+
+.lead-magnet-form-container .sib-form-block__button {
+    transition: all 0.3s ease;
+}
+
+.lead-magnet-form-container .sib-form-block__button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 30px rgba(59, 130, 246, 0.3);
+}
+
+.lead-magnet-form-container .input {
+    transition: all 0.3s ease;
+}
+
+.lead-magnet-form-container .input:focus {
+    outline: none;
+    border-color: var(--accent-blue);
+    box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+}
+
+@media (max-width: 768px) {
+    .lead-magnet-section {
+        padding: 80px 0;
+    }
+    
+    .lead-magnet-form-container #sib-container {
+        padding: 30px 20px !important;
+    }
+}
+
 /* Smooth Scroll */
 html {
     scroll-behavior: smooth;

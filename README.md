@@ -79,3 +79,4 @@ Replace the placeholder result cards with actual screenshots by:
 - Set up email capture forms if needed
 - Add video embeds if you have promotional videos
 
+
