@@ -1556,9 +1556,13 @@ html {
 }
 
 .exit-guide-section .input {
-    background-color: var(--bg-primary) !important;
-    border-color: var(--border-color) !important;
-    color: var(--text-primary) !important;
+    background-color: #ffffff !important;
+    border-color: #C0CCD9 !important;
+    color: #3c4858 !important;
+}
+
+.exit-guide-section .input::placeholder {
+    color: #c0ccda !important;
 }
 
 .exit-guide-section .input:focus {
@@ -1568,11 +1572,11 @@ html {
 }
 
 .exit-guide-section .entry__label {
-    color: var(--text-primary) !important;
+    color: #3c4858 !important;
 }
 
 .exit-guide-section .entry__specification {
-    color: var(--text-secondary) !important;
+    color: #8390A4 !important;
 }
 
 @media (max-width: 768px) {
