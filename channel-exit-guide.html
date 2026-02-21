@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Channel Exit Guide - YTA CHADS</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <style>
+        .pdf-viewer-container {
+            padding: 40px 0;
+            min-height: calc(100vh - 200px);
+        }
+        
+        .pdf-header {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+        
+        .pdf-header h1 {
+            font-size: clamp(28px, 4vw, 40px);
+            font-weight: 800;
+            margin-bottom: 15px;
+            color: var(--text-primary);
+        }
+        
+        .pdf-header p {
+            font-size: 18px;
+            color: var(--text-secondary);
+            margin-bottom: 30px;
+        }
+        
+        .pdf-actions {
+            display: flex;
+            gap: 15px;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-bottom: 40px;
+        }
+        
+        .pdf-viewer-wrapper {
+            max-width: 1200px;
+            margin: 0 auto;
+            background-color: var(--bg-card);
+            border-radius: 12px;
+            border: 1px solid var(--border-color);
+            padding: 20px;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
+        }
+        
+        .pdf-viewer {
+            width: 100%;
+            min-height: 600px;
+            border: none;
+            border-radius: 8px;
+            background-color: #f5f5f5;
+        }
+        
+        .pdf-fallback {
+            text-align: center;
+            padding: 60px 20px;
+            background-color: var(--bg-card);
+            border-radius: 12px;
+            border: 1px solid var(--border-color);
+        }
+        
+        .pdf-fallback h2 {
+            font-size: 24px;
+            font-weight: 700;
+            margin-bottom: 20px;
+            color: var(--text-primary);
+        }
+        
+        .pdf-fallback p {
+            font-size: 16px;
+            color: var(--text-secondary);
+            margin-bottom: 30px;
+        }
+        
+        @media (max-width: 768px) {
+            .pdf-viewer {
+                min-height: 500px;
+            }
+            
+            .pdf-actions {
+                flex-direction: column;
+            }
+            
+            .pdf-actions .btn-primary,
+            .pdf-actions .btn-secondary {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="logo">YTA CHADS</div>
+            <nav class="nav">
+                <div style="display: flex; gap: 15px; align-items: center;">
+                    <a href="https://calendly.com/sigmayt/ytachads" target="_blank" class="btn-secondary">Book a Call</a>
+                    <a href="index.html" class="btn-secondary">Back to Home</a>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- PDF Viewer Section -->
+    <section class="pdf-viewer-container">
+        <div class="container">
+            <div class="pdf-header">
+                <h1>Channel Exit Guide</h1>
+                <p>Your complete guide to selling your YouTube channel for maximum value</p>
+                
+                <div class="pdf-actions">
+                    <a href="assets/channel-exit-guide.pdf" download class="btn-primary btn-large">Download PDF</a>
+                    <a href="calculator.html" class="btn-secondary btn-large">Calculate Your Channel Value</a>
+                </div>
+            </div>
+            
+            <div class="pdf-viewer-wrapper">
+                <iframe 
+                    id="pdf-viewer"
+                    class="pdf-viewer" 
+                    src="assets/channel-exit-guide.pdf#toolbar=1&navpanes=1&scrollbar=1"
+                    type="application/pdf"
+                    title="Channel Exit Guide PDF">
+                    <div class="pdf-fallback">
+                        <h2>PDF Viewer Not Supported</h2>
+                        <p>Your browser doesn't support inline PDF viewing. Please download the PDF to view it.</p>
+                        <a href="assets/channel-exit-guide.pdf" download class="btn-primary btn-large">Download PDF</a>
+                    </div>
+                </iframe>
+            </div>
+            
+            <div style="text-align: center; margin-top: 40px; padding: 30px; background-color: var(--bg-card); border-radius: 12px; border: 1px solid var(--border-color);">
+                <h3 style="font-size: 20px; font-weight: 700; margin-bottom: 15px; color: var(--text-primary);">Ready to Sell Your Channel?</h3>
+                <p style="font-size: 16px; color: var(--text-secondary); margin-bottom: 25px;">Get your channel valued and connect with buyers on Flippa</p>
+                <div style="display: flex; gap: 15px; justify-content: center; flex-wrap: wrap;">
+                    <a href="calculator.html" class="btn-primary">Calculate Value</a>
+                    <a href="sell-channel.html" target="_blank" class="btn-secondary">Sell on Flippa</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <div class="logo">YTA CHADS</div>
+                </div>
+                <div class="footer-links">
+                    <div class="footer-section">
+                        <h4>Support</h4>
+                        <ul>
+                            <li><a href="index.html">Home</a></li>
+                            <li><a href="#">Privacy Policy</a></li>
+                            <li><a href="#">Terms & Conditions</a></li>
+                            <li><a href="#">Refund Policy</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 YTA CHADS. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Fallback for browsers that don't support PDF viewing
+        const pdfViewer = document.getElementById('pdf-viewer');
+        
+        // Check if PDF loaded successfully
+        pdfViewer.onerror = function() {
+            const wrapper = pdfViewer.parentElement;
+            wrapper.innerHTML = `
+                <div class="pdf-fallback">
+                    <h2>Unable to Load PDF</h2>
+                    <p>There was an issue loading the PDF. Please download it directly.</p>
+                    <a href="assets/channel-exit-guide.pdf" download class="btn-primary btn-large">Download PDF</a>
+                </div>
+            `;
+        };
+        
+        // For mobile devices, provide better experience
+        if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
+            // On mobile, the iframe might not work well, so we'll show download option prominently
+            pdfViewer.style.minHeight = '400px';
+        }
+    </script>
+</body>
+</html>
+
