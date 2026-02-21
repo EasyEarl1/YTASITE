@@ -3,24 +3,112 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Get Your Channel Valued - YTA CHADS</title>
-    <meta http-equiv="refresh" content="0; url=https://referral.flippa.com/m4jx42xr6xhu">
-    <link rel="canonical" href="https://referral.flippa.com/m4jx42xr6xhu">
+    <title>Sell Your Channel on Flippa - YTA CHADS</title>
     <link rel="stylesheet" href="styles.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <style>
+        .redirect-container {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            padding: 40px 20px;
+            text-align: center;
+        }
+        
+        .redirect-message {
+            max-width: 600px;
+            background-color: var(--bg-card);
+            padding: 40px;
+            border-radius: 12px;
+            border: 1px solid var(--border-color);
+        }
+        
+        .redirect-message h1 {
+            font-size: 28px;
+            font-weight: 700;
+            margin-bottom: 20px;
+            color: var(--text-primary);
+        }
+        
+        .redirect-message p {
+            font-size: 16px;
+            color: var(--text-secondary);
+            margin-bottom: 30px;
+            line-height: 1.6;
+        }
+        
+        .redirect-buttons {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            margin-top: 30px;
+        }
+        
+        .redirect-buttons a {
+            text-decoration: none;
+        }
+        
+        .spinner {
+            border: 3px solid var(--border-color);
+            border-top: 3px solid var(--accent-blue);
+            border-radius: 50%;
+            width: 40px;
+            height: 40px;
+            animation: spin 1s linear infinite;
+            margin: 0 auto 20px;
+        }
+        
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+    </style>
     <script>
-        // Immediate redirect
-        window.location.replace("https://referral.flippa.com/m4jx42xr6xhu");
+        // Try referral link first, fallback to main Flippa site
+        const referralLink = "https://referral.flippa.com/m4jx42xr6xhu";
+        const fallbackLink = "https://flippa.com";
+        
+        // Attempt redirect
+        function attemptRedirect() {
+            // Try the referral link
+            window.location.href = referralLink;
+            
+            // If redirect fails after 3 seconds, show fallback options
+            setTimeout(function() {
+                document.getElementById('redirect-content').innerHTML = `
+                    <div class="redirect-message">
+                        <h1>Redirecting to Flippa...</h1>
+                        <p>If you're not automatically redirected, use one of the links below:</p>
+                        <div class="redirect-buttons">
+                            <a href="${referralLink}" target="_blank" class="btn-primary btn-large">Try Referral Link</a>
+                            <a href="${fallbackLink}" target="_blank" class="btn-secondary btn-large">Go to Flippa.com</a>
+                            <p style="font-size: 14px; color: var(--text-secondary); margin-top: 20px;">
+                                If the referral link doesn't work, you can still sign up at Flippa.com and mention you came from YTA CHADS.
+                            </p>
+                        </div>
+                    </div>
+                `;
+            }, 3000);
+        }
+        
+        // Start redirect attempt
+        attemptRedirect();
     </script>
 </head>
 <body>
-    <div style="display: flex; justify-content: center; align-items: center; min-height: 100vh; flex-direction: column; gap: 20px;">
-        <p style="color: var(--text-primary); font-size: 18px;">Redirecting to Flippa...</p>
-        <p style="color: var(--text-secondary); font-size: 14px;">
-            <a href="https://referral.flippa.com/m4jx42xr6xhu" style="color: var(--accent-blue); text-decoration: none;">Click here if you're not redirected</a>
-        </p>
+    <div class="redirect-container" id="redirect-content">
+        <div class="redirect-message">
+            <div class="spinner"></div>
+            <h1>Redirecting to Flippa...</h1>
+            <p>You'll be taken to Flippa to list your channel for sale.</p>
+            <p style="font-size: 14px; color: var(--text-secondary); margin-top: 20px;">
+                <a href="https://referral.flippa.com/m4jx42xr6xhu" target="_blank" style="color: var(--accent-blue); text-decoration: none;">Click here if you're not redirected automatically</a>
+            </p>
+        </div>
     </div>
 </body>
 </html>
