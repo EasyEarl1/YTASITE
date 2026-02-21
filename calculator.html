@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>YouTube Channel Valuation Calculator - YTA CHADS</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="logo">YTA CHADS</div>
+            <nav class="nav">
+                <div style="display: flex; gap: 15px; align-items: center;">
+                    <a href="https://calendly.com/sigmayt/ytachads" target="_blank" class="btn-secondary">Book a Call</a>
+                    <a href="index.html" class="btn-secondary">Back to Home</a>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Calculator Section -->
+    <section class="calculator-section">
+        <div class="container">
+            <h1 class="calculator-title">YouTube Channel Valuation Calculator</h1>
+            <p class="calculator-subtitle">Get an estimated valuation range for your YouTube search channel based on proven market multiples</p>
+            
+            <div class="calculator-container">
+                <div class="calculator-form">
+                    <h2 class="form-title">Enter Your Channel Details</h2>
+                    
+                    <div class="form-group">
+                        <label for="lifetime-revenue">Lifetime Revenue ($)</label>
+                        <input type="number" id="lifetime-revenue" placeholder="e.g., 60000" min="0" step="1000">
+                        <small class="form-hint">Total revenue your channel has generated since launch</small>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="monthly-revenue">Current Monthly Revenue ($)</label>
+                        <input type="number" id="monthly-revenue" placeholder="e.g., 2000" min="0" step="100">
+                        <small class="form-hint">Average monthly revenue over the last 3 months</small>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="monthly-costs">Current Monthly Costs ($)</label>
+                        <input type="number" id="monthly-costs" placeholder="e.g., 0" min="0" step="100">
+                        <small class="form-hint">Monthly expenses (editing, voiceover, etc.)</small>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="channel-age">Channel Age (Months)</label>
+                        <input type="number" id="channel-age" placeholder="e.g., 18" min="1" step="1">
+                        <small class="form-hint">How long has your channel been active?</small>
+                    </div>
+                    
+                    <button id="calculate-btn" class="btn-primary btn-large">Calculate Valuation</button>
+                </div>
+                
+                <div class="calculator-result" id="result-container" style="display: none;">
+                    <h2 class="result-title">Your Channel Valuation</h2>
+                    <div class="valuation-range">
+                        <div class="valuation-box low">
+                            <span class="valuation-label">Low Estimate</span>
+                            <span class="valuation-amount" id="low-estimate">$0</span>
+                        </div>
+                        <div class="valuation-box high">
+                            <span class="valuation-label">High Estimate</span>
+                            <span class="valuation-amount" id="high-estimate">$0</span>
+                        </div>
+                    </div>
+                    <div class="valuation-details">
+                        <h3>Calculation Breakdown</h3>
+                        <div class="detail-item">
+                            <span class="detail-label">Monthly Profit:</span>
+                            <span class="detail-value" id="monthly-profit">$0</span>
+                        </div>
+                        <div class="detail-item">
+                            <span class="detail-label">Base Multiple:</span>
+                            <span class="detail-value" id="base-multiple">10-25x</span>
+                        </div>
+                        <div class="detail-item">
+                            <span class="detail-label">Age Factor:</span>
+                            <span class="detail-value" id="age-factor">+0x</span>
+                        </div>
+                        <div class="detail-item">
+                            <span class="detail-label">Margin Factor:</span>
+                            <span class="detail-value" id="margin-factor">+0x</span>
+                        </div>
+                        <div class="detail-item">
+                            <span class="detail-label">Consistency Factor:</span>
+                            <span class="detail-value" id="consistency-factor">+0x</span>
+                        </div>
+                        <div class="detail-item">
+                            <span class="detail-label">Adjusted Multiple:</span>
+                            <span class="detail-value" id="adjusted-multiple">10-25x</span>
+                        </div>
+                    </div>
+                    <div class="result-note">
+                        <p><strong>Note:</strong> This is an estimated range based on market data. Actual sale price depends on buyer demand, channel niche, and other factors.</p>
+                    </div>
+                    <div style="display: flex; gap: 15px; flex-wrap: wrap; margin-top: 20px;">
+                        <a href="sell-channel.html" target="_blank" class="btn-primary btn-large" style="flex: 1; min-width: 200px; text-align: center; text-decoration: none;">Sell Your Channel on Flippa</a>
+                        <button id="reset-btn" class="btn-secondary" style="flex: 1; min-width: 200px;">Calculate Another Channel</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <div class="logo">YTA CHADS</div>
+                </div>
+                <div class="footer-links">
+                    <div class="footer-section">
+                        <h4>Support</h4>
+                        <ul>
+                            <li><a href="index.html">Home</a></li>
+                            <li><a href="#">Privacy Policy</a></li>
+                            <li><a href="#">Terms & Conditions</a></li>
+                            <li><a href="#">Refund Policy</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 YTA CHADS. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        document.getElementById('calculate-btn').addEventListener('click', calculateValuation);
+        document.getElementById('reset-btn').addEventListener('click', resetCalculator);
+
+        function calculateValuation() {
+            // Get input values
+            const lifetimeRevenue = parseFloat(document.getElementById('lifetime-revenue').value) || 0;
+            const monthlyRevenue = parseFloat(document.getElementById('monthly-revenue').value) || 0;
+            const monthlyCosts = parseFloat(document.getElementById('monthly-costs').value) || 0;
+            const channelAge = parseFloat(document.getElementById('channel-age').value) || 1;
+
+            // Validate inputs
+            if (monthlyRevenue <= 0 || channelAge < 1) {
+                alert('Please enter valid values for monthly revenue and channel age.');
+                return;
+            }
+
+            // Calculate monthly profit
+            const monthlyProfit = monthlyRevenue - monthlyCosts;
+            
+            if (monthlyProfit <= 0) {
+                alert('Your monthly costs exceed your revenue. Please check your inputs.');
+                return;
+            }
+
+            // Calculate profit margin
+            const profitMargin = (monthlyProfit / monthlyRevenue) * 100;
+
+            // Calculate consistency (lifetime revenue vs what it should be if consistent)
+            const expectedLifetime = monthlyRevenue * channelAge;
+            const consistencyRatio = lifetimeRevenue / expectedLifetime;
+            // Clamp between 0.5 and 1.5 (50% to 150% of expected)
+            const normalizedConsistency = Math.max(0.5, Math.min(1.5, consistencyRatio));
+
+            // Base multiple: 12-20x (tighter range)
+            let baseLow = 12;
+            let baseHigh = 20;
+
+            // Age factor: Older channels are more valuable
+            // 0-6 months: +0x, 6-12 months: +0.5-1x, 12-24 months: +1-2x, 24+ months: +1.5-3x
+            let ageLowBonus = 0;
+            let ageHighBonus = 0;
+            if (channelAge >= 24) {
+                ageLowBonus = 1.5;
+                ageHighBonus = 3;
+            } else if (channelAge >= 12) {
+                ageLowBonus = 1;
+                ageHighBonus = 2;
+            } else if (channelAge >= 6) {
+                ageLowBonus = 0.5;
+                ageHighBonus = 1;
+            }
+
+            // Margin factor: Higher margins = higher multiple
+            // 80%+ margin: +1-2x, 60-80%: +0.5-1x, 40-60%: +0-0.5x, <40%: -0.5-0x
+            let marginLowBonus = 0;
+            let marginHighBonus = 0;
+            if (profitMargin >= 80) {
+                marginLowBonus = 1;
+                marginHighBonus = 2;
+            } else if (profitMargin >= 60) {
+                marginLowBonus = 0.5;
+                marginHighBonus = 1;
+            } else if (profitMargin >= 40) {
+                marginLowBonus = 0;
+                marginHighBonus = 0.5;
+            } else {
+                marginLowBonus = -0.5;
+                marginHighBonus = 0;
+            }
+
+            // Consistency factor: More consistent = higher multiple
+            // 1.0+ (consistent/growing): +0.5-1.5x, 0.8-1.0: +0-0.5x, <0.8: -0.5-0x
+            let consistencyLowBonus = 0;
+            let consistencyHighBonus = 0;
+            if (normalizedConsistency >= 1.0) {
+                consistencyLowBonus = 0.5;
+                consistencyHighBonus = 1.5;
+            } else if (normalizedConsistency >= 0.8) {
+                consistencyLowBonus = 0;
+                consistencyHighBonus = 0.5;
+            } else {
+                consistencyLowBonus = -0.5;
+                consistencyHighBonus = 0;
+            }
+
+            // Calculate adjusted multiples (tighter range - max 4x spread)
+            const adjustedLow = Math.max(10, Math.round((baseLow + ageLowBonus + marginLowBonus + consistencyLowBonus) * 10) / 10);
+            const adjustedHigh = Math.min(25, Math.max(adjustedLow + 2, Math.round((baseHigh + ageHighBonus + marginHighBonus + consistencyHighBonus) * 10) / 10));
+
+            // Calculate valuation range
+            const lowValuation = monthlyProfit * adjustedLow;
+            const highValuation = monthlyProfit * adjustedHigh;
+
+            // Display results
+            document.getElementById('monthly-profit').textContent = `$${monthlyProfit.toLocaleString('en-US', {minimumFractionDigits: 0, maximumFractionDigits: 0})}`;
+            document.getElementById('base-multiple').textContent = `${baseLow}-${baseHigh}x`;
+            
+            // Format factors with decimals if needed
+            const formatFactor = (low, high) => {
+                const lowStr = low % 1 === 0 ? low : low.toFixed(1);
+                const highStr = high % 1 === 0 ? high : high.toFixed(1);
+                return `${low >= 0 ? '+' : ''}${lowStr}-${highStr}x`;
+            };
+            
+            document.getElementById('age-factor').textContent = formatFactor(ageLowBonus, ageHighBonus);
+            document.getElementById('margin-factor').textContent = formatFactor(marginLowBonus, marginHighBonus);
+            document.getElementById('consistency-factor').textContent = formatFactor(consistencyLowBonus, consistencyHighBonus);
+            
+            // Format adjusted multiple
+            const adjustedLowStr = adjustedLow % 1 === 0 ? adjustedLow : adjustedLow.toFixed(1);
+            const adjustedHighStr = adjustedHigh % 1 === 0 ? adjustedHigh : adjustedHigh.toFixed(1);
+            document.getElementById('adjusted-multiple').textContent = `${adjustedLowStr}-${adjustedHighStr}x`;
+            document.getElementById('low-estimate').textContent = `$${lowValuation.toLocaleString('en-US', {minimumFractionDigits: 0, maximumFractionDigits: 0})}`;
+            document.getElementById('high-estimate').textContent = `$${highValuation.toLocaleString('en-US', {minimumFractionDigits: 0, maximumFractionDigits: 0})}`;
+
+            // Show result container
+            document.getElementById('result-container').style.display = 'block';
+            document.getElementById('result-container').scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+        }
+
+        function resetCalculator() {
+            document.getElementById('lifetime-revenue').value = '';
+            document.getElementById('monthly-revenue').value = '';
+            document.getElementById('monthly-costs').value = '';
+            document.getElementById('channel-age').value = '';
+            document.getElementById('result-container').style.display = 'none';
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+    </script>
+</body>
+</html>
+
