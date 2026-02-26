@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thank You - YTA CHADS</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-9V7MHPL83H"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'G-9V7MHPL83H');
+      
+      // Track conversion event
+      gtag('event', 'calendly_booking', {
+        'event_category': 'conversion',
+        'event_label': 'Call Booking Confirmed'
+      });
+    </script>
+    <style>
+        .thank-you-section {
+            min-height: calc(100vh - 200px);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 80px 20px;
+            text-align: center;
+        }
+        
+        .thank-you-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            padding: 60px 40px;
+            max-width: 600px;
+            width: 100%;
+        }
+        
+        .success-icon {
+            width: 80px;
+            height: 80px;
+            margin: 0 auto 30px;
+            background: var(--success-green);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 40px;
+        }
+        
+        .thank-you-title {
+            font-size: 36px;
+            font-weight: 700;
+            margin-bottom: 20px;
+            color: var(--text-primary);
+        }
+        
+        .thank-you-text {
+            font-size: 18px;
+            color: var(--text-secondary);
+            margin-bottom: 40px;
+            line-height: 1.8;
+        }
+        
+        .next-steps {
+            background: var(--bg-secondary);
+            border-radius: 8px;
+            padding: 30px;
+            margin-top: 40px;
+            text-align: left;
+        }
+        
+        .next-steps h3 {
+            font-size: 20px;
+            margin-bottom: 15px;
+            color: var(--text-primary);
+        }
+        
+        .next-steps ul {
+            list-style: none;
+            padding: 0;
+        }
+        
+        .next-steps li {
+            padding: 10px 0;
+            padding-left: 30px;
+            position: relative;
+            color: var(--text-secondary);
+        }
+        
+        .next-steps li:before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: var(--success-green);
+            font-weight: bold;
+        }
+        
+        @media (max-width: 768px) {
+            .thank-you-card {
+                padding: 40px 20px;
+            }
+            
+            .thank-you-title {
+                font-size: 28px;
+            }
+            
+            .thank-you-text {
+                font-size: 16px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="logo">YTA CHADS</div>
+            <nav class="nav">
+                <div style="display: flex; gap: 15px; align-items: center;">
+                    <a href="index.html" class="btn-secondary">Home</a>
+                    <a href="calculator.html" class="btn-secondary">Channel Calculator</a>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Thank You Section -->
+    <section class="thank-you-section">
+        <div class="container">
+            <div class="thank-you-card">
+                <div class="success-icon">✓</div>
+                <h1 class="thank-you-title">Thank You!</h1>
+                <p class="thank-you-text">
+                    Your call has been scheduled successfully. We're excited to speak with you about building your YouTube Search business.
+                </p>
+                <p class="thank-you-text">
+                    You should receive a calendar invitation in your email shortly with all the details for our call.
+                </p>
+                
+                <div class="next-steps">
+                    <h3>What happens next?</h3>
+                    <ul>
+                        <li>Check your email for the calendar invitation</li>
+                        <li>Add the call to your calendar</li>
+                        <li>We'll see you at the scheduled time!</li>
+                    </ul>
+                </div>
+                
+                <div style="margin-top: 40px; display: flex; gap: 20px; justify-content: center; flex-wrap: wrap;">
+                    <a href="index.html" class="btn-primary">Back to Home</a>
+                    <a href="calculator.html" class="btn-secondary">Channel Calculator</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <div class="logo">YTA CHADS</div>
+                </div>
+                <div class="footer-links">
+                    <div class="footer-section">
+                        <h4>Support</h4>
+                        <ul>
+                            <li><a href="#">Privacy Policy</a></li>
+                            <li><a href="#">Terms & Conditions</a></li>
+                            <li><a href="#">Refund Policy</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 YTA CHADS. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
+
