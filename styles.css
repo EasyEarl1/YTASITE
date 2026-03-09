@@ -1152,6 +1152,70 @@ section {
     font-size: 14px;
 }
 
+/* CRO / Compliance disclaimer under testimonials */
+.cro-disclaimer {
+    font-size: 11px;
+    color: #888;
+    text-align: center;
+    margin-top: 24px;
+    line-height: 1.4;
+    max-width: 640px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Legal Footer */
+.legal-footer .container {
+    text-align: center;
+}
+
+.footer-contact {
+    color: var(--text-secondary);
+    font-size: 14px;
+    margin-bottom: 16px;
+}
+
+.footer-legal-links {
+    display: flex;
+    justify-content: center;
+    gap: 24px;
+    flex-wrap: wrap;
+    margin-bottom: 24px;
+}
+
+.footer-legal-links a {
+    color: var(--accent-blue-light);
+    text-decoration: none;
+    font-size: 14px;
+}
+
+.footer-legal-links a:hover {
+    text-decoration: underline;
+}
+
+.footer-disclaimer-block {
+    border-top: 1px solid var(--border-color);
+    padding-top: 24px;
+    max-width: 720px;
+    margin: 0 auto;
+}
+
+.footer-disclaimer-text {
+    font-size: 12px;
+    color: #999;
+    line-height: 1.6;
+}
+
+@media (max-width: 768px) {
+    .footer-legal-links {
+        gap: 16px;
+    }
+    
+    .footer-disclaimer-text {
+        font-size: 11px;
+    }
+}
+
 /* Responsive Design */
 @media (max-width: 768px) {
     .hero {
@@ -1603,3 +1667,47 @@ html {
     }
 }
 
+/* Compliance disclaimer (testimonials / results) */
+.cro-disclaimer {
+    font-size: 11px;
+    color: #888;
+    font-style: italic;
+    margin-top: 12px;
+    display: block;
+}
+
+/* Legal footer */
+.legal-footer {
+    background: var(--bg-secondary);
+    border-top: 1px solid var(--border-color);
+    padding: 40px 20px 32px;
+    text-align: center;
+}
+.legal-footer .footer-contact {
+    color: var(--text-secondary);
+    margin-bottom: 20px;
+    font-size: 14px;
+}
+.legal-footer .footer-legal-links {
+    display: flex;
+    justify-content: center;
+    gap: 24px;
+    flex-wrap: wrap;
+    margin-bottom: 24px;
+}
+.legal-footer .footer-legal-links a {
+    color: var(--accent-blue-light);
+    text-decoration: none;
+}
+.legal-footer .footer-legal-links a:hover {
+    text-decoration: underline;
+}
+.legal-footer .footer-disclaimer-block {
+    max-width: 720px;
+    margin: 0 auto;
+}
+.legal-footer .footer-disclaimer-text {
+    font-size: 11px;
+    color: #888;
+    line-height: 1.5;
+}
