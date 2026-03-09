@@ -5,6 +5,14 @@
   "framework": null,
   "rewrites": [
     {
+      "source": "/twitter",
+      "destination": "/twitter.html"
+    },
+    {
+      "source": "/twitter.html",
+      "destination": "/twitter.html"
+    },
+    {
       "source": "/(.*)",
       "destination": "/index.html"
     }
