@@ -13,6 +13,22 @@
       "destination": "/twitter.html"
     },
     {
+      "source": "/youtube",
+      "destination": "/youtube.html"
+    },
+    {
+      "source": "/youtube.html",
+      "destination": "/youtube.html"
+    },
+    {
+      "source": "/telegram",
+      "destination": "/telegram.html"
+    },
+    {
+      "source": "/telegram.html",
+      "destination": "/telegram.html"
+    },
+    {
       "source": "/(.*)",
       "destination": "/index.html"
     }
