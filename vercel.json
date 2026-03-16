@@ -37,6 +37,14 @@
       "destination": "/playbook.html"
     },
     {
+      "source": "/playbook-confirm",
+      "destination": "/playbook-confirm.html"
+    },
+    {
+      "source": "/playbook-confirm.html",
+      "destination": "/playbook-confirm.html"
+    },
+    {
       "source": "/(.*)",
       "destination": "/index.html"
     }
