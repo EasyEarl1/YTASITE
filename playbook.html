@@ -479,6 +479,35 @@
     };
 
     var AUTOHIDE = Boolean(0);
+
+    // When Brevo reports success, make the next step extremely clear
+    document.addEventListener("DOMContentLoaded", function () {
+      var success = document.getElementById("success-message");
+      var error = document.getElementById("error-message");
+      var heading = document.querySelector(".form-heading");
+      var sub = document.querySelector(".form-sub");
+      var submitBtn = document.querySelector(".sib-form-block__button");
+
+      if (!success) return;
+
+      var observer = new MutationObserver(function () {
+        var visible =
+          window.getComputedStyle(success).display !== "none" &&
+          success.textContent.trim().length > 0;
+
+        if (visible) {
+          if (heading) heading.textContent = "Check your email to confirm your copy";
+          if (sub)
+            sub.textContent =
+              "We’ve sent you an email with a confirmation link. Open it and confirm so we can send you the $100K YouTube Playbook PDF. Check promotions and spam if you don’t see it.";
+          if (submitBtn) submitBtn.style.display = "none";
+          if (error) error.style.display = "none";
+          success.scrollIntoView({ behavior: "smooth", block: "center" });
+        }
+      });
+
+      observer.observe(success, { attributes: true, attributeFilter: ["style", "class"] });
+    });
   </script>
 
   <script defer src="https://sibforms.com/forms/end-form/build/main.js"></script>
