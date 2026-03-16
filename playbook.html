@@ -94,88 +94,9 @@
     }
 
     .hero {
-      display: grid;
-      grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr);
-      gap: 32px;
-      align-items: center;
-    }
-
-    .hero-copy-eyebrow {
-      text-transform: uppercase;
-      letter-spacing: 0.18em;
-      font-size: 11px;
-      color: var(--muted);
-      margin-bottom: 10px;
-    }
-
-    .hero h1 {
-      font-size: clamp(30px, 4vw, 40px);
-      line-height: 1.05;
-      letter-spacing: -0.05em;
-      margin: 0 0 14px;
-    }
-
-    .hero h1 span {
-      color: #4ade80;
-    }
-
-    .hero-sub {
-      margin: 0 0 16px;
-      color: var(--muted);
-      font-size: 15px;
-      max-width: 480px;
-    }
-
-    .steps {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 10px;
-      margin-bottom: 18px;
-    }
-
-    .step-pill {
-      display: inline-flex;
-      align-items: center;
-      gap: 6px;
-      padding: 6px 10px;
-      border-radius: 999px;
-      font-size: 11px;
-      background: rgba(15, 23, 42, 0.9);
-      border: 1px solid rgba(55, 65, 81, 0.9);
-      color: var(--muted);
-    }
-
-    .step-pill strong {
-      color: #e5e7eb;
-      font-weight: 600;
-    }
-
-    .hero-cta-note {
-      font-size: 12px;
-      color: var(--muted);
-    }
-
-    .book-card {
-      background: radial-gradient(circle at top, rgba(15, 23, 42, 0.8), #020617);
-      border-radius: var(--radius-lg);
-      border: 1px solid var(--border);
-      box-shadow: var(--shadow);
-      padding: 14px 14px 18px;
       display: flex;
       justify-content: center;
-      align-items: center;
-    }
-
-    .book-image {
-      display: block;
-      width: 100%;
-      max-width: 360px;
-      border-radius: 18px;
-      box-shadow: 0 20px 60px rgba(15, 23, 42, 0.9);
-    }
-
-    .form-section {
-      margin-top: 32px;
+      align-items: flex-start;
     }
 
     .form-heading {
@@ -294,17 +215,23 @@
       padding: 10px 12px !important;
     }
 
+    /* Hide messages on initial page load; Brevo will show them by setting inline styles */
+    #error-message,
+    #success-message {
+      display: none;
+    }
+
+    /* Hide Brevo honeypot field so users don't see the extra box */
+    .input--hidden,
+    input[name="email_address_check"] {
+      display: none !important;
+      visibility: hidden !important;
+    }
+
     /* Hide Brevo's big icons and loader graphics */
     .sib-form-message-panel svg,
     .sib-form-block__button svg {
       display: none !important;
-    }
-
-    footer {
-      margin-top: 40px;
-      font-size: 11px;
-      color: #6b7280;
-      text-align: center;
     }
 
     @media (max-width: 800px) {
@@ -312,10 +239,7 @@
         padding-top: 22px;
       }
       .hero {
-        grid-template-columns: minmax(0, 1fr);
-      }
-      .book-card {
-        order: -1;
+        justify-content: stretch;
       }
     }
   </style>
@@ -323,14 +247,6 @@
 <body>
   <div class="shell">
     <section class="hero" aria-label="Get the $100K YouTube Playbook PDF">
-      <div class="book-card">
-        <img
-          src="4c670030-b17c-40b7-b59c-d536529f241f.jfif"
-          alt="$100K YouTube Playbook physical copy"
-          class="book-image"
-        />
-      </div>
-
       <div class="form-shell">
         <div class="form-card">
           <h2 class="form-heading">$100K YouTube Playbook</h2>
