@@ -29,6 +29,14 @@
       "destination": "/telegram.html"
     },
     {
+      "source": "/playbook",
+      "destination": "/playbook.html"
+    },
+    {
+      "source": "/playbook.html",
+      "destination": "/playbook.html"
+    },
+    {
       "source": "/(.*)",
       "destination": "/index.html"
     }
