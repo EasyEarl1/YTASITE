@@ -45,6 +45,14 @@
       "destination": "/playbook-confirm.html"
     },
     {
+      "source": "/youtube-business",
+      "destination": "/youtube-business.html"
+    },
+    {
+      "source": "/youtube-business.html",
+      "destination": "/youtube-business.html"
+    },
+    {
       "source": "/(.*)",
       "destination": "/index.html"
     }
