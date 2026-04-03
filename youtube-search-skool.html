@@ -14,11 +14,11 @@
       --bg: #000000;
       --text: #ffffff;
       --muted: #a8b4c9;
-      --label: #4da3ff;
-      --line: rgba(0, 123, 255, 0.22);
-      --primary: #007bff;
-      --primary-deep: #0062cc;
-      --primary-glow: rgba(0, 123, 255, 0.5);
+      --label: #0055ff;
+      --line: rgba(0, 85, 255, 0.22);
+      --primary: #0055ff;
+      --primary-deep: #0046d4;
+      --primary-glow: rgba(0, 85, 255, 0.55);
       --accent: #38b6ff;
       --radius: 16px;
       --radius-lg: 22px;
@@ -32,37 +32,90 @@
       color: var(--text);
       line-height: 1.65;
       background:
-        radial-gradient(900px 520px at 50% -10%, rgba(0, 123, 255, 0.12), transparent 55%),
-        radial-gradient(700px 400px at 12% 35%, rgba(0, 123, 255, 0.06), transparent 50%),
-        radial-gradient(600px 380px at 88% 55%, rgba(56, 182, 255, 0.05), transparent 50%),
+        radial-gradient(900px 520px at 50% -10%, rgba(0, 85, 255, 0.12), transparent 55%),
+        radial-gradient(700px 400px at 8% 30%, rgba(0, 85, 255, 0.07), transparent 50%),
+        radial-gradient(700px 400px at 92% 35%, rgba(0, 85, 255, 0.06), transparent 50%),
         var(--bg);
       -webkit-font-smoothing: antialiased;
     }
     .shell { max-width: var(--max); margin: 0 auto; padding: 32px 24px 48px; }
     section { margin-bottom: 56px; }
 
-    .hero { text-align: center; padding-bottom: 8px; }
-    .hero-logo {
-      display: inline-block;
-      margin: 0 auto 20px;
-      font-size: 13px;
-      font-weight: 800;
-      letter-spacing: 0.06em;
-      color: var(--muted);
-      text-decoration: none;
+    /* —— Hero (wireframe: logo → full proof bar → labels → headline → subhead → CTA → VSL) —— */
+    .hero-wireframe {
+      text-align: center;
+      padding: 28px 0 24px;
     }
-    .hero-logo:hover { color: var(--text); }
-    .proof-strip {
-      max-width: 560px;
-      margin: 0 auto 28px;
-      padding: 10px 18px;
-      border-radius: 999px;
-      font-size: 12px;
+    .hero-logo-wrap {
+      max-width: var(--max);
+      margin: 0 auto;
+      padding: 0 24px 20px;
+    }
+    .hero-logo-box {
+      display: inline-block;
+      padding: 10px 28px;
+      border: 1px solid rgba(255, 255, 255, 0.45);
+      border-radius: 4px;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.2em;
+      color: var(--text);
+      text-transform: uppercase;
+      background: transparent;
+    }
+    .proof-bar-full {
+      width: 100%;
+      margin: 0 0 36px;
+      padding: 14px 20px;
+      background: #16161a;
+      border: solid rgba(255, 255, 255, 0.06);
+      border-width: 1px 0;
+      box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.04);
+    }
+    .proof-bar-full p {
+      margin: 0 auto;
+      max-width: var(--max);
+      font-size: 13px;
       font-weight: 500;
-      color: var(--muted);
-      background: rgba(14, 14, 18, 0.9);
-      border: 1px solid var(--line);
-      box-shadow: 0 0 28px rgba(0, 123, 255, 0.1);
+      color: #9ca3af;
+      line-height: 1.5;
+    }
+    .hero-content {
+      max-width: var(--max);
+      margin: 0 auto;
+      padding: 8px 24px 0;
+    }
+    .hero-field-label {
+      display: block;
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 0.02em;
+      color: var(--label);
+      margin-bottom: 10px;
+    }
+    .hero-field-label + h1 { margin-top: 0; }
+    .hero-wireframe h1 {
+      margin: 0 auto 28px;
+      max-width: 920px;
+      font-size: clamp(28px, 4.8vw, 46px);
+      line-height: 1.05;
+      letter-spacing: -0.04em;
+      font-weight: 800;
+      color: var(--text);
+    }
+    .hero-subhead {
+      margin: 0 auto 32px;
+      max-width: var(--max-narrow);
+      font-size: clamp(17px, 2.1vw, 22px);
+      color: var(--text);
+      font-weight: 600;
+      line-height: 1.5;
+    }
+    .btn-hero {
+      min-height: 56px;
+      padding: 16px 36px;
+      border-radius: 14px;
+      font-size: 17px;
     }
     h1 {
       margin: 0 auto 18px;
@@ -72,14 +125,6 @@
       letter-spacing: -0.04em;
       font-weight: 800;
       color: var(--text);
-    }
-    .subhead {
-      margin: 0 auto 26px;
-      max-width: var(--max-narrow);
-      font-size: clamp(16px, 2vw, 19px);
-      color: var(--label);
-      font-weight: 700;
-      line-height: 1.55;
     }
     .btn {
       display: inline-flex;
@@ -97,7 +142,7 @@
       box-shadow:
         0 0 0 1px rgba(255, 255, 255, 0.1) inset,
         0 4px 24px var(--primary-glow),
-        0 12px 40px rgba(0, 40, 100, 0.35);
+        0 12px 40px rgba(0, 30, 90, 0.4);
       transition: transform 0.12s ease, filter 0.12s ease, box-shadow 0.12s ease;
     }
     .btn:hover {
@@ -105,8 +150,8 @@
       filter: brightness(1.06);
       box-shadow:
         0 0 0 1px rgba(255, 255, 255, 0.14) inset,
-        0 6px 32px rgba(0, 123, 255, 0.55),
-        0 16px 48px rgba(0, 40, 100, 0.4);
+        0 6px 32px rgba(0, 85, 255, 0.55),
+        0 16px 48px rgba(0, 30, 90, 0.45);
     }
     .btn-ghost {
       background: transparent;
@@ -115,8 +160,8 @@
       color: var(--text);
     }
     .btn-ghost:hover {
-      border-color: rgba(0, 123, 255, 0.5);
-      background: rgba(0, 123, 255, 0.08);
+      border-color: rgba(0, 85, 255, 0.5);
+      background: rgba(0, 85, 255, 0.08);
       filter: none;
     }
     .micro {
@@ -125,49 +170,64 @@
       color: var(--muted);
     }
     .vsl {
-      margin: 36px auto 0;
+      margin: 40px auto 0;
       max-width: 880px;
       aspect-ratio: 16 / 9;
-      border-radius: var(--radius);
-      background: linear-gradient(145deg, #0c1018, #06080e);
-      border: 1px solid var(--line);
+      border-radius: 4px;
+      background: #000000;
+      border: 1px solid rgba(0, 85, 255, 0.5);
       box-shadow:
-        0 0 0 1px rgba(0, 123, 255, 0.15),
-        0 0 60px rgba(0, 123, 255, 0.25),
-        0 24px 64px rgba(0, 0, 0, 0.55);
+        0 0 0 1px rgba(0, 85, 255, 0.2),
+        0 0 48px rgba(0, 85, 255, 0.35),
+        0 0 100px rgba(0, 85, 255, 0.12),
+        inset 0 0 80px rgba(0, 85, 255, 0.06);
       display: flex;
       align-items: center;
       justify-content: center;
       position: relative;
       overflow: hidden;
+      transition: box-shadow 0.2s ease, border-color 0.2s ease;
     }
-    .vsl::before {
-      content: "";
-      position: absolute;
-      inset: -2px;
-      border-radius: inherit;
-      background: radial-gradient(ellipse at 50% 30%, rgba(0, 123, 255, 0.22), transparent 65%);
-      pointer-events: none;
+    .vsl:hover {
+      border-color: rgba(0, 85, 255, 0.75);
+      box-shadow:
+        0 0 0 1px rgba(0, 85, 255, 0.3),
+        0 0 56px rgba(0, 85, 255, 0.45),
+        0 0 120px rgba(0, 85, 255, 0.18),
+        inset 0 0 80px rgba(0, 85, 255, 0.08);
     }
-    .vsl-play {
+    .vsl-inner {
       position: relative;
       z-index: 1;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 16px;
+    }
+    .vsl-play {
       width: 72px;
       height: 72px;
       border-radius: 50%;
-      background: rgba(0, 123, 255, 0.95);
-      border: 2px solid rgba(255, 255, 255, 0.25);
-      box-shadow: 0 8px 32px rgba(0, 123, 255, 0.5);
+      background: rgba(255, 255, 255, 0.12);
+      border: 2px solid rgba(255, 255, 255, 0.35);
       display: flex;
       align-items: center;
       justify-content: center;
+      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
     }
     .vsl-play::after {
       content: "";
-      margin-left: 4px;
+      margin-left: 5px;
       border-style: solid;
-      border-width: 10px 0 10px 16px;
-      border-color: transparent transparent transparent #fff;
+      border-width: 11px 0 11px 18px;
+      border-color: transparent transparent transparent #ffffff;
+    }
+    .vsl-tag {
+      font-size: 14px;
+      font-weight: 800;
+      letter-spacing: 0.35em;
+      color: rgba(255, 255, 255, 0.85);
     }
 
     .section-title-caps {
@@ -365,7 +425,7 @@
       display: flex;
       align-items: center;
       justify-content: center;
-      box-shadow: 0 0 20px rgba(0, 123, 255, 0.35);
+      box-shadow: 0 0 20px rgba(0, 85, 255, 0.35);
     }
     .signup-step h3 {
       margin: 0 0 8px;
@@ -398,7 +458,7 @@
     .about-photo {
       aspect-ratio: 3 / 4;
       border-radius: var(--radius);
-      border: 2px solid rgba(0, 123, 255, 0.45);
+      border: 2px solid rgba(0, 85, 255, 0.45);
       background: rgba(12, 14, 22, 0.9);
       display: flex;
       align-items: center;
@@ -488,9 +548,9 @@
       border-radius: var(--radius-lg);
       padding: 28px 22px;
       text-align: center;
-      border: 1px solid rgba(0, 123, 255, 0.35);
+      border: 1px solid rgba(0, 85, 255, 0.35);
       background: linear-gradient(180deg, rgba(12, 18, 32, 0.96), rgba(4, 8, 16, 0.98));
-      box-shadow: 0 0 40px rgba(0, 123, 255, 0.12), 0 20px 50px rgba(0, 0, 0, 0.45);
+      box-shadow: 0 0 40px rgba(0, 85, 255, 0.12), 0 20px 50px rgba(0, 0, 0, 0.45);
     }
     .price-card h3 {
       margin: 0 0 8px;
@@ -600,21 +660,29 @@
   </style>
 </head>
 <body>
-  <main class="shell">
-    <section class="hero" aria-label="Introduction">
-      <a href="index.html" class="hero-logo">YTA CHADS</a>
-      <div class="proof-strip">No experience needed • No team required • Start simple</div>
-
+  <section class="hero-wireframe" aria-label="Introduction">
+    <div class="hero-logo-wrap">
+      <div class="hero-logo-box">LOGO</div>
+    </div>
+    <div class="proof-bar-full">
+      <p>No experience needed • No team required • Start simple</p>
+    </div>
+    <div class="hero-content">
+      <span class="hero-field-label">Headline:</span>
       <h1>Build a Predictable YouTube Income — Without Going Viral, Filming Daily, or Guessing What Works</h1>
-      <p class="subhead">Learn a simple system to start a YouTube channel using topics people are already searching for — and turn it into a compounding content asset.</p>
-
-      <a href="#" class="btn">Join The YouTube Search Skool</a>
-
-      <div class="vsl" aria-label="Video introduction">
-        <div class="vsl-play" aria-hidden="true"></div>
+      <span class="hero-field-label">Subheadline:</span>
+      <p class="hero-subhead">Learn a simple system to start a YouTube channel using topics people are already searching for — and turn it into a compounding content asset.</p>
+      <a href="#" class="btn btn-hero">Start My YouTube Transformation</a>
+      <div class="vsl" aria-label="Video sales letter">
+        <div class="vsl-inner">
+          <div class="vsl-play" aria-hidden="true"></div>
+          <span class="vsl-tag">VSL</span>
+        </div>
       </div>
-    </section>
+    </div>
+  </section>
 
+  <main class="shell">
     <section aria-label="The problem">
       <h2 class="section-title-caps">It’s time you got paid what you deserve</h2>
       <p class="section-lead">Most people approach YouTube the wrong way: they chase viral ideas, spend hours editing, guess what might work, and hope something takes off. The result is random views, no consistency, and no income — so they quit. Not because YouTube doesn’t work, but because the model is built on guesswork and luck.</p>
