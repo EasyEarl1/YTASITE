@@ -1,0 +1,506 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>YouTube Search Skool — Predictable Income Without Virality</title>
+  <meta name="description" content="Learn a simple search-based YouTube system: demand-led topics, simple videos, compounding content. Join the YouTube Search Skool." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <script defer src="/_vercel/insights/script.js"></script>
+  <style>
+    :root {
+      --bg: #060912;
+      --card: rgba(10, 17, 30, 0.84);
+      --text: #f3f7ff;
+      --muted: #9aa8c2;
+      --line: rgba(154, 168, 194, 0.2);
+      --primary: #5b8cff;
+      --primary-dark: #4c7cf0;
+      --accent: #22c55e;
+      --radius: 16px;
+      --radius-lg: 22px;
+      --max: 900px;
+    }
+    * { box-sizing: border-box; }
+    html, body { margin: 0; padding: 0; }
+    body {
+      font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      color: var(--text);
+      line-height: 1.65;
+      background:
+        radial-gradient(1000px 600px at 8% -8%, rgba(91, 140, 255, 0.18), transparent 60%),
+        radial-gradient(900px 500px at 92% -5%, rgba(34, 211, 238, 0.1), transparent 55%),
+        linear-gradient(180deg, #070b14, #050912);
+      -webkit-font-smoothing: antialiased;
+    }
+    .topbar {
+      position: sticky;
+      top: 0;
+      z-index: 20;
+      border-bottom: 1px solid var(--line);
+      background: rgba(6, 9, 18, 0.75);
+      backdrop-filter: blur(12px);
+    }
+    .topbar-inner {
+      max-width: var(--max);
+      margin: 0 auto;
+      padding: 14px 24px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .logo { color: var(--text); font-weight: 800; letter-spacing: -0.05em; font-size: 17px; text-decoration: none; }
+    .proof-bar {
+      font-size: 12px;
+      color: var(--muted);
+    }
+    .shell { max-width: var(--max); margin: 0 auto; padding: 36px 24px 80px; }
+    section { margin-bottom: 44px; }
+    .section-kicker {
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 0.14em;
+      color: var(--muted);
+      margin-bottom: 8px;
+    }
+    h1 {
+      margin: 0 0 16px;
+      font-size: clamp(28px, 4.2vw, 42px);
+      line-height: 1.08;
+      letter-spacing: -0.04em;
+      font-weight: 800;
+    }
+    h2 {
+      margin: 0 0 14px;
+      font-size: clamp(22px, 2.8vw, 28px);
+      letter-spacing: -0.03em;
+      font-weight: 700;
+      line-height: 1.2;
+    }
+    .lede {
+      color: var(--muted);
+      font-size: 17px;
+      margin: 0 0 22px;
+      max-width: 640px;
+    }
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 14px 24px;
+      border-radius: 12px;
+      border: 1px solid rgba(113, 148, 255, 0.35);
+      background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+      color: #fff;
+      font-weight: 700;
+      font-size: 15px;
+      text-decoration: none;
+      box-shadow: 0 0 0 1px rgba(91, 140, 255, 0.2), 0 14px 40px rgba(29, 78, 216, 0.25);
+      transition: transform 0.12s ease, filter 0.12s ease;
+    }
+    .btn:hover { transform: translateY(-1px); filter: brightness(1.05); }
+    .btn-secondary {
+      background: transparent;
+      border-color: var(--line);
+      box-shadow: none;
+      color: var(--text);
+      font-weight: 600;
+    }
+    .micro {
+      margin-top: 14px;
+      font-size: 13px;
+      color: var(--muted);
+    }
+    .panel {
+      border: 1px solid var(--line);
+      border-radius: var(--radius-lg);
+      background: linear-gradient(180deg, rgba(13, 20, 35, 0.85), rgba(8, 13, 24, 0.9));
+      padding: 26px 24px;
+      box-shadow: 0 16px 40px rgba(2, 6, 23, 0.35);
+    }
+    .panel p, .panel li { color: var(--muted); font-size: 15px; }
+    .panel strong { color: var(--text); }
+    ul.clean { margin: 12px 0 0; padding-left: 20px; }
+    ul.clean li { margin-bottom: 8px; }
+    .list-bullets { list-style: none; padding: 0; margin: 14px 0 0; }
+    .list-bullets li {
+      position: relative;
+      padding-left: 22px;
+      margin-bottom: 10px;
+      font-size: 15px;
+      color: var(--muted);
+    }
+    .list-bullets li::before {
+      content: "→";
+      position: absolute;
+      left: 0;
+      color: var(--accent);
+      font-weight: 600;
+    }
+    .steps {
+      display: grid;
+      gap: 14px;
+      margin-top: 18px;
+    }
+    .step {
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      padding: 16px 18px;
+      background: rgba(255,255,255,0.02);
+    }
+    .step-num {
+      font-size: 12px;
+      font-weight: 700;
+      color: var(--primary);
+      margin-bottom: 6px;
+    }
+    .step h3 { margin: 0 0 6px; font-size: 16px; color: var(--text); }
+    .step p { margin: 0; font-size: 14px; color: var(--muted); }
+    .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; margin-top: 16px; }
+    .mini-card {
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      padding: 16px;
+      background: rgba(255,255,255,0.02);
+    }
+    .mini-card h3 { margin: 0 0 6px; font-size: 15px; }
+    .mini-card p { margin: 0; font-size: 13px; color: var(--muted); }
+    .video-placeholder {
+      margin-top: 20px;
+      border-radius: var(--radius);
+      border: 1px dashed var(--line);
+      aspect-ratio: 16 / 9;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--muted);
+      font-size: 13px;
+      background: rgba(0,0,0,0.2);
+    }
+    .pricing-box {
+      border: 1px solid rgba(113, 148, 255, 0.35);
+      border-radius: var(--radius-lg);
+      padding: 28px 24px;
+      text-align: center;
+      background: linear-gradient(180deg, rgba(13, 22, 38, 0.92), rgba(8, 14, 27, 0.94));
+      box-shadow: 0 0 0 1px rgba(91, 140, 255, 0.15), 0 20px 50px rgba(0,0,0,0.35);
+    }
+    .price { font-size: 40px; font-weight: 800; letter-spacing: -0.03em; margin: 0 0 8px; }
+    .upsell {
+      margin-top: 28px;
+      padding: 20px 22px;
+      border-radius: var(--radius);
+      border: 1px solid var(--line);
+      background: rgba(255,255,255,0.03);
+      font-size: 14px;
+      color: var(--muted);
+    }
+    .upsell a { color: var(--primary); font-weight: 600; }
+    .faq details {
+      border-bottom: 1px solid var(--line);
+      padding: 14px 0;
+    }
+    .faq summary {
+      cursor: pointer;
+      font-weight: 600;
+      color: var(--text);
+      list-style: none;
+    }
+    .faq summary::-webkit-details-marker { display: none; }
+    .faq details p { margin: 10px 0 0; font-size: 14px; color: var(--muted); }
+    .final-cta {
+      text-align: center;
+      padding: 36px 24px;
+      border-radius: var(--radius-lg);
+      border: 1px solid var(--line);
+      background: rgba(13, 20, 35, 0.6);
+    }
+    .final-cta h2 { margin-bottom: 16px; }
+    @media (max-width: 720px) {
+      .grid-2 { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+  <header class="topbar">
+    <div class="topbar-inner">
+      <a href="index.html" class="logo">YTA CHADS</a>
+      <div class="proof-bar">Search‑first system • Self‑guided</div>
+    </div>
+  </header>
+
+  <main class="shell">
+    <!-- 1 HERO -->
+    <section class="panel" aria-label="Hero">
+      <h1>Build a Predictable YouTube Income — Without Going Viral, Filming Daily, or Guessing What Works</h1>
+      <p class="lede">Learn a simple system to start a YouTube channel using topics people are already searching for — and turn it into a compounding content asset.</p>
+      <a href="#" class="btn">👉 Join The YouTube Search Skool</a>
+      <p class="micro">No experience needed • No team required • Start simple</p>
+      <div class="video-placeholder" aria-hidden="true">[ Optional intro video — embed your Wistia / YouTube URL here ]</div>
+    </section>
+
+    <!-- 2 PROBLEM -->
+    <section>
+      <div class="section-kicker">2</div>
+      <h2>Why Most People Fail On YouTube</h2>
+      <div class="panel">
+        <p>Most people approach YouTube the wrong way.</p>
+        <p><strong>They:</strong></p>
+        <ul class="clean">
+          <li>chase viral ideas</li>
+          <li>spend hours editing</li>
+          <li>guess what topics might work</li>
+          <li>and hope something “takes off”</li>
+        </ul>
+        <p><strong>The result?</strong></p>
+        <ul class="clean">
+          <li>❌ random views</li>
+          <li>❌ no consistency</li>
+          <li>❌ no income</li>
+        </ul>
+        <p>Eventually… they quit.</p>
+        <p><strong>Not because YouTube doesn’t work — but because they’re using a model built on guesswork and luck.</strong></p>
+      </div>
+    </section>
+
+    <!-- 3 SHIFT -->
+    <section>
+      <div class="section-kicker">3</div>
+      <h2>The Problem With “Going Viral”</h2>
+      <div class="panel">
+        <p>The internet tells you to:</p>
+        <ul class="clean">
+          <li>be entertaining</li>
+          <li>follow trends</li>
+          <li>post constantly</li>
+          <li>stand out</li>
+        </ul>
+        <p><strong>But this creates a problem:</strong></p>
+        <p>👉 your results become unpredictable</p>
+        <p>You’re relying on:</p>
+        <ul class="clean">
+          <li>timing</li>
+          <li>algorithm spikes</li>
+          <li>luck</li>
+        </ul>
+        <p>Instead of building something stable.</p>
+        <p><strong>You don’t need more effort. You need a better system.</strong></p>
+      </div>
+    </section>
+
+    <!-- 4 SOLUTION -->
+    <section>
+      <div class="section-kicker">4</div>
+      <h2>The Search-Based YouTube Model</h2>
+      <div class="panel">
+        <p>Instead of chasing attention…</p>
+        <p><strong>You create videos around things people are already searching for.</strong></p>
+        <p>That means:</p>
+        <ul class="list-bullets">
+          <li>built-in demand</li>
+          <li>clear topics</li>
+          <li>consistent traffic over time</li>
+        </ul>
+        <p>You’re not trying to “blow up” — <strong>you’re building a content asset.</strong></p>
+        <h3 style="margin: 22px 0 12px; font-size: 18px;">The Simple 3-Step System</h3>
+        <div class="steps">
+          <div class="step">
+            <div class="step-num">1</div>
+            <h3>Find Demand</h3>
+            <p>Learn how to find topics people are already searching for</p>
+          </div>
+          <div class="step">
+            <div class="step-num">2</div>
+            <h3>Make Simple Videos</h3>
+            <p>Create clear, useful videos without overcomplicating production</p>
+          </div>
+          <div class="step">
+            <div class="step-num">3</div>
+            <h3>Stack Content Over Time</h3>
+            <p>Build a library of videos that compounds into traffic and income</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 5 WHAT THIS LOOKS LIKE -->
+    <section>
+      <div class="section-kicker">5</div>
+      <h2>What Happens When You Do This Properly</h2>
+      <div class="panel">
+        <p>Instead of hoping for views…</p>
+        <p><strong>You start seeing:</strong></p>
+        <ul class="list-bullets">
+          <li>videos consistently getting traffic</li>
+          <li>your channel growing steadily</li>
+          <li>income becoming more predictable</li>
+        </ul>
+        <p>Each video becomes a small asset. And over time, they stack.</p>
+      </div>
+    </section>
+
+    <!-- 6 WHAT YOU GET -->
+    <section>
+      <div class="section-kicker">6</div>
+      <h2>Inside The YouTube Search Skool</h2>
+      <div class="grid-2">
+        <div class="mini-card">
+          <h3>Step-by-step training (1 hour)</h3>
+          <p>A simple breakdown of the search-based model so you can get started fast</p>
+        </div>
+        <div class="mini-card">
+          <h3>30-Day Action Plan</h3>
+          <p>Know exactly what to do each day without overthinking</p>
+        </div>
+        <div class="mini-card">
+          <h3>Progress Tracker</h3>
+          <p>Track videos, keywords, and momentum as you build</p>
+        </div>
+        <div class="mini-card">
+          <h3>Private community</h3>
+          <p>Ask questions, stay accountable, and build alongside others</p>
+        </div>
+      </div>
+      <div class="mini-card" style="margin-top: 14px;">
+        <h3>Ongoing guidance</h3>
+        <p>Get clarity when you’re stuck — without needing constant calls or hand-holding</p>
+      </div>
+      <p style="margin-top: 18px; font-size: 15px; color: var(--muted);"><strong style="color: var(--text);">This is designed to be simple.</strong> This is a self-guided system so you can start quickly, stay consistent, and build without relying on constant coaching.</p>
+    </section>
+
+    <!-- 7 WHO FOR -->
+    <section>
+      <div class="section-kicker">7</div>
+      <h2>This Is Perfect For You If:</h2>
+      <div class="panel">
+        <ul class="list-bullets">
+          <li>You want to start YouTube but don’t know where to begin</li>
+          <li>You don’t want to rely on virality</li>
+          <li>You want something simple and structured</li>
+          <li>You’re happy to follow a system and stay consistent</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- 8 NEXT STEPS -->
+    <section>
+      <div class="section-kicker">8</div>
+      <h2>Your Next Steps</h2>
+      <div class="panel">
+        <p><strong>Step 1:</strong> Join and get instant access</p>
+        <p><strong>Step 2:</strong> Follow the 30-day plan</p>
+        <p><strong>Step 3:</strong> Start posting your first videos</p>
+        <p><strong>Step 4:</strong> Build momentum and track your progress</p>
+        <p style="margin-top: 16px;">No guesswork. No overwhelm. Just a clear path.</p>
+      </div>
+    </section>
+
+    <!-- 9 ABOUT -->
+    <section>
+      <div class="section-kicker">9</div>
+      <h2>Why Learn This From Me?</h2>
+      <div class="panel">
+        <p>I’ve built my YouTube business around search-based traffic.</p>
+        <p>Instead of chasing trends, I focused on:</p>
+        <ul class="clean">
+          <li>predictable views</li>
+          <li>scalable systems</li>
+          <li>simple production</li>
+        </ul>
+        <p>This allowed me to:</p>
+        <ul class="clean">
+          <li>build multiple channels</li>
+          <li>generate consistent income</li>
+          <li>treat YouTube like a business, not a gamble</li>
+        </ul>
+        <p><strong>This Skool is the simplified version of that model.</strong></p>
+      </div>
+    </section>
+
+    <!-- 10 PROOF -->
+    <section>
+      <div class="section-kicker">10</div>
+      <h2>This Model Works When Applied Properly</h2>
+      <div class="panel">
+        <ul class="list-bullets">
+          <li>Channels generating consistent monthly income from search</li>
+          <li>Videos continuing to get views long after being posted</li>
+          <li>Students gaining traction by following a structured system</li>
+        </ul>
+        <p style="margin-top: 14px;">This isn’t about luck. It’s about using demand that already exists.</p>
+      </div>
+    </section>
+
+    <!-- 11 PRICING -->
+    <section>
+      <div class="section-kicker">11</div>
+      <h2>Start Simple</h2>
+      <div class="pricing-box">
+        <div style="font-size: 14px; color: var(--muted); margin-bottom: 4px;">YouTube Search Skool</div>
+        <div class="price">💰 $39/month</div>
+        <p style="color: var(--muted); font-size: 14px; margin: 0 0 20px;">Includes:</p>
+        <ul class="clean" style="text-align: left; max-width: 320px; margin: 0 auto 24px;">
+          <li>Training</li>
+          <li>30-day plan</li>
+          <li>Tracker</li>
+          <li>Community</li>
+          <li>Ongoing guidance</li>
+        </ul>
+        <a href="#" class="btn">👉 Join The Skool</a>
+      </div>
+    </section>
+
+    <!-- 12 SOFT UPSELL -->
+    <section class="upsell" aria-label="Upgrade path">
+      <strong style="color: var(--text);">Want to move faster?</strong>
+      <p style="margin: 8px 0 0;">If you want to build a team, scale faster, access advanced tools, and work toward $5k/month — <a href="#">you can apply for the private program here</a>.</p>
+    </section>
+
+    <!-- 13 FAQ -->
+    <section class="faq">
+      <div class="section-kicker">13</div>
+      <h2>Common Questions</h2>
+      <div class="panel" style="padding: 0 24px;">
+        <details open>
+          <summary>Do I need experience?</summary>
+          <p>No — this is designed for beginners.</p>
+        </details>
+        <details>
+          <summary>Do I need to show my face?</summary>
+          <p>No.</p>
+        </details>
+        <details>
+          <summary>Do I need expensive tools?</summary>
+          <p>No — you can start simple.</p>
+        </details>
+        <details>
+          <summary>Do I need a team?</summary>
+          <p>No — this is designed for solo execution.</p>
+        </details>
+        <details>
+          <summary>How fast can I start?</summary>
+          <p>Immediately.</p>
+        </details>
+        <details>
+          <summary>Is this the same as the private program?</summary>
+          <p>No — this is the beginner version. The private program is for scaling faster with more support, tools, and systems.</p>
+        </details>
+      </div>
+    </section>
+
+    <!-- 14 FINAL CTA -->
+    <section class="final-cta">
+      <h2>Ready To Start?</h2>
+      <p class="lede" style="margin: 0 auto 20px; text-align: center;">Build your first search-based YouTube income stream using a simple, proven system.</p>
+      <a href="#" class="btn">👉 Join The YouTube Search Skool</a>
+    </section>
+  </main>
+
+  <script async type="text/javascript" src="https://static.klaviyo.com/onsite/js/URMvbK/klaviyo.js?company_id=URMvbK"></script>
+  <script type="text/javascript">
+  !function(){if(!window.klaviyo){window._klOnsite=window._klOnsite||[];try{window.klaviyo=new Proxy({},{get:function(n,i){return"push"===i?function(){var n;(n=window._klOnsite).push.apply(n,arguments)}:function(){for(var n=arguments.length,o=new Array(n),w=0;w<n;w++)o[w]=arguments[w];var t="function"==typeof o[o.length-1]?o.pop():void 0,e=new Promise((function(n){window._klOnsite.push([i].concat(o,[function(i){t&&t(i),n(i)}]))}));return e}}})}catch(n){window.klaviyo=window.klaviyo||[],window.klaviyo.push=function(){var n;(n=window._klOnsite).push.apply(n,arguments)}}}}();
+  </script>
+</body>
+</html>

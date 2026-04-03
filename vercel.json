@@ -61,6 +61,14 @@
       "destination": "/1k-free.html"
     },
     {
+      "source": "/youtube-search-skool",
+      "destination": "/youtube-search-skool.html"
+    },
+    {
+      "source": "/youtube-search-skool.html",
+      "destination": "/youtube-search-skool.html"
+    },
+    {
       "source": "/(.*)",
       "destination": "/index.html"
     }
