@@ -44,12 +44,22 @@
 
     .card {
       width: 100%;
-      max-width: 640px;
+      max-width: 900px;
       border-radius: var(--radius);
       border: 1px solid var(--border);
       background: var(--card);
-      padding: 28px 22px;
+      padding: 42px 34px;
       box-shadow: 0 12px 28px rgba(2, 6, 23, 0.08);
+    }
+
+    /* Klaviyo injects the actual form UI into this wrapper.
+       Make it use the available space and scale up slightly. */
+    .klaviyo-form-Wh3Vku {
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      transform: scale(1.12);
+      transform-origin: top center;
     }
 
     h1 {
