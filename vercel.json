@@ -53,6 +53,14 @@
       "destination": "/youtube-business.html"
     },
     {
+      "source": "/1k-free",
+      "destination": "/1k-free.html"
+    },
+    {
+      "source": "/1k-free.html",
+      "destination": "/1k-free.html"
+    },
+    {
       "source": "/(.*)",
       "destination": "/index.html"
     }
