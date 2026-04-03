@@ -9,6 +9,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
   <script defer src="/_vercel/insights/script.js"></script>
+  <link rel="preconnect" href="https://static.klaviyo.com" crossorigin />
 
   <style>
     :root {
@@ -62,6 +63,28 @@
       transform-origin: top center;
     }
 
+    .klaviyo-wrap {
+      width: 100%;
+      position: relative;
+      min-height: 360px;
+    }
+
+    .klaviyo-loading {
+      position: absolute;
+      inset: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 18px;
+      background: rgba(255, 255, 255, 0.8);
+      border-radius: inherit;
+      color: rgba(15, 23, 42, 0.7);
+      font-weight: 700;
+      font-size: 14px;
+      text-align: center;
+      pointer-events: none;
+    }
+
     h1 {
       margin: 0 0 14px;
       font-size: clamp(26px, 3.2vw, 38px);
@@ -99,17 +122,52 @@
       }
     }
   </style>
+
+  <!-- Klaviyo form scripts (load earlier + less perceived delay) -->
+  <script async type="text/javascript" src="https://static.klaviyo.com/onsite/js/URMvbK/klaviyo.js?company_id=URMvbK"></script>
+  <script type="text/javascript">
+  !function(){if(!window.klaviyo){window._klOnsite=window._klOnsite||[];try{window.klaviyo=new Proxy({},{get:function(n,i){return"push"===i?function(){var n;(n=window._klOnsite).push.apply(n,arguments)}:function(){for(var n=arguments.length,o=new Array(n),w=0;w<n;w++)o[w]=arguments[w];var t="function"==typeof o[o.length-1]?o.pop():void 0,e=new Promise((function(n){window._klOnsite.push([i].concat(o,[function(i){t&&t(i),n(i)}]))}));return e}}})}catch(n){window.klaviyo=window.klaviyo||[],window.klaviyo.push=function(){var n;(n=window._klOnsite).push.apply(n,arguments)}}}}();
+  </script>
 </head>
 <body>
   <div class="shell">
     <main class="card" aria-label="$1k free sign up">
-      <div class="klaviyo-form-Wh3Vku"></div>
+      <div class="klaviyo-wrap" aria-label="Klaviyo form container">
+        <div class="klaviyo-form-Wh3Vku"></div>
+        <div class="klaviyo-loading">Loading your free plan…</div>
+      </div>
     </main>
   </div>
 
-  <script async type="text/javascript" src="https://static.klaviyo.com/onsite/js/URMvbK/klaviyo.js?company_id=URMvbK"></script>
-  <script type="text/javascript">
-  !function(){if(!window.klaviyo){window._klOnsite=window._klOnsite||[];try{window.klaviyo=new Proxy({},{get:function(n,i){return"push"===i?function(){var n;(n=window._klOnsite).push.apply(n,arguments)}:function(){for(var n=arguments.length,o=new Array(n),w=0;w<n;w++)o[w]=arguments[w];var t="function"==typeof o[o.length-1]?o.pop():void 0,e=new Promise((function(n){window._klOnsite.push([i].concat(o,[function(i){t&&t(i),n(i)}]))}));return e}}})}catch(n){window.klaviyo=window.klaviyo||[],window.klaviyo.push=function(){var n;(n=window._klOnsite).push.apply(n,arguments)}}}}();
+  <script>
+    // Hide the loader as soon as Klaviyo injects the form UI.
+    document.addEventListener("DOMContentLoaded", function () {
+      var wrapper = document.querySelector(".klaviyo-form-Wh3Vku");
+      var loader = document.querySelector(".klaviyo-loading");
+      if (!wrapper || !loader) return;
+
+      function hideLoader() {
+        loader.style.display = "none";
+      }
+
+      // If it loads instantly, hide right away.
+      if (wrapper.children && wrapper.children.length > 0) hideLoader();
+
+      var obs = new MutationObserver(function () {
+        if (wrapper.children && wrapper.children.length > 0) {
+          hideLoader();
+          obs.disconnect();
+        }
+      });
+
+      obs.observe(wrapper, { childList: true, subtree: true });
+
+      // Safety: hide after 10s even if injection fails.
+      setTimeout(function () {
+        hideLoader();
+        obs.disconnect();
+      }, 10000);
+    });
   </script>
 </body>
 </html>
