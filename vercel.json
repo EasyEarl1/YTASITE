@@ -69,6 +69,14 @@
       "destination": "/youtube-search-skool.html"
     },
     {
+      "source": "/landing-wireframe-template",
+      "destination": "/landing-wireframe-template.html"
+    },
+    {
+      "source": "/landing-wireframe-template.html",
+      "destination": "/landing-wireframe-template.html"
+    },
+    {
       "source": "/(.*)",
       "destination": "/index.html"
     }
