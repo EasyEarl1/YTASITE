@@ -77,6 +77,22 @@
       "destination": "/landing-wireframe-template.html"
     },
     {
+      "source": "/yt-incubator",
+      "destination": "/yt-incubator.html"
+    },
+    {
+      "source": "/yt-incubator.html",
+      "destination": "/yt-incubator.html"
+    },
+    {
+      "source": "/yt-incubator-sales",
+      "destination": "/yt-incubator-sales.html"
+    },
+    {
+      "source": "/yt-incubator-sales.html",
+      "destination": "/yt-incubator-sales.html"
+    },
+    {
       "source": "/(.*)",
       "destination": "/index.html"
     }

@@ -1,0 +1,932 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>YT Incubator — Search-Based YouTube Asset System | YTA CHADS</title>
+  <meta name="description" content="Build a search-based YouTube channel that compounds monthly income and sells as a digital asset. YT Incubator by YTA CHADS." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <script defer src="/_vercel/insights/script.js"></script>
+  <style>
+    :root {
+      --bg: #ffffff;
+      --bg-soft: #f7f8fb;
+      --text: #0f172a;
+      --muted: #64748b;
+      --border: rgba(15, 23, 42, 0.08);
+      --shadow-soft: 0 10px 30px rgba(15, 23, 42, 0.06);
+      --primary: #2563eb;
+      --primary-dark: #1d4ed8;
+      --gold: #c9a84c;
+      --gold-soft: rgba(201, 168, 76, 0.12);
+      --radius-lg: 18px;
+      --radius-md: 14px;
+      --ring: 0 0 0 4px rgba(37, 99, 235, 0.16);
+      --max-width: 900px;
+    }
+    * { box-sizing: border-box; }
+    html, body { margin: 0; padding: 0; }
+    body {
+      font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background: radial-gradient(circle at top, #eef2ff 0, #ffffff 55%);
+      color: var(--text);
+      line-height: 1.6;
+    }
+    .announce {
+      background: var(--gold);
+      color: #0a0a0a;
+      text-align: center;
+      padding: 10px 20px;
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+    }
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 20;
+      backdrop-filter: blur(14px);
+      background: rgba(255, 255, 255, 0.92);
+      border-bottom: 1px solid rgba(148, 163, 184, 0.2);
+    }
+    .header-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      max-width: var(--max-width);
+      margin: 0 auto;
+      padding: 14px 20px 12px;
+    }
+    .logo {
+      font-weight: 800;
+      letter-spacing: -0.06em;
+      font-size: 17px;
+      color: #0f172a;
+      text-decoration: none;
+    }
+    .shell { max-width: var(--max-width); margin: 0 auto; padding: 0 20px 72px; }
+    main { padding-top: 32px; }
+
+    .eyebrow {
+      display: inline-block;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--primary);
+      background: rgba(37, 99, 235, 0.08);
+      padding: 6px 14px;
+      border-radius: 999px;
+      margin-bottom: 14px;
+    }
+    .headline {
+      font-size: clamp(28px, 4vw, 42px);
+      letter-spacing: -0.04em;
+      line-height: 1.1;
+      margin: 0 0 14px;
+      font-weight: 800;
+    }
+    .headline .hl { color: var(--primary); }
+    .subheadline {
+      margin: 0 auto 20px;
+      max-width: 640px;
+      color: var(--muted);
+      font-size: 16px;
+    }
+    .proof-strip {
+      display: inline-flex;
+      align-items: flex-start;
+      gap: 10px;
+      text-align: left;
+      max-width: 640px;
+      margin: 0 auto 22px;
+      padding: 12px 16px;
+      background: var(--gold-soft);
+      border: 1px solid rgba(201, 168, 76, 0.35);
+      border-radius: var(--radius-md);
+      font-size: 14px;
+      color: #334155;
+      line-height: 1.5;
+    }
+    .proof-strip span { color: var(--gold); font-weight: 800; flex-shrink: 0; }
+
+    .hero { text-align: center; margin-bottom: 8px; }
+    .video-card {
+      background: var(--bg-soft);
+      border-radius: var(--radius-lg);
+      border: 1px solid var(--border);
+      box-shadow: var(--shadow-soft);
+      overflow: hidden;
+      margin-top: 8px;
+    }
+    .video-aspect {
+      position: relative;
+      width: 100%;
+      padding-top: 56.25%;
+      background: linear-gradient(135deg, #e0e7ff, #f1f5f9);
+    }
+    .video-aspect iframe {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      border: 0;
+    }
+    .video-caption {
+      padding: 14px 18px;
+      font-size: 14px;
+      color: var(--muted);
+      text-align: center;
+      border-top: 1px solid var(--border);
+    }
+
+    .cta-block { margin-top: 18px; text-align: center; }
+    .btn-primary {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-width: 280px;
+      padding: 15px 22px;
+      border-radius: 999px;
+      border: 1px solid rgba(37, 99, 235, 0.75);
+      background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+      color: #fff;
+      font-weight: 700;
+      font-size: 15px;
+      text-decoration: none;
+      box-shadow: 0 14px 30px rgba(37, 99, 235, 0.25);
+      transition: transform 0.14s ease, box-shadow 0.14s ease;
+    }
+    .btn-primary:hover { transform: translateY(-1px); box-shadow: 0 18px 40px rgba(37, 99, 235, 0.28); }
+    .cta-subtext { margin-top: 8px; font-size: 12px; color: var(--muted); }
+
+    section { margin-top: 44px; }
+    .sec-label {
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--primary);
+      margin-bottom: 8px;
+    }
+    .section-heading {
+      font-size: clamp(20px, 2.5vw, 26px);
+      margin: 0 0 12px;
+      letter-spacing: -0.02em;
+      font-weight: 800;
+      line-height: 1.2;
+    }
+    .section-lede {
+      margin: 0 0 18px;
+      color: var(--muted);
+      font-size: 15px;
+      max-width: 680px;
+    }
+
+    .card-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 14px;
+      margin-top: 16px;
+    }
+    .info-card {
+      background: #fff;
+      border-radius: var(--radius-md);
+      border: 1px solid var(--border);
+      box-shadow: var(--shadow-soft);
+      padding: 16px 18px;
+      text-align: left;
+    }
+    .info-card h3 {
+      margin: 0 0 8px;
+      font-size: 15px;
+      font-weight: 800;
+    }
+    .info-card p { margin: 0; font-size: 14px; color: var(--muted); line-height: 1.55; }
+
+    .callout {
+      margin-top: 20px;
+      padding: 18px 20px;
+      border-left: 4px solid var(--gold);
+      background: #fff;
+      border-radius: 0 var(--radius-md) var(--radius-md) 0;
+      box-shadow: var(--shadow-soft);
+      font-size: 15px;
+      color: #334155;
+      line-height: 1.65;
+    }
+
+    .vs-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+      margin-top: 18px;
+    }
+    .vs-card {
+      border-radius: var(--radius-md);
+      border: 1px solid var(--border);
+      padding: 18px;
+      background: #fff;
+      box-shadow: var(--shadow-soft);
+    }
+    .vs-card.bad { border-top: 3px solid #ef4444; }
+    .vs-card.good { border-top: 3px solid #22c55e; }
+    .vs-title { font-size: 12px; font-weight: 800; text-transform: uppercase; letter-spacing: 0.06em; margin-bottom: 10px; }
+    .vs-card.bad .vs-title { color: #b91c1c; }
+    .vs-card.good .vs-title { color: #15803d; }
+    .vs-card ul { margin: 0; padding-left: 18px; font-size: 14px; color: #475569; }
+    .vs-card li { margin: 6px 0; }
+
+    .founder-card {
+      margin-top: 20px;
+      padding: 22px;
+      border-left: 4px solid var(--gold);
+      background: #fff;
+      border-radius: 0 var(--radius-md) var(--radius-md) 0;
+      box-shadow: var(--shadow-soft);
+    }
+    .founder-card h3 { margin: 0 0 6px; font-size: 17px; }
+    .founder-card .sub { font-size: 13px; color: var(--muted); margin-bottom: 14px; }
+    .stat-list { list-style: none; margin: 0; padding: 0; font-size: 14px; color: #334155; }
+    .stat-list li { margin: 8px 0; padding-left: 0; }
+    .stat-list strong { color: var(--gold); }
+
+    .stats-bar {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 10px;
+      margin: 20px 0;
+    }
+    .stat-box {
+      background: #fff;
+      border: 1px solid var(--border);
+      border-radius: var(--radius-md);
+      padding: 18px 12px;
+      text-align: center;
+      box-shadow: var(--shadow-soft);
+    }
+    .stat-num { font-size: clamp(22px, 3vw, 30px); font-weight: 800; color: var(--primary); letter-spacing: -0.02em; }
+    .stat-label { font-size: 12px; color: var(--muted); margin-top: 6px; line-height: 1.35; }
+
+    .proof-grid {
+      column-count: 2;
+      column-gap: 14px;
+    }
+    .proof-card { break-inside: avoid; margin: 0 0 8px; }
+    .proof-image {
+      display: block;
+      width: 100%;
+      height: auto;
+      object-fit: contain;
+      background: #e2e8f0;
+      border-radius: 10px;
+    }
+
+    .t-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 14px;
+      margin-top: 14px;
+    }
+    .t-card {
+      background: #fff;
+      border-radius: var(--radius-md);
+      border: 1px solid var(--border);
+      box-shadow: var(--shadow-soft);
+      padding: 14px;
+    }
+    .t-badge {
+      display: inline-block;
+      font-size: 11px;
+      font-weight: 700;
+      color: var(--primary);
+      background: rgba(37, 99, 235, 0.08);
+      padding: 4px 10px;
+      border-radius: 6px;
+      margin-bottom: 8px;
+    }
+    .t-name { font-size: 13px; font-weight: 800; margin-bottom: 4px; }
+    .t-meta { font-size: 12px; color: var(--muted); margin-bottom: 8px; }
+    .t-text { font-size: 13px; color: #475569; margin: 0; line-height: 1.55; }
+    .t-head { display: flex; align-items: center; gap: 10px; margin-bottom: 8px; }
+    .t-avatar {
+      width: 40px;
+      height: 40px;
+      border-radius: 999px;
+      object-fit: cover;
+      border: 1px solid rgba(148, 163, 184, 0.6);
+    }
+
+    .simple-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 14px;
+      font-size: 14px;
+      background: #fff;
+      border-radius: var(--radius-md);
+      overflow: hidden;
+      box-shadow: var(--shadow-soft);
+      border: 1px solid var(--border);
+    }
+    .simple-table th, .simple-table td { padding: 12px 14px; text-align: left; border-bottom: 1px solid var(--border); }
+    .simple-table th { background: var(--bg-soft); font-size: 12px; text-transform: uppercase; letter-spacing: 0.06em; color: var(--muted); }
+    .simple-table tr:last-child td { border-bottom: none; }
+
+    .timeline { display: flex; flex-direction: column; gap: 10px; margin-top: 14px; }
+    .tl-row {
+      display: grid;
+      grid-template-columns: 130px 1fr;
+      gap: 14px;
+      background: #fff;
+      border: 1px solid var(--border);
+      border-radius: var(--radius-md);
+      padding: 16px 18px;
+      box-shadow: var(--shadow-soft);
+    }
+    .tl-time { font-weight: 800; color: var(--primary); font-size: 14px; }
+    .tl-body { font-size: 14px; color: #475569; }
+    .tl-body strong { color: var(--text); }
+
+    .inside-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 14px;
+      margin-top: 14px;
+    }
+    .inside-card {
+      background: #fff;
+      border: 1px solid var(--border);
+      border-radius: var(--radius-md);
+      padding: 16px;
+      box-shadow: var(--shadow-soft);
+    }
+    .inside-num { font-size: 28px; font-weight: 900; color: #cbd5e1; line-height: 1; margin-bottom: 6px; }
+    .inside-card h4 { margin: 0 0 8px; font-size: 15px; }
+    .inside-card p { margin: 0; font-size: 13px; color: var(--muted); line-height: 1.55; }
+
+    .fit-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 14px;
+      margin-top: 16px;
+    }
+    .fit-card {
+      background: #fff;
+      border: 1px solid var(--border);
+      border-radius: var(--radius-md);
+      padding: 16px;
+      box-shadow: var(--shadow-soft);
+    }
+    .fit-card h4 { margin: 0 0 12px; font-size: 13px; font-weight: 800; text-transform: uppercase; letter-spacing: 0.06em; }
+    .fit-card.yes h4 { color: #15803d; }
+    .fit-card.no h4 { color: #b91c1c; }
+    .fit-card ul { margin: 0; padding-left: 18px; font-size: 14px; color: #475569; }
+    .fit-card li { margin: 6px 0; }
+
+    .faq-item {
+      background: #fff;
+      border: 1px solid var(--border);
+      border-radius: var(--radius-md);
+      margin-bottom: 8px;
+      overflow: hidden;
+      box-shadow: var(--shadow-soft);
+    }
+    .faq-q {
+      padding: 14px 16px;
+      font-weight: 600;
+      font-size: 14px;
+      cursor: pointer;
+      display: flex;
+      justify-content: space-between;
+      gap: 12px;
+      align-items: center;
+    }
+    .faq-a {
+      display: none;
+      padding: 0 16px 14px;
+      font-size: 14px;
+      color: #475569;
+      line-height: 1.6;
+      border-top: 1px solid var(--border);
+      padding-top: 12px;
+    }
+    .faq-item.open .faq-a { display: block; }
+    .faq-chev { transition: transform 0.2s; color: var(--primary); flex-shrink: 0; }
+    .faq-item.open .faq-chev { transform: rotate(180deg); }
+
+    .guarantee-box {
+      margin-top: 16px;
+      padding: 24px;
+      border-radius: var(--radius-md);
+      border: 1px solid rgba(201, 168, 76, 0.45);
+      background: var(--gold-soft);
+      text-align: center;
+    }
+    .guarantee-box h3 { margin: 0 0 10px; font-size: 18px; }
+    .guarantee-box p { margin: 0; font-size: 15px; color: #334155; line-height: 1.65; max-width: 560px; margin-left: auto; margin-right: auto; }
+
+    .pricing-wrap {
+      background: #fff;
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      box-shadow: var(--shadow-soft);
+      max-width: 520px;
+      margin: 20px auto 0;
+    }
+    .pricing-head {
+      background: linear-gradient(135deg, rgba(201, 168, 76, 0.2), rgba(201, 168, 76, 0.08));
+      padding: 18px 22px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      border-bottom: 1px solid rgba(201, 168, 76, 0.3);
+    }
+    .pricing-head h3 { margin: 0; font-size: 18px; font-weight: 800; }
+    .badge { font-size: 10px; font-weight: 800; text-transform: uppercase; letter-spacing: 0.08em; background: var(--gold); color: #111; padding: 4px 10px; border-radius: 4px; }
+    .pricing-body { padding: 24px; text-align: center; }
+    .price-big { font-size: 48px; font-weight: 900; letter-spacing: -0.03em; line-height: 1; }
+    .price-alt { font-size: 15px; color: var(--muted); margin: 10px 0 6px; }
+    .checklist { text-align: left; list-style: none; margin: 18px 0 0; padding: 0; }
+    .checklist li {
+      display: flex;
+      gap: 10px;
+      align-items: flex-start;
+      font-size: 14px;
+      color: #334155;
+      margin: 10px 0;
+    }
+    .checklist li::before { content: '✓'; color: #22c55e; font-weight: 800; flex-shrink: 0; }
+
+    .final-cta { margin-top: 36px; text-align: center; padding: 28px 20px; background: #fff; border-radius: var(--radius-lg); border: 1px solid var(--border); box-shadow: var(--shadow-soft); }
+    .final-cta .section-heading { margin-bottom: 10px; }
+    .ps-note { margin-top: 14px; font-size: 13px; color: var(--muted); max-width: 560px; margin-left: auto; margin-right: auto; }
+
+    footer {
+      margin-top: 40px;
+      padding: 24px 20px 40px;
+      text-align: center;
+      font-size: 12px;
+      color: #94a3b8;
+      line-height: 1.7;
+    }
+
+    @media (max-width: 720px) {
+      .card-grid, .vs-grid, .t-grid, .inside-grid, .fit-grid, .stats-bar { grid-template-columns: 1fr; }
+      .proof-grid { column-count: 1; }
+      .tl-row { grid-template-columns: 1fr; }
+      .btn-primary { width: 100%; min-width: 0; }
+    }
+  </style>
+</head>
+<body>
+  <div class="announce">Limited intake — programme accepts new members monthly</div>
+
+  <header>
+    <div class="header-inner">
+      <a href="index.html" class="logo">YTA&nbsp;CHADS</a>
+    </div>
+  </header>
+
+  <main>
+    <div class="shell">
+      <!-- 1–2 Hook + VSL (matches twitter: hero + video + primary CTA) -->
+      <section class="hero" aria-label="Introduction">
+        <span class="eyebrow">Introducing YT Incubator</span>
+        <h1 class="headline">
+          I built a YouTube channel for $4,000.<br />
+          Sold it for $53,000.<br />
+          Here’s the <span class="hl">exact system</span>.
+        </h1>
+        <p class="subheadline">
+          No viral content. No showing your face. No prior experience. Just a search-based model that generates consistent monthly income — and builds into a sellable asset.
+        </p>
+        <div class="proof-strip" style="margin-left:auto;margin-right:auto;">
+          <span>✓</span>
+          <span>$300,000+ generated — 2 channel exits ($20k + $53k) — students hitting $1k–$6k/month consistently</span>
+        </div>
+
+        <div class="video-card" aria-label="Video sales letter">
+          <div class="video-aspect">
+            <iframe
+              src="https://adwise-1.wistia.com/embed/iframe/sakbrdwj2m?videoFoam=true"
+              title="YT Incubator — training"
+              allow="autoplay; fullscreen"
+              allowtransparency="true"
+              frameborder="0"
+              scrolling="no"
+            ></iframe>
+            <script src="https://adwise-1.wistia.com/assets/external/E-v1.js" async></script>
+          </div>
+          <div class="video-caption">⚠️ Watch this before you scroll. It will change how you think about YouTube.</div>
+        </div>
+
+        <div class="cta-block">
+          <a href="#" class="btn-primary">Join YT Incubator — $3,000</a>
+          <div class="cta-subtext">Or 2 payments of $1,500 · Intake is intentionally limited</div>
+        </div>
+      </section>
+
+      <!-- Problem / pain -->
+      <section aria-labelledby="problem-h">
+        <p class="sec-label" id="problem-h">Sound familiar?</p>
+        <h2 class="section-heading">You’re not behind. You’ve just been playing the wrong game.</h2>
+        <p class="section-lede">
+          Most people who try to make money online hit the same wall. Big month. Dead month. Try something new. Repeat. It’s not a skill problem. It’s not a work ethic problem. It’s a model problem.
+        </p>
+        <div class="card-grid">
+          <div class="info-card">
+            <h3>The income never stabilises</h3>
+            <p>Some months feel like it’s finally clicking. Then it falls apart. You can’t plan, save, or breathe because you never know what’s coming in.</p>
+          </div>
+          <div class="info-card">
+            <h3>You’ve tried things that didn’t stick</h3>
+            <p>Dropshipping. Freelancing. Trading. Viral content. Not because you’re bad at business — because those models are designed to be inconsistent.</p>
+          </div>
+          <div class="info-card">
+            <h3>YouTube felt like a dead end</h3>
+            <p>You tried it, or looked at it, and saw what everyone else sees: a platform where the algorithm picks winners and everyone else starves. So you moved on.</p>
+          </div>
+          <div class="info-card">
+            <h3>Nothing you’ve built has real value</h3>
+            <p>When you stop, the money stops. There’s nothing to sell. Nothing that runs without you. Years in, and there’s nothing to show for it but the hours you put in.</p>
+          </div>
+        </div>
+        <div class="callout">
+          Here’s what I eventually figured out: the problem isn’t effort. I did over $2,000,000 in dropshipping revenue and had almost nothing to show for it. Revenue is not income. Inconsistent revenue is just stress with a comma in it. The real problem is that most people are building income streams — not assets.
+        </div>
+      </section>
+
+      <!-- Solution / mechanism -->
+      <section aria-labelledby="mech-h">
+        <p class="sec-label">The thing nobody in this space will tell you</p>
+        <h2 class="section-heading" id="mech-h">Going viral isn’t the goal. Search is.</h2>
+        <p class="section-lede">
+          There are 9 billion searches on YouTube every single month. Not views. Searches. People looking for how to do things, fix things, understand things — every single day.
+        </p>
+        <p class="section-lede" style="margin-top:-8px;">
+          Those searches happen whether you’re posting or not. Whether the algorithm likes you or not. And if your video shows up when someone searches for something — it gets watched. Today. Tomorrow. A year from now. Without you doing a single thing.
+        </p>
+        <p class="section-lede" style="margin-top:-8px;">
+          That’s what I was missing for years. I was chasing attention. Fighting for trends. Hoping the algorithm would pick me that week. And even when it did — the income disappeared just as fast as it came.
+        </p>
+        <p class="section-lede" style="margin-top:-8px;">
+          The day I discovered search-based YouTube automation, I saw a chart that changed everything. Someone in a Discord server shared their analytics. Flat. Consistent. $3,000 every single month without dropping once. No spikes. No dead months. Just compounding.
+        </p>
+        <p class="section-lede" style="margin-top:-8px;">
+          The difference wasn’t talent. Wasn’t niche. Wasn’t production quality. They weren’t building content that dies. They were building content that compounds.
+        </p>
+        <div class="vs-grid">
+          <div class="vs-card bad">
+            <div class="vs-title">The viral model (what almost everyone does)</div>
+            <ul>
+              <li>Chases trends that die in days</li>
+              <li>Income spikes and disappears</li>
+              <li>Stops the moment you stop posting</li>
+              <li>Dependent on the algorithm picking you</li>
+              <li>No resale value — tied to your face and name</li>
+            </ul>
+          </div>
+          <div class="vs-card good">
+            <div class="vs-title">The search model (what we build)</div>
+            <ul>
+              <li>Targets demand that already exists</li>
+              <li>Income compounds month over month</li>
+              <li>Old videos keep earning without you</li>
+              <li>The algorithm is irrelevant — search is what drives views</li>
+              <li>Channels sell for 10–25x their monthly revenue</li>
+            </ul>
+          </div>
+        </div>
+        <p class="section-lede" style="margin-top:18px;">
+          And before you think “I’d need thousands of videos — that’s impossible”: we produce videos for $1 each. Not because they’re low quality. Because we built a production system so efficient that cost per video is negligible. You’re not editing. You’re not recording. You’re managing a process — and eventually stepping back from that too.
+        </p>
+      </section>
+
+      <!-- Why / credibility -->
+      <section aria-labelledby="founder-h">
+        <p class="sec-label">Who is Harvey — and why does this work?</p>
+        <h2 class="section-heading" id="founder-h">I made $2,000,000 in dropshipping and had almost nothing to show for it.</h2>
+        <p class="section-lede">
+          Five years. Over two million in revenue. Ad costs, refunds, supplier problems, sleepless nights. And at the end of it — almost nothing to show for it. The money came in and disappeared just as fast.
+        </p>
+        <p class="section-lede" style="margin-top:-8px;">
+          When I moved to YouTube it was the same story. Big month. Dead month. Big month. Dead month. Different hamster wheel. Same trap.
+        </p>
+        <p class="section-lede" style="margin-top:-8px;">
+          The turning point was that Discord chart. Someone doing $3,000 a month consistently using search. No spikes. No dead months. Just flat, predictable, compounding income. I rebuilt everything around that model.
+        </p>
+        <p class="section-lede" style="margin-top:-8px;">
+          I built my first search-based channel from scratch. Hit $2,000 a month consistently. Sold it for $20,000. Took $4,000 of that, reinvested into a second channel, ran it for 18 months, and sold it for $53,000. I now run a portfolio of 10 channels generating over $10,000 a month — and I wake up in Thailand most mornings.
+        </p>
+        <div class="founder-card">
+          <h3>Harvey — Founder, YTA Chads</h3>
+          <p class="sub">2+ years in YouTube automation · Portfolio of 10 channels · Wifi Money Mafia (invitation only)</p>
+          <ul class="stat-list">
+            <li><strong>$2,000,000+</strong> — dropshipping revenue (the hard way)</li>
+            <li><strong>$300,000+</strong> — generated via the search-based model</li>
+            <li><strong>$20,000</strong> — first channel exit</li>
+            <li><strong>$53,000</strong> — second channel exit</li>
+            <li><strong>$10,000+/mo</strong> — current portfolio run rate</li>
+          </ul>
+          <p style="margin:14px 0 0;font-size:14px;color:#475569;line-height:1.55;">
+            Vixian — one of the most respected names in this space — has publicly called our approach the most interesting and well-reasoned YouTube method he’s ever seen.
+          </p>
+        </div>
+      </section>
+
+      <!-- Logic + benefits: asset angle -->
+      <section aria-labelledby="asset-h">
+        <p class="sec-label">The part most people completely miss</p>
+        <h2 class="section-heading" id="asset-h">You’re not building content. You’re building equity.</h2>
+        <p class="section-lede">
+          Most people think about YouTube income as monthly cashflow. That’s fine. But zoom out.
+        </p>
+        <p class="section-lede" style="margin-top:-8px;">
+          These channels sell for 10 to 25 times their monthly revenue. A channel doing $2,000 a month is a $20,000–$50,000 asset. A channel doing $5,000 a month is a $50,000–$125,000 asset.
+        </p>
+        <p class="section-lede" style="margin-top:-8px;">
+          I built my second channel for $4,000. Ran it for 18 months. Sold it for $53,000. Joel’s channel is already worth $50,000+ on paper — and it’s still growing.
+        </p>
+        <table class="simple-table">
+          <thead><tr><th>Monthly revenue</th><th>Estimated exit value</th></tr></thead>
+          <tbody>
+            <tr><td>$2,000/month</td><td>$20,000–$50,000 asset</td></tr>
+            <tr><td>$3,000/month</td><td>$30,000–$75,000 asset</td></tr>
+            <tr><td>$5,000/month</td><td>$50,000–$125,000 asset</td></tr>
+          </tbody>
+        </table>
+        <p class="section-lede" style="margin-top:14px;font-weight:600;color:var(--text);">
+          Build. Sell. Reinvest. Repeat. That’s the game nobody else is teaching.
+        </p>
+      </section>
+
+      <!-- Timeline -->
+      <section aria-labelledby="timeline-h">
+        <p class="sec-label">What this looks like in practice</p>
+        <h2 class="section-heading" id="timeline-h">From zero to consistent income in 90 days.</h2>
+        <p class="section-lede">
+          This isn’t a “maybe someday” programme. You follow the system. Within 30–60 days you have early traction. Within 90 days you have consistency. Within 3–6 months you’re scaling — and your channel is becoming a sellable asset.
+        </p>
+        <div class="timeline">
+          <div class="tl-row"><div class="tl-time">Days 1–14</div><div class="tl-body"><strong>Foundation.</strong> You pick a niche using real search data — before you make a single video. You know demand exists. You know RPMs are strong. You build your content map and set up your production system.</div></div>
+          <div class="tl-row"><div class="tl-time">Days 15–60</div><div class="tl-body"><strong>Early traction.</strong> First videos go live. Search traffic starts arriving. You’re not chasing the algorithm. You’re not hoping something blows up. You’re getting found by people who are already looking.</div></div>
+          <div class="tl-row"><div class="tl-time">Days 61–90</div><div class="tl-body"><strong>Consistency.</strong> Monthly income becomes predictable. You know what’s coming in. You know what’s driving it. You’re not guessing anymore.</div></div>
+          <div class="tl-row"><div class="tl-time">Month 3–6+</div><div class="tl-body"><strong>Scaling.</strong> You add channels. You increase output using the same system. You build a portfolio. Your channels are now worth 10–25x their monthly revenue. Exit or hold — that’s your decision to make.</div></div>
+        </div>
+      </section>
+
+      <!-- What’s inside -->
+      <section aria-labelledby="inside-h">
+        <p class="sec-label">What you get</p>
+        <h2 class="section-heading" id="inside-h">Not a course. An operating system.</h2>
+        <p class="section-lede">
+          YT Incubator is everything I’ve built — the research process, the content strategy, the $1 per video production system, the team structure, the monetisation playbook, the exit strategy — inside one programme. The same system behind every result you just read.
+        </p>
+        <div class="inside-grid">
+          <div class="inside-card"><div class="inside-num">01</div><h4>The Complete Course</h4><p>Step-by-step from wherever you are now to a running, profitable YouTube automation channel. Niche selection using real data. Content strategy built entirely around search. Monetisation. Team building. Exits. Nothing left out.</p></div>
+          <div class="inside-card"><div class="inside-num">02</div><h4>Proprietary Keyword Research Tool</h4><p>Built by us. Not available anywhere else. You’ll know which topics have high search volume, low competition, and strong RPMs — before you start. No guessing. No wasted videos.</p></div>
+          <div class="inside-card"><div class="inside-num">03</div><h4>Proprietary Production Tool</h4><p>This is what makes $1 per video possible. It streamlines the entire production workflow so your team produces more, faster. The biggest bottleneck that kills most channels — removed.</p></div>
+          <div class="inside-card"><div class="inside-num">04</div><h4>Weekly Live Calls</h4><p>Every week — direct access to Harvey and the team. Whatever question you have, we’re there. You are not buying a course and getting abandoned.</p></div>
+          <div class="inside-card" style="grid-column:1/-1;"><div class="inside-num">05</div><h4>Private Community</h4><p>People building exactly what you’re building. Sharing wins, sharing what’s working, keeping each other accountable. Not a ghost town.</p></div>
+        </div>
+      </section>
+
+      <!-- Social proof: stats + screenshots + quotes (twitter-style proof grid) -->
+      <section aria-label="Proof and student results">
+        <p class="sec-label">Student results</p>
+        <h2 class="section-heading">Real people. Real screenshots. No cherry-picking.</h2>
+        <p class="section-lede">
+          Joel never touched YouTube before joining. Jono tried for eight years on his own before this. ATTE spent $20,000 on other courses first. These aren’t outliers. They’re what happens when the model is right.
+        </p>
+        <div class="stats-bar">
+          <div class="stat-box"><div class="stat-num">$300k+</div><div class="stat-label">generated by Harvey using this model</div></div>
+          <div class="stat-box"><div class="stat-num">$73k</div><div class="stat-label">total channel exits ($20k + $53k)</div></div>
+          <div class="stat-box"><div class="stat-num">$6k/mo</div><div class="stat-label">top student monthly revenue</div></div>
+        </div>
+
+        <h3 class="section-heading" style="font-size:17px;margin-top:8px;">Proof our system works in the real world</h3>
+        <p class="section-lede" style="margin-top:-4px;">Examples from students using the search-first system.</p>
+        <div class="proof-grid">
+          <article class="proof-card"><img src="assets/resukts/1.png" alt="Student results example 1" class="proof-image" loading="lazy" /></article>
+          <article class="proof-card"><img src="assets/resukts/2.png" alt="Student results example 2" class="proof-image" loading="lazy" /></article>
+          <article class="proof-card"><img src="assets/resukts/3.png" alt="Student results example 3" class="proof-image" loading="lazy" /></article>
+          <article class="proof-card"><img src="assets/resukts/4.png" alt="Student results example 4" class="proof-image" loading="lazy" /></article>
+          <article class="proof-card"><img src="assets/resukts/5.jpeg" alt="Student results example 5" class="proof-image" loading="lazy" /></article>
+          <article class="proof-card"><img src="assets/resukts/6.png" alt="Student results example 6" class="proof-image" loading="lazy" /></article>
+          <article class="proof-card"><img src="assets/resukts/7.jpeg" alt="Student results example 7" class="proof-image" loading="lazy" /></article>
+          <article class="proof-card"><img src="assets/resukts/8.png" alt="Student results example 8" class="proof-image" loading="lazy" /></article>
+          <article class="proof-card"><img src="assets/resukts/9.png" alt="Student results example 9" class="proof-image" loading="lazy" /></article>
+          <article class="proof-card"><img src="assets/resukts/10.png" alt="Student results example 10" class="proof-image" loading="lazy" /></article>
+          <article class="proof-card"><img src="assets/resukts/11.png" alt="Student results example 11" class="proof-image" loading="lazy" /></article>
+          <article class="proof-card"><img src="assets/resukts/12.png" alt="Student results example 12" class="proof-image" loading="lazy" /></article>
+          <article class="proof-card"><img src="assets/resukts/13.png" alt="Student results example 13" class="proof-image" loading="lazy" /></article>
+          <article class="proof-card"><img src="assets/resukts/14.png" alt="Student results example 14" class="proof-image" loading="lazy" /></article>
+          <article class="proof-card"><img src="assets/resukts/15.png" alt="Student results example 15" class="proof-image" loading="lazy" /></article>
+          <article class="proof-card"><img src="assets/resukts/16.png" alt="Student results example 16" class="proof-image" loading="lazy" /></article>
+          <article class="proof-card"><img src="assets/resukts/17.png" alt="Student results example 17" class="proof-image" loading="lazy" /></article>
+          <article class="proof-card"><img src="assets/resukts/18.jpeg" alt="Student results example 18" class="proof-image" loading="lazy" /></article>
+          <article class="proof-card"><img src="assets/resukts/19.png" alt="Student results example 19" class="proof-image" loading="lazy" /></article>
+          <article class="proof-card"><img src="assets/resukts/20.png" alt="Student results example 20" class="proof-image" loading="lazy" /></article>
+        </div>
+
+        <h3 class="section-heading" style="font-size:17px;margin-top:28px;">What students say</h3>
+        <p class="section-lede" style="margin-top:-6px;">Pulled from member feedback — copy sheet + programme.</p>
+        <div class="t-grid">
+          <article class="t-card">
+            <span class="t-badge">$5,000/month</span>
+            <div class="t-head"><div class="t-avatar" style="display:flex;align-items:center;justify-content:center;font-size:13px;font-weight:800;background:#e2e8f0;color:#475569;width:40px;height:40px;">JL</div><div><div class="t-name">Joel</div></div></div>
+            <p class="t-text">“I’ve tried ecom, freelancing, side hustles — all of it. Nothing has clicked the way YouTube automation has. The difference was YTA Chads.”</p>
+            <p class="t-meta">Student · $5k/month after 8 months · Channel worth $50,000+ on paper</p>
+          </article>
+          <article class="t-card">
+            <span class="t-badge">$2,000/month passive</span>
+            <p class="t-text">“I’m making $2k a month passively and about to get another channel monetised. This wasn’t luck. I’m not an outlier. I’m following the process just like I’m taught.”</p>
+            <p class="t-meta">— Bautista · Search-based niche channel</p>
+          </article>
+          <article class="t-card">
+            <span class="t-badge">$3,000/month — switched from viral</span>
+            <p class="t-text">“Out of all the side hustles I’ve done, this is by far the easiest money I’ve made online. Genuinely a cheat code to money and time freedom.”</p>
+            <p class="t-meta">— Adrien · Was burning out on viral content before this</p>
+          </article>
+          <article class="t-card">
+            <span class="t-badge">$1k → $3k/month</span>
+            <div class="t-head"><img src="assets/jono-p-500.png" alt="" class="t-avatar" /><div><div class="t-name">Jono</div></div></div>
+            <p class="t-text">“Joining YTA CHADS genuinely changed how I see YouTube — not as a side hustle, but as a real, scalable business.”</p>
+            <p class="t-meta">Tried YouTube alone for 8 years · Monetised in 4 months</p>
+          </article>
+          <article class="t-card">
+            <span class="t-badge">Finally something that makes sense</span>
+            <div class="t-head"><img src="assets/atte-p-500.png" alt="" class="t-avatar" /><div><div class="t-name">ATTE</div></div></div>
+            <p class="t-text">“Over the past two years I’ve spent well over $20,000 on YouTube courses, services, AI tools and freelancers. This process actually makes sense — and it keeps making sense even when you don’t see instant results.”</p>
+          </article>
+          <article class="t-card">
+            <span class="t-badge">€1,600/month — enjoying it again</span>
+            <p class="t-text">“My friends told me it wouldn’t work. But once I was inside it really opened my mind to what’s possible.”</p>
+            <p class="t-meta">— Lars · Was burnt out making daily VR content before this</p>
+          </article>
+          <article class="t-card">
+            <span class="t-badge">$600 from 100 views</span>
+            <p class="t-text">“Boring videos that get 100 views and generate $600 are amazing.”</p>
+            <p class="t-meta">— MotoTube · High-RPM search niche</p>
+          </article>
+          <article class="t-card">
+            <span class="t-badge">The snowball effect</span>
+            <div class="t-head"><img src="assets/g-we.png" alt="" class="t-avatar" /><div><div class="t-name">G We</div></div></div>
+            <p class="t-text">“The snowball effect has started. If you’re looking to scale your YouTube efforts and achieve substantial passive income, I wholeheartedly recommend it.”</p>
+          </article>
+        </div>
+        <p class="section-lede" style="margin-top:18px;font-weight:600;color:var(--text);">
+          Joel. Bautista. Adrien. Jono. ATTE. Lars. MotoTube. G We. All completely different. All working. All consistent. That is not luck. That is what a real system produces.
+        </p>
+      </section>
+
+      <!-- Comparison -->
+      <section aria-labelledby="compare-h">
+        <p class="sec-label">How this compares</p>
+        <h2 class="section-heading" id="compare-h">This is not like the other programmes.</h2>
+        <p class="section-lede">
+          ATTE spent over $20,000 on YouTube courses before finding this. He said it himself: “This process actually makes sense.” Here’s exactly what’s different.
+        </p>
+        <table class="simple-table">
+          <thead><tr><th>Topic</th><th>Most YouTube courses</th><th>YT Incubator</th></tr></thead>
+          <tbody>
+            <tr><td>Income model</td><td>Chase viral content and trends</td><td>Search-based — tap demand that already exists</td></tr>
+            <tr><td>Income predictability</td><td>Spikes and dead months</td><td>Flat, consistent, compounds month over month</td></tr>
+            <tr><td>What you build</td><td>A channel tied to your face and effort</td><td>A sellable digital asset</td></tr>
+            <tr><td>Exit potential</td><td>None</td><td>10–25x monthly revenue at exit</td></tr>
+            <tr><td>Effort over time</td><td>Constant — stop posting, stop earning</td><td>Decreasing — old videos keep earning</td></tr>
+            <tr><td>Tools included</td><td>You figure it out</td><td>Proprietary keyword + production tools</td></tr>
+            <tr><td>Support</td><td>Pre-recorded modules, no real access</td><td>Weekly live calls + active community</td></tr>
+            <tr><td>Cost per video</td><td>$50–$300+ per video</td><td>$1 per video using our system</td></tr>
+          </tbody>
+        </table>
+      </section>
+
+      <!-- Who it’s for -->
+      <section aria-labelledby="fit-h">
+        <p class="sec-label">Be honest with yourself</p>
+        <h2 class="section-heading" id="fit-h">This is for some people. Not everyone.</h2>
+        <p class="section-lede">
+          We keep the programme intentionally small. The community only works if the people in it are serious. The calls only work at the right group size. So we’d rather you read this carefully than join and be the wrong fit.
+        </p>
+        <div class="fit-grid">
+          <div class="fit-card yes">
+            <h4>This IS for you if…</h4>
+            <ul>
+              <li>You want consistent monthly income — not spikes that disappear</li>
+              <li>You’re willing to put in 60–90 days of real effort before judging the result</li>
+              <li>You’ve tried other models and want something that compounds over time</li>
+              <li>You want to build something with real resale value — not just cashflow</li>
+              <li>You’re done consuming courses and ready to actually execute</li>
+              <li>You can invest $3,000 without it being a financial emergency</li>
+            </ul>
+          </div>
+          <div class="fit-card no">
+            <h4>This is NOT for you if…</h4>
+            <ul>
+              <li>You need money in the next 2–4 weeks</li>
+              <li>You want to become a creator, build a personal brand, or go viral</li>
+              <li>You’re not willing to commit to the first 60–90 days</li>
+              <li>You want someone to do it for you</li>
+              <li>You’re not open to feedback on your niche and approach</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <!-- FAQ / objections -->
+      <section aria-labelledby="faq-h">
+        <p class="sec-label">Before you decide</p>
+        <h2 class="section-heading" id="faq-h">The things going through your head right now — answered.</h2>
+        <p class="section-lede">I’ve heard every version of these. Let me cut straight through them.</p>
+
+        <div class="faq-item"><div class="faq-q">“I don’t have time.” <span class="faq-chev">▼</span></div><div class="faq-a">The system is designed to run without you once it’s set up. Students have built this alongside full-time jobs. The upfront commitment is real. The ongoing one is minimal. That’s the whole point of building a system instead of a job.</div></div>
+        <div class="faq-item"><div class="faq-q">“I’m not technical.” <span class="faq-chev">▼</span></div><div class="faq-a">You don’t edit videos. You don’t reverse-engineer algorithms. You manage a system and a small team. Our tools handle the complexity. The training handles the rest. If you can follow a process, you can do this.</div></div>
+        <div class="faq-item"><div class="faq-q">“YouTube is too saturated.” <span class="faq-chev">▼</span></div><div class="faq-a">For viral content — maybe. For search — not even close. 9 billion monthly searches. Most with little to no competition from well-made content. Saturated is the wrong word. Misunderstood is more accurate.</div></div>
+        <div class="faq-item"><div class="faq-q">“Those RPMs seem unrealistic.” <span class="faq-chev">▼</span></div><div class="faq-a">MotoTube said it best: “Boring videos that get 100 views and generate $600 are amazing.” That’s what high-RPM search niches produce. Look at the screenshots. The numbers speak for themselves.</div></div>
+        <div class="faq-item"><div class="faq-q">“I’ve tried YouTube before and it didn’t work.” <span class="faq-chev">▼</span></div><div class="faq-a">So did Jono — for eight years. So did ATTE, who spent $20,000 on other courses first. The difference isn’t effort. It’s the model. If you were chasing viral, you were playing a game designed to be inconsistent. Search is a completely different game.</div></div>
+        <div class="faq-item"><div class="faq-q">“This sounds like another YouTube automation course.” <span class="faq-chev">▼</span></div><div class="faq-a">Most courses teach you how to make videos. We teach you how to build a system that produces predictable income and a sellable asset — without going viral, without showing your face, without becoming a ‘creator’ in any traditional sense. The proof is in the exits: $20k and $53k channel sales.</div></div>
+        <div class="faq-item"><div class="faq-q">“What if it doesn’t work for me?” <span class="faq-chev">▼</span></div><div class="faq-a">I can’t guarantee your results. Nobody honest can. What I can show you is a system that’s worked for complete beginners, for people who failed for years, for people burned out from doing it the wrong way, and for people who tried everything else first. If you follow the system and show up — this works.</div></div>
+      </section>
+
+      <!-- Guarantee -->
+      <section aria-labelledby="guar-h">
+        <p class="sec-label">Your protection</p>
+        <h2 class="section-heading" id="guar-h">We want you to win. Not just buy.</h2>
+        <div class="guarantee-box">
+          <h3>Show up. Do the work. If it doesn’t work, we’ll make it right.</h3>
+          <p>
+            Complete the course. Follow the system. Attend the live calls. Implement what’s taught. If you’ve genuinely done all of that and still don’t have results within 90 days — contact us and we’ll work with you personally until you do. We don’t leave people behind who are genuinely putting in the effort.
+          </p>
+        </div>
+      </section>
+
+      <!-- Offer & pricing -->
+      <section id="pricing" aria-labelledby="price-h">
+        <p class="sec-label">The investment</p>
+        <h2 class="section-heading" id="price-h">One price. Full access. No upsells.</h2>
+        <p class="section-lede">
+          Let’s put the number in context before I show it to you. The goal is $5,000 a month. That’s $60,000 a year. You make your investment back in the first month you hit target. And a channel doing $5,000 a month sells for $50,000 to $125,000. You are not buying a course. You are buying the system to build a real, sellable digital asset.
+        </p>
+        <p class="section-lede" style="margin-top:-6px;">
+          I built one for $4,000 and sold it for $53,000. Joel built one from scratch — it’s already worth $50,000 on paper. ATTE spent $20,000 on other courses trying to find this. You’re getting it for $3,000.
+        </p>
+        <div class="pricing-wrap">
+          <div class="pricing-head"><h3>YT Incubator</h3><span class="badge">Full Access</span></div>
+          <div class="pricing-body">
+            <div class="price-big">$3,000</div>
+            <div class="price-alt">— or —</div>
+            <div style="font-size:17px;font-weight:700;">2 payments of $1,500</div>
+            <ul class="checklist">
+              <li>The complete step-by-step course — niche to exit</li>
+              <li>Proprietary keyword research tool (not available anywhere else)</li>
+              <li>Proprietary production tool ($1 per video system)</li>
+              <li>Weekly live calls — direct access to Harvey and the team</li>
+              <li>Private community — active, accountable, building the same thing</li>
+              <li>Lifetime access — all future updates included</li>
+            </ul>
+            <a href="#" class="btn-primary" style="width:100%;max-width:none;">Join YT Incubator Now</a>
+            <p class="cta-subtext" style="margin-top:14px;">Secure checkout · Instant access · Intake is intentionally limited<br />Questions? DM Harvey on Twitter/X before joining</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Final CTA + P.S. -->
+      <section class="final-cta" aria-label="Final call to action">
+        <h2 class="section-heading">Six months from now you could be watching income come in from videos you published months ago.</h2>
+        <p class="section-lede" style="margin-left:auto;margin-right:auto;">
+          Or you could be exactly where you are right now. Either you keep guessing what might work. Or you build something that’s designed to work. That decision is yours.
+        </p>
+        <a href="#" class="btn-primary">Join YT Incubator — $3,000</a>
+        <p class="cta-subtext">Or 2 payments of $1,500 · Intake is intentionally limited</p>
+        <p class="ps-note"><strong>P.S.</strong> If you’re still on the fence, watch the video at the top one more time — then look at the proof screenshots. Same system. Different people. Same pattern. That’s what a real model looks like.</p>
+      </section>
+    </div>
+  </main>
+
+  <footer>
+    © 2025 YTA Chads · YT Incubator<br />
+    Results shown are real but not guaranteed. Individual results vary based on effort, niche, and consistency.<br />
+    By purchasing you agree to our terms and conditions.
+  </footer>
+
+  <script>
+    document.querySelectorAll('.faq-q').forEach(function (q) {
+      q.addEventListener('click', function () {
+        var item = q.closest('.faq-item');
+        var open = item.classList.contains('open');
+        document.querySelectorAll('.faq-item').forEach(function (el) { el.classList.remove('open'); });
+        if (!open) item.classList.add('open');
+      });
+    });
+  </script>
+  <script async type="text/javascript" src="https://static.klaviyo.com/onsite/js/URMvbK/klaviyo.js?company_id=URMvbK"></script>
+  <script type="text/javascript">
+  !function(){if(!window.klaviyo){window._klOnsite=window._klOnsite||[];try{window.klaviyo=new Proxy({},{get:function(n,i){return"push"===i?function(){var n;(n=window._klOnsite).push.apply(n,arguments)}:function(){for(var n=arguments.length,o=new Array(n),w=0;w<n;w++)o[w]=arguments[w];var t="function"==typeof o[o.length-1]?o.pop():void 0,e=new Promise((function(n){window._klOnsite.push([i].concat(o,[function(i){t&&t(i),n(i)}]))}));return e}}})}catch(n){window.klaviyo=window.klaviyo||[],window.klaviyo.push=function(){var n;(n=window._klOnsite).push.apply(n,arguments)}}}}();
+  </script>
+</body>
+</html>
