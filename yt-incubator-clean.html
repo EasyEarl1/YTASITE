@@ -1,0 +1,1744 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>YT Incubator - Build a $2k-$5k/Month Faceless YouTube Channel</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,400;0,14..32,500;0,14..32,600;0,14..32,700;0,14..32,800&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    /* Type scale (rem — sizes up with html font-size) */
+    --fs-11: 0.75rem;
+    --fs-12: 0.8125rem;
+    --fs-13: 0.875rem;
+    --fs-14: 0.9375rem;
+    --fs-15: 1rem;
+    --fs-16: 1.0625rem;
+    --fs-18: 1.1875rem;
+    --fs-20: 1.3125rem;
+    --fs-24: 1.625rem;
+    --fs-28: 1.875rem;
+    --fs-32: 2.125rem;
+    --lh-tight: 1.2;
+    --lh-snug: 1.35;
+    --lh-body: 1.6;
+    --lh-relaxed: 1.65;
+
+    --black: #0a0b0f;
+    --dark: #0f1117;
+    --dark2: #141928;
+    --dark3: #1e2235;
+    --blue: #2563eb;
+    --blue-light: #a0c4ff;
+    --green: #4ade80;
+    --green-dark: #1a5c30;
+    --green-bg: #f0faf4;
+    --green-border: #a8d9b8;
+    --red-bg: #fff5f5;
+    --red-border: #fca5a5;
+    --page-bg: #eef0f8;
+    --white: #ffffff;
+    --text-primary: #0f1117;
+    --text-secondary: #4a4f6a;
+    --text-muted: #7a7f96;
+    --text-hint: #9a9fb0;
+    --border: #d0d5ea;
+    --border-dark: #d8dce8;
+    --gold: #c8a84b;
+    --gold-bg: #faf4e6;
+    --gold-border: #d4a843;
+    --gold-text: #8a6820;
+    --info-bg: #f4f6ff;
+    --info-border: #c5cef5;
+    --info-text: #185FA5;
+
+    /* Page width — single wide column (not ~720px “blog narrow”) */
+    --container-max: min(1120px, calc(100vw - 48px));
+  }
+
+  /* ~22% larger than typical 16px default — body copy & all rem tokens */
+  html {
+    scroll-behavior: smooth;
+    font-size: 122.5%;
+  }
+
+  body {
+    font-family: Inter, system-ui, -apple-system, Segoe UI, sans-serif;
+    background: var(--page-bg);
+    color: var(--text-primary);
+    font-size: var(--fs-16);
+    line-height: var(--lh-body);
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+    font-feature-settings: "kern" 1, "liga" 1;
+  }
+
+  /* TOPBAR */
+  .topbar {
+    background: var(--gold);
+    text-align: center;
+    padding: 11px 20px;
+    font-size: var(--fs-13);
+    font-weight: 700;
+    color: #412402;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+  }
+
+  /* NAV */
+  .nav {
+    background: var(--white);
+    padding: 14px clamp(20px, 4vw, 32px);
+    border-bottom: 0.5px solid var(--border);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+  }
+  .nav-logo {
+    font-size: var(--fs-14);
+    font-weight: 700;
+    color: var(--text-primary);
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+
+  /* LAYOUT */
+  .container {
+    max-width: var(--container-max);
+    margin: 0 auto;
+    padding: 0 clamp(20px, 5vw, 40px);
+  }
+
+  section { padding: clamp(48px, 8vw, 64px) 0; }
+
+  .eyebrow {
+    font-size: var(--fs-12);
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--blue);
+    margin-bottom: 10px;
+    display: block;
+  }
+
+  .section-title {
+    font-size: clamp(1.75rem, 4.2vw, 2.35rem);
+    font-weight: 800;
+    color: var(--text-primary);
+    line-height: var(--lh-tight);
+    letter-spacing: -0.03em;
+    margin-bottom: 10px;
+  }
+
+  .section-sub {
+    font-size: var(--fs-15);
+    color: var(--text-secondary);
+    margin-bottom: 28px;
+    line-height: var(--lh-body);
+    max-width: min(44rem, 100%);
+  }
+
+  .divider {
+    border: none;
+    border-top: 0.5px solid var(--border);
+    margin: 0;
+  }
+
+  /* PROOF PILL */
+  .proof-pill {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    background: var(--gold-bg);
+    border: 1px solid var(--gold-border);
+    border-radius: 30px;
+    padding: 9px 20px;
+    margin-bottom: 24px;
+    max-width: min(52rem, 100%);
+    text-align: left;
+  }
+  .proof-check {
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    background: var(--gold);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+  }
+  .proof-check svg { width: 10px; height: 10px; }
+  .proof-pill-text {
+    font-size: var(--fs-14);
+    font-weight: 600;
+    color: var(--gold-text);
+    line-height: var(--lh-snug);
+  }
+
+  /* HERO */
+  .hero {
+    background: var(--page-bg);
+    padding: clamp(40px, 8vw, 56px) 0 clamp(48px, 8vw, 64px);
+    text-align: center;
+  }
+  .hero h1 {
+    font-size: clamp(2rem, 5.2vw, 2.85rem);
+    font-weight: 800;
+    line-height: var(--lh-tight);
+    color: var(--text-primary);
+    margin-bottom: 20px;
+    max-width: min(52rem, 100%);
+    margin-left: auto;
+    margin-right: auto;
+    letter-spacing: -0.03em;
+  }
+  .hero h1 .accent { color: var(--blue); }
+  .hero .subhead {
+    font-size: var(--fs-18);
+    color: var(--text-secondary);
+    line-height: var(--lh-relaxed);
+    max-width: min(44rem, 100%);
+    margin: 0 auto 28px;
+  }
+  .hero .subhead strong { color: var(--text-primary); font-weight: 700; }
+
+  .vsl-label {
+    font-size: var(--fs-15);
+    color: var(--text-secondary);
+    max-width: min(44rem, 100%);
+    margin: 0 auto 14px;
+    text-align: center;
+    line-height: var(--lh-body);
+  }
+  .vsl-label strong { color: var(--text-primary); font-weight: 700; }
+
+  .video-wrap {
+    background: var(--white);
+    border-radius: 14px;
+    padding: 16px;
+    max-width: min(920px, 100%);
+    margin: 0 auto;
+    border: 0.5px solid var(--border);
+  }
+  .video-thumb {
+    background: var(--dark2);
+    border-radius: 10px;
+    aspect-ratio: 16 / 9;
+    min-height: 220px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .play-btn {
+    width: 72px;
+    height: 72px;
+    background: var(--blue);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: transform 0.2s, background 0.2s;
+  }
+  .play-btn:hover { transform: scale(1.08); background: #1d4fd8; }
+  .play-tri {
+    width: 0;
+    height: 0;
+    border-top: 13px solid transparent;
+    border-bottom: 13px solid transparent;
+    border-left: 21px solid white;
+    margin-left: 4px;
+  }
+
+  /* CTA BUTTON */
+  .cta-wrap { margin: 28px auto 0; max-width: min(36rem, 100%); text-align: center; }
+  .btn-primary {
+    display: block;
+    background: var(--blue);
+    color: white;
+    font-family: inherit;
+    font-size: var(--fs-18);
+    font-weight: 700;
+    padding: 17px 26px;
+    border-radius: 10px;
+    text-decoration: none;
+    margin-bottom: 12px;
+    letter-spacing: 0.01em;
+    border: none;
+    cursor: pointer;
+    transition: background 0.2s, transform 0.15s;
+    width: 100%;
+  }
+  .btn-primary:hover { background: #1d4fd8; transform: translateY(-1px); }
+  .cta-sub { font-size: var(--fs-14); color: var(--text-muted); line-height: var(--lh-body); }
+
+  /* MONEY MODEL */
+  .money-section { background: var(--page-bg); }
+
+  .model-box {
+    background: var(--white);
+    border: 0.5px solid var(--border);
+    border-radius: 14px;
+    padding: 20px 22px;
+    margin-bottom: 12px;
+  }
+  .model-row { display: flex; align-items: flex-start; gap: 16px; margin-bottom: 14px; }
+  .model-icon {
+    width: 40px;
+    height: 40px;
+    background: var(--info-bg);
+    border-radius: 10px;
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .model-icon svg { width: 20px; height: 20px; }
+  .model-title { font-size: var(--fs-16); font-weight: 700; color: var(--text-primary); margin-bottom: 6px; }
+  .model-desc { font-size: var(--fs-15); color: var(--text-secondary); line-height: var(--lh-body); }
+  .model-desc .num { color: var(--blue); font-weight: 700; }
+  .system-line {
+    font-size: var(--fs-14);
+    color: var(--text-muted);
+    font-style: italic;
+    border-top: 0.5px solid var(--border-dark);
+    padding-top: 12px;
+    line-height: var(--lh-body);
+  }
+  .system-line strong { color: var(--text-primary); font-style: normal; font-weight: 700; }
+
+  .exit-box {
+    background: var(--dark);
+    border-radius: 14px;
+    padding: 22px 24px;
+    margin-bottom: 12px;
+  }
+  .exit-box-label {
+    font-size: var(--fs-12);
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    color: #4a527a;
+    text-transform: uppercase;
+    margin-bottom: 16px;
+  }
+  .exit-row {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    padding: 12px 0;
+    border-bottom: 0.5px solid var(--dark3);
+  }
+  .exit-row:last-child { border-bottom: none; padding-bottom: 0; }
+  .exit-input { font-size: var(--fs-16); color: #a0a8c0; font-weight: 500; }
+  .exit-arrow { font-size: var(--fs-15); color: #4a527a; }
+  .exit-output { font-size: clamp(1.45rem, 3.5vw, 1.9rem); font-weight: 800; color: white; letter-spacing: -0.02em; }
+  .exit-output .range { font-size: var(--fs-14); font-weight: 500; color: #7a8099; margin-left: 5px; }
+
+  .roi-box {
+    background: var(--green-bg);
+    border: 0.5px solid var(--green-border);
+    border-radius: 14px;
+    padding: 18px 22px;
+    display: flex;
+    align-items: center;
+    gap: 16px;
+  }
+  .roi-icon {
+    width: 38px;
+    height: 38px;
+    background: #d4f0e0;
+    border-radius: 9px;
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .roi-icon svg { width: 19px; height: 19px; }
+  .roi-title { font-size: var(--fs-16); font-weight: 700; color: var(--green-dark); margin-bottom: 4px; }
+  .roi-desc { font-size: var(--fs-14); color: #2d6b42; line-height: var(--lh-body); }
+  .roi-desc .num { font-weight: 700; }
+
+  /* SYSTEM SECTION */
+  .system-section { background: var(--white); }
+
+  .credibility {
+    font-size: var(--fs-15);
+    color: var(--text-muted);
+    margin-bottom: 18px;
+    font-style: italic;
+    line-height: var(--lh-body);
+  }
+  .credibility strong { color: var(--text-primary); font-style: normal; font-weight: 700; }
+
+  .hook-box {
+    background: var(--page-bg);
+    border-left: 3px solid var(--blue);
+    border-radius: 0 12px 12px 0;
+    padding: 16px 20px;
+    margin-bottom: 32px;
+    font-size: var(--fs-18);
+    font-weight: 600;
+    color: var(--text-primary);
+    line-height: var(--lh-body);
+  }
+  .hook-box span { color: var(--blue); }
+
+  .sys-item {
+    display: flex;
+    gap: 18px;
+    align-items: flex-start;
+    padding: 18px 0;
+    border-bottom: 0.5px solid var(--border-dark);
+  }
+  .sys-item:last-of-type { border-bottom: none; }
+  .sys-num {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background: var(--dark);
+    color: white;
+    font-size: var(--fs-13);
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    margin-top: 2px;
+  }
+  .sys-title { font-size: var(--fs-16); font-weight: 700; color: var(--text-primary); margin-bottom: 6px; }
+  .sys-stmt { font-size: var(--fs-15); color: var(--text-secondary); line-height: var(--lh-body); margin-bottom: 8px; }
+  .sys-out { font-size: var(--fs-14); font-weight: 700; color: var(--info-text); }
+  .sys-out::before { content: "-> "; color: var(--blue); }
+
+  .sys-bridge {
+    text-align: center;
+    padding: 32px 0 0;
+  }
+  .sys-bridge-line { font-size: var(--fs-18); font-weight: 700; color: var(--text-primary); margin-bottom: 6px; }
+  .sys-bridge-sub { font-size: var(--fs-15); color: var(--text-muted); line-height: var(--lh-body); }
+  .sys-bridge-arrow { font-size: var(--fs-24); color: var(--border); margin-top: 12px; line-height: 1; }
+
+  /* PROOF SECTION */
+  .proof-section { background: var(--page-bg); }
+
+  .speed-anchor {
+    background: var(--white);
+    border: 0.5px solid var(--border);
+    border-radius: 10px;
+    padding: 14px 18px;
+    margin-bottom: 20px;
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+  }
+  .sa-dot {
+    width: 9px;
+    height: 9px;
+    border-radius: 50%;
+    background: var(--blue);
+    flex-shrink: 0;
+    margin-top: 5px;
+  }
+  .sa-text { font-size: var(--fs-15); color: var(--text-secondary); line-height: var(--lh-body); }
+  .sa-text strong { color: var(--text-primary); font-weight: 700; }
+
+  .ss-card {
+    background: var(--dark);
+    border-radius: 14px;
+    padding: 18px;
+    margin-bottom: 12px;
+  }
+  .ss-top { display: flex; align-items: flex-start; justify-content: space-between; margin-bottom: 12px; }
+  .ss-num { font-size: clamp(1.5rem, 3.5vw, 1.85rem); font-weight: 800; color: var(--green); letter-spacing: -0.02em; }
+  .ss-meta { font-size: var(--fs-12); color: #4a527a; text-align: right; line-height: var(--lh-body); }
+  .ss-chart { height: 32px; display: flex; align-items: flex-end; gap: 3px; margin-bottom: 12px; }
+  .bar { background: #1e3a5f; border-radius: 2px 2px 0 0; flex: 1; }
+  .bar.hi { background: var(--blue); }
+  .ss-cap {
+    font-size: var(--fs-14);
+    color: #7a8099;
+    border-top: 0.5px solid var(--dark3);
+    padding-top: 10px;
+    line-height: var(--lh-body);
+  }
+  .ss-cap strong { color: white; font-weight: 700; }
+
+  .ss-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+
+  /* Real screenshot gallery — two flex columns (not CSS Grid rows) so variable heights do not leave huge gaps */
+  .real-results-grid {
+    display: flex;
+    flex-direction: row;
+    gap: 8px;
+    align-items: flex-start;
+    margin-top: 4px;
+  }
+  .real-results-col {
+    flex: 1;
+    min-width: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+  .real-results-item {
+    margin: 0;
+    border-radius: 10px;
+    overflow: hidden;
+    border: 0.5px solid var(--border);
+    background: transparent;
+    line-height: 0;
+    min-height: 0;
+  }
+  .real-results-item img {
+    width: 100%;
+    height: auto;
+    display: block;
+    vertical-align: top;
+  }
+
+  .exit-proof-section { background: var(--page-bg); padding-top: 0; }
+
+  .exit-card {
+    background: var(--white);
+    border: 0.5px solid var(--border);
+    border-radius: 14px;
+    padding: 20px 22px;
+    margin-bottom: 12px;
+  }
+  .exit-card-top {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    margin-bottom: 12px;
+  }
+  .exit-tag { font-size: var(--fs-12); font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: var(--text-muted); margin-bottom: 5px; }
+  .exit-amount { font-size: clamp(1.65rem, 3.5vw, 2rem); font-weight: 800; color: var(--text-primary); letter-spacing: -0.02em; }
+  .exit-roi-badge { font-size: var(--fs-14); font-weight: 700; color: var(--green-dark); background: var(--green-bg); border-radius: 6px; padding: 5px 12px; white-space: nowrap; }
+  .exit-detail { font-size: var(--fs-15); color: var(--text-secondary); line-height: var(--lh-relaxed); border-top: 0.5px solid var(--border-dark); padding-top: 12px; }
+  .exit-detail strong { color: var(--text-primary); font-weight: 700; }
+  .exit-math {
+    font-size: var(--fs-15);
+    font-weight: 700;
+    color: var(--text-primary);
+    background: var(--info-bg);
+    border-radius: 8px;
+    padding: 11px 16px;
+    margin-top: 12px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  .exit-math .arrow { color: var(--blue); font-size: var(--fs-18); }
+  .exit-math .result { color: var(--green-dark); }
+  .exit-math--compound {
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 8px 10px;
+    line-height: 1.35;
+  }
+  .exit-math--compound .arrow { font-size: var(--fs-15); flex-shrink: 0; }
+  .exit-proof-bar {
+    background: var(--info-bg);
+    border-radius: 8px;
+    padding: 9px 14px;
+    margin-top: 10px;
+    font-size: var(--fs-13);
+    color: var(--info-text);
+    font-weight: 600;
+    line-height: var(--lh-body);
+  }
+
+  .exit-proof-shot {
+    margin: 0 0 14px;
+    border-radius: 12px;
+    overflow: hidden;
+    border: 0.5px solid var(--border);
+    background: #f3f4f8;
+    line-height: 0;
+  }
+  .exit-proof-shot img {
+    width: 100%;
+    height: auto;
+    max-height: min(360px, 48vh);
+    object-fit: contain;
+    object-position: top center;
+    display: block;
+  }
+
+  .exit-proof-pair {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 8px;
+    margin: 0 0 14px;
+    align-items: start;
+  }
+  .exit-proof-pair .exit-proof-shot {
+    margin: 0;
+  }
+  .exit-proof-pair .exit-proof-shot img {
+    max-height: min(300px, 42vh);
+  }
+
+  /* STUDENT PROOF */
+  .student-section { background: var(--white); }
+
+  .breakeven-banner {
+    background: var(--dark);
+    border-radius: 14px;
+    padding: 20px 24px;
+    margin-bottom: 18px;
+  }
+  .bb-label { font-size: var(--fs-12); font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: #4a527a; margin-bottom: 8px; }
+  .bb-text { font-size: var(--fs-18); font-weight: 700; color: white; line-height: var(--lh-snug); }
+  .bb-text span { color: var(--green); }
+
+  .no-exp-bar {
+    background: var(--dark);
+    border-radius: 12px;
+    padding: 16px 20px;
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 18px;
+  }
+  .neb-item { text-align: center; }
+  .neb-x { font-size: 1.6rem; font-weight: 800; color: #ef4444; line-height: 1; }
+  .neb-label { font-size: var(--fs-12); color: #7a8099; margin-top: 4px; line-height: var(--lh-body); }
+
+  .t-card {
+    background: var(--page-bg);
+    border: 0.5px solid var(--border);
+    border-radius: 14px;
+    padding: 20px 20px 18px;
+    margin-bottom: 14px;
+  }
+  .t-head {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    margin-bottom: 14px;
+  }
+  .t-avatar {
+    width: 56px;
+    height: 56px;
+    border-radius: 50%;
+    object-fit: cover;
+    flex-shrink: 0;
+    border: 1px solid var(--border);
+    background: var(--white);
+  }
+  .t-meta-top { min-width: 0; }
+  .t-display-name {
+    font-size: var(--fs-16);
+    font-weight: 700;
+    color: var(--text-primary);
+    letter-spacing: -0.02em;
+  }
+  .t-role {
+    font-size: var(--fs-13);
+    color: var(--text-muted);
+    margin-top: 2px;
+  }
+  .t-quote {
+    font-size: var(--fs-16);
+    color: var(--text-primary);
+    line-height: var(--lh-relaxed);
+    margin-bottom: 14px;
+    font-style: italic;
+  }
+  .t-quote::before { content: '"'; color: var(--blue); font-size: var(--fs-24); font-style: normal; font-weight: 800; margin-right: 2px; line-height: 0; vertical-align: -5px; }
+  .t-bottom { display: flex; align-items: flex-end; justify-content: space-between; gap: 12px; flex-wrap: wrap; }
+  .t-name { font-size: var(--fs-14); font-weight: 600; color: var(--text-muted); }
+  .t-timeline { font-size: var(--fs-13); color: var(--text-hint); margin-top: 4px; line-height: var(--lh-body); }
+  .t-result { font-size: var(--fs-15); font-weight: 700; color: var(--blue); text-align: right; max-width: 12rem; }
+
+  /* TRANSFORMATIONS - Start - Build - Scale/Exit */
+  .transform-section { background: var(--page-bg); }
+
+  .flow-sub { max-width: 36rem; }
+
+  .flow-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 12px;
+    margin-bottom: 12px;
+    align-items: stretch;
+  }
+  .flow-card {
+    border-radius: 12px;
+    padding: 18px;
+    display: flex;
+    flex-direction: column;
+    min-height: 0;
+  }
+  .flow-step {
+    font-size: var(--fs-12);
+    font-weight: 600;
+    color: var(--text-muted);
+    margin-bottom: 8px;
+    letter-spacing: 0.02em;
+  }
+  .flow-label {
+    font-size: var(--fs-12);
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+  }
+  .flow-stat {
+    font-size: clamp(1.35rem, 2.8vw, var(--fs-24));
+    font-weight: 800;
+    margin-bottom: 8px;
+    line-height: var(--lh-tight);
+  }
+  .flow-desc {
+    font-size: var(--fs-14);
+    line-height: var(--lh-body);
+    flex: 1;
+  }
+  .flow-recovered {
+    font-size: var(--fs-13);
+    font-weight: 700;
+    margin-top: 10px;
+    padding-top: 10px;
+    border-top: 0.5px dashed rgba(0, 0, 0, 0.1);
+  }
+  .flow-options { margin-top: 4px; flex: 1; }
+  .flow-opt { font-size: var(--fs-14); line-height: var(--lh-body); margin-bottom: 10px; }
+  .flow-opt:last-of-type { margin-bottom: 0; }
+
+  .flow-card--start {
+    background: var(--red-bg);
+    border: 0.5px solid var(--red-border);
+  }
+  .flow-card--start .flow-label { color: #993C1D; }
+  .flow-card--start .flow-stat { color: var(--text-primary); }
+  .flow-card--start .flow-desc { color: #7a3020; }
+
+  .flow-card--build {
+    background: var(--green-bg);
+    border: 0.5px solid var(--green-border);
+  }
+  .flow-card--build .flow-label { color: var(--green-dark); }
+  .flow-card--build .flow-stat { color: var(--green-dark); }
+  .flow-card--build .flow-desc { color: #2d6b42; }
+  .flow-card--build .flow-recovered { color: #1a5c30; border-color: rgba(26, 92, 48, 0.22); }
+
+  .flow-card--scale {
+    background: var(--info-bg);
+    border: 0.5px solid var(--info-border);
+  }
+  .flow-card--scale .flow-label { color: var(--info-text); }
+  .flow-card--scale .flow-stat { color: var(--info-text); }
+  .flow-card--scale .flow-opt { color: #234876; }
+
+  @media (max-width: 960px) {
+    .flow-grid { grid-template-columns: 1fr; }
+  }
+
+  .bridge-dark {
+    background: var(--dark);
+    border-radius: 14px;
+    padding: 24px 28px;
+    text-align: center;
+    margin-top: 8px;
+  }
+  .bridge-dark-line { font-size: var(--fs-18); font-weight: 700; color: white; margin-bottom: 6px; line-height: var(--lh-snug); }
+  .bridge-dark-line em { color: var(--blue-light); font-style: italic; }
+  .bridge-dark-sub { font-size: var(--fs-15); color: #7a8099; line-height: var(--lh-body); }
+
+  /* FAQ — accordion */
+  .faq-section { background: var(--white); }
+
+  .faq-accordion {
+    border-top: 0.5px solid var(--border-dark);
+  }
+  .faq-item {
+    border-bottom: 0.5px solid var(--border-dark);
+  }
+  .faq-item summary {
+    list-style: none;
+    cursor: pointer;
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 12px;
+    padding: 18px 0;
+    font-size: var(--fs-16);
+    font-weight: 700;
+    color: var(--text-primary);
+    user-select: none;
+    -webkit-tap-highlight-color: transparent;
+  }
+  .faq-item summary::-webkit-details-marker { display: none; }
+  .faq-item summary:hover { color: var(--blue); }
+  .faq-item summary:focus { outline: none; }
+  .faq-item summary:focus-visible {
+    outline: 2px solid var(--blue);
+    outline-offset: 3px;
+    border-radius: 6px;
+  }
+  .faq-summary-main {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    flex: 1;
+    min-width: 0;
+    text-align: left;
+  }
+  .faq-chevron {
+    flex-shrink: 0;
+    width: 22px;
+    height: 22px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--text-muted);
+    margin-top: 1px;
+    transition: transform 0.2s ease, color 0.15s ease;
+  }
+  .faq-item[open] .faq-chevron {
+    transform: rotate(180deg);
+    color: var(--blue);
+  }
+  .faq-chevron svg { width: 12px; height: 12px; display: block; }
+  .faq-icon {
+    width: 22px;
+    height: 22px;
+    border-radius: 50%;
+    background: var(--info-bg);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    margin-top: 1px;
+  }
+  .faq-icon svg { width: 10px; height: 10px; }
+  .faq-a {
+    font-size: var(--fs-15);
+    color: var(--text-secondary);
+    line-height: 1.65;
+    padding: 0 34px 18px 34px;
+    margin-top: -4px;
+  }
+  .faq-a strong { color: var(--text-primary); font-weight: 700; }
+  .faq-a .hl { color: var(--blue); font-weight: 700; }
+
+  /* FINAL CTA */
+  .final-cta {
+    background: var(--dark);
+    padding: 64px 0;
+  }
+  .final-cta .container { text-align: center; }
+  .cta-pre {
+    font-size: var(--fs-16);
+    color: #7a8099;
+    margin-bottom: 24px;
+    line-height: var(--lh-relaxed);
+    font-style: italic;
+  }
+  .cta-pre span { color: var(--blue-light); font-weight: 700; font-style: normal; }
+  .cta-headline {
+    font-size: clamp(1.6rem, 4vw, 2.15rem);
+    font-weight: 800;
+    color: white;
+    line-height: var(--lh-snug);
+    letter-spacing: -0.03em;
+    margin-bottom: 10px;
+  }
+  .cta-headline span { color: var(--green); }
+  .cta-desc { font-size: var(--fs-15); color: #7a8099; margin-bottom: 32px; line-height: var(--lh-body); max-width: min(40rem, 100%); margin-left: auto; margin-right: auto; margin-top: 0; }
+
+  /* PRICING CARD */
+  .pricing-card {
+    background: var(--dark3);
+    border: 1.5px solid #2a3050;
+    border-radius: 16px;
+    padding: 32px 28px;
+    max-width: min(720px, 100%);
+    margin: 0 auto 28px;
+  }
+  .pricing-badge {
+    display: inline-flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: baseline;
+    justify-content: center;
+    gap: 10px 14px;
+    background: var(--dark);
+    color: var(--blue-light);
+    padding: 10px 20px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    letter-spacing: -0.01em;
+    text-align: center;
+  }
+  .pricing-badge-usd {
+    font-size: var(--fs-20);
+    font-weight: 800;
+    line-height: 1.15;
+  }
+  .pricing-badge-fiat {
+    font-size: var(--fs-17);
+    font-weight: 700;
+    color: #b8c9f0;
+    line-height: 1.2;
+    letter-spacing: 0;
+  }
+  .pricing-badge-sep {
+    color: #4a5d85;
+    font-weight: 700;
+    font-size: var(--fs-18);
+    user-select: none;
+    line-height: 1;
+  }
+  .pricing-title {
+    font-size: var(--fs-24);
+    font-weight: 800;
+    color: white;
+    margin-bottom: 24px;
+    line-height: var(--lh-snug);
+    letter-spacing: -0.02em;
+  }
+  .pricing-features { list-style: none; margin-bottom: 28px; }
+  .pricing-features li {
+    font-size: var(--fs-15);
+    color: #a0a8c0;
+    padding: 11px 0;
+    border-bottom: 0.5px solid #2a3050;
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    line-height: 1.5;
+    text-align: left;
+  }
+  .pricing-features li:last-child { border-bottom: none; }
+  .feat-check { color: var(--green); font-size: var(--fs-14); flex-shrink: 0; margin-top: 1px; }
+
+  .pricing-safety {
+    font-size: var(--fs-15);
+    color: #c5cbe0;
+    line-height: var(--lh-body);
+    text-align: left;
+    margin: -8px 0 24px;
+    padding: 14px 16px;
+    background: rgba(0, 0, 0, 0.25);
+    border-radius: 10px;
+    border: 0.5px solid #2a3050;
+  }
+  .pricing-safety strong { color: white; font-weight: 700; }
+
+  .btn-full {
+    display: block;
+    background: var(--blue);
+    color: white;
+    font-family: inherit;
+    font-size: var(--fs-18);
+    font-weight: 700;
+    padding: 17px 28px;
+    border-radius: 10px;
+    text-decoration: none;
+    margin-bottom: 14px;
+    letter-spacing: 0.01em;
+    border: none;
+    cursor: pointer;
+    transition: background 0.2s, transform 0.15s;
+    width: 100%;
+    text-align: center;
+  }
+  .btn-full:hover { background: #1d4fd8; transform: translateY(-1px); }
+
+  .btn-split {
+    display: block;
+    background: transparent;
+    color: #a0a8c0;
+    font-family: inherit;
+    font-size: var(--fs-15);
+    font-weight: 700;
+    padding: 14px 28px;
+    border-radius: 10px;
+    text-decoration: none;
+    margin-bottom: 14px;
+    border: 0.5px solid #2a3050;
+    cursor: pointer;
+    transition: border-color 0.2s, color 0.2s;
+    width: 100%;
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+  }
+  .btn-split:hover { border-color: #4a527a; color: white; }
+
+  .btn-call {
+    display: inline-block;
+    background: transparent;
+    color: #6b728e;
+    font-family: inherit;
+    font-size: var(--fs-13);
+    font-weight: 600;
+    padding: 10px 16px;
+    border-radius: 8px;
+    text-decoration: none;
+    border: none;
+    cursor: pointer;
+    transition: color 0.2s;
+    text-align: center;
+    margin-top: 6px;
+  }
+  .btn-call:hover { color: #a0a8c0; text-decoration: underline; }
+  .pricing-call-wrap {
+    margin-top: 8px;
+    text-align: center;
+  }
+
+  .payment-icons {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 16px;
+    margin-top: 20px;
+  }
+  .payment-icons span { font-size: var(--fs-14); color: #4a527a; font-weight: 600; letter-spacing: 0.04em; }
+
+  /* REASSURANCE + POST-PRICING (aligned with card) */
+  .cta-post-stack {
+    max-width: min(720px, 100%);
+    margin: 0 auto;
+  }
+  .reassurance {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 10px 20px;
+    margin: 0;
+    padding: 0 4px;
+  }
+  @media (min-width: 520px) {
+    .reassurance {
+      grid-template-columns: 1fr 1fr;
+    }
+  }
+  .r-item {
+    font-size: var(--fs-14);
+    color: #9aa3bc;
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+    gap: 10px;
+    line-height: 1.35;
+    text-align: left;
+  }
+  .r-check {
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    background: #1a3a2a;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+  }
+  .r-check svg { width: 9px; height: 9px; }
+
+  .roi-line-final {
+    font-size: var(--fs-15);
+    color: var(--green);
+    font-weight: 700;
+    margin: 22px 0 8px;
+    padding-top: 20px;
+    border-top: 0.5px solid #2a3050;
+    line-height: var(--lh-snug);
+    text-align: center;
+  }
+  .urgency-line {
+    font-size: var(--fs-13);
+    color: #6b728e;
+    margin: 0 0 0;
+    line-height: var(--lh-body);
+    text-align: center;
+  }
+
+  .intake-note {
+    display: flex;
+    align-items: flex-start;
+    gap: 14px;
+    background: #1a1d2e;
+    border: 0.5px solid #2a3050;
+    border-radius: 12px;
+    padding: 20px 22px;
+    text-align: left;
+    max-width: none;
+    width: 100%;
+    margin: 18px 0 0;
+  }
+  .intake-icon {
+    width: 36px;
+    height: 36px;
+    background: var(--dark3);
+    border-radius: 8px;
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .intake-icon svg { width: 17px; height: 17px; }
+  .intake-title { font-size: var(--fs-15); font-weight: 700; color: #e8eaf4; margin-bottom: 6px; line-height: var(--lh-snug); }
+  .intake-desc { font-size: var(--fs-13); color: #8b93a8; line-height: var(--lh-body); }
+
+  /* SECTION DIVIDERS */
+  .section-divider {
+    height: 0.5px;
+    background: var(--border);
+    max-width: var(--container-max);
+    margin: 0 auto;
+  }
+
+  /* RESPONSIVE */
+  @media (max-width: 640px) {
+    .real-results-grid {
+      flex-direction: column;
+    }
+    .real-results-col {
+      display: contents;
+    }
+    .real-results-col:first-child .real-results-item:nth-child(1) { order: 1; }
+    .real-results-col:first-child .real-results-item:nth-child(2) { order: 3; }
+    .real-results-col:first-child .real-results-item:nth-child(3) { order: 5; }
+    .real-results-col:last-child .real-results-item:nth-child(1) { order: 2; }
+    .real-results-col:last-child .real-results-item:nth-child(2) { order: 4; }
+    .real-results-col:last-child .real-results-item:nth-child(3) { order: 6; }
+  }
+
+  @media (max-width: 520px) {
+    .hero h1 { font-size: 1.85rem; }
+    .ss-grid { grid-template-columns: 1fr; }
+    .no-exp-bar { gap: 8px; }
+    .neb-label { font-size: var(--fs-12); }
+    .exit-output { font-size: 1.4rem; }
+    .exit-proof-shot img { max-height: min(300px, 44vh); }
+    .exit-proof-pair { gap: 6px; }
+    .exit-proof-pair .exit-proof-shot img { max-height: min(220px, 36vh); }
+  }
+</style>
+</head>
+<body>
+
+<!-- TOPBAR -->
+<div class="topbar">Limited Intake - Programme Accepts New Members Monthly</div>
+
+<!-- NAV -->
+<nav class="nav">
+  <div class="container">
+    <span class="nav-logo">YTA Chads</span>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="container">
+    <div class="proof-pill">
+      <div class="proof-check">
+        <svg viewBox="0 0 10 10" fill="none"><path d="M2 5l2.5 2.5L8 3" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </div>
+      <span class="proof-pill-text">$300,000+ generated - 2 channel exits ($20k + $53k) - students hitting $1k-$6k/month consistently</span>
+    </div>
+
+    <h1>Build a faceless YouTube channel that pays you <span class="accent">$2k-$5k/month</span> - and can sell for $50k+ (like mine did)</h1>
+
+    <p class="subhead">I built a channel for $4,000 and sold it for $53,000 using this exact search-based system - <strong>no face, no viral content, no experience needed.</strong></p>
+
+    <div class="vsl-label"><strong>Watch this (6 min):</strong> How this model generates $2k-$5k/month - and why most people waste 12 months doing YouTube wrong.</div>
+    <div class="video-wrap">
+      <div class="video-thumb">
+        <div class="play-btn"><div class="play-tri"></div></div>
+      </div>
+    </div>
+
+    <div class="cta-wrap">
+      <a href="#join" class="btn-primary">Start Building Your First $2k-$5k/Month Channel</a>
+      <p class="cta-sub">$2,500 or 2 payments of $1,250 &nbsp;·&nbsp; Intake is intentionally limited</p>
+    </div>
+  </div>
+</section>
+
+<div class="section-divider"></div>
+
+<!-- MONEY MODEL -->
+<section class="money-section">
+  <div class="container">
+    <span class="eyebrow">How the money works</span>
+
+    <div class="model-box">
+      <div class="model-row">
+        <div class="model-icon">
+          <svg viewBox="0 0 20 20" fill="none"><circle cx="10" cy="10" r="8.5" stroke="#2563eb" stroke-width="1.4"/><path d="M10 5.5v9M7.5 7.5C7.5 6.5 8.7 6 10 6s2.5.5 2.5 1.5S11.3 9 10 9.5C8.7 10 7.5 10.5 7.5 11.5S8.7 13 10 13s2.5-.5 2.5-1.5" stroke="#2563eb" stroke-width="1.3" stroke-linecap="round"/></svg>
+        </div>
+        <div>
+          <div class="model-title">Build to $2k-$5k/month in profit</div>
+          <div class="model-desc">That's the target for a single channel - built on <span class="num">search-based content</span> that earns consistently without showing your face or chasing trends.</div>
+        </div>
+      </div>
+      <div class="system-line"><strong>This isn't one viral video</strong> - it's consistent search traffic compounding over time.</div>
+    </div>
+
+    <div class="exit-box">
+      <div class="exit-box-label">Then exit for 10-25x monthly profit</div>
+      <div class="exit-row">
+        <span class="exit-input">$3k/month</span>
+        <span class="exit-arrow">-&gt;</span>
+        <span class="exit-output">$30k-$75k<span class="range">exit</span></span>
+      </div>
+      <div class="exit-row">
+        <span class="exit-input">$5k/month</span>
+        <span class="exit-arrow">-&gt;</span>
+        <span class="exit-output">$50k-$125k<span class="range">exit</span></span>
+      </div>
+    </div>
+
+    <div class="roi-box">
+      <div class="roi-icon">
+        <svg viewBox="0 0 20 20" fill="none"><path d="M4 14l4-4 3 3 5-6" stroke="#1a7a3c" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/><rect x="2" y="2" width="16" height="16" rx="3" stroke="#1a7a3c" stroke-width="1.3"/></svg>
+      </div>
+      <div>
+        <div class="roi-title">Recover your $2,500 first - then scale or exit</div>
+        <div class="roi-desc">Most students hit breakeven through channel revenue. Then decide: keep the <span class="num">$2k-$5k/month</span> or sell for <span class="num">10-25x</span>.</div>
+      </div>
+    </div>
+
+    <div class="cta-wrap" style="margin-top:36px;">
+      <a href="#join" class="btn-primary">Start Building Your First $2k-$5k/Month Channel</a>
+      <p class="cta-sub">$2,500 or 2 payments of $1,250 &nbsp;·&nbsp; Intake is intentionally limited</p>
+    </div>
+  </div>
+</section>
+
+<div class="section-divider"></div>
+
+<!-- SYSTEM SECTION -->
+<section class="system-section">
+  <div class="container">
+    <span class="eyebrow">Inside YT Incubator</span>
+    <h2 class="section-title">The exact system to build a $2k-$5k/month channel</h2>
+    <p class="credibility">This is the same system used to build and sell channels for <strong>$20k and $53k.</strong></p>
+
+    <div class="hook-box">
+      This isn't content creation.<br>
+      <span>This is building a cash-flowing asset you can sell.</span>
+    </div>
+
+    <div class="sys-item">
+      <div class="sys-num">1</div>
+      <div>
+        <div class="sys-title">Niche and Keyword System</div>
+        <div class="sys-stmt">Find proven niches with existing search demand and high RPM - no guesswork, no "trying ideas."</div>
+        <div class="sys-out">Start in markets that can realistically hit $2k-$5k/month</div>
+      </div>
+    </div>
+
+    <div class="sys-item">
+      <div class="sys-num">2</div>
+      <div>
+        <div class="sys-title">Search-Based Video Strategy</div>
+        <div class="sys-stmt">Create videos people are already searching for - titles, topics, and structure built for compounding views, not viral spikes.</div>
+        <div class="sys-out">Predictable daily traffic that grows whether you post or not</div>
+      </div>
+    </div>
+
+    <div class="sys-item">
+      <div class="sys-num">3</div>
+      <div>
+        <div class="sys-title">Automated Production System</div>
+        <div class="sys-stmt">Produce videos for ~$1 each using our internal tools and workflows - no filming, no editing skills, no big team required.</div>
+        <div class="sys-out">Scale to hundreds of videos without burning out</div>
+      </div>
+    </div>
+
+    <div class="sys-item">
+      <div class="sys-num">4</div>
+      <div>
+        <div class="sys-title">Monetisation System</div>
+        <div class="sys-stmt">Structure channels for $10-$100+ RPM niches with a simple AdSense-first stack. Profit per video - not just views.</div>
+        <div class="sys-out">Small channels generating meaningful monthly cashflow</div>
+      </div>
+    </div>
+
+    <div class="sys-item">
+      <div class="sys-num">5</div>
+      <div>
+        <div class="sys-title">Scaling System</div>
+        <div class="sys-stmt">Find your winning videos, replicate them, expand into adjacent keywords. Build a library of assets that compounds.</div>
+        <div class="sys-out">Grow steadily from first $1k to $5k/month - not randomly</div>
+      </div>
+    </div>
+
+    <div class="sys-item">
+      <div class="sys-num">6</div>
+      <div>
+        <div class="sys-title">Exit Framework</div>
+        <div class="sys-stmt">Value and position your channel as a sellable asset from day one. Real exits: $20k and $53k. Same playbook, yours to follow.</div>
+        <div class="sys-out">You're not just making income - you're building equity you can cash out</div>
+      </div>
+    </div>
+
+    <div class="sys-bridge">
+      <div class="sys-bridge-line">Here's what happens when people follow this system:</div>
+      <div class="sys-bridge-sub">No prior experience. No audience. No face.</div>
+      <div class="sys-bridge-arrow">v</div>
+    </div>
+  </div>
+</section>
+
+<div class="section-divider"></div>
+
+<!-- INCOME PROOF -->
+<section class="proof-section">
+  <div class="container">
+    <span class="eyebrow">Real results</span>
+    <h2 class="section-title">From $0 to $2k-$5k/month channels</h2>
+
+    <div class="speed-anchor">
+      <div class="sa-dot"></div>
+      <div class="sa-text"><strong>Most channels take 3-6 months to reach $2k-$5k/month</strong> - then compound. These are what that looks like.</div>
+    </div>
+
+    <div class="real-results-grid" aria-label="Real AdSense and YouTube Studio screenshots">
+      <div class="real-results-col">
+        <figure class="real-results-item">
+          <img src="revv/REV2.png" alt="YouTube Studio revenue and analytics screenshot" width="1600" height="900" loading="lazy" decoding="async" />
+        </figure>
+        <figure class="real-results-item">
+          <img src="revv/REV%204.png" alt="YouTube estimated revenue screenshot" width="1600" height="900" loading="lazy" decoding="async" />
+        </figure>
+        <figure class="real-results-item">
+          <img src="revv/rev%207.jpeg" alt="YouTube Studio payment and earnings screenshot" width="1600" height="900" loading="lazy" decoding="async" />
+        </figure>
+      </div>
+      <div class="real-results-col">
+        <figure class="real-results-item">
+          <img src="revv/REV%203.png" alt="YouTube Studio analytics screenshot" width="1600" height="900" loading="lazy" decoding="async" />
+        </figure>
+        <figure class="real-results-item">
+          <img src="revv/rev%205.png" alt="YouTube Studio earnings screenshot" width="1600" height="900" loading="lazy" decoding="async" />
+        </figure>
+        <figure class="real-results-item">
+          <img src="revv/rev%208.png" alt="YouTube Studio estimated earnings by month screenshot" width="1600" height="900" loading="lazy" decoding="async" />
+        </figure>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="section-divider"></div>
+
+<!-- EXIT PROOF -->
+<section style="background:var(--page-bg); padding: 56px 0;">
+  <div class="container">
+    <span class="eyebrow">Channel exits</span>
+    <h2 class="section-title">Channels turning into $30k-$100k+ assets</h2>
+    <p class="section-sub">Two real exits. Offers accepted, contracts signed, money transferred.</p>
+
+    <div class="exit-card">
+      <div class="exit-card-top">
+        <div>
+          <div class="exit-tag">Exit 1</div>
+          <div class="exit-amount">$20,000</div>
+        </div>
+        <div class="exit-roi-badge">10x on capital</div>
+      </div>
+      <div class="exit-proof-pair">
+        <div class="exit-proof-shot">
+          <img src="revv/exit%202.png" alt="Screenshot: $20,000 channel exit - proof 1" width="1200" height="800" loading="lazy" decoding="async" />
+        </div>
+        <div class="exit-proof-shot">
+          <img src="revv/exit%201.2.png" alt="Screenshot: $20,000 channel exit - proof 2" width="1200" height="800" loading="lazy" decoding="async" />
+        </div>
+      </div>
+      <div class="exit-detail">Built from scratch using the search-based model. Offer accepted, agreement signed, channel transferred.</div>
+      <div class="exit-math exit-math--compound">
+        <span>$2,000 invested</span>
+        <span class="arrow">-&gt;</span>
+        <span>~$1k/mo profit</span>
+        <span class="arrow">-&gt;</span>
+        <span class="result">$20,000 exit</span>
+      </div>
+      <div class="exit-proof-bar">Offer accepted · Contract signed · Payment received</div>
+    </div>
+
+    <div class="exit-card">
+      <div class="exit-card-top">
+        <div>
+          <div class="exit-tag">Exit 2</div>
+          <div class="exit-amount">$53,000</div>
+        </div>
+        <div class="exit-roi-badge">~13x return</div>
+      </div>
+      <div class="exit-proof-shot">
+        <img src="revv/exit1.png" alt="Screenshot: $53,000 channel exit payment or agreement" width="1200" height="800" loading="lazy" decoding="async" />
+      </div>
+      <div class="exit-detail">No audience. No face. Same system taught inside the programme.</div>
+      <div class="exit-math exit-math--compound">
+        <span>$4,000 invested</span>
+        <span class="arrow">-&gt;</span>
+        <span>~$2k/mo passive profit</span>
+        <span class="arrow">-&gt;</span>
+        <span class="result">$53,000 exit</span>
+      </div>
+      <div class="exit-proof-bar">Offer accepted · Contract signed · Payment received</div>
+    </div>
+  </div>
+</section>
+
+<div class="section-divider"></div>
+
+<!-- STUDENT PROOF -->
+<section class="student-section">
+  <div class="container">
+    <span class="eyebrow">Student wins</span>
+    <h2 class="section-title">No experience. No audience. No face.</h2>
+
+    <div class="breakeven-banner">
+      <div class="bb-label">The most common outcome</div>
+      <div class="bb-text">Most students aim to <span>recover their $2,500 within the first few months</span> - then everything after is profit.</div>
+    </div>
+
+    <div class="no-exp-bar">
+      <div class="neb-item"><div class="neb-x">0</div><div class="neb-label">Prior experience</div></div>
+      <div class="neb-item"><div class="neb-x">0</div><div class="neb-label">Existing audience</div></div>
+      <div class="neb-item"><div class="neb-x">0</div><div class="neb-label">On camera</div></div>
+      <div class="neb-item"><div class="neb-x">0</div><div class="neb-label">Tech skills</div></div>
+    </div>
+
+    <div class="t-card">
+      <div class="t-head">
+        <img src="assets/bautista-p-500.png" alt="" class="t-avatar" width="112" height="112" loading="lazy" />
+        <div class="t-meta-top">
+          <div class="t-display-name">Bautista</div>
+          <div class="t-role">YTA CHADS member</div>
+        </div>
+      </div>
+      <div class="t-quote">I'm at $2k/month already and about to launch another channel that should do $1k+. This isn't luck, I'm just following the system exactly as taught.</div>
+      <div class="t-bottom">
+        <div>
+          <div class="t-name">Search-based channels</div>
+          <div class="t-timeline">Following the system · scaling up</div>
+        </div>
+        <div class="t-result">$2k/month+</div>
+      </div>
+    </div>
+
+    <div class="t-card">
+      <div class="t-head">
+        <img src="assets/mtt-p-500.png" alt="" class="t-avatar" width="112" height="112" loading="lazy" />
+        <div class="t-meta-top">
+          <div class="t-display-name">MotoTube</div>
+          <div class="t-role">YTA CHADS member</div>
+        </div>
+      </div>
+      <div class="t-quote">Some videos get barely 100 views and still make $600. That's when I realized this model actually works.</div>
+      <div class="t-bottom">
+        <div>
+          <div class="t-name">High-RPM niche</div>
+          <div class="t-timeline">Search traffic · not viral spikes</div>
+        </div>
+        <div class="t-result">$600+ / video</div>
+      </div>
+    </div>
+
+    <div class="t-card">
+      <div class="t-head">
+        <img src="assets/ck-jake-p-500.png" alt="" class="t-avatar" width="112" height="112" loading="lazy" />
+        <div class="t-meta-top">
+          <div class="t-display-name">CK Jake</div>
+          <div class="t-role">YTA CHADS member</div>
+        </div>
+      </div>
+      <div class="t-quote">I just got my first payment into my bank account. This is the first method that's actually worked for me and it's been steady growth, not spikes.</div>
+      <div class="t-bottom">
+        <div>
+          <div class="t-name">First payout</div>
+          <div class="t-timeline">Steady growth · not hype cycles</div>
+        </div>
+        <div class="t-result">Payment received</div>
+      </div>
+    </div>
+
+    <div class="t-card">
+      <div class="t-head">
+        <img src="assets/adarsh-p-500.png" alt="" class="t-avatar" width="112" height="112" loading="lazy" />
+        <div class="t-meta-top">
+          <div class="t-display-name">Adarsh</div>
+          <div class="t-role">YTA CHADS member</div>
+        </div>
+      </div>
+      <div class="t-quote">I spent way more on other courses that had me chasing viral content. This is the first system that gave me a clear path to consistent income.</div>
+      <div class="t-bottom">
+        <div>
+          <div class="t-name">After other courses</div>
+          <div class="t-timeline">Clear path · consistent income</div>
+        </div>
+        <div class="t-result">Income clarity</div>
+      </div>
+    </div>
+
+    <div class="t-card">
+      <div class="t-head">
+        <img src="assets/atte-p-500.png" alt="" class="t-avatar" width="112" height="112" loading="lazy" />
+        <div class="t-meta-top">
+          <div class="t-display-name">Atte</div>
+          <div class="t-role">YTA CHADS member</div>
+        </div>
+      </div>
+      <div class="t-quote">I've spent over $20,000 on YouTube courses, tools, and freelancers. This is the first system that actually made sense and started producing consistent results instead of guesswork.</div>
+      <div class="t-bottom">
+        <div>
+          <div class="t-name">Tried $20k+ elsewhere</div>
+          <div class="t-timeline">Finally a process that works</div>
+        </div>
+        <div class="t-result">Consistent results</div>
+      </div>
+    </div>
+
+    <div class="t-card">
+      <div class="t-head">
+        <img src="assets/jono-p-500.png" alt="" class="t-avatar" width="112" height="112" loading="lazy" />
+        <div class="t-meta-top">
+          <div class="t-display-name">Jono</div>
+          <div class="t-role">YTA CHADS member</div>
+        </div>
+      </div>
+      <div class="t-quote">This completely changed how I see YouTube. Not a side hustle, but a real, scalable business if you follow the process.</div>
+      <div class="t-bottom">
+        <div>
+          <div class="t-name">Mindset shift</div>
+          <div class="t-timeline">Business · not side hustle</div>
+        </div>
+        <div class="t-result">Scalable model</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="section-divider"></div>
+
+<!-- TRANSFORMATIONS -->
+<section class="transform-section">
+  <div class="container">
+    <span class="eyebrow">Transformations</span>
+    <h2 class="section-title">How your $2,500 turns into income - and an asset</h2>
+    <p class="section-sub flow-sub">The real question isn't "can I afford this?"<br />It's "how fast do I get my money back - and what happens after?"</p>
+
+    <div class="flow-grid">
+      <div class="flow-card flow-card--start">
+        <div class="flow-step">Step 1 - Start</div>
+        <div class="flow-label">Start</div>
+        <div class="flow-stat">$0/month</div>
+        <p class="flow-desc">No channel. No system. No income.</p>
+      </div>
+      <div class="flow-card flow-card--build">
+        <div class="flow-step">Step 2 - Build income (3-6 months)</div>
+        <div class="flow-label">3-6 months later</div>
+        <div class="flow-stat">$2k-$5k/month</div>
+        <p class="flow-desc">Search-based channel generating consistent income.</p>
+        <p class="flow-recovered">Initial investment recovered.</p>
+      </div>
+      <div class="flow-card flow-card--scale">
+        <div class="flow-step">Step 3 - Scale or exit</div>
+        <div class="flow-label">Scale or exit</div>
+        <div class="flow-stat">$30k-$100k+ asset</div>
+        <div class="flow-options">
+          <p class="flow-opt"><strong>Option A:</strong> Keep the $2k-$5k/month cashflow</p>
+          <p class="flow-opt"><strong>Option B:</strong> Sell for $30k-$100k+ (10-25x monthly profit)</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="bridge-dark">
+      <div class="bridge-dark-line">If you're thinking <em>"this looks good... but will it work for me?"</em></div>
+      <div class="bridge-dark-sub">Here's what people ask before joining v</div>
+    </div>
+  </div>
+</section>
+
+<div class="section-divider"></div>
+
+<!-- FAQ -->
+<section class="faq-section">
+  <div class="container">
+    <span class="eyebrow">Before you join</span>
+    <h2 class="section-title">If you're thinking "this looks good... but will it work for me?"</h2>
+    <p class="section-sub">Here's what people ask before joining:</p>
+
+    <div class="faq-accordion">
+      <details class="faq-item" name="faq">
+        <summary>
+          <span class="faq-summary-main">
+            <span class="faq-icon" aria-hidden="true"><svg viewBox="0 0 10 10" fill="none"><path d="M5 1v4M5 7.5v.5" stroke="#185FA5" stroke-width="1.5" stroke-linecap="round"/></svg></span>
+            Do I need any experience?
+          </span>
+          <span class="faq-chevron" aria-hidden="true"><svg viewBox="0 0 12 12" fill="none"><path d="M3 4.5L6 7.5L9 4.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+        </summary>
+        <div class="faq-a">No. Most students start from zero. The system is designed so you follow a <strong>process</strong> - not guess. Experience helps, but it's never been the reason people succeed or fail here.</div>
+      </details>
+
+      <details class="faq-item" name="faq">
+        <summary>
+          <span class="faq-summary-main">
+            <span class="faq-icon" aria-hidden="true"><svg viewBox="0 0 10 10" fill="none"><path d="M5 1v4M5 7.5v.5" stroke="#185FA5" stroke-width="1.5" stroke-linecap="round"/></svg></span>
+            Do I need to show my face?
+          </span>
+          <span class="faq-chevron" aria-hidden="true"><svg viewBox="0 0 12 12" fill="none"><path d="M3 4.5L6 7.5L9 4.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+        </summary>
+        <div class="faq-a">No. This is <strong>entirely faceless</strong>. Everything is built around search-based content - not personal branding, not a following, not being on camera.</div>
+      </details>
+
+      <details class="faq-item" name="faq">
+        <summary>
+          <span class="faq-summary-main">
+            <span class="faq-icon" aria-hidden="true"><svg viewBox="0 0 10 10" fill="none"><path d="M5 1v4M5 7.5v.5" stroke="#185FA5" stroke-width="1.5" stroke-linecap="round"/></svg></span>
+            How long does it take to make money?
+          </span>
+          <span class="faq-chevron" aria-hidden="true"><svg viewBox="0 0 12 12" fill="none"><path d="M3 4.5L6 7.5L9 4.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+        </summary>
+        <div class="faq-a">Most channels take <strong>3-6 months</strong> to reach <strong>$2k-$5k/month</strong>. Some move faster, some slower - but the focus is consistent monthly growth, not a lucky viral spike. The compounding effect means it gets easier over time, not harder.</div>
+      </details>
+
+      <details class="faq-item" name="faq">
+        <summary>
+          <span class="faq-summary-main">
+            <span class="faq-icon" aria-hidden="true"><svg viewBox="0 0 10 10" fill="none"><path d="M5 1v4M5 7.5v.5" stroke="#185FA5" stroke-width="1.5" stroke-linecap="round"/></svg></span>
+            How much time does this take per week?
+          </span>
+          <span class="faq-chevron" aria-hidden="true"><svg viewBox="0 0 12 12" fill="none"><path d="M3 4.5L6 7.5L9 4.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+        </summary>
+        <div class="faq-a">You don't need full-time hours. The production system is built to be <strong>efficient and delegatable</strong> - you're managing a process, not doing everything yourself. Most students run this alongside other commitments.</div>
+      </details>
+
+      <details class="faq-item" name="faq">
+        <summary>
+          <span class="faq-summary-main">
+            <span class="faq-icon" aria-hidden="true"><svg viewBox="0 0 10 10" fill="none"><path d="M5 1v4M5 7.5v.5" stroke="#185FA5" stroke-width="1.5" stroke-linecap="round"/></svg></span>
+            What if I don't make my money back?
+          </span>
+          <span class="faq-chevron" aria-hidden="true"><svg viewBox="0 0 12 12" fill="none"><path d="M3 4.5L6 7.5L9 4.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+        </summary>
+        <div class="faq-a">The entire model is built around <span class="hl">recovering your $2,500 first</span> - before scaling, before exiting. That's why we focus on predictable monthly cashflow from day one. The goal isn't a lucky month. It's a channel that earns consistently until it pays for itself.</div>
+      </details>
+
+      <details class="faq-item" name="faq">
+        <summary>
+          <span class="faq-summary-main">
+            <span class="faq-icon" aria-hidden="true"><svg viewBox="0 0 10 10" fill="none"><path d="M5 1v4M5 7.5v.5" stroke="#185FA5" stroke-width="1.5" stroke-linecap="round"/></svg></span>
+            Isn't YouTube too saturated?
+          </span>
+          <span class="faq-chevron" aria-hidden="true"><svg viewBox="0 0 12 12" fill="none"><path d="M3 4.5L6 7.5L9 4.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+        </summary>
+        <div class="faq-a">Not for this model. Saturation affects trend-chasers and personality channels. <strong>Search-based content taps into demand that already exists</strong> - people searching for answers every day, regardless of what's trending or how the algorithm changes.</div>
+      </details>
+
+      <details class="faq-item" name="faq">
+        <summary>
+          <span class="faq-summary-main">
+            <span class="faq-icon" aria-hidden="true"><svg viewBox="0 0 10 10" fill="none"><path d="M5 1v4M5 7.5v.5" stroke="#185FA5" stroke-width="1.5" stroke-linecap="round"/></svg></span>
+            Why not just figure this out myself?
+          </span>
+          <span class="faq-chevron" aria-hidden="true"><svg viewBox="0 0 12 12" fill="none"><path d="M3 4.5L6 7.5L9 4.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+        </summary>
+        <div class="faq-a">You can. But most people <strong>waste 6-12 months</strong> testing what works, picking the wrong niche, or producing content that never compounds. This gives you the exact system from day one - so you skip the part where you lose time and money finding out what doesn't work.</div>
+      </details>
+    </div>
+  </div>
+</section>
+
+<!-- FINAL CTA -->
+<section class="final-cta" id="join">
+  <div class="container">
+    <p class="cta-pre">You don't need to figure this out alone - <span>you just need the right system.</span></p>
+    <h2 class="cta-headline">Start building your first<br><span>$2k-$5k/month channel</span> today</h2>
+    <p class="cta-desc">The same system used to generate $300k+ and exit two channels for $20k and $53k.</p>
+
+    <div class="pricing-card">
+      <div class="pricing-badge" role="group" aria-label="Price in US dollars, British pounds, and euros">
+        <span class="pricing-badge-usd">$2,500</span>
+        <span class="pricing-badge-sep" aria-hidden="true">&middot;</span>
+        <span class="pricing-badge-fiat">&#163;1,800</span>
+        <span class="pricing-badge-sep" aria-hidden="true">&middot;</span>
+        <span class="pricing-badge-fiat">&#8364;2,100</span>
+      </div>
+      <div class="pricing-title">Everything you need to turn search traffic into income</div>
+      <ul class="pricing-features">
+        <li><span class="feat-check">v</span> Own the full playbook as it evolves - new modules included, no surprise upsells</li>
+        <li><span class="feat-check">v</span> Private community of people on the same model - get unstuck without trial-and-error alone</li>
+        <li><span class="feat-check">v</span> Get feedback so you don't waste months doing the wrong thing</li>
+        <li><span class="feat-check">v</span> Create videos for ~$1 without being the bottleneck</li>
+        <li><span class="feat-check">v</span> Find videos that already generate revenue (no guessing)</li>
+      </ul>
+
+      <p class="pricing-safety">The goal is simple: build to <strong>$2k-$5k/month</strong> and recover your investment first.</p>
+
+      <a href="#" class="btn-full">Start Building Your $2k-$5k/Month Channel</a>
+
+      <a href="#" class="btn-split">Split it into 2 payments of $1,250</a>
+
+      <div class="pricing-call-wrap">
+        <a href="#" class="btn-call">Not sure yet? Book a call</a>
+      </div>
+
+      <div class="payment-icons">
+        <span>VISA</span>
+        <span>APPLE PAY</span>
+        <span>MASTERCARD</span>
+      </div>
+    </div>
+
+    <div class="cta-post-stack">
+      <div class="reassurance">
+        <div class="r-item">
+          <div class="r-check"><svg viewBox="0 0 9 9" fill="none"><path d="M1.5 4.5l2 2 4-3.5" stroke="#4ade80" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+          <span>No experience needed</span>
+        </div>
+        <div class="r-item">
+          <div class="r-check"><svg viewBox="0 0 9 9" fill="none"><path d="M1.5 4.5l2 2 4-3.5" stroke="#4ade80" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+          <span>No face or audience required</span>
+        </div>
+        <div class="r-item">
+          <div class="r-check"><svg viewBox="0 0 9 9" fill="none"><path d="M1.5 4.5l2 2 4-3.5" stroke="#4ade80" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+          <span>Built around predictable search traffic</span>
+        </div>
+        <div class="r-item">
+          <div class="r-check"><svg viewBox="0 0 9 9" fill="none"><path d="M1.5 4.5l2 2 4-3.5" stroke="#4ade80" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+          <span>Designed to recover your investment first</span>
+        </div>
+      </div>
+
+      <div class="roi-line-final">Goal: recover your $2,500 first - then scale or exit.</div>
+      <div class="urgency-line">Intake is intentionally limited - programme accepts new members monthly</div>
+
+      <div class="intake-note">
+        <div class="intake-icon">
+          <svg viewBox="0 0 20 20" fill="none"><path d="M10 2l1.8 5.4H17l-4.6 3.3 1.8 5.4L10 13l-4.2 3.1 1.8-5.4L3 7.4h5.2z" stroke="#4ade80" stroke-width="1.3" stroke-linejoin="round"/></svg>
+        </div>
+        <div>
+          <div class="intake-title">Spots are limited so every student gets proper support - when it's full, doors close until next month</div>
+          <div class="intake-desc">Cohort size stays capped on purpose so feedback stays fast and specific.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<script>
+  // Smooth scroll for anchor links
+  document.querySelectorAll('a[href^="#"]').forEach(a => {
+    a.addEventListener('click', e => {
+      const target = document.querySelector(a.getAttribute('href'));
+      if (target) { e.preventDefault(); target.scrollIntoView({ behavior: 'smooth' }); }
+    });
+  });
+</script>
+
+</body>
+</html>

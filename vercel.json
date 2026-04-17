@@ -93,6 +93,30 @@
       "destination": "/yt-incubator-sales.html"
     },
     {
+      "source": "/yt-incubator-landing",
+      "destination": "/yt-incubator-landing.html"
+    },
+    {
+      "source": "/yt-incubator-landing.html",
+      "destination": "/yt-incubator-landing.html"
+    },
+    {
+      "source": "/yt-incubator-clean",
+      "destination": "/yt-incubator-clean.html"
+    },
+    {
+      "source": "/yt-incubator-clean.html",
+      "destination": "/yt-incubator-clean.html"
+    },
+    {
+      "source": "/lander",
+      "destination": "/lander.html"
+    },
+    {
+      "source": "/lander.html",
+      "destination": "/lander.html"
+    },
+    {
       "source": "/(.*)",
       "destination": "/index.html"
     }
