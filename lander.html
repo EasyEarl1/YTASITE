@@ -1505,6 +1505,62 @@
       max-height: min(320px, 52vh);
     }
   }
+
+  /* Telegram DM (fixed corner) */
+  .tg-dm-widget {
+    position: fixed;
+    right: max(16px, env(safe-area-inset-right, 0px));
+    bottom: max(16px, env(safe-area-inset-bottom, 0px));
+    z-index: 200;
+    max-width: min(288px, calc(100vw - 28px));
+  }
+  .tg-dm-widget a {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    text-decoration: none;
+    background: var(--white);
+    border: 0.5px solid var(--border);
+    border-radius: 14px;
+    padding: 14px 16px;
+    box-shadow:
+      0 10px 32px rgba(15, 17, 23, 0.12),
+      0 2px 8px rgba(15, 17, 23, 0.06);
+    transition: transform 0.15s ease, box-shadow 0.2s ease;
+    color: inherit;
+    -webkit-tap-highlight-color: transparent;
+  }
+  .tg-dm-widget a:hover {
+    transform: translateY(-2px);
+    box-shadow:
+      0 14px 36px rgba(15, 17, 23, 0.14),
+      0 4px 12px rgba(15, 17, 23, 0.08);
+  }
+  .tg-dm-widget a:focus-visible {
+    outline: 2px solid var(--blue);
+    outline-offset: 3px;
+  }
+  .tg-dm-widget-kicker {
+    font-size: var(--fs-14);
+    font-weight: 700;
+    color: var(--text-primary);
+    line-height: var(--lh-snug);
+    letter-spacing: -0.02em;
+  }
+  .tg-dm-widget-sub {
+    font-size: var(--fs-12);
+    color: var(--blue);
+    font-weight: 600;
+  }
+
+  @media (max-width: 640px) {
+    .tg-dm-widget a {
+      padding: 12px 14px;
+    }
+    .tg-dm-widget-kicker {
+      font-size: var(--fs-13);
+    }
+  }
 </style>
 </head>
 <body>
@@ -2117,6 +2173,18 @@
     </div>
   </div>
 </section>
+
+<div class="tg-dm-widget">
+  <a
+    href="https://t.me/ytavision"
+    target="_blank"
+    rel="noopener noreferrer"
+    aria-label="Have a question? Send a DM on Telegram (opens in a new tab)"
+  >
+    <span class="tg-dm-widget-kicker">Have a question? Send me a DM</span>
+    <span class="tg-dm-widget-sub">Open Telegram</span>
+  </a>
+</div>
 
 <script>
   // Smooth scroll for anchor links
