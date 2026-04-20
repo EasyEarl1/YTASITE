@@ -1195,6 +1195,225 @@
     .exit-proof-pair { gap: 6px; }
     .exit-proof-pair .exit-proof-shot img { max-height: min(220px, 36vh); }
   }
+
+  /*
+   * Mobile polish: max-width 640px only.
+   * Viewports 641px+ keep the original desktop/tablet styles unchanged.
+   */
+  @media (max-width: 640px) {
+    html {
+      -webkit-text-size-adjust: 100%;
+      text-size-adjust: 100%;
+    }
+
+    body {
+      overflow-x: hidden;
+    }
+
+    .topbar {
+      padding: 10px max(16px, env(safe-area-inset-right, 0px)) 10px max(16px, env(safe-area-inset-left, 0px));
+      font-size: var(--fs-12);
+      letter-spacing: 0.05em;
+      line-height: var(--lh-snug);
+    }
+
+    .nav {
+      padding: max(12px, env(safe-area-inset-top, 0px)) max(16px, env(safe-area-inset-right, 0px)) 12px max(16px, env(safe-area-inset-left, 0px));
+    }
+
+    .container {
+      padding-left: max(16px, env(safe-area-inset-left, 0px));
+      padding-right: max(16px, env(safe-area-inset-right, 0px));
+    }
+
+    section {
+      padding: clamp(36px, 9vw, 52px) 0;
+    }
+
+    .hero {
+      padding: clamp(28px, 7vw, 44px) 0 clamp(36px, 9vw, 56px);
+    }
+
+    .proof-pill {
+      align-items: flex-start;
+      padding: 10px 14px;
+      gap: 8px;
+      margin-bottom: 20px;
+    }
+    .proof-pill-text {
+      font-size: var(--fs-13);
+      line-height: 1.45;
+      overflow-wrap: anywhere;
+    }
+
+    .video-wrap,
+    .testimonial-wrap {
+      padding: 12px;
+      border-radius: 12px;
+    }
+
+    .model-box,
+    .exit-card {
+      padding: 18px 16px;
+    }
+
+    .model-row {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 12px;
+    }
+
+    .exit-box {
+      padding: 18px 16px;
+    }
+
+    .exit-row {
+      flex-direction: column;
+      align-items: stretch;
+      text-align: center;
+      gap: 2px;
+      padding: 10px 0;
+    }
+
+    .roi-box {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+
+    .hook-box {
+      padding: 14px 16px;
+      font-size: var(--fs-16);
+    }
+
+    .sys-item {
+      gap: 14px;
+      padding: 16px 0;
+    }
+
+    .ss-top {
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+    .ss-meta {
+      text-align: left;
+      flex: 1;
+      min-width: 0;
+    }
+
+    .no-exp-bar {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      justify-content: stretch;
+      gap: 14px 12px;
+      padding: 16px 14px;
+    }
+    .neb-item {
+      min-width: 0;
+    }
+
+    .exit-card-top {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 8px;
+    }
+    .exit-roi-badge {
+      white-space: normal;
+      text-align: center;
+    }
+
+    .exit-math {
+      font-size: var(--fs-14);
+      padding: 10px 14px;
+    }
+    .exit-math--compound {
+      font-size: var(--fs-13);
+    }
+
+    .bridge-dark {
+      padding: 20px 18px;
+    }
+
+    .breakeven-banner {
+      padding: 18px 16px;
+    }
+
+    .flow-card {
+      padding: 16px;
+    }
+
+    .faq-item summary {
+      padding: 16px 0;
+      font-size: var(--fs-15);
+      min-height: 48px;
+      box-sizing: border-box;
+    }
+    .faq-a {
+      padding-left: 0;
+      padding-right: 0;
+      padding-bottom: 16px;
+    }
+
+    .testimonial-section {
+      padding: 36px 0 8px;
+    }
+
+    .final-cta {
+      padding: 48px 0 max(48px, env(safe-area-inset-bottom, 0px));
+    }
+
+    .pricing-card {
+      padding: 24px 16px;
+      border-radius: 14px;
+    }
+    .pricing-badge {
+      padding: 10px 14px;
+      gap: 8px 10px;
+      max-width: 100%;
+    }
+    .pricing-title {
+      font-size: clamp(1.35rem, 6vw, 1.65rem);
+    }
+    .pricing-features li {
+      padding: 12px 0;
+      font-size: var(--fs-14);
+    }
+    .pricing-safety {
+      font-size: var(--fs-14);
+      padding: 12px 14px;
+    }
+
+    .btn-primary,
+    .btn-full,
+    .btn-split {
+      min-height: 48px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      touch-action: manipulation;
+    }
+    .btn-call {
+      min-height: 44px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      touch-action: manipulation;
+    }
+
+    .intake-note {
+      padding: 16px 16px;
+      gap: 12px;
+    }
+  }
+
+  /* Very narrow: stack side-by-side exit screenshots for readability */
+  @media (max-width: 480px) {
+    .exit-proof-pair {
+      grid-template-columns: 1fr;
+    }
+    .exit-proof-pair .exit-proof-shot img {
+      max-height: min(320px, 52vh);
+    }
+  }
 </style>
 </head>
 <body>
