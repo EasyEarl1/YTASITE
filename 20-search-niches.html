@@ -5,7 +5,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>20 YouTube Search Niches — $27</title>
   <meta name="description" content="20 proven YouTube search niches already making $1k–$5k/month — full breakdowns, titles, and monetisation notes.">
-  <!-- Set your Whop (or Stripe) checkout URL once; both CTAs pick it up automatically. -->
   <meta name="upsell-checkout" content="">
   <script defer src="/_vercel/insights/script.js"></script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -15,404 +14,535 @@
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
     :root {
-      --fs-12: 0.8125rem;
-      --fs-13: 0.875rem;
-      --fs-14: 0.9375rem;
-      --fs-15: 1rem;
-      --fs-16: 1.0625rem;
-      --fs-17: 1.125rem;
-      --fs-18: 1.1875rem;
-      --fs-20: 1.3125rem;
-      --fs-24: 1.625rem;
-      --lh-tight: 1.2;
-      --lh-snug: 1.35;
-      --lh-body: 1.6;
-      --lh-relaxed: 1.65;
-
-      --black: #0a0b0f;
-      --dark: #0f1117;
-      --dark2: #141928;
-      --dark3: #1e2235;
       --blue: #2563eb;
-      --blue-light: #a0c4ff;
+      --blue-hover: #1d4fd8;
       --green: #4ade80;
-      --page-bg: #eef0f8;
-      --white: #ffffff;
-      --text-primary: #0f1117;
-      --text-secondary: #4a4f6a;
-      --text-muted: #7a7f96;
-      --border: #d0d5ea;
+      --page: #ffffff;
+      --soft: #f4f6fb;
+      --text: #0f1117;
+      --text-body: #4a5568;
+      --text-soft: #6b7280;
+      --border: #e2e8f0;
       --gold-bg: #faf4e6;
       --gold-border: #d4a843;
-      --gold-text: #8a6820;
-      --red-bg: #fff5f5;
-      --red-border: #fca5a5;
+      --gold-text: #6b5420;
+      --rose-bg: #fff5f5;
+      --rose-border: #fecaca;
       --info-bg: #f4f6ff;
       --info-border: #c5cef5;
-      --info-text: #185FA5;
+      --info-text: #1e3a5f;
+      --dark: #0f1117;
+      --dark3: #1e2235;
 
-      --container-max: min(720px, calc(100vw - 48px));
+      --col: min(42rem, calc(100vw - 2.5rem));
+      --section-y: clamp(3.5rem, 10vw, 5.5rem);
     }
 
     html {
       scroll-behavior: smooth;
-      font-size: 122.5%;
+      font-size: 100%;
+      -webkit-text-size-adjust: 100%;
     }
 
     body {
       font-family: Inter, system-ui, -apple-system, Segoe UI, sans-serif;
-      background: var(--page-bg);
-      color: var(--text-primary);
-      font-size: var(--fs-16);
-      line-height: var(--lh-body);
+      background: var(--page);
+      color: var(--text);
+      font-size: 1.125rem;
+      line-height: 1.65;
       -webkit-font-smoothing: antialiased;
-      text-rendering: optimizeLegibility;
     }
 
-    .container {
-      max-width: var(--container-max);
-      margin: 0 auto;
-      padding: 0 clamp(20px, 5vw, 40px);
+    .content-col {
+      width: 100%;
+      max-width: var(--col);
+      margin-left: auto;
+      margin-right: auto;
+      padding-left: max(1.25rem, env(safe-area-inset-left));
+      padding-right: max(1.25rem, env(safe-area-inset-right));
     }
 
+    /* —— Hero —— */
     .hero {
-      padding-top: max(clamp(24px, 5vw, 40px), env(safe-area-inset-top, 0px));
-      padding-bottom: clamp(40px, 7vw, 56px);
       text-align: center;
+      padding-top: max(2.5rem, env(safe-area-inset-top));
+      padding-bottom: var(--section-y);
     }
 
     .hero h1 {
-      font-size: clamp(1.65rem, 4.5vw, 2.35rem);
+      font-size: clamp(2rem, 5.5vw, 3.125rem);
       font-weight: 800;
-      line-height: var(--lh-tight);
-      letter-spacing: -0.03em;
-      margin-bottom: 16px;
-      color: var(--text-primary);
+      line-height: 1.12;
+      letter-spacing: -0.035em;
+      color: var(--text);
+      max-width: 22ch;
+      margin-left: auto;
+      margin-right: auto;
     }
 
-    .hero h1 .accent { color: var(--blue); }
+    .hero h1 .accent {
+      color: var(--blue);
+      white-space: nowrap;
+    }
+
+    @media (max-width: 380px) {
+      .hero h1 .accent { white-space: normal; }
+    }
 
     .hero .subhead {
-      font-size: var(--fs-17);
-      color: var(--text-secondary);
-      line-height: var(--lh-relaxed);
-      max-width: 38rem;
-      margin: 0 auto 28px;
+      font-size: clamp(1.125rem, 2.4vw, 1.375rem);
+      font-weight: 500;
+      line-height: 1.55;
+      color: var(--text-soft);
+      max-width: 36rem;
+      margin: 1.5rem auto 0;
     }
 
-    .prose {
-      background: var(--white);
-      border: 0.5px solid var(--border);
-      border-radius: 14px;
-      padding: clamp(22px, 4vw, 32px);
-      margin-bottom: 16px;
+    .hero-cta {
+      margin-top: 2.25rem;
     }
 
-    .prose p {
-      font-size: var(--fs-15);
-      color: var(--text-secondary);
-      margin-bottom: 14px;
-      line-height: var(--lh-body);
+    /* —— Sections —— */
+    .band {
+      padding: var(--section-y) 0;
     }
 
-    .prose p:last-child { margin-bottom: 0; }
-
-    .prose p strong { color: var(--text-primary); font-weight: 700; }
-
-    .agitate {
-      background: var(--red-bg);
-      border: 0.5px solid var(--red-border);
-      border-radius: 14px;
-      padding: clamp(20px, 4vw, 28px);
-      margin-bottom: 16px;
+    .band--soft {
+      background: var(--soft);
     }
 
-    .agitate p {
-      font-size: var(--fs-15);
-      color: var(--text-secondary);
-      margin-bottom: 14px;
-      line-height: var(--lh-body);
+    .band--tight-top {
+      padding-top: 0;
     }
 
-    .agitate p:last-child { margin-bottom: 0; }
-
-    .hook-box {
-      background: var(--page-bg);
-      border-left: 3px solid var(--blue);
-      border-radius: 0 12px 12px 0;
-      padding: 16px 20px;
-      margin: 20px 0;
-      font-size: var(--fs-16);
-      font-weight: 600;
-      color: var(--text-primary);
-      line-height: var(--lh-body);
+    /* Body copy */
+    .prose-flow p {
+      font-size: 1.125rem;
+      line-height: 1.7;
+      color: var(--text-body);
+      margin-bottom: 1.25rem;
     }
 
-    .hook-box span { color: var(--blue); }
-
-    .cheat-box {
-      background: var(--gold-bg);
-      border: 0.5px solid var(--gold-border);
-      border-radius: 14px;
-      padding: 20px 22px;
-      margin: 20px 0 0;
+    .prose-flow p:last-child {
+      margin-bottom: 0;
     }
 
-    .cheat-box p {
-      font-size: var(--fs-15);
-      color: var(--gold-text);
-      margin-bottom: 12px;
-      line-height: var(--lh-body);
-    }
-
-    .cheat-box p:last-child { margin-bottom: 0; }
-
-    .cheat-box strong { font-weight: 800; color: var(--gold-text); }
-
-    .get-list {
-      list-style: none;
-      margin: 16px 0 0;
-    }
-
-    .get-list li {
-      display: flex;
-      gap: 12px;
-      align-items: flex-start;
-      padding: 12px 0;
-      border-bottom: 0.5px solid var(--border);
-      font-size: var(--fs-15);
-      color: var(--text-secondary);
-      line-height: var(--lh-body);
-    }
-
-    .get-list li:last-child { border-bottom: none; padding-bottom: 0; }
-
-    .get-list .dot {
-      width: 8px;
-      height: 8px;
-      border-radius: 50%;
-      background: var(--blue);
-      flex-shrink: 0;
-      margin-top: 7px;
-    }
-
-    .anchor-note {
-      background: var(--info-bg);
-      border: 0.5px solid var(--info-border);
-      border-radius: 12px;
-      padding: 16px 18px;
-      margin-top: 18px;
-      font-size: var(--fs-14);
-      color: var(--info-text);
-      line-height: var(--lh-body);
-    }
-
-    .anchor-note strong { font-weight: 700; }
-
-    .cta-wrap {
-      margin: 28px auto 0;
-      max-width: min(28rem, 100%);
-      text-align: center;
-    }
-
-    .btn-primary {
-      display: inline-block;
-      background: var(--blue);
-      color: white;
-      font-family: inherit;
-      font-size: var(--fs-17);
+    .prose-flow strong {
+      color: var(--text);
       font-weight: 700;
-      padding: 16px 28px;
-      border-radius: 10px;
-      text-decoration: none;
-      letter-spacing: 0.01em;
-      border: none;
-      cursor: pointer;
-      transition: background 0.2s, transform 0.15s;
-      width: 100%;
-      max-width: 380px;
-      touch-action: manipulation;
     }
 
-    .btn-primary:hover { background: #1d4fd8; transform: translateY(-1px); }
-
-    .btn-primary:focus-visible {
-      outline: 2px solid var(--blue);
-      outline-offset: 3px;
+    .prose-flow .lead {
+      font-size: 1.1875rem;
+      color: var(--text);
+      font-weight: 600;
+      line-height: 1.6;
     }
 
-    .urgency-block {
-      background: var(--dark);
-      color: #a0a8c0;
-      border-radius: 14px;
-      padding: clamp(22px, 4vw, 30px);
-      margin-top: 16px;
-      font-size: var(--fs-15);
-      line-height: var(--lh-relaxed);
+    /* Mid-page title (reference-style subheadline) */
+    .block-title {
+      font-size: clamp(1.375rem, 3.2vw, 1.75rem);
+      font-weight: 800;
+      line-height: 1.25;
+      letter-spacing: -0.03em;
+      color: var(--text);
       text-align: center;
+      margin-bottom: 0.35rem;
     }
 
-    .urgency-block strong { color: white; font-weight: 700; }
+    .block-sub {
+      text-align: center;
+      font-size: 1.0625rem;
+      color: var(--text-soft);
+      line-height: 1.6;
+      max-width: 32rem;
+      margin: 0 auto 2rem;
+    }
 
-    .urgency-block .accent { color: var(--green); }
+    /* Agitate card */
+    .pain-card {
+      background: var(--rose-bg);
+      border: 1px solid var(--rose-border);
+      border-radius: 1rem;
+      padding: clamp(1.75rem, 5vw, 2.5rem);
+      margin-top: 0.5rem;
+    }
 
-    .proof-section {
-      padding: clamp(40px, 7vw, 56px) 0 clamp(48px, 8vw, 72px);
+    .pain-card p {
+      font-size: 1.125rem;
+      line-height: 1.7;
+      color: var(--text-body);
+      margin-bottom: 1.25rem;
+    }
+
+    .pain-card p:last-child {
+      margin-bottom: 0;
+    }
+
+    /* Two-column “what you get” */
+    .split {
+      display: grid;
+      gap: clamp(2rem, 5vw, 3rem);
+      align-items: start;
+      margin-top: 2rem;
+    }
+
+    @media (min-width: 768px) {
+      .split {
+        grid-template-columns: 1fr 1.15fr;
+        gap: 2.5rem;
+      }
+    }
+
+    .split-visual {
+      border-radius: 1rem;
+      border: 2px dashed var(--border);
+      background: linear-gradient(160deg, #fff 0%, var(--soft) 100%);
+      aspect-ratio: 1;
+      max-height: 320px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 1.5rem;
+      color: var(--text-soft);
+      font-size: 0.9375rem;
+      font-weight: 600;
+      line-height: 1.45;
+    }
+
+    .split-visual span {
+      display: block;
+      font-size: 2rem;
+      font-weight: 800;
+      color: var(--blue);
+      letter-spacing: -0.03em;
+      margin-bottom: 0.35rem;
+    }
+
+    .checklist {
+      list-style: none;
+    }
+
+    .checklist li {
+      position: relative;
+      padding-left: 1.35rem;
+      font-size: 1.0625rem;
+      line-height: 1.65;
+      color: var(--text-body);
+      margin-bottom: 1rem;
+    }
+
+    .checklist li:last-child {
+      margin-bottom: 0;
+    }
+
+    .checklist li::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 0.55em;
+      width: 0.375rem;
+      height: 0.375rem;
+      border-radius: 50%;
+      background: var(--text);
+    }
+
+    .closing-line {
+      margin-top: 1.75rem;
+      font-size: 1.125rem;
+      line-height: 1.65;
+      color: var(--text-body);
+    }
+
+    .closing-line strong {
+      color: var(--text);
+    }
+
+    /* Highlight boxes */
+    .highlight-gold {
+      margin-top: 2.25rem;
+      background: var(--gold-bg);
+      border: 1px solid var(--gold-border);
+      border-radius: 1rem;
+      padding: clamp(1.5rem, 4vw, 2rem);
+    }
+
+    .highlight-gold p {
+      font-size: 1.0625rem;
+      line-height: 1.65;
+      color: var(--gold-text);
+      margin-bottom: 1rem;
+    }
+
+    .highlight-gold p:last-child {
+      margin-bottom: 0;
+    }
+
+    .highlight-gold strong {
+      font-weight: 800;
+      color: var(--gold-text);
+    }
+
+    .highlight-info {
+      margin-top: 1.75rem;
+      background: var(--info-bg);
+      border: 1px solid var(--info-border);
+      border-radius: 1rem;
+      padding: clamp(1.5rem, 4vw, 1.75rem);
+      font-size: 1.0625rem;
+      line-height: 1.65;
+      color: var(--info-text);
+    }
+
+    .highlight-info strong {
+      font-weight: 700;
+      color: var(--info-text);
+    }
+
+    /* Urgency */
+    .urgency {
+      text-align: center;
+      background: var(--dark);
+      color: #c5cad8;
+      border-radius: 1rem;
+      padding: clamp(2rem, 5vw, 2.75rem);
+      font-size: 1.0625rem;
+      line-height: 1.7;
+      max-width: var(--col);
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .urgency strong {
+      color: #fff;
+      font-weight: 700;
+    }
+
+    .urgency .mark {
+      color: var(--green);
+      font-weight: 700;
+    }
+
+    .mid-cta {
+      text-align: center;
+      margin-top: 2rem;
+    }
+
+    /* Proof */
+    .proof-band {
+      padding: var(--section-y) 0;
+      background: var(--soft);
     }
 
     .proof-grid {
       display: grid;
       grid-template-columns: repeat(2, 1fr);
-      gap: 12px;
+      gap: 1rem;
+      max-width: min(52rem, 100%);
+      margin: 0 auto;
     }
 
     @media (max-width: 560px) {
-      .proof-grid { grid-template-columns: 1fr; }
+      .proof-grid {
+        grid-template-columns: 1fr;
+      }
     }
 
     .proof-slot {
       aspect-ratio: 16 / 10;
-      border-radius: 12px;
-      border: 2px dashed var(--border);
-      background: rgba(255, 255, 255, 0.7);
+      border-radius: 0.875rem;
+      border: 2px dashed #cbd5e1;
+      background: #fff;
       display: flex;
       align-items: center;
       justify-content: center;
       text-align: center;
-      padding: 16px;
-      color: var(--text-muted);
-      font-size: var(--fs-13);
+      padding: 1.25rem;
+      color: var(--text-soft);
+      font-size: 0.9375rem;
       font-weight: 600;
-      line-height: var(--lh-snug);
+      line-height: 1.4;
     }
 
     .proof-slot img {
       width: 100%;
       height: 100%;
       object-fit: cover;
-      border-radius: 10px;
+      border-radius: 0.625rem;
       display: block;
     }
 
-    .offer-section {
+    /* CTAs */
+    .btn-primary {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      background: var(--blue);
+      color: #fff;
+      font-family: inherit;
+      font-size: 1.0625rem;
+      font-weight: 700;
+      padding: 1rem 2.25rem;
+      border-radius: 999px;
+      text-decoration: none;
+      border: none;
+      cursor: pointer;
+      transition: background 0.2s, transform 0.15s;
+      min-width: min(20rem, 100%);
+      touch-action: manipulation;
+    }
+
+    .btn-primary:hover {
+      background: var(--blue-hover);
+      transform: translateY(-1px);
+    }
+
+    .btn-primary:focus-visible {
+      outline: 2px solid var(--blue);
+      outline-offset: 3px;
+    }
+
+    .btn-primary--lg {
+      font-size: 1.125rem;
+      padding: 1.125rem 2.5rem;
+    }
+
+    /* Offer footer */
+    .offer {
       background: var(--dark);
-      padding: clamp(48px, 8vw, 64px) 0;
+      padding: var(--section-y) 0;
       text-align: center;
     }
 
-    .offer-section .container { max-width: min(640px, calc(100vw - 48px)); }
+    .offer .content-col {
+      max-width: min(40rem, var(--col));
+    }
 
-    .offer-price {
+    .offer-badge {
       display: inline-block;
       background: var(--dark3);
-      border: 1.5px solid #2a3050;
-      color: var(--blue-light);
-      font-size: var(--fs-24);
+      border: 1px solid #2a3050;
+      color: #a0c4ff;
+      font-size: clamp(1.5rem, 4vw, 1.875rem);
       font-weight: 800;
-      padding: 12px 24px;
-      border-radius: 10px;
-      margin-bottom: 16px;
+      padding: 0.65rem 1.5rem;
+      border-radius: 0.75rem;
       letter-spacing: -0.02em;
+      margin-bottom: 1.25rem;
     }
 
-    .offer-copy {
-      font-size: var(--fs-17);
+    .offer p {
+      font-size: 1.125rem;
+      line-height: 1.65;
       color: #a0a8c0;
-      line-height: var(--lh-relaxed);
-      margin-bottom: 24px;
-      max-width: 36rem;
-      margin-left: auto;
-      margin-right: auto;
+      margin-bottom: 1.75rem;
     }
 
-    .offer-copy strong { color: white; }
+    .offer p strong {
+      color: #fff;
+      font-weight: 700;
+    }
 
     .fine-print {
-      margin-top: 14px;
-      font-size: var(--fs-12);
+      margin-top: 1rem;
+      font-size: 0.875rem;
       color: #6b728e;
-      line-height: var(--lh-body);
-    }
-
-    @media (max-width: 640px) {
-      html { font-size: 100%; }
-      .container {
-        padding-left: max(18px, env(safe-area-inset-left));
-        padding-right: max(18px, env(safe-area-inset-right));
-      }
+      line-height: 1.5;
     }
   </style>
 </head>
 <body>
 
   <header class="hero">
-    <div class="container">
+    <div class="content-col">
       <h1>Steal These 20 YouTube Search Niches Already Making <span class="accent">$1k–$5k/Month</span></h1>
       <p class="subhead">No guessing. No testing. No wasted months. Just 20 proven niches you can start this week.</p>
-      <div class="cta-wrap">
-        <a class="btn-primary upsell-cta" href="#offer">Get Instant Access →</a>
+      <div class="hero-cta">
+        <a class="btn-primary btn-primary--lg upsell-cta" href="#offer">Get Instant Access →</a>
       </div>
     </div>
   </header>
 
-  <div class="container" style="padding-bottom: 8px;">
-    <div class="prose">
+  <section class="band band--soft band--tight-top" aria-label="Introduction">
+    <div class="content-col prose-flow">
       <p>You just saw exactly how this model works.</p>
       <p>The system is simple. The math checks out. The results are real.</p>
       <p>But here's where 90% of people go wrong before they even upload a single video.</p>
-      <p><strong>They pick the wrong niche.</strong></p>
+      <p class="lead">They pick the wrong niche.</p>
     </div>
+  </section>
 
-    <div class="agitate">
-      <p>Wrong niche means low RPM.</p>
-      <p>Low RPM means you could upload hundreds of videos and still make almost nothing.</p>
-      <p>And the brutal part? You won't know it's wrong until 3 months in. After you've already put in the time, hired the VA, and built the keyword bank.</p>
-      <p>We've been there. We wasted months on niches that looked good on paper and paid almost nothing in practice.</p>
-      <p>A gaming channel. A finance channel that was too broad. A tutorials channel in a niche where advertisers just didn't spend.</p>
-      <p>Every one of those cost us time we didn't get back.</p>
+  <section class="band" aria-label="The cost of the wrong niche">
+    <div class="content-col">
+      <div class="pain-card prose-flow">
+        <p>Wrong niche means low RPM.</p>
+        <p>Low RPM means you could upload hundreds of videos and still make almost nothing.</p>
+        <p>And the brutal part? You won't know it's wrong until 3 months in. After you've already put in the time, hired the VA, and built the keyword bank.</p>
+        <p>We've been there. We wasted months on niches that looked good on paper and paid almost nothing in practice.</p>
+        <p>A gaming channel. A finance channel that was too broad. A tutorials channel in a niche where advertisers just didn't spend.</p>
+        <p><strong>Every one of those cost us time we didn't get back.</strong></p>
+      </div>
     </div>
+  </section>
 
-    <div class="prose">
-      <p>So instead of guessing, we did the work for you.</p>
-      <p>We went through our own channels, our students' channels, and hundreds of hours of keyword and RPM research. We pulled out the <strong>20 niches that consistently perform</strong>. The ones with high RPM, evergreen demand, and enough keyword volume to build a real channel on.</p>
-      <p>These are not theories. These are niches with channels actively making money right now.</p>
-
-      <p style="margin-top: 18px;"><strong>For each of the 20 niches you get:</strong></p>
-      <ul class="get-list">
-        <li><span class="dot" aria-hidden="true"></span><span>A full breakdown of what the niche is and who the audience is.</span></li>
-        <li><span class="dot" aria-hidden="true"></span><span>Why advertisers pay a premium to reach that audience and what the RPM looks like.</span></li>
-        <li><span class="dot" aria-hidden="true"></span><span>3 to 5 specific video ideas you can produce this week.</span></li>
-        <li><span class="dot" aria-hidden="true"></span><span>Exact title formats that are already ranking.</span></li>
-        <li><span class="dot" aria-hidden="true"></span><span>The primary monetisation method — AdSense, affiliate, or both.</span></li>
-      </ul>
-      <p style="margin-top: 18px;">You are not getting a vague list of categories. You are getting a ready-to-use research doc that tells you exactly what to build and why it will make money.</p>
-
-      <div class="cheat-box">
-        <p>This is the exact research process we run internally every time we launch a new channel.</p>
-        <p>Normally it takes 2 to 3 weeks of keyword research, RPM testing, and competitor analysis to validate a niche properly. Most people skip this step, pick something they are interested in, and wonder why it never earns.</p>
-        <p><strong>You are skipping all of that.</strong><br>You are starting at the finish line of the research phase.</p>
+  <section class="band band--soft" aria-label="What you get">
+    <div class="content-col">
+      <div class="prose-flow" style="max-width: 36rem; margin: 0 auto 2rem;">
+        <p>So instead of guessing, we did the work for you.</p>
+        <p>We went through our own channels, our students' channels, and hundreds of hours of keyword and RPM research. We pulled out the <strong>20 niches that consistently perform</strong>. The ones with high RPM, evergreen demand, and enough keyword volume to build a real channel on.</p>
+        <p>These are not theories. These are niches with channels actively making money right now.</p>
       </div>
 
-      <div class="anchor-note">
-        Think about what getting this wrong actually costs you.<br>
-        <strong>3 months of uploads in a bad niche.</strong> The VA time. The production cost. Then starting over.<br>
-        That is easily <strong>$500 to $1,000</strong> gone, not counting the time.<br>
+      <h2 class="block-title">For each of the 20 niches you get:</h2>
+
+      <div class="split">
+        <div class="split-visual" aria-hidden="true">
+          <span>20</span>
+          niches · breakdowns · titles · monetisation
+        </div>
+        <ul class="checklist">
+          <li>A full breakdown of what the niche is and who the audience is.</li>
+          <li>Why advertisers pay a premium to reach that audience and what the RPM looks like.</li>
+          <li>3 to 5 specific video ideas you can produce this week.</li>
+          <li>Exact title formats that are already ranking.</li>
+          <li>The primary monetisation method — AdSense, affiliate, or both.</li>
+        </ul>
+      </div>
+
+      <p class="closing-line">You are not getting a vague list of categories. You are getting a <strong>ready-to-use research doc</strong> that tells you exactly what to build and why it will make money.</p>
+
+      <div class="highlight-gold">
+        <p>This is the exact research process we run internally every time we launch a new channel.</p>
+        <p>Normally it takes 2 to 3 weeks of keyword research, RPM testing, and competitor analysis to validate a niche properly. Most people skip this step, pick something they are interested in, and wonder why it never earns.</p>
+        <p><strong>You are skipping all of that.</strong> You are starting at the finish line of the research phase.</p>
+      </div>
+
+      <div class="highlight-info">
+        Think about what getting this wrong actually costs you.<br><br>
+        <strong>3 months of uploads in a bad niche.</strong> The VA time. The production cost. Then starting over.<br><br>
+        That is easily <strong>$500 to $1,000</strong> gone, not counting the time.<br><br>
         Or you spend <strong>$27</strong> right now and start in a niche you already know works.
       </div>
     </div>
+  </section>
 
-    <div class="urgency-block">
-      Most people who read this will close the page, go back to guessing, and pick the wrong niche anyway.<br>
-      Three months from now they will wonder why it is not working.<br>
-      You already know how the model works. The only question is whether you want to start in a niche that is <span class="accent">proven</span> or figure it out the hard way.
+  <section class="band" aria-label="Decision">
+    <div class="content-col">
+      <div class="urgency">
+        Most people who read this will close the page, go back to guessing, and pick the wrong niche anyway.<br><br>
+        Three months from now they will wonder why it is not working.<br><br>
+        You already know how the model works. The only question is whether you want to start in a niche that is <span class="mark">proven</span> or figure it out the hard way.
+      </div>
+      <div class="mid-cta">
+        <a class="btn-primary btn-primary--lg upsell-cta" href="#offer">Get Instant Access →</a>
+      </div>
     </div>
-    <div class="cta-wrap" style="margin-top: 24px;">
-      <a class="btn-primary upsell-cta" href="#offer">Get Instant Access →</a>
-    </div>
-  </div>
+  </section>
 
-  <section class="proof-section" aria-label="Results screenshots">
-    <div class="container">
+  <section class="proof-band" aria-label="Results screenshots">
+    <div class="content-col">
       <div class="proof-grid">
         <div class="proof-slot">Screenshot placeholder 1</div>
         <div class="proof-slot">Screenshot placeholder 2</div>
@@ -422,11 +552,11 @@
     </div>
   </section>
 
-  <section class="offer-section" id="offer">
-    <div class="container">
-      <div class="offer-price">$27 · one time</div>
-      <p class="offer-copy">Get all <strong>20 niches</strong> with full breakdowns, video ideas, exact titles, and monetisation method for just <strong>$27</strong>.<br>One time. Instant access. Yours to keep.</p>
-      <a class="btn-primary upsell-cta" href="#offer">Get Instant Access →</a>
+  <section class="offer" id="offer">
+    <div class="content-col">
+      <div class="offer-badge">$27 · one time</div>
+      <p>Get all <strong>20 niches</strong> with full breakdowns, video ideas, exact titles, and monetisation method for just <strong>$27</strong>.<br>One time. Instant access. Yours to keep.</p>
+      <a class="btn-primary btn-primary--lg upsell-cta" href="#offer">Get Instant Access →</a>
       <p class="fine-print">Secure checkout · Instant access · Digital delivery</p>
     </div>
   </section>
