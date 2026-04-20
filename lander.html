@@ -839,7 +839,16 @@
     letter-spacing: -0.03em;
     line-height: var(--lh-snug);
     text-align: center;
-    margin-bottom: 14px;
+    margin-bottom: 8px;
+  }
+  .testimonial-subhead {
+    font-size: clamp(0.95rem, 2.1vw, 1.05rem);
+    font-weight: 500;
+    color: var(--text-secondary);
+    line-height: var(--lh-body);
+    text-align: center;
+    max-width: 36rem;
+    margin: 0 auto 18px;
   }
   .testimonial-wrap {
     background: var(--white);
@@ -1722,6 +1731,7 @@
 <section class="testimonial-section">
   <div class="container">
     <h2 class="testimonial-heading">Bautista's Journey With Us</h2>
+    <p class="testimonial-subhead">Bautista went from zero to $2,000/mo by following the Search-Based model</p>
     <div class="testimonial-wrap">
       <div class="testimonial-embed">
         <wistia-player media-id="09lmxjzmu8" aspect="1.7877094972067038"></wistia-player>
