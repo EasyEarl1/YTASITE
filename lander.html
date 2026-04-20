@@ -92,13 +92,6 @@
     padding-top: max(10px, env(safe-area-inset-top, 0px));
     padding-bottom: 12px;
   }
-  .site-header-top {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 12px;
-    margin-bottom: 8px;
-  }
   .nav-logo {
     font-size: var(--fs-14);
     font-weight: 700;
@@ -119,7 +112,7 @@
   }
   .site-header-proof {
     display: flex;
-    align-items: flex-start;
+    align-items: center;
     gap: 8px;
     background: var(--gold-bg);
     border: 1px solid var(--gold-border);
@@ -135,7 +128,6 @@
     align-items: center;
     justify-content: center;
     flex-shrink: 0;
-    margin-top: 2px;
   }
   .site-header-proof-check svg {
     width: 8px;
@@ -152,6 +144,68 @@
   .site-header-proof-text strong {
     font-weight: 800;
     color: var(--gold-text);
+  }
+
+  /* Header: mobile = logo | urgency on row 1, proof full width row 2 */
+  @media (max-width: 767px) {
+    .site-header-inner {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) auto;
+      grid-template-areas:
+        "logo urgency"
+        "proof proof";
+      gap: 8px 12px;
+      align-items: center;
+    }
+    .nav-logo { grid-area: logo; }
+    .site-header-urgency {
+      grid-area: urgency;
+      text-align: right;
+      justify-self: end;
+    }
+    .site-header-proof { grid-area: proof; }
+  }
+
+  /* Header: desktop = one row, proof centered in the middle */
+  @media (min-width: 768px) {
+    .site-header-inner {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: space-between;
+      gap: clamp(18px, 3vw, 36px);
+      padding-top: max(12px, env(safe-area-inset-top, 0px));
+      padding-bottom: 14px;
+    }
+    .nav-logo {
+      font-size: var(--fs-15);
+    }
+    .site-header-urgency {
+      font-size: var(--fs-12);
+      letter-spacing: 0.08em;
+      flex-shrink: 0;
+      max-width: 15rem;
+      text-align: right;
+    }
+    .site-header-proof {
+      flex: 1 1 auto;
+      justify-content: center;
+      min-width: 0;
+      border-radius: 999px;
+      padding: 10px 22px;
+    }
+    .site-header-proof-check {
+      width: 18px;
+      height: 18px;
+    }
+    .site-header-proof-check svg {
+      width: 9px;
+      height: 9px;
+    }
+    .site-header-proof-text {
+      font-size: var(--fs-13);
+      text-align: center;
+    }
   }
 
   /* LAYOUT */
@@ -1232,10 +1286,6 @@
       padding: max(8px, env(safe-area-inset-top, 0px)) 0 8px;
     }
 
-    .site-header-top {
-      margin-bottom: 6px;
-    }
-
     .site-header-urgency {
       font-size: 0.625rem;
       letter-spacing: 0.05em;
@@ -1250,6 +1300,7 @@
     .site-header-proof-text {
       font-size: var(--fs-11);
       line-height: 1.35;
+      white-space: normal;
     }
 
     .container {
@@ -1552,16 +1603,14 @@
 
 <header class="site-header">
   <div class="container site-header-inner">
-    <div class="site-header-top">
-      <span class="nav-logo">YTA Chads</span>
-      <span class="site-header-urgency">Limited intake · monthly cohort</span>
-    </div>
+    <span class="nav-logo">YTA Chads</span>
     <div class="site-header-proof">
       <span class="site-header-proof-check" aria-hidden="true">
         <svg viewBox="0 0 10 10" fill="none"><path d="M2 5l2.5 2.5L8 3" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
       </span>
       <p class="site-header-proof-text"><strong>$300k+</strong> generated · <strong>2 exits</strong> ($20k + $53k) · Students <strong>$1k-$6k/mo</strong></p>
     </div>
+    <span class="site-header-urgency">Limited intake · monthly cohort</span>
   </div>
 </header>
 
