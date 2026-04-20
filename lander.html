@@ -7,6 +7,8 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,400;0,14..32,500;0,14..32,600;0,14..32,700;0,14..32,800&display=swap" rel="stylesheet">
+<script src="https://fast.wistia.com/player.js" async></script>
+<script src="https://fast.wistia.com/embed/uzl52bst5b.js" async type="module"></script>
 <style>
   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
@@ -210,7 +212,7 @@
     font-size: var(--fs-15);
     color: var(--text-secondary);
     max-width: min(44rem, 100%);
-    margin: 0 auto 14px;
+    margin: 14px auto 24px;
     text-align: center;
     line-height: var(--lh-body);
   }
@@ -224,35 +226,21 @@
     margin: 0 auto;
     border: 0.5px solid var(--border);
   }
-  .video-thumb {
-    background: var(--dark2);
+  .video-embed {
     border-radius: 10px;
-    aspect-ratio: 16 / 9;
-    min-height: 220px;
+    overflow: hidden;
     width: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    background: #0d0f14;
   }
-  .play-btn {
-    width: 72px;
-    height: 72px;
-    background: var(--blue);
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    cursor: pointer;
-    transition: transform 0.2s, background 0.2s;
+  .video-embed wistia-player {
+    display: block;
+    width: 100%;
   }
-  .play-btn:hover { transform: scale(1.08); background: #1d4fd8; }
-  .play-tri {
-    width: 0;
-    height: 0;
-    border-top: 13px solid transparent;
-    border-bottom: 13px solid transparent;
-    border-left: 21px solid white;
-    margin-left: 4px;
+  wistia-player[media-id='uzl52bst5b']:not(:defined) {
+    background: center / contain no-repeat url('https://fast.wistia.com/embed/medias/uzl52bst5b/swatch');
+    display: block;
+    filter: blur(5px);
+    padding-top: 56.25%;
   }
 
   /* CTA BUTTON */
@@ -425,6 +413,15 @@
 
   /* PROOF SECTION */
   .proof-section { background: var(--page-bg); }
+
+  .proof-cta {
+    margin-top: 28px;
+    max-width: min(36rem, 100%);
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+  }
+  .proof-cta .btn-primary { margin-bottom: 0; }
 
   .speed-anchor {
     background: var(--white);
@@ -933,66 +930,95 @@
   }
   .pricing-safety strong { color: white; font-weight: 700; }
 
+  .pricing-cta-stack {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    margin-top: 4px;
+  }
+
   .btn-full {
     display: block;
     background: var(--blue);
     color: white;
     font-family: inherit;
-    font-size: var(--fs-18);
-    font-weight: 700;
-    padding: 17px 28px;
-    border-radius: 10px;
+    font-size: var(--fs-15);
+    font-weight: 800;
+    padding: 16px 22px;
+    border-radius: 999px;
     text-decoration: none;
-    margin-bottom: 14px;
-    letter-spacing: 0.01em;
+    letter-spacing: 0.1em;
     border: none;
     cursor: pointer;
     transition: background 0.2s, transform 0.15s;
     width: 100%;
     text-align: center;
+    text-transform: uppercase;
+    line-height: 1.25;
   }
   .btn-full:hover { background: #1d4fd8; transform: translateY(-1px); }
+
+  .pricing-or {
+    font-size: var(--fs-12);
+    font-weight: 800;
+    color: rgba(255, 255, 255, 0.92);
+    letter-spacing: 0.2em;
+    text-align: center;
+    margin: 12px 0;
+    text-transform: uppercase;
+  }
 
   .btn-split {
     display: block;
     background: transparent;
-    color: #a0a8c0;
+    color: white;
     font-family: inherit;
-    font-size: var(--fs-15);
+    font-size: var(--fs-12);
     font-weight: 700;
-    padding: 14px 28px;
-    border-radius: 10px;
+    padding: 15px 18px;
+    border-radius: 999px;
     text-decoration: none;
-    margin-bottom: 14px;
-    border: 0.5px solid #2a3050;
+    border: 1.5px solid var(--blue);
     cursor: pointer;
-    transition: border-color 0.2s, color 0.2s;
+    transition: border-color 0.2s, background 0.2s, color 0.2s;
     width: 100%;
     text-align: center;
     text-transform: uppercase;
-    letter-spacing: 0.04em;
+    letter-spacing: 0.05em;
+    line-height: 1.35;
   }
-  .btn-split:hover { border-color: #4a527a; color: white; }
+  .btn-split:hover {
+    border-color: #5b8def;
+    background: rgba(37, 99, 235, 0.12);
+    color: white;
+  }
 
   .btn-call {
-    display: inline-block;
+    display: block;
     background: transparent;
-    color: #6b728e;
+    color: #9aa3bc;
     font-family: inherit;
-    font-size: var(--fs-13);
-    font-weight: 600;
-    padding: 10px 16px;
-    border-radius: 8px;
+    font-size: var(--fs-12);
+    font-weight: 700;
+    padding: 14px 20px;
+    border-radius: 999px;
     text-decoration: none;
-    border: none;
+    border: 1px solid #3d4d70;
     cursor: pointer;
-    transition: color 0.2s;
+    transition: border-color 0.2s, color 0.2s, background 0.2s;
     text-align: center;
-    margin-top: 6px;
+    margin-top: 0;
+    width: 100%;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
   }
-  .btn-call:hover { color: #a0a8c0; text-decoration: underline; }
+  .btn-call:hover {
+    color: #e8eaf4;
+    border-color: #5a6b92;
+    background: rgba(255, 255, 255, 0.04);
+  }
   .pricing-call-wrap {
-    margin-top: 8px;
+    margin-top: 14px;
     text-align: center;
   }
 
@@ -1151,16 +1177,15 @@
 
     <p class="subhead">I built a channel for $4,000 and sold it for $53,000 using this exact search-based system - <strong>no face, no viral content, no experience needed.</strong></p>
 
-    <div class="vsl-label"><strong>Watch this (6 min):</strong> How this model generates $2k-$5k/month - and why most people waste 12 months doing YouTube wrong.</div>
     <div class="video-wrap">
-      <div class="video-thumb">
-        <div class="play-btn"><div class="play-tri"></div></div>
+      <div class="video-embed">
+        <wistia-player media-id="uzl52bst5b" aspect="1.7777777777777777"></wistia-player>
       </div>
     </div>
+    <div class="vsl-label"><strong>Watch this (14 minute video):</strong> How this model generates $2k-$5k/month - and why most people waste 12 months doing YouTube wrong.</div>
 
     <div class="cta-wrap">
-      <a href="#join" class="btn-primary">Start Building Your First $2k-$5k/Month Channel</a>
-      <p class="cta-sub">$2,500 or 2 payments of $1,250 &nbsp;·&nbsp; Intake is intentionally limited</p>
+      <a href="#join" class="btn-primary">I want to Build A YouTube Search Empire</a>
     </div>
   </div>
 </section>
@@ -1210,8 +1235,7 @@
     </div>
 
     <div class="cta-wrap" style="margin-top:36px;">
-      <a href="#join" class="btn-primary">Start Building Your First $2k-$5k/Month Channel</a>
-      <p class="cta-sub">$2,500 or 2 payments of $1,250 &nbsp;·&nbsp; Intake is intentionally limited</p>
+      <a href="#join" class="btn-primary">Join YT Incubator Today</a>
     </div>
   </div>
 </section>
@@ -1328,6 +1352,10 @@
           <img src="revv/rev%208.png" alt="YouTube Studio estimated earnings by month screenshot" width="1600" height="900" loading="lazy" decoding="async" />
         </figure>
       </div>
+    </div>
+
+    <div class="proof-cta">
+      <a href="#join" class="btn-primary">Join YT Incubator Today</a>
     </div>
   </div>
 </section>
@@ -1679,12 +1707,13 @@
 
       <p class="pricing-safety">The goal is simple: build to <strong>$2k-$5k/month</strong> and recover your investment first.</p>
 
-      <a href="#" class="btn-full">Start Building Your $2k-$5k/Month Channel</a>
-
-      <a href="#" class="btn-split">Split it into 2 payments of $1,250</a>
-
-      <div class="pricing-call-wrap">
-        <a href="#" class="btn-call">Not sure yet? Book a call</a>
+      <div class="pricing-cta-stack">
+        <a href="https://whop.com/checkout/14uxJ1cerLzyNafQK5-vJIt-s9VD-6dzY-mJxtegJmR0qx/" class="btn-full" target="_blank" rel="noopener noreferrer">Join now</a>
+        <div class="pricing-or" aria-hidden="true">Or</div>
+        <a href="https://whop.com/checkout/2rrn1RUm2ah17trhVn-B6pe-mqHn-ybf1-XlV8qhC7EkJ9/" class="btn-split" target="_blank" rel="noopener noreferrer">Pay in 2 monthly payments of $1,250</a>
+        <div class="pricing-call-wrap">
+          <a href="https://calendly.com/sigmayt/ytachads" class="btn-call" target="_blank" rel="noopener noreferrer">Book a call</a>
+        </div>
       </div>
 
       <div class="payment-icons">
