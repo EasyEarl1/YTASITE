@@ -9,6 +9,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,400;0,14..32,500;0,14..32,600;0,14..32,700;0,14..32,800&display=swap" rel="stylesheet">
 <script src="https://fast.wistia.com/player.js" async></script>
 <script src="https://fast.wistia.com/embed/uzl52bst5b.js" async type="module"></script>
+<script src="https://fast.wistia.com/embed/09lmxjzmu8.js" async type="module"></script>
 <style>
   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
@@ -825,6 +826,42 @@
   }
   .faq-a strong { color: var(--text-primary); font-weight: 700; }
   .faq-a .hl { color: var(--blue); font-weight: 700; }
+
+  /* TESTIMONIAL VIDEO (Wistia) */
+  .testimonial-section {
+    background: var(--page-bg);
+    padding: 44px 0 10px;
+  }
+  .testimonial-heading {
+    font-size: clamp(1.35rem, 3.2vw, 1.85rem);
+    font-weight: 800;
+    color: var(--text-primary);
+    letter-spacing: -0.03em;
+    line-height: var(--lh-snug);
+    text-align: center;
+    margin-bottom: 14px;
+  }
+  .testimonial-wrap {
+    background: var(--white);
+    border-radius: 14px;
+    padding: 16px;
+    max-width: min(920px, 100%);
+    margin: 0 auto;
+    border: 0.5px solid var(--border);
+  }
+  .testimonial-embed {
+    border-radius: 10px;
+    overflow: hidden;
+    width: 100%;
+    background: #0d0f14;
+  }
+  .testimonial-embed wistia-player { display: block; width: 100%; }
+  wistia-player[media-id='09lmxjzmu8']:not(:defined) {
+    background: center / contain no-repeat url('https://fast.wistia.com/embed/medias/09lmxjzmu8/swatch');
+    display: block;
+    filter: blur(5px);
+    padding-top: 55.94%;
+  }
 
   /* FINAL CTA */
   .final-cta {
@@ -1677,6 +1714,18 @@
         </summary>
         <div class="faq-a">You can. But most people <strong>waste 6-12 months</strong> testing what works, picking the wrong niche, or producing content that never compounds. This gives you the exact system from day one - so you skip the part where you lose time and money finding out what doesn't work.</div>
       </details>
+    </div>
+  </div>
+</section>
+
+<!-- TESTIMONIAL -->
+<section class="testimonial-section">
+  <div class="container">
+    <h2 class="testimonial-heading">Bautista's Journey With Us</h2>
+    <div class="testimonial-wrap">
+      <div class="testimonial-embed">
+        <wistia-player media-id="09lmxjzmu8" aspect="1.7877094972067038"></wistia-player>
+      </div>
     </div>
   </div>
 </section>
