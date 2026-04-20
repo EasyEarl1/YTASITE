@@ -168,6 +168,18 @@
         obs.disconnect();
       }, 10000);
     });
+
+    // After a successful Klaviyo submit, go to the $27 upsell.
+    // Also set the same URL in Klaviyo: Form → Behaviors → "Redirect to URL" → full URL e.g. https://YOUR_DOMAIN/20-search-niches
+    (function () {
+      var upsellPath = "/20-search-niches.html";
+      var navigated = false;
+      window.addEventListener("klaviyoForms", function (e) {
+        if (navigated || !e.detail || e.detail.type !== "submit") return;
+        navigated = true;
+        window.location.assign(upsellPath);
+      });
+    })();
   </script>
 </body>
 </html>

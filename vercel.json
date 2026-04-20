@@ -61,6 +61,14 @@
       "destination": "/1k-free.html"
     },
     {
+      "source": "/20-search-niches",
+      "destination": "/20-search-niches.html"
+    },
+    {
+      "source": "/20-search-niches.html",
+      "destination": "/20-search-niches.html"
+    },
+    {
       "source": "/youtube-search-skool",
       "destination": "/youtube-search-skool.html"
     },
