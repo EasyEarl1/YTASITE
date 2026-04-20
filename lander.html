@@ -182,11 +182,6 @@
     line-height: var(--lh-snug);
   }
 
-  /* Mobile-only social proof badges (hidden on desktop) */
-  .proof-badges-mobile {
-    display: none;
-  }
-
   /* HERO */
   .hero {
     background: var(--page-bg);
@@ -205,7 +200,6 @@
     letter-spacing: -0.03em;
   }
   .hero h1 .accent { color: var(--blue); }
-  .hero h1 .hero-roi-highlight { color: inherit; }
   .hero .subhead {
     font-size: var(--fs-18);
     color: var(--text-secondary);
@@ -224,14 +218,6 @@
     line-height: var(--lh-body);
   }
   .vsl-label strong { color: var(--text-primary); font-weight: 700; }
-
-  .vsl-prehead {
-    display: none;
-  }
-
-  .btn-hero-sub {
-    display: none;
-  }
 
   .video-wrap {
     background: var(--white);
@@ -1210,11 +1196,10 @@
   }
 
   /*
-   * Mobile polish: max-width 640px only.
-   * Viewports 641px+ keep the original desktop/tablet styles unchanged.
+   * Mobile layout: max-width 640px only (641px+ unchanged).
+   * Focus: wider content band, calmer vertical rhythm, hero video uses horizontal space like a premium mobile VSL.
    */
   @media (max-width: 640px) {
-    /* Normal 16px root on phones - drops the global 122.5% bump so type & spacing feel balanced */
     html {
       font-size: 100%;
       -webkit-text-size-adjust: 100%;
@@ -1225,114 +1210,87 @@
       overflow-x: hidden;
     }
 
+    :root {
+      --container-max: 100%;
+    }
+
     .topbar {
-      padding: 8px max(22px, env(safe-area-inset-right, 0px)) 8px max(22px, env(safe-area-inset-left, 0px));
+      padding: 8px max(18px, env(safe-area-inset-right, 0px)) 8px max(18px, env(safe-area-inset-left, 0px));
       font-size: var(--fs-12);
       letter-spacing: 0.05em;
       line-height: var(--lh-snug);
     }
 
     .nav {
-      padding: max(10px, env(safe-area-inset-top, 0px)) max(22px, env(safe-area-inset-right, 0px)) 10px max(22px, env(safe-area-inset-left, 0px));
+      padding: max(10px, env(safe-area-inset-top, 0px)) max(18px, env(safe-area-inset-right, 0px)) 10px max(18px, env(safe-area-inset-left, 0px));
     }
 
     .container {
-      padding-left: max(22px, env(safe-area-inset-left, 0px));
-      padding-right: max(22px, env(safe-area-inset-right, 0px));
+      padding-left: max(18px, env(safe-area-inset-left, 0px));
+      padding-right: max(18px, env(safe-area-inset-right, 0px));
     }
 
     section {
-      padding: clamp(24px, 6vw, 36px) 0;
+      padding: clamp(32px, 7vw, 44px) 0;
     }
 
     .hero {
-      padding: clamp(20px, 5vw, 32px) 0 clamp(24px, 6vw, 40px);
+      padding: clamp(28px, 7vw, 44px) 0 clamp(36px, 8vw, 52px);
     }
 
-    .proof-pill--desktop {
-      display: none;
-    }
-
-    .proof-badges-mobile {
+    .proof-pill {
       display: flex;
-      flex-direction: column;
-      align-items: stretch;
-      gap: 10px;
       width: 100%;
-      max-width: min(22rem, 100%);
-      margin: 0 auto 16px;
+      max-width: 100%;
+      margin-left: 0;
+      margin-right: 0;
+      margin-bottom: 22px;
+      padding: 12px 16px;
+      border-radius: 16px;
+      text-align: left;
     }
 
-    .proof-badge {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 10px;
-      background: var(--gold-bg);
-      border: 1px solid var(--gold-border);
-      border-radius: 999px;
-      padding: 11px 18px;
-      font-size: var(--fs-14);
-      font-weight: 700;
-      color: var(--gold-text);
-      line-height: var(--lh-snug);
-      letter-spacing: 0.01em;
-    }
-
-    .proof-badge-ico {
-      font-size: 1.15rem;
-      line-height: 1;
-      flex-shrink: 0;
+    .proof-pill-text {
+      font-size: var(--fs-13);
+      line-height: 1.45;
     }
 
     .hero h1 {
-      font-size: clamp(1.5rem, 5.4vw, 2.05rem);
-      margin-bottom: 14px;
-      letter-spacing: -0.02em;
-      line-height: 1.22;
-    }
-
-    .hero h1 .accent {
-      color: var(--text-primary);
-      background: linear-gradient(180deg, transparent 58%, rgba(253, 224, 71, 0.55) 58%);
-      box-decoration-break: clone;
-      -webkit-box-decoration-break: clone;
-      padding: 0 0.08em 0.06em;
-      border-radius: 3px;
-    }
-
-    .hero h1 .hero-roi-highlight {
-      background: linear-gradient(180deg, transparent 58%, rgba(187, 247, 208, 0.75) 58%);
-      box-decoration-break: clone;
-      -webkit-box-decoration-break: clone;
-      padding: 0 0.08em 0.06em;
-      border-radius: 3px;
+      font-size: clamp(1.55rem, 5.6vw, 2.1rem);
+      max-width: 100%;
+      margin-bottom: 18px;
+      letter-spacing: -0.025em;
+      line-height: 1.28;
     }
 
     .hero .subhead {
       font-size: var(--fs-15);
-      margin-bottom: 20px;
-      line-height: 1.62;
-      letter-spacing: 0.01em;
+      max-width: 100%;
+      margin-bottom: 26px;
+      line-height: 1.6;
     }
 
-    .vsl-prehead {
-      display: block;
-      font-size: var(--fs-14);
-      font-weight: 600;
-      color: var(--text-primary);
-      line-height: 1.55;
-      letter-spacing: 0.015em;
-      text-align: center;
-      max-width: min(26rem, 100%);
-      margin: 0 auto 12px;
+    .hero .video-wrap {
+      padding: 0;
+      border: none;
+      background: transparent;
+      border-radius: 0;
+      max-width: 100%;
+    }
+
+    .hero .video-embed {
+      border-radius: 16px;
+    }
+
+    wistia-player[media-id='uzl52bst5b']:not(:defined) {
+      border-radius: 16px;
     }
 
     .vsl-label {
       font-size: var(--fs-14);
-      margin: 12px auto 18px;
+      max-width: 100%;
+      margin: 18px auto 0;
       line-height: 1.55;
-      letter-spacing: 0.012em;
     }
 
     .section-title {
@@ -1341,30 +1299,12 @@
 
     .section-sub {
       font-size: var(--fs-14);
-      margin-bottom: 20px;
+      margin-bottom: 22px;
     }
 
-    .video-wrap,
     .testimonial-wrap {
-      padding: 10px;
-      border-radius: 12px;
-    }
-
-    .video-embed {
-      position: relative;
-    }
-    .video-embed::after {
-      content: "";
-      position: absolute;
-      inset: 0;
-      border-radius: 10px;
-      background: rgba(0, 0, 0, 0.3);
-      pointer-events: none;
-      z-index: 1;
-    }
-    .video-embed wistia-player {
-      position: relative;
-      z-index: 0;
+      padding: 12px;
+      border-radius: 14px;
     }
 
     .model-box,
@@ -1537,39 +1477,6 @@
       margin: -6px 0 18px;
     }
 
-    .hero .btn-primary {
-      font-size: var(--fs-16);
-      padding: 16px 20px;
-      min-height: 52px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      touch-action: manipulation;
-      border-radius: 12px;
-      box-shadow:
-        0 4px 16px rgba(37, 99, 235, 0.42),
-        0 2px 4px rgba(15, 17, 23, 0.14),
-        inset 0 1px 0 rgba(255, 255, 255, 0.12);
-    }
-
-    .hero .btn-primary:active {
-      transform: translateY(1px);
-      box-shadow:
-        0 2px 10px rgba(37, 99, 235, 0.35),
-        0 1px 2px rgba(15, 17, 23, 0.12);
-    }
-
-    .btn-hero-sub {
-      display: block;
-      font-size: var(--fs-12);
-      font-weight: 600;
-      color: var(--text-muted);
-      letter-spacing: 0.04em;
-      line-height: 1.45;
-      margin: 10px auto 0;
-      max-width: 20rem;
-    }
-
     .btn-primary {
       font-size: var(--fs-16);
       padding: 14px 18px;
@@ -1612,11 +1519,11 @@
     }
 
     .cta-wrap {
-      margin-top: 22px;
+      margin-top: 28px;
     }
 
     .proof-cta {
-      margin-top: 22px;
+      margin-top: 26px;
     }
   }
 
@@ -1646,23 +1553,16 @@
 <!-- HERO -->
 <section class="hero">
   <div class="container">
-    <div class="proof-pill proof-pill--desktop">
+    <div class="proof-pill">
       <div class="proof-check">
         <svg viewBox="0 0 10 10" fill="none"><path d="M2 5l2.5 2.5L8 3" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
       </div>
       <span class="proof-pill-text">$300,000+ generated - 2 channel exits ($20k + $53k) - students hitting $1k-$6k/month consistently</span>
     </div>
 
-    <div class="proof-badges-mobile" aria-label="Results and exits">
-      <div class="proof-badge"><span class="proof-badge-ico" aria-hidden="true">&#127942;</span><span class="proof-badge-text">$300k+ Generated</span></div>
-      <div class="proof-badge"><span class="proof-badge-ico" aria-hidden="true">&#128176;</span><span class="proof-badge-text">2 Channel Exits ($53k &amp; $20k)</span></div>
-    </div>
-
-    <h1>Build a faceless YouTube channel that pays you <span class="accent">$2k-$5k/month</span> - and can sell for <span class="hero-roi-highlight">$50k+</span> (like mine did)</h1>
+    <h1>Build a faceless YouTube channel that pays you <span class="accent">$2k-$5k/month</span> - and can sell for $50k+ (like mine did)</h1>
 
     <p class="subhead">I built a channel for $4,000 and sold it for $53,000 using this exact search-based system - <strong>no face, no viral content, no experience needed.</strong></p>
-
-    <p class="vsl-prehead">Watch how this model scales across multiple channels - real revenue on screen before you hit play.</p>
 
     <div class="video-wrap">
       <div class="video-embed">
@@ -1671,9 +1571,8 @@
     </div>
     <div class="vsl-label"><strong>Watch this (14 minute video):</strong> How this model generates $2k-$5k/month - and why most people waste 12 months doing YouTube wrong.</div>
 
-    <div class="cta-wrap cta-wrap--hero">
+    <div class="cta-wrap">
       <a href="#join" class="btn-primary">I want to Build A YouTube Search Empire</a>
-      <p class="btn-hero-sub">(Only 5 spots left for <span id="hero-month-label"></span>)</p>
     </div>
   </div>
 </section>
@@ -2268,13 +2167,6 @@
       if (target) { e.preventDefault(); target.scrollIntoView({ behavior: 'smooth' }); }
     });
   });
-
-  (function () {
-    var el = document.getElementById('hero-month-label');
-    if (el) {
-      el.textContent = new Date().toLocaleString('en-US', { month: 'long', year: 'numeric' });
-    }
-  })();
 </script>
 
 </body>
