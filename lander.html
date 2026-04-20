@@ -80,7 +80,7 @@
     font-feature-settings: "kern" 1, "liga" 1;
   }
 
-  /* SITE HEADER (logo + urgency + condensed proof - single sticky band) */
+  /* SITE HEADER (logo + urgency only) */
   .site-header {
     background: var(--white);
     position: sticky;
@@ -89,6 +89,11 @@
     border-bottom: 0.5px solid var(--border);
   }
   .site-header-inner {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
     padding-top: max(10px, env(safe-area-inset-top, 0px));
     padding-bottom: 12px;
   }
@@ -110,70 +115,9 @@
     line-height: var(--lh-snug);
     min-width: 0;
   }
-  .site-header-proof {
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    background: var(--gold-bg);
-    border: 1px solid var(--gold-border);
-    border-radius: 12px;
-    padding: 8px 12px;
-  }
-  .site-header-proof-check {
-    width: 16px;
-    height: 16px;
-    border-radius: 50%;
-    background: var(--gold);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-shrink: 0;
-  }
-  .site-header-proof-check svg {
-    width: 8px;
-    height: 8px;
-  }
-  .site-header-proof-text {
-    font-size: var(--fs-12);
-    font-weight: 600;
-    color: var(--gold-text);
-    line-height: 1.4;
-    margin: 0;
-    text-align: left;
-  }
-  .site-header-proof-text strong {
-    font-weight: 800;
-    color: var(--gold-text);
-  }
 
-  /* Header: mobile = logo | urgency on row 1, proof full width row 2 */
-  @media (max-width: 767px) {
-    .site-header-inner {
-      display: grid;
-      grid-template-columns: minmax(0, 1fr) auto;
-      grid-template-areas:
-        "logo urgency"
-        "proof proof";
-      gap: 8px 12px;
-      align-items: center;
-    }
-    .nav-logo { grid-area: logo; }
-    .site-header-urgency {
-      grid-area: urgency;
-      text-align: right;
-      justify-self: end;
-    }
-    .site-header-proof { grid-area: proof; }
-  }
-
-  /* Header: desktop = one row, proof centered in the middle */
   @media (min-width: 768px) {
     .site-header-inner {
-      display: flex;
-      flex-direction: row;
-      align-items: center;
-      justify-content: space-between;
-      gap: clamp(18px, 3vw, 36px);
       padding-top: max(12px, env(safe-area-inset-top, 0px));
       padding-bottom: 14px;
     }
@@ -183,29 +127,49 @@
     .site-header-urgency {
       font-size: var(--fs-12);
       letter-spacing: 0.08em;
-      flex-shrink: 0;
-      max-width: 15rem;
-      text-align: right;
+      max-width: 16rem;
     }
-    .site-header-proof {
-      flex: 1 1 auto;
-      justify-content: center;
-      min-width: 0;
-      border-radius: 999px;
-      padding: 10px 22px;
-    }
-    .site-header-proof-check {
-      width: 18px;
-      height: 18px;
-    }
-    .site-header-proof-check svg {
-      width: 9px;
-      height: 9px;
-    }
-    .site-header-proof-text {
-      font-size: var(--fs-13);
-      text-align: center;
-    }
+  }
+
+  /* Hero: results bubble above headline */
+  .hero-results {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    background: var(--gold-bg);
+    border: 1px solid var(--gold-border);
+    border-radius: 999px;
+    padding: 10px 20px;
+    margin: 0 auto 24px;
+    width: fit-content;
+    max-width: 100%;
+    box-sizing: border-box;
+    text-align: left;
+  }
+  .hero-results-check {
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    background: var(--gold);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+  }
+  .hero-results-check svg {
+    width: 10px;
+    height: 10px;
+  }
+  .hero-results-text {
+    font-size: var(--fs-14);
+    font-weight: 600;
+    color: var(--gold-text);
+    line-height: var(--lh-snug);
+    margin: 0;
+  }
+  .hero-results-text strong {
+    font-weight: 800;
+    color: var(--gold-text);
   }
 
   /* LAYOUT */
@@ -1291,16 +1255,18 @@
       letter-spacing: 0.05em;
     }
 
-    .site-header-proof {
-      padding: 7px 10px;
-      border-radius: 10px;
-      gap: 6px;
+    .hero-results {
+      width: 100%;
+      max-width: 100%;
+      border-radius: 14px;
+      padding: 11px 14px;
+      margin-bottom: 20px;
+      gap: 8px;
     }
 
-    .site-header-proof-text {
-      font-size: var(--fs-11);
-      line-height: 1.35;
-      white-space: normal;
+    .hero-results-text {
+      font-size: var(--fs-12);
+      line-height: 1.45;
     }
 
     .container {
@@ -1604,12 +1570,6 @@
 <header class="site-header">
   <div class="container site-header-inner">
     <span class="nav-logo">YTA Chads</span>
-    <div class="site-header-proof">
-      <span class="site-header-proof-check" aria-hidden="true">
-        <svg viewBox="0 0 10 10" fill="none"><path d="M2 5l2.5 2.5L8 3" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-      </span>
-      <p class="site-header-proof-text"><strong>$300k+</strong> generated · <strong>2 exits</strong> ($20k + $53k) · Students <strong>$1k-$6k/mo</strong></p>
-    </div>
     <span class="site-header-urgency">Limited intake · monthly cohort</span>
   </div>
 </header>
@@ -1617,6 +1577,13 @@
 <!-- HERO -->
 <section class="hero">
   <div class="container">
+    <div class="hero-results">
+      <span class="hero-results-check" aria-hidden="true">
+        <svg viewBox="0 0 10 10" fill="none"><path d="M2 5l2.5 2.5L8 3" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </span>
+      <p class="hero-results-text"><strong>$300k+</strong> generated · <strong>2 exits</strong> ($20k + $53k) · Students <strong>$1k-$6k/mo</strong></p>
+    </div>
+
     <h1>Build a faceless YouTube channel that pays you <span class="accent">$2k-$5k/month</span> - and can sell for $50k+ (like mine did)</h1>
 
     <p class="subhead">I built a channel for $4,000 and sold it for $53,000 using this exact search-based system - <strong>no face, no viral content, no experience needed.</strong></p>
