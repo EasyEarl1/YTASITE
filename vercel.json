@@ -125,6 +125,14 @@
       "destination": "/the-1k-month-youtube-plan.html"
     },
     {
+      "source": "/the-1k-month-youtube-plan-viewer",
+      "destination": "/the-1k-month-youtube-plan-viewer.html"
+    },
+    {
+      "source": "/the-1k-month-youtube-plan-viewer.html",
+      "destination": "/the-1k-month-youtube-plan-viewer.html"
+    },
+    {
       "source": "/(.*)",
       "destination": "/index.html"
     }

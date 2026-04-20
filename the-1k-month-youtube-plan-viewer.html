@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>The $1k/Month YouTube Plan — Reader</title>
+  <meta name="description" content="Read the $1k/month YouTube plan in a focused viewer.">
+  <script defer src="/_vercel/insights/script.js"></script>
+  <style>
+    :root {
+      --bg: #1a1a1a;
+      --panel: #111;
+      --text: #f5f5f5;
+      --muted: #9a9a9a;
+      --accent: #e8360a;
+      --line: rgba(255,255,255,0.08);
+    }
+
+    * { box-sizing: border-box; }
+
+    html, body {
+      margin: 0;
+      height: 100%;
+    }
+
+    body {
+      font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      -webkit-font-smoothing: antialiased;
+    }
+
+    .layout {
+      display: flex;
+      flex-direction: column;
+      min-height: 100dvh;
+    }
+
+    @media (min-width: 768px) {
+      .layout {
+        flex-direction: row;
+        height: 100dvh;
+      }
+    }
+
+    .side {
+      flex-shrink: 0;
+      background: var(--panel);
+      border-bottom: 1px solid var(--line);
+      padding: 14px 16px;
+      padding-bottom: max(14px, env(safe-area-inset-bottom));
+      padding-left: max(16px, env(safe-area-inset-left));
+      padding-right: max(16px, env(safe-area-inset-right));
+    }
+
+    @media (min-width: 768px) {
+      .side {
+        width: 260px;
+        border-bottom: none;
+        border-right: 1px solid var(--line);
+        padding: 20px 18px;
+        overflow-y: auto;
+      }
+    }
+
+    .side-kicker {
+      font-size: 10px;
+      font-weight: 600;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-bottom: 8px;
+    }
+
+    .side-title {
+      font-size: 17px;
+      font-weight: 700;
+      line-height: 1.25;
+      letter-spacing: -0.02em;
+      margin: 0 0 12px;
+    }
+
+    .side-title span { color: var(--accent); }
+
+    .side-actions {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    @media (max-width: 767px) {
+      .side-actions {
+        flex-direction: row;
+        flex-wrap: wrap;
+      }
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 6px;
+      padding: 10px 14px;
+      font-size: 13px;
+      font-weight: 600;
+      text-decoration: none;
+      border-radius: 8px;
+      border: 1px solid var(--line);
+      background: rgba(255,255,255,0.06);
+      color: var(--text);
+      touch-action: manipulation;
+    }
+
+    .btn:hover { background: rgba(255,255,255,0.1); }
+
+    .btn:focus-visible {
+      outline: 2px solid var(--accent);
+      outline-offset: 2px;
+    }
+
+    .btn-primary {
+      background: var(--accent);
+      border-color: var(--accent);
+      color: #fff;
+    }
+
+    .btn-primary:hover { filter: brightness(1.06); }
+
+    .side-note {
+      margin: 14px 0 0;
+      font-size: 12px;
+      line-height: 1.5;
+      color: var(--muted);
+    }
+
+    .frame-wrap {
+      flex: 1;
+      min-height: 0;
+      min-width: 0;
+      display: flex;
+      flex-direction: column;
+      background: #2a2a2a;
+    }
+
+    .frame-wrap iframe {
+      flex: 1;
+      width: 100%;
+      min-height: 60vh;
+      border: 0;
+      display: block;
+      background: #ccc;
+    }
+
+    @media (min-width: 768px) {
+      .frame-wrap iframe {
+        min-height: 0;
+        height: 100%;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="layout">
+    <aside class="side" aria-label="Document navigation">
+      <div class="side-kicker">Reader</div>
+      <h1 class="side-title">The <span>$1k/Month</span> YouTube Plan</h1>
+      <div class="side-actions">
+        <a class="btn btn-primary" href="/the-1k-month-youtube-plan.html" target="_blank" rel="noopener noreferrer">Open full page</a>
+        <a class="btn" href="/lander.html">Back to offer</a>
+      </div>
+      <p class="side-note">This is the same document in a focused frame. Use “Open full page” to print or share the direct link.</p>
+    </aside>
+    <div class="frame-wrap">
+      <iframe
+        title="The $1k/Month YouTube Plan document"
+        src="/the-1k-month-youtube-plan.html"
+        loading="lazy"
+        referrerpolicy="strict-origin-when-cross-origin"
+      ></iframe>
+    </div>
+  </div>
+</body>
+</html>
