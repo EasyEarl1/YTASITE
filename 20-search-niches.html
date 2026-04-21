@@ -460,14 +460,50 @@
       color: var(--gold-text);
     }
 
-    .highlight-gold .bonus-img {
-      width: 100%;
-      max-width: 36rem;
-      margin: 0 auto 1.25rem;
-      display: block;
-      border-radius: 0.75rem;
-      border: 1px solid rgba(212, 168, 67, 0.45);
+    .bonus-split {
+      display: grid;
+      gap: 1.75rem;
+      align-items: center;
+    }
+
+    @media (min-width: 768px) {
+      .bonus-split {
+        grid-template-columns: 1fr 1fr;
+        gap: 2rem;
+      }
+    }
+
+    .bonus-split-copy .vip-row-head {
+      margin-bottom: 0.85rem;
+    }
+
+    .highlight-gold .bonus-split-copy .vip-row-head h3 {
+      color: var(--gold-text);
+    }
+
+    .highlight-gold .bonus-split-copy > p {
+      margin-bottom: 0;
+    }
+
+    .bonus-split-media {
+      border-radius: 0.875rem;
+      overflow: hidden;
       background: #fff;
+      border: 1px solid rgba(212, 168, 67, 0.45);
+      box-shadow: 0 12px 32px rgba(15, 23, 42, 0.08);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 0.35rem;
+      min-height: 0;
+    }
+
+    .bonus-split-media img {
+      width: 100%;
+      height: auto;
+      max-width: 100%;
+      object-fit: contain;
+      display: block;
     }
 
     .highlight-info {
@@ -825,17 +861,23 @@
     <div class="vip-stack" style="margin-top: 2.5rem;">
       <div class="highlight-gold">
         <div class="bonus-label">Bonus</div>
-        <img
-          class="bonus-img"
-          src="revv/121%20rpm.png"
-          width="1200"
-          height="800"
-          alt="How to find high RPM niches — visual for the $50–$100 RPM bonus"
-          loading="lazy"
-          decoding="async"
-        >
-        <p><strong>How to Find $50–$100 RPM Niches</strong></p>
-        <p>Most people have no idea some niches pay 10x more than others for the same views. This breaks down exactly what signals to look for and why certain niches attract premium advertisers. This alone changes how you think about niche selection.</p>
+        <div class="bonus-split">
+          <div class="bonus-split-copy">
+            <div class="vip-row-head">
+              <span class="vip-dot" aria-hidden="true"></span>
+              <h3>How to Find $50–$100 RPM Niches</h3>
+            </div>
+            <p>Most people have no idea some niches pay 10x more than others for the same views. This breaks down exactly what signals to look for and why certain niches attract premium advertisers. This alone changes how you think about niche selection.</p>
+          </div>
+          <div class="bonus-split-media">
+            <img
+              src="revv/121%20rpm.png"
+              alt="YouTube Studio screenshot: video performance with high RPM near $122"
+              loading="lazy"
+              decoding="async"
+            >
+          </div>
+        </div>
       </div>
 
       <div class="highlight-info">
