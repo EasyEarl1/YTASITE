@@ -593,6 +593,20 @@
       display: block;
     }
 
+    .proof-slot--contain {
+      padding: 0;
+      border-style: solid;
+      border-width: 1px;
+      border-color: #e2e8f0;
+      overflow: hidden;
+    }
+
+    .proof-slot--contain img {
+      object-fit: contain;
+      object-position: center;
+      border-radius: 0.75rem;
+    }
+
     /* FAQ */
     .vip-faq {
       padding: var(--section-y) 0;
@@ -893,7 +907,16 @@
     <div class="proof-grid">
       <div class="proof-slot">Screenshot placeholder 1</div>
       <div class="proof-slot">Screenshot placeholder 2</div>
-      <div class="proof-slot">Screenshot placeholder 3</div>
+      <div class="proof-slot proof-slot--contain">
+        <img
+          src="revv/REV%203.png"
+          width="1600"
+          height="900"
+          alt="YouTube Studio: channel analytics — about 4.2M views and $31,005 estimated revenue over 365 days"
+          loading="lazy"
+          decoding="async"
+        >
+      </div>
       <div class="proof-slot">Screenshot placeholder 4</div>
     </div>
   </section>
