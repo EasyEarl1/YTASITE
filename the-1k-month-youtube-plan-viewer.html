@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>The $1k/Month YouTube Plan - Reader</title>
-  <meta name="description" content="Read the $1k/month YouTube plan in a focused viewer.">
+  <title>The $1k/Month YouTube Plan - Step 1</title>
+  <meta name="description" content="Step 1: understand the model. Then watch the full system breakdown and apply when you are ready.">
   <script defer src="/_vercel/insights/script.js"></script>
   <style>
     :root {
@@ -30,6 +30,68 @@
       -webkit-font-smoothing: antialiased;
     }
 
+    .sticky-cta {
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      background: linear-gradient(180deg, #0d0d0d 0%, #141414 100%);
+      border-bottom: 1px solid var(--line);
+      padding: 10px 14px;
+      padding-top: max(10px, env(safe-area-inset-top));
+      padding-left: max(14px, env(safe-area-inset-left));
+      padding-right: max(14px, env(safe-area-inset-right));
+    }
+
+    .progress-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 10px;
+      flex-wrap: wrap;
+      margin-bottom: 10px;
+    }
+
+    .progress-label {
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: var(--accent);
+    }
+
+    .progress-hint {
+      font-size: 11px;
+      color: var(--muted);
+      max-width: 280px;
+      line-height: 1.35;
+    }
+
+    .btn-primary-cta {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 100%;
+      padding: 12px 16px;
+      font-size: 13px;
+      font-weight: 700;
+      text-decoration: none;
+      border-radius: 8px;
+      background: var(--accent);
+      border: 1px solid var(--accent);
+      color: #fff;
+      text-align: center;
+      line-height: 1.25;
+      touch-action: manipulation;
+      box-shadow: 0 4px 18px rgba(232, 54, 10, 0.25);
+    }
+
+    .btn-primary-cta:hover { filter: brightness(1.05); }
+
+    .btn-primary-cta:focus-visible {
+      outline: 2px solid var(--accent);
+      outline-offset: 2px;
+    }
+
     .layout {
       display: flex;
       flex-direction: column;
@@ -47,18 +109,18 @@
       flex-shrink: 0;
       background: var(--panel);
       border-bottom: 1px solid var(--line);
-      padding: 14px 16px;
-      padding-bottom: max(14px, env(safe-area-inset-bottom));
+      padding: 16px 16px 18px;
+      padding-bottom: max(16px, env(safe-area-inset-bottom));
       padding-left: max(16px, env(safe-area-inset-left));
       padding-right: max(16px, env(safe-area-inset-right));
     }
 
     @media (min-width: 768px) {
       .side {
-        width: 260px;
+        width: 288px;
         border-bottom: none;
         border-right: 1px solid var(--line);
-        padding: 20px 18px;
+        padding: 22px 18px;
         overflow-y: auto;
       }
     }
@@ -82,55 +144,35 @@
 
     .side-title span { color: var(--accent); }
 
-    .side-actions {
-      display: flex;
-      flex-direction: column;
-      gap: 8px;
-    }
-
-    @media (max-width: 767px) {
-      .side-actions {
-        flex-direction: row;
-        flex-wrap: wrap;
-      }
-    }
-
-    .btn {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      gap: 6px;
-      padding: 10px 14px;
-      font-size: 13px;
-      font-weight: 600;
-      text-decoration: none;
-      border-radius: 8px;
-      border: 1px solid var(--line);
-      background: rgba(255,255,255,0.06);
-      color: var(--text);
-      touch-action: manipulation;
-    }
-
-    .btn:hover { background: rgba(255,255,255,0.1); }
-
-    .btn:focus-visible {
-      outline: 2px solid var(--accent);
-      outline-offset: 2px;
-    }
-
-    .btn-primary {
-      background: var(--accent);
-      border-color: var(--accent);
-      color: #fff;
-    }
-
-    .btn-primary:hover { filter: brightness(1.06); }
-
-    .side-note {
-      margin: 14px 0 0;
+    .side-step {
       font-size: 12px;
       line-height: 1.5;
       color: var(--muted);
+      margin: 0 0 14px;
+      padding: 12px;
+      background: rgba(255,255,255,0.04);
+      border-radius: 8px;
+      border: 1px solid var(--line);
+    }
+
+    .side-step strong { color: var(--text); }
+
+    .side-actions {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    @media (max-width: 767px) {
+      .side .btn-primary-cta {
+        display: none;
+      }
+    }
+
+    @media (min-width: 768px) {
+      .sticky-cta {
+        display: none;
+      }
     }
 
     .frame-wrap {
@@ -145,7 +187,7 @@
     .frame-wrap iframe {
       flex: 1;
       width: 100%;
-      min-height: 60vh;
+      min-height: 50vh;
       border: 0;
       display: block;
       background: #ccc;
@@ -160,15 +202,23 @@
   </style>
 </head>
 <body>
+  <div class="sticky-cta">
+    <div class="progress-row">
+      <span class="progress-label">Step 1 of 3: Understand the model</span>
+    </div>
+    <a class="btn-primary-cta" href="/lander.html" target="_top" rel="noopener">See How To Build Your First $1k-$5k/Month Channel →</a>
+    <p class="progress-hint" style="margin:10px 0 0;">This is Step 1. Step 2 is the full breakdown on the next page.</p>
+  </div>
+
   <div class="layout">
-    <aside class="side" aria-label="Document navigation">
-      <div class="side-kicker">Reader</div>
+    <aside class="side" aria-label="Progress and next step">
+      <div class="side-kicker">Guided read</div>
       <h1 class="side-title">The <span>$1k/Month</span> YouTube Plan</h1>
+      <p class="side-step"><strong>Step 1 of 3:</strong> Understand the model (this document). <strong>Step 2:</strong> Watch the full system. <strong>Step 3:</strong> Apply when you are ready.</p>
+      <p class="side-step"><strong>This is Step 1.</strong> If you want to actually build this, Step 2 is here:</p>
       <div class="side-actions">
-        <a class="btn btn-primary" href="./the-1k-month-youtube-plan.html" target="_blank" rel="noopener noreferrer">Open full page</a>
-        <a class="btn" href="./lander.html">Back to offer</a>
+        <a class="btn-primary-cta" href="/lander.html" target="_top" rel="noopener">See How To Build Your First $1k-$5k/Month Channel →</a>
       </div>
-      <p class="side-note">This is the same document in a focused frame. Use “Open full page” to print or share the direct link.</p>
     </aside>
     <div class="frame-wrap">
       <iframe
