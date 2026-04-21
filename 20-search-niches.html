@@ -359,6 +359,18 @@
       display: block;
     }
 
+    .vip-row-media--infographic {
+      padding: 0;
+      aspect-ratio: auto;
+      background: #fff;
+    }
+
+    .vip-row-media--infographic img {
+      width: 100%;
+      height: auto;
+      object-fit: contain;
+    }
+
     .vip-row-head {
       display: flex;
       align-items: flex-start;
@@ -748,7 +760,16 @@
 
     <div class="vip-rows">
       <div class="vip-row">
-        <div class="vip-row-media" role="img" aria-label="Placeholder for niche or RPM graphic">Image: wrong niche / low RPM graphic (optional)</div>
+        <div class="vip-row-media vip-row-media--infographic" role="img" aria-label="Wrong niche versus right niche RPM comparison">
+          <img
+            src="revv/rpm-wrong-vs-right.png"
+            width="1200"
+            height="800"
+            alt="Wrong niche: Gaming at about $2 RPM. Right niche: Shopify tutorials at about $40 RPM."
+            loading="lazy"
+            decoding="async"
+          >
+        </div>
         <div class="vip-row-copy">
           <div class="vip-row-head">
             <span class="vip-dot" aria-hidden="true"></span>
