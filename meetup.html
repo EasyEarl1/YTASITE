@@ -1,0 +1,983 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CHADS x KINGS - London Meetup - 25 April 2026</title>
+<meta name="description" content="YTA Chads x Etsy Kings - London meetup 25 April 2026. Two talks, small room, Central London. Early bird £10, standard £20.">
+<script defer src="/_vercel/insights/script.js"></script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800;900&family=Source+Serif+4:ital,wght@0,400;0,600;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --black: #0a0a0a;
+    --white: #ffffff;
+    --off: #f7f5f1;
+    --mid: #555;
+    --light: #999;
+    --accent: #e8360a;
+    --border: 2.5px solid #0a0a0a;
+    --border-thin: 1px solid #ddd;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: 'DM Sans', sans-serif;
+    background: var(--white);
+    color: var(--black);
+    font-size: 16px;
+    line-height: 1.65;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  /* TOP STRIP */
+  .strip {
+    background: var(--accent);
+    padding: 10px 24px;
+    text-align: center;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--white);
+  }
+
+  /* HERO */
+  .hero {
+    background: var(--black);
+    color: var(--white);
+    padding: 72px 48px 64px;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .hero::before {
+    content: 'x';
+    font-family: 'Montserrat', sans-serif;
+    font-size: 480px;
+    font-weight: 900;
+    color: rgba(255,255,255,0.03);
+    position: absolute;
+    right: -60px;
+    top: -80px;
+    line-height: 1;
+    pointer-events: none;
+    user-select: none;
+  }
+
+  .hero-inner {
+    max-width: 860px;
+    margin: 0 auto;
+    position: relative;
+  }
+
+  .hero-collab {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    margin-bottom: 32px;
+  }
+
+  .brand-tag {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 10px;
+    font-weight: 800;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--white);
+    border: 1.5px solid rgba(255,255,255,0.3);
+    padding: 6px 14px;
+  }
+
+  .brand-x {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 18px;
+    font-weight: 900;
+    color: var(--accent);
+  }
+
+  .hero h1 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: clamp(52px, 8vw, 96px);
+    font-weight: 900;
+    line-height: 0.92;
+    text-transform: uppercase;
+    letter-spacing: -0.02em;
+    margin-bottom: 28px;
+  }
+
+  .hero h1 span { color: var(--accent); }
+
+  .hero-meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0;
+    border: 1.5px solid rgba(255,255,255,0.15);
+    margin-bottom: 36px;
+    width: fit-content;
+  }
+
+  .hero-meta-item {
+    padding: 12px 24px;
+    border-right: 1.5px solid rgba(255,255,255,0.15);
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+  }
+
+  .hero-meta-item:last-child { border-right: none; }
+
+  .meta-label {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 8px;
+    font-weight: 700;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.4);
+  }
+
+  .meta-val {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 13px;
+    font-weight: 700;
+    color: var(--white);
+  }
+
+  .hero-sub {
+    font-family: 'Source Serif 4', serif;
+    font-size: 18px;
+    font-style: italic;
+    color: rgba(255,255,255,0.65);
+    max-width: 520px;
+    line-height: 1.65;
+    margin-bottom: 36px;
+  }
+
+  .ticket-row {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    flex-wrap: wrap;
+  }
+
+  .btn-primary {
+    display: inline-block;
+    background: var(--accent);
+    color: var(--white);
+    text-decoration: none;
+    padding: 18px 40px;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 13px;
+    font-weight: 800;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    border: 2.5px solid var(--accent);
+    transition: background 0.2s;
+  }
+
+  .btn-primary:hover { background: #c42d08; border-color: #c42d08; }
+
+  .ticket-note {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.35);
+  }
+
+  /* SECTIONS */
+  .section {
+    max-width: 860px;
+    margin: 0 auto;
+    padding: 64px 48px;
+    border-bottom: var(--border);
+  }
+
+  .section:last-of-type { border-bottom: none; }
+
+  .sec-label {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 9px;
+    font-weight: 700;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    color: var(--light);
+    margin-bottom: 12px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+
+  .sec-label::after { content: ''; flex: 1; height: 1px; background: #e0e0e0; }
+
+  .sec-h {
+    font-family: 'Montserrat', sans-serif;
+    font-size: clamp(28px, 4vw, 40px);
+    font-weight: 900;
+    text-transform: uppercase;
+    line-height: 1.0;
+    letter-spacing: -0.02em;
+    margin-bottom: 20px;
+  }
+
+  .sec-h em { font-style: normal; color: var(--accent); }
+
+  .body-text {
+    font-family: 'Source Serif 4', serif;
+    font-size: 16px;
+    line-height: 1.75;
+    color: #1a1a1a;
+    margin-bottom: 16px;
+    max-width: 600px;
+  }
+
+  /* WHY COME */
+  .why-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    border: var(--border);
+    margin-top: 24px;
+  }
+
+  .why-cell {
+    padding: 24px 22px;
+    border-right: var(--border);
+  }
+
+  .why-cell:last-child { border-right: none; }
+
+  .why-num {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 36px;
+    font-weight: 900;
+    color: rgba(0,0,0,0.06);
+    line-height: 1;
+    margin-bottom: -4px;
+  }
+
+  .why-title {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 12px;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    margin-bottom: 8px;
+  }
+
+  .why-desc {
+    font-family: 'Source Serif 4', serif;
+    font-size: 14px;
+    color: var(--mid);
+    line-height: 1.6;
+  }
+
+  /* AGENDA */
+  .agenda { margin-top: 24px; }
+
+  .agenda-item {
+    display: grid;
+    grid-template-columns: 90px 1fr;
+    border: var(--border);
+    margin-bottom: -2.5px;
+  }
+
+  .agenda-time {
+    background: var(--off);
+    border-right: var(--border);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 11px;
+    font-weight: 700;
+    color: var(--mid);
+    letter-spacing: 0.05em;
+    padding: 18px 12px;
+    text-align: center;
+  }
+
+  .agenda-item.feature .agenda-time {
+    background: var(--black);
+    color: var(--white);
+    border-right-color: var(--black);
+  }
+
+  .agenda-body { padding: 18px 22px; }
+
+  .agenda-tag {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 8px;
+    font-weight: 800;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 4px;
+  }
+
+  .agenda-title {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 14px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.02em;
+    margin-bottom: 4px;
+  }
+
+  .agenda-desc {
+    font-family: 'Source Serif 4', serif;
+    font-size: 13px;
+    color: var(--mid);
+    line-height: 1.55;
+  }
+
+  /* SPEAKERS */
+  .speakers-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0;
+    border: var(--border);
+    margin-top: 24px;
+  }
+
+  .speaker-card {
+    padding: 28px 28px;
+    border-right: var(--border);
+  }
+
+  .speaker-card:last-child { border-right: none; }
+
+  .speaker-brand {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 9px;
+    font-weight: 800;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 10px;
+  }
+
+  .speaker-name {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 20px;
+    font-weight: 900;
+    text-transform: uppercase;
+    letter-spacing: -0.01em;
+    margin-bottom: 6px;
+  }
+
+  .speaker-topic {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 10px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--mid);
+    margin-bottom: 12px;
+    padding-bottom: 12px;
+    border-bottom: var(--border-thin);
+  }
+
+  .speaker-bio {
+    font-family: 'Source Serif 4', serif;
+    font-size: 14px;
+    color: var(--mid);
+    line-height: 1.65;
+  }
+
+  /* VENUE */
+  .venue-box {
+    border: var(--border);
+    margin-top: 24px;
+    overflow: hidden;
+  }
+
+  .venue-hd {
+    background: var(--black);
+    padding: 12px 22px;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 9px;
+    font-weight: 700;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    color: var(--white);
+  }
+
+  .venue-body {
+    padding: 22px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0;
+  }
+
+  .venue-cell { padding: 12px 16px; border-right: var(--border-thin); }
+  .venue-cell:last-child { border-right: none; }
+
+  .venue-cell-label {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 8px;
+    font-weight: 700;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--light);
+    margin-bottom: 4px;
+  }
+
+  .venue-cell-val {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 14px;
+    font-weight: 700;
+    color: var(--black);
+  }
+
+  .venue-note {
+    padding: 16px 22px;
+    border-top: var(--border-thin);
+    font-family: 'Source Serif 4', serif;
+    font-size: 14px;
+    font-style: italic;
+    color: var(--mid);
+    line-height: 1.6;
+  }
+
+  /* TICKETS */
+  .tickets-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0;
+    border: var(--border);
+    margin-top: 24px;
+  }
+
+  .ticket-card {
+    padding: 28px;
+    border-right: var(--border);
+  }
+
+  .ticket-card:last-child { border-right: none; }
+  .ticket-card.featured { background: var(--black); color: var(--white); }
+
+  .ticket-type {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 9px;
+    font-weight: 800;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 8px;
+  }
+
+  .ticket-price {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 52px;
+    font-weight: 900;
+    line-height: 1;
+    margin-bottom: 8px;
+    color: var(--white);
+  }
+
+  .ticket-card:not(.featured) .ticket-price { color: var(--black); }
+
+  .ticket-avail {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.4);
+    margin-bottom: 20px;
+    padding-bottom: 16px;
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+  }
+
+  .ticket-card:not(.featured) .ticket-avail {
+    color: var(--light);
+    border-bottom-color: #eee;
+  }
+
+  .ticket-desc {
+    font-family: 'Source Serif 4', serif;
+    font-size: 14px;
+    color: rgba(255,255,255,0.6);
+    line-height: 1.6;
+    margin-bottom: 20px;
+  }
+
+  .ticket-card:not(.featured) .ticket-desc { color: var(--mid); }
+
+  .btn-ticket {
+    display: inline-block;
+    background: var(--accent);
+    color: var(--white);
+    text-decoration: none;
+    padding: 14px 28px;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 11px;
+    font-weight: 800;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    border: 2px solid var(--accent);
+    width: 100%;
+    text-align: center;
+  }
+
+  .btn-ticket-outline {
+    display: inline-block;
+    background: transparent;
+    color: var(--black);
+    text-decoration: none;
+    padding: 14px 28px;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 11px;
+    font-weight: 800;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    border: 2px solid var(--black);
+    width: 100%;
+    text-align: center;
+  }
+
+  /* FAQ */
+  .faq-list { margin-top: 24px; }
+
+  .faq-item {
+    border: var(--border);
+    margin-bottom: -2.5px;
+    overflow: hidden;
+  }
+
+  .faq-q {
+    padding: 18px 22px;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 13px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.03em;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    user-select: none;
+    background: var(--white);
+  }
+
+  .faq-q:hover { background: var(--off); }
+
+  .faq-arrow {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 16px;
+    font-weight: 900;
+    color: var(--accent);
+    transition: transform 0.2s;
+    flex-shrink: 0;
+  }
+
+  .faq-item.open .faq-arrow { transform: rotate(45deg); }
+
+  .faq-a {
+    display: none;
+    padding: 0 22px 18px;
+    font-family: 'Source Serif 4', serif;
+    font-size: 15px;
+    color: var(--mid);
+    line-height: 1.7;
+    border-top: var(--border-thin);
+    padding-top: 16px;
+  }
+
+  .faq-item.open .faq-a { display: block; }
+
+  /* AFTER SECTION */
+  .after-bar {
+    background: var(--off);
+    border-left: 4px solid var(--accent);
+    padding: 18px 22px;
+    margin-top: 24px;
+    display: flex;
+    align-items: flex-start;
+    gap: 14px;
+  }
+
+  .after-icon {
+    font-size: 20px;
+    flex-shrink: 0;
+  }
+
+  .after-text {
+    font-family: 'Source Serif 4', serif;
+    font-size: 15px;
+    color: var(--black);
+    line-height: 1.6;
+  }
+
+  .after-text strong {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 11px;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    display: block;
+    margin-bottom: 4px;
+  }
+
+  /* FOOTER CTA */
+  .footer-cta {
+    background: var(--black);
+    padding: 64px 48px;
+    text-align: center;
+  }
+
+  .footer-cta-inner { max-width: 860px; margin: 0 auto; }
+
+  .footer-eye {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 9px;
+    font-weight: 700;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 20px;
+  }
+
+  .footer-div { width: 40px; height: 3px; background: var(--accent); margin: 0 auto 24px; }
+
+  .footer-h {
+    font-family: 'Montserrat', sans-serif;
+    font-size: clamp(32px, 5vw, 52px);
+    font-weight: 900;
+    text-transform: uppercase;
+    color: var(--white);
+    line-height: 1.0;
+    letter-spacing: -0.02em;
+    margin-bottom: 16px;
+  }
+
+  .footer-h span { color: var(--accent); }
+
+  .footer-sub {
+    font-family: 'Source Serif 4', serif;
+    font-size: 17px;
+    font-style: italic;
+    color: rgba(255,255,255,0.5);
+    max-width: 440px;
+    margin: 0 auto 36px;
+    line-height: 1.65;
+  }
+
+  .footer-tickets {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+    margin-bottom: 20px;
+  }
+
+  .footer-price {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.4);
+  }
+
+  .footer-fine {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 9px;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.2);
+    margin-top: 16px;
+  }
+
+  @media (max-width: 640px) {
+    .hero { padding: 48px 24px 40px; }
+    .section { padding: 48px 24px; }
+    .footer-cta { padding: 48px 24px; }
+    .why-grid { grid-template-columns: 1fr; }
+    .why-cell { border-right: none; border-bottom: var(--border); }
+    .why-cell:last-child { border-bottom: none; }
+    .speakers-grid { grid-template-columns: 1fr; }
+    .speaker-card { border-right: none; border-bottom: var(--border); }
+    .speaker-card:last-child { border-bottom: none; }
+    .tickets-grid { grid-template-columns: 1fr; }
+    .ticket-card { border-right: none; border-bottom: var(--border); }
+    .ticket-card:last-child { border-bottom: none; }
+    .venue-body { grid-template-columns: 1fr; }
+    .venue-cell { border-right: none; border-bottom: var(--border-thin); }
+    .venue-cell:last-child { border-bottom: none; }
+    .hero-meta { flex-direction: column; gap: 0; }
+    .hero-meta-item { border-right: none; border-bottom: 1.5px solid rgba(255,255,255,0.15); }
+    .hero-meta-item:last-child { border-bottom: none; }
+    .agenda-item { grid-template-columns: 70px 1fr; }
+    .footer-tickets { flex-direction: column; gap: 12px; }
+  }
+</style>
+</head>
+<body>
+
+<div class="strip">Saturday 25 April 2026 - Central London - Limited to 50 people</div>
+
+<!-- HERO -->
+<header class="hero">
+  <div class="hero-inner">
+    <div class="hero-collab">
+      <div class="brand-tag">YTA Chads</div>
+      <div class="brand-x">×</div>
+      <div class="brand-tag">Etsy Kings</div>
+    </div>
+    <h1>Chads<br><span>x</span><br>Kings</h1>
+    <div class="hero-meta">
+      <div class="hero-meta-item">
+        <div class="meta-label">Date</div>
+        <div class="meta-val">Saturday 25 April 2026</div>
+      </div>
+      <div class="hero-meta-item">
+        <div class="meta-label">Time</div>
+        <div class="meta-val">3:00 PM to 5:00 PM</div>
+      </div>
+      <div class="hero-meta-item">
+        <div class="meta-label">Location</div>
+        <div class="meta-val">Central London</div>
+      </div>
+      <div class="hero-meta-item">
+        <div class="meta-label">Capacity</div>
+        <div class="meta-val">50 people max</div>
+      </div>
+    </div>
+    <p class="hero-sub">Two people who have built over $7M in online businesses between them, in one room, for two hours. Come and find out how.</p>
+    <div class="ticket-row">
+      <a href="#tickets" class="btn-primary">Reserve Your Spot</a>
+      <div class="ticket-note">Early bird £10 · Standard £20</div>
+    </div>
+  </div>
+</header>
+
+<!-- WHY COME -->
+<section class="section">
+  <div class="sec-label">Why come</div>
+  <div class="sec-h">Small room.<br><em>Real people.</em><br>Useful conversations.</div>
+  <p class="body-text">This is not a conference or a seminar. It is a small room of people who are actually building online income, or seriously want to. Two talks from people who have generated over $7M in online business between them, then time to actually talk to each other.</p>
+  <p class="body-text">Most events are too big to be useful. This one is deliberately small.</p>
+  <div class="why-grid">
+    <div class="why-cell">
+      <div class="why-num">01</div>
+      <div class="why-title">Meet real builders</div>
+      <div class="why-desc">Everyone in the room is working on something. No spectators. Useful conversations happen fast when everyone has skin in the game.</div>
+    </div>
+    <div class="why-cell">
+      <div class="why-num">02</div>
+      <div class="why-title">Cut months of trial and error</div>
+      <div class="why-desc">Two talks from people running businesses at scale. What works, what wastes time, and what they wish they knew earlier.</div>
+    </div>
+    <div class="why-cell">
+      <div class="why-num">03</div>
+      <div class="why-title">Leave with next steps</div>
+      <div class="why-desc">Not just inspiration. Specific things you can do the following week to move faster on whatever you are building.</div>
+    </div>
+  </div>
+</section>
+
+<!-- AGENDA -->
+<section class="section">
+  <div class="sec-label">What to expect</div>
+  <div class="sec-h">Two hours.<br><em>No filler.</em></div>
+  <p class="body-text">Two talks, Q&A, and time to actually meet people. That is it.</p>
+  <div class="agenda">
+    <div class="agenda-item">
+      <div class="agenda-time">3:00 PM</div>
+      <div class="agenda-body">
+        <div class="agenda-tag">Doors open</div>
+        <div class="agenda-title">Arrive, grab a drink, get settled</div>
+        <div class="agenda-desc">Come in, meet a few people, get comfortable before we kick off.</div>
+      </div>
+    </div>
+    <div class="agenda-item feature">
+      <div class="agenda-time">3:15 PM</div>
+      <div class="agenda-body">
+        <div class="agenda-tag">Talk 1 - YTA Chads</div>
+        <div class="agenda-title">How the YouTube Search Model Works</div>
+        <div class="agenda-desc">How to build a search-based YouTube channel generating consistent monthly income. Covering the model that currently generates $15k–$20k per month, two channel exits, and what it actually takes to get there.</div>
+      </div>
+    </div>
+    <div class="agenda-item feature">
+      <div class="agenda-time">3:45 PM</div>
+      <div class="agenda-body">
+        <div class="agenda-tag">Talk 2 - Etsy Kings</div>
+        <div class="agenda-title">Building Multiple Million-Pound Ecom Businesses</div>
+        <div class="agenda-desc">Craig has built across dropshipping, Etsy, and a food brand now doing multiple millions. This talk covers how those businesses were built, what scaled, and what he knows now that he wished he knew at the start.</div>
+      </div>
+    </div>
+    <div class="agenda-item">
+      <div class="agenda-time">4:15 PM</div>
+      <div class="agenda-body">
+        <div class="agenda-tag">Open session</div>
+        <div class="agenda-title">Q&A and Discussion</div>
+        <div class="agenda-desc">Open floor. Ask anything. This tends to be where the most useful conversations happen.</div>
+      </div>
+    </div>
+    <div class="agenda-item">
+      <div class="agenda-time">4:30 PM</div>
+      <div class="agenda-body">
+        <div class="agenda-tag">Networking</div>
+        <div class="agenda-title">Meet the room</div>
+        <div class="agenda-desc">Unstructured time to talk to people. Bring questions, bring ideas, be useful to someone.</div>
+      </div>
+    </div>
+    <div class="agenda-item">
+      <div class="agenda-time">5:00 PM</div>
+      <div class="agenda-body">
+        <div class="agenda-tag">Wrap</div>
+        <div class="agenda-title">Official end</div>
+        <div class="agenda-desc">The meetup wraps. See below if you want to keep going.</div>
+      </div>
+    </div>
+  </div>
+  <div class="after-bar">
+    <div class="after-icon">🍻</div>
+    <div class="after-text">
+      <strong>After - Food and drinks</strong>
+      After the meetup we will be heading out to a nearby spot for food and drinks. No obligation at all, but a good chance to keep the conversation going in a more relaxed setting. Details shared on the day.
+    </div>
+  </div>
+</section>
+
+<!-- SPEAKERS -->
+<section class="section">
+  <div class="sec-label">Speakers</div>
+  <div class="sec-h">Who is<br><em>in the room</em></div>
+  <div class="speakers-grid">
+    <div class="speaker-card">
+      <div class="speaker-brand">YTA Chads</div>
+      <div class="speaker-name">YouTube Search<br>Automation</div>
+      <div class="speaker-topic">Topic: Building a search-based YouTube channel to $15k–$20k/month</div>
+      <div class="speaker-bio">Currently generating $15k–$20k per month through YouTube search automation, with two channel exits under his belt at $20k and $53k respectively. No viral videos, no entertainment content, no camera. Pure search-based channels running on autopilot. This talk covers exactly how the model works and what it takes to build income that compounds month after month.</div>
+    </div>
+    <div class="speaker-card">
+      <div class="speaker-brand">Etsy Kings</div>
+      <div class="speaker-name">Multi-Million<br>Ecom Brand</div>
+      <div class="speaker-topic">Topic: Building multiple online businesses to millions in revenue</div>
+      <div class="speaker-bio">Craig has built multiple ecommerce businesses across dropshipping, Etsy, and a food brand that has grown into a multi-million pound operation he now runs independently. Between the two speakers, they have generated over $7M in online business revenue. This talk goes into the real decisions, the models that worked, and what scaling an ecommerce business actually looks like day to day.</div>
+    </div>
+  </div>
+</section>
+
+<!-- VENUE -->
+<section class="section">
+  <div class="sec-label">Location</div>
+  <div class="sec-h">Central London.<br><em>Venue confirmed<br>to ticket holders.</em></div>
+  <p class="body-text">We are keeping the venue flexible so we can book the right size space based on demand. The exact location will be emailed to all ticket holders once numbers are finalised. All we can tell you now is it will be central and easy to get to.</p>
+  <div class="venue-box">
+    <div class="venue-hd">Venue details</div>
+    <div class="venue-body">
+      <div class="venue-cell">
+        <div class="venue-cell-label">City</div>
+        <div class="venue-cell-val">London, UK</div>
+      </div>
+      <div class="venue-cell">
+        <div class="venue-cell-label">Area</div>
+        <div class="venue-cell-val">Central London</div>
+      </div>
+      <div class="venue-cell">
+        <div class="venue-cell-label">Exact venue</div>
+        <div class="venue-cell-val">Confirmed by email</div>
+      </div>
+      <div class="venue-cell">
+        <div class="venue-cell-label">When</div>
+        <div class="venue-cell-val">Saturday 25 April, 3–5pm</div>
+      </div>
+    </div>
+    <div class="venue-note">We will confirm the exact venue and directions to all ticket holders by email before the event. If you have any accessibility requirements, let us know when you register.</div>
+  </div>
+</section>
+
+<!-- TICKETS -->
+<section class="section" id="tickets">
+  <div class="sec-label">Tickets</div>
+  <div class="sec-h">Get in<br><em>early.</em></div>
+  <p class="body-text">This is a small event on purpose. Once the room is full, that is it. Early bird tickets are gone once the first 20 go.</p>
+  <div class="tickets-grid">
+    <div class="ticket-card featured">
+      <div class="ticket-type">Early Bird</div>
+      <div class="ticket-price">£10</div>
+      <div class="ticket-avail">First 20 tickets only</div>
+      <div class="ticket-desc">Same event, same access, same speakers. Just cheaper because you moved fast. These will go quickly.</div>
+      <a href="#" class="btn-ticket">Get Early Bird Ticket</a>
+    </div>
+    <div class="ticket-card">
+      <div class="ticket-type">Standard</div>
+      <div class="ticket-price">£20</div>
+      <div class="ticket-avail">After first 20 tickets</div>
+      <div class="ticket-desc">Full access to both talks, Q&A, networking, and the after event. Same experience as early bird.</div>
+      <a href="#" class="btn-ticket-outline">Get Standard Ticket</a>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="section">
+  <div class="sec-label">FAQ</div>
+  <div class="sec-h">Common<br><em>questions</em></div>
+  <div class="faq-list">
+    <div class="faq-item">
+      <div class="faq-q">Do I need experience to come? <span class="faq-arrow">+</span></div>
+      <div class="faq-a">No. You just need to be genuinely interested in building something online. Whether you are just starting out or already running a business, there will be something useful for you in the room.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">When will the venue be announced? <span class="faq-arrow">+</span></div>
+      <div class="faq-a">Once ticket numbers are finalised, all ticket holders will receive the exact venue, address, and any travel information by email. We are aiming to confirm this at least a week before the event.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">Is this a workshop or a networking event? <span class="faq-arrow">+</span></div>
+      <div class="faq-a">Both. Two structured talks first, then open Q&A, then unstructured networking time. The talks are practical and specific, not motivational fluff. The networking is optional but most people stay.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">What if I can't make it? <span class="faq-arrow">+</span></div>
+      <div class="faq-a">Please get in touch as soon as you know. Refund policy details are confirmed at checkout.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">Is the after event included in the ticket? <span class="faq-arrow">+</span></div>
+      <div class="faq-a">The meetup itself is what the ticket covers. The food and drinks afterwards are separate and optional - you just pay for yourself. Details on the venue for that will be shared on the day.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">How many people will be there? <span class="faq-arrow">+</span></div>
+      <div class="faq-a">We are capping this at 50 people. Small enough that you will actually meet people and have real conversations, not just stand in a crowd.</div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER CTA -->
+<section class="footer-cta">
+  <div class="footer-cta-inner">
+    <div class="footer-eye">Saturday 25 April 2026 - Central London</div>
+    <div class="footer-div"></div>
+    <div class="footer-h">50 spots.<br><span>Two talks.</span><br>One afternoon.</div>
+    <p class="footer-sub">Over $7M in online business between two speakers. Small room. Two hours. Come if you are serious.</p>
+    <div class="footer-tickets">
+      <a href="#tickets" class="btn-primary">Reserve Your Spot</a>
+    </div>
+    <div class="footer-price">Early bird £10 · Standard £20 · Limited to 50 people</div>
+    <div class="footer-fine">YTA Chads x Etsy Kings · London · April 2026</div>
+  </div>
+</section>
+
+<script>
+  document.querySelectorAll('.faq-q').forEach(function(q) {
+    q.addEventListener('click', function() {
+      var item = this.closest('.faq-item');
+      var wasOpen = item.classList.contains('open');
+      document.querySelectorAll('.faq-item').forEach(function(i) { i.classList.remove('open'); });
+      if (!wasOpen) item.classList.add('open');
+    });
+  });
+</script>
+
+</body>
+</html>

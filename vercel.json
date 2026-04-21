@@ -149,6 +149,14 @@
       "destination": "/the-1k-month-youtube-plan-viewer.html"
     },
     {
+      "source": "/meetup",
+      "destination": "/meetup.html"
+    },
+    {
+      "source": "/meetup.html",
+      "destination": "/meetup.html"
+    },
+    {
       "source": "/(.*)",
       "destination": "/index.html"
     }
