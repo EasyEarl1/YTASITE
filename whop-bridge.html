@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Before You Dive In: Watch This</title>
+  <meta name="description" content="Quick next step after your purchase: watch this short video, then see how the full system works.">
+  <!-- Set your VSL URL here (used by the primary CTA if you prefer editing one place). -->
+  <meta name="bridge-vsl-url" content="/lander.html">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg: #f8fafc;
+      --card: #ffffff;
+      --text: #0f172a;
+      --muted: #475569;
+      --soft: #64748b;
+      --border: #e2e8f0;
+      --primary: #2563eb;
+      --primary-hover: #1d4fd8;
+      --narrow: min(40rem, calc(100vw - 2rem));
+    }
+
+    body {
+      font-family: Inter, system-ui, -apple-system, Segoe UI, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      font-size: 1.0625rem;
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    .bridge {
+      min-height: 100vh;
+      padding: clamp(1.75rem, 5vw, 3rem) 1rem 2.5rem;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .bridge-inner {
+      width: var(--narrow);
+      max-width: 100%;
+    }
+
+    .eyebrow {
+      font-size: 0.75rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--soft);
+      margin-bottom: 0.75rem;
+      text-align: center;
+    }
+
+    h1 {
+      font-size: clamp(1.5rem, 4.2vw, 1.85rem);
+      font-weight: 800;
+      letter-spacing: -0.03em;
+      line-height: 1.2;
+      text-align: center;
+      margin-bottom: 1rem;
+    }
+
+    .sub {
+      text-align: center;
+      color: var(--muted);
+      font-size: 1.05rem;
+      font-weight: 500;
+      max-width: 28rem;
+      margin: 0 auto 1.75rem;
+    }
+
+    .video-card {
+      background: var(--card);
+      border-radius: 1rem;
+      border: 1px solid var(--border);
+      box-shadow: 0 10px 40px rgba(15, 23, 42, 0.06);
+      overflow: hidden;
+    }
+
+    .video-aspect {
+      position: relative;
+      width: 100%;
+      padding-top: 56.25%;
+      background:
+        radial-gradient(800px 400px at 20% 0%, rgba(37, 99, 235, 0.1), transparent 55%),
+        #e8eef9;
+    }
+
+    .video-aspect iframe,
+    .video-aspect .video-placeholder {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      border: 0;
+    }
+
+    .video-placeholder {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      padding: 1.5rem;
+      text-align: center;
+      color: var(--text);
+      font-weight: 600;
+      font-size: 1rem;
+    }
+
+    .video-placeholder small {
+      display: block;
+      margin-top: 0.5rem;
+      font-weight: 500;
+      font-size: 0.875rem;
+      color: var(--muted);
+      max-width: 20rem;
+    }
+
+    .cta-wrap {
+      margin-top: 1.5rem;
+      text-align: center;
+    }
+
+    .btn-vsl {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.35rem;
+      min-height: 3.25rem;
+      padding: 0 1.75rem;
+      border-radius: 999px;
+      background: linear-gradient(135deg, var(--primary), var(--primary-hover));
+      color: #fff;
+      font-weight: 700;
+      font-size: 1rem;
+      text-decoration: none;
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      box-shadow: 0 12px 28px rgba(37, 99, 235, 0.28);
+      transition: transform 0.15s ease, box-shadow 0.15s ease;
+    }
+
+    .btn-vsl:hover {
+      transform: translateY(-1px);
+      box-shadow: 0 16px 36px rgba(37, 99, 235, 0.32);
+    }
+
+    .btn-vsl:focus-visible {
+      outline: 2px solid var(--primary);
+      outline-offset: 3px;
+    }
+
+    .cta-note {
+      margin-top: 1rem;
+      font-size: 0.98rem;
+      color: var(--muted);
+      font-weight: 500;
+      max-width: 26rem;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .cta-reassure {
+      margin-top: 0.65rem;
+      font-size: 0.9rem;
+      color: var(--soft);
+      max-width: 26rem;
+      margin-left: auto;
+      margin-right: auto;
+    }
+  </style>
+</head>
+<body>
+  <div class="bridge">
+    <main class="bridge-inner">
+      <p class="eyebrow">Quick start</p>
+      <h1>Before You Dive In: Watch This (Important)</h1>
+      <p class="sub">This will save you months if you actually want this to work</p>
+
+      <div class="video-card" aria-label="Bridge video">
+        <div class="video-aspect">
+          <!--
+            Paste your embed here: remove .video-placeholder and add an iframe
+            (Wistia / YouTube / etc.): same pattern as telegram.html / landing-page-1.html
+            Example (Wistia):
+            <iframe src="https://fast.wistia.net/embed/iframe/YOUR_ID?videoFoam=true" title="Bridge video" allow="autoplay; fullscreen" allowtransparency="true" frameborder="0" scrolling="no" style="position:absolute;top:0;left:0;width:100%;height:100%;border:0;"></iframe>
+          -->
+          <div class="video-placeholder">
+            Place your bridge video here
+            <small>Replace this block with your video embed in the HTML.</small>
+          </div>
+        </div>
+      </div>
+
+      <div class="cta-wrap">
+        <a class="btn-vsl bridge-vsl" href="/lander.html">See How The Full System Works →</a>
+        <p class="cta-note">If you’re serious about turning this into a real income stream, watch the next page.</p>
+        <p class="cta-reassure">No pressure: just a full breakdown of how everything actually works step-by-step.</p>
+      </div>
+    </main>
+  </div>
+
+  <script>
+    (function () {
+      var m = document.querySelector('meta[name="bridge-vsl-url"]');
+      var url = m && m.getAttribute('content') && m.getAttribute('content').trim();
+      var a = document.querySelector('a.bridge-vsl');
+      if (url && a) a.setAttribute('href', url);
+    })();
+  </script>
+</body>
+</html>
