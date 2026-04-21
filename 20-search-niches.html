@@ -574,6 +574,16 @@
       }
     }
 
+    .proof-grid.proof-grid--triple {
+      grid-template-columns: 1fr;
+    }
+
+    @media (min-width: 720px) {
+      .proof-grid.proof-grid--triple {
+        grid-template-columns: repeat(3, 1fr);
+      }
+    }
+
     .proof-slot {
       aspect-ratio: 16 / 10;
       border-radius: 0.875rem;
@@ -604,9 +614,14 @@
       border-width: 1px;
       border-color: #e2e8f0;
       overflow: hidden;
+      aspect-ratio: auto;
+      min-height: 12rem;
     }
 
     .proof-slot--contain img {
+      width: 100%;
+      height: auto;
+      max-height: min(28rem, 70vh);
       object-fit: contain;
       object-position: center;
       border-radius: 0.75rem;
@@ -927,20 +942,37 @@
   <section class="vip-proof-band" aria-label="Proof">
     <p class="vip-stars"><span class="stars" aria-hidden="true">★★★★★</span> Results &amp; proof</p>
     <p class="vip-proof-headline">Everything above for <strong style="color:var(--text);">$27</strong>. One time. Instant access.</p>
-    <div class="proof-grid">
-      <div class="proof-slot">Screenshot placeholder 1</div>
-      <div class="proof-slot">Screenshot placeholder 2</div>
+    <div class="proof-grid proof-grid--triple">
       <div class="proof-slot proof-slot--contain">
         <img
-          src="revv/REV%203.png"
-          width="1600"
-          height="900"
-          alt="YouTube Studio: channel analytics — about 4.2M views and $31,005 estimated revenue over 365 days"
+          src="revv/rev%208.png"
+          width="1200"
+          height="800"
+          alt="Estimated earnings by month for the last six months — upward trend in creator revenue"
           loading="lazy"
           decoding="async"
         >
       </div>
-      <div class="proof-slot">Screenshot placeholder 4</div>
+      <div class="proof-slot proof-slot--contain">
+        <img
+          src="revv/rev%205.png"
+          width="900"
+          height="1200"
+          alt="YouTube Studio mobile: payment on the way and January earnings progress"
+          loading="lazy"
+          decoding="async"
+        >
+      </div>
+      <div class="proof-slot proof-slot--contain">
+        <img
+          src="revv/REV%204.png"
+          width="1600"
+          height="900"
+          alt="YouTube Analytics: estimated revenue about $47,660 over 365 days with daily revenue chart"
+          loading="lazy"
+          decoding="async"
+        >
+      </div>
     </div>
   </section>
 
