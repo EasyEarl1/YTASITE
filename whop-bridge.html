@@ -32,10 +32,36 @@
       font-size: 1.0625rem;
       line-height: 1.6;
       -webkit-font-smoothing: antialiased;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .bridge-thanks {
+      flex-shrink: 0;
+      width: 100%;
+      padding: 0.7rem max(1rem, env(safe-area-inset-left)) 0.7rem max(1rem, env(safe-area-inset-right));
+      text-align: center;
+      font-size: 0.9375rem;
+      font-weight: 600;
+      letter-spacing: 0.02em;
+      color: #ecfdf5;
+      background: linear-gradient(135deg, #064e3b 0%, #047857 45%, #065f46 100%);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.5rem;
+    }
+
+    .bridge-thanks svg {
+      flex-shrink: 0;
+      opacity: 0.95;
     }
 
     .bridge {
-      min-height: 100vh;
+      flex: 1;
+      min-height: 0;
       padding: clamp(1.75rem, 5vw, 3rem) 1rem 2.5rem;
       display: flex;
       flex-direction: column;
@@ -176,6 +202,12 @@
   </style>
 </head>
 <body>
+  <div class="bridge-thanks" role="status">
+    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.25" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+      <path d="M20 6L9 17l-5-5" />
+    </svg>
+    Thank you for your purchase
+  </div>
   <div class="bridge">
     <main class="bridge-inner">
       <p class="eyebrow">Quick start</p>
