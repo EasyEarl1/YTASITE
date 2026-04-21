@@ -17,25 +17,26 @@
       --blue: #2563eb;
       --blue-hover: #1d4fd8;
       --green: #4ade80;
+      --hl: #fef08a;
       --page: #ffffff;
-      --soft: #f4f6fb;
+      --soft: #f4f4f4;
       --text: #0f1117;
-      --text-body: #4a5568;
+      --text-body: #374151;
       --text-soft: #6b7280;
-      --border: #e2e8f0;
+      --border: #e5e7eb;
       --gold-bg: #faf4e6;
       --gold-border: #d4a843;
       --gold-text: #6b5420;
-      --rose-bg: #fff5f5;
-      --rose-border: #fecaca;
       --info-bg: #f4f6ff;
       --info-border: #c5cef5;
       --info-text: #1e3a5f;
-      --dark: #0f1117;
-      --dark3: #1e2235;
+      --hero-dark: #0a0e1a;
+      --hero-mid: #121a2e;
+      --dark-footer: #0a0e1a;
 
-      --col: min(42rem, calc(100vw - 2.5rem));
-      --section-y: clamp(3.5rem, 10vw, 5.5rem);
+      --vip-wide: min(68rem, calc(100vw - 2.5rem));
+      --narrow: min(42rem, calc(100vw - 2.5rem));
+      --section-y: clamp(3.25rem, 8vw, 5rem);
     }
 
     html {
@@ -48,221 +49,369 @@
       font-family: Inter, system-ui, -apple-system, Segoe UI, sans-serif;
       background: var(--page);
       color: var(--text);
-      font-size: 1.125rem;
+      font-size: 1.0625rem;
       line-height: 1.65;
       -webkit-font-smoothing: antialiased;
     }
 
-    .content-col {
-      width: 100%;
-      max-width: var(--col);
-      margin-left: auto;
-      margin-right: auto;
-      padding-left: max(1.25rem, env(safe-area-inset-left));
-      padding-right: max(1.25rem, env(safe-area-inset-right));
-    }
-
-    /* —— Hero —— */
-    .hero {
-      text-align: center;
-      padding-top: max(2.5rem, env(safe-area-inset-top));
-      padding-bottom: var(--section-y);
-    }
-
-    .hero h1 {
-      font-size: clamp(2rem, 5.5vw, 3.125rem);
-      font-weight: 800;
-      line-height: 1.12;
-      letter-spacing: -0.035em;
-      color: var(--text);
-      max-width: 22ch;
-      margin-left: auto;
-      margin-right: auto;
-    }
-
-    .hero h1 .accent {
-      color: var(--blue);
-      white-space: nowrap;
-    }
-
-    @media (max-width: 380px) {
-      .hero h1 .accent { white-space: normal; }
-    }
-
-    .hero .subhead {
-      font-size: clamp(1.125rem, 2.4vw, 1.375rem);
-      font-weight: 500;
-      line-height: 1.55;
-      color: var(--text-soft);
-      max-width: 36rem;
-      margin: 1.5rem auto 0;
-    }
-
-    .hero-cta {
-      margin-top: 2.25rem;
-    }
-
-    /* —— Sections —— */
-    .band {
-      padding: var(--section-y) 0;
-    }
-
-    .band--soft {
-      background: var(--soft);
-    }
-
-    .band--tight-top {
-      padding-top: 0;
-    }
-
-    /* Body copy */
-    .prose-flow p {
-      font-size: 1.125rem;
-      line-height: 1.7;
-      color: var(--text-body);
-      margin-bottom: 1.25rem;
-    }
-
-    .prose-flow p:last-child {
-      margin-bottom: 0;
-    }
-
-    .prose-flow strong {
-      color: var(--text);
+    .hl {
+      background: var(--hl);
       font-weight: 700;
+      padding: 0 0.15em;
+      box-decoration-break: clone;
+      -webkit-box-decoration-break: clone;
     }
 
-    .prose-flow .lead {
-      font-size: 1.1875rem;
-      color: var(--text);
-      font-weight: 600;
-      line-height: 1.6;
-    }
-
-    /* Mid-page title (reference-style subheadline) */
-    .block-title {
-      font-size: clamp(1.375rem, 3.2vw, 1.75rem);
-      font-weight: 800;
-      line-height: 1.25;
-      letter-spacing: -0.03em;
-      color: var(--text);
+    /* —— Top strip (VIP PDF style) —— */
+    .vip-strip {
+      background: #050814;
+      color: rgba(255, 255, 255, 0.92);
+      font-size: 0.75rem;
+      font-weight: 700;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
       text-align: center;
-      margin-bottom: 0.35rem;
+      padding: 0.65rem 1rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.5rem;
     }
 
-    .block-sub {
-      text-align: center;
-      font-size: 1.0625rem;
-      color: var(--text-soft);
-      line-height: 1.6;
-      max-width: 32rem;
-      margin: 0 auto 2rem;
+    .vip-strip svg {
+      flex-shrink: 0;
+      opacity: 0.9;
     }
 
-    /* Agitate card */
-    .pain-card {
-      background: var(--rose-bg);
-      border: 1px solid var(--rose-border);
-      border-radius: 1rem;
-      padding: clamp(1.75rem, 5vw, 2.5rem);
-      margin-top: 0.5rem;
+    /* —— Dark split hero —— */
+    .vip-hero {
+      background: linear-gradient(165deg, var(--hero-dark) 0%, var(--hero-mid) 55%, #0f172a 100%);
+      color: #fff;
+      padding: clamp(1.75rem, 5vw, 3rem) 0 clamp(2.5rem, 6vw, 4rem);
     }
 
-    .pain-card p {
-      font-size: 1.125rem;
-      line-height: 1.7;
-      color: var(--text-body);
-      margin-bottom: 1.25rem;
-    }
-
-    .pain-card p:last-child {
-      margin-bottom: 0;
-    }
-
-    /* Two-column “what you get” */
-    .split {
+    .vip-hero-inner {
+      width: var(--vip-wide);
+      margin: 0 auto;
+      padding: 0 max(1.25rem, env(safe-area-inset-left)) 0 max(1.25rem, env(safe-area-inset-right));
       display: grid;
       gap: clamp(2rem, 5vw, 3rem);
-      align-items: start;
-      margin-top: 2rem;
+      align-items: center;
     }
 
-    @media (min-width: 768px) {
-      .split {
-        grid-template-columns: 1fr 1.15fr;
-        gap: 2.5rem;
+    @media (min-width: 900px) {
+      .vip-hero-inner {
+        grid-template-columns: 1fr 1fr;
+        gap: 2.5rem 3rem;
       }
     }
 
-    .split-visual {
-      border-radius: 1rem;
-      border: 2px dashed var(--border);
-      background: linear-gradient(160deg, #fff 0%, var(--soft) 100%);
-      aspect-ratio: 1;
-      max-height: 320px;
+    @media (max-width: 899px) {
+      .vip-hero-inner .vip-media-block { order: -1; }
+    }
+
+    .vip-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      font-size: 0.6875rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: rgba(255, 255, 255, 0.95);
+      border: 1px solid rgba(255, 255, 255, 0.35);
+      border-radius: 999px;
+      padding: 0.4rem 0.85rem;
+      margin-bottom: 1rem;
+    }
+
+    .vip-pill-dot {
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: #f87171;
+      flex-shrink: 0;
+    }
+
+    .vip-hero h1 {
+      font-size: clamp(1.65rem, 4.2vw, 2.35rem);
+      font-weight: 800;
+      line-height: 1.15;
+      letter-spacing: -0.03em;
+      margin-bottom: 1rem;
+    }
+
+    .vip-hero h1 em {
+      font-style: italic;
+      font-weight: 800;
+      color: #93c5fd;
+    }
+
+    .vip-hero h1 .accent {
+      color: #93c5fd;
+      font-style: normal;
+    }
+
+    .vip-hero-sub {
+      font-size: clamp(1rem, 2.2vw, 1.15rem);
+      line-height: 1.55;
+      color: rgba(255, 255, 255, 0.72);
+      font-weight: 500;
+      max-width: 36rem;
+      margin-bottom: 1.35rem;
+    }
+
+    .vip-hero-meta {
+      font-size: 0.9375rem;
+      color: rgba(255, 255, 255, 0.55);
+      margin-bottom: 1.5rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      flex-wrap: wrap;
+    }
+
+    .vip-media-block {
       display: flex;
       flex-direction: column;
+      gap: 1rem;
+    }
+
+    .vip-media {
+      position: relative;
+      border-radius: 1rem;
+      overflow: hidden;
+      background: #0f172a;
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      aspect-ratio: 16 / 10;
+      display: flex;
       align-items: center;
       justify-content: center;
       text-align: center;
       padding: 1.5rem;
-      color: var(--text-soft);
+      color: rgba(255, 255, 255, 0.45);
       font-size: 0.9375rem;
       font-weight: 600;
       line-height: 1.45;
     }
 
-    .split-visual span {
+    .vip-media strong {
       display: block;
-      font-size: 2rem;
-      font-weight: 800;
-      color: var(--blue);
-      letter-spacing: -0.03em;
+      color: rgba(255, 255, 255, 0.85);
+      font-size: 1rem;
       margin-bottom: 0.35rem;
     }
 
-    .checklist {
-      list-style: none;
+    .vip-countdown {
+      background: rgba(0, 0, 0, 0.45);
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      border-radius: 0.75rem;
+      padding: 0.85rem 1rem;
+      font-size: 0.75rem;
+      font-weight: 700;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      color: rgba(255, 255, 255, 0.75);
+      text-align: center;
     }
 
-    .checklist li {
-      position: relative;
-      padding-left: 1.35rem;
+    .vip-countdown span {
+      color: #fca5a5;
+    }
+
+    /* CTAs */
+    .btn-cta {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 100%;
+      max-width: 26rem;
+      background: var(--blue);
+      color: #fff;
+      font-family: inherit;
+      font-size: 1rem;
+      font-weight: 700;
+      padding: 1rem 1.5rem;
+      border-radius: 999px;
+      text-decoration: none;
+      border: none;
+      cursor: pointer;
+      transition: background 0.2s, transform 0.15s;
+      text-align: center;
+      touch-action: manipulation;
+    }
+
+    .btn-cta:hover {
+      background: var(--blue-hover);
+      transform: translateY(-1px);
+    }
+
+    .btn-cta:focus-visible {
+      outline: 2px solid #fff;
+      outline-offset: 3px;
+    }
+
+    .btn-cta--lg {
       font-size: 1.0625rem;
-      line-height: 1.65;
+      padding: 1.1rem 1.75rem;
+    }
+
+    .vip-decline {
+      display: inline-block;
+      margin-top: 1rem;
+      font-size: 0.875rem;
+      color: rgba(255, 255, 255, 0.55);
+      text-decoration: underline;
+      text-underline-offset: 3px;
+    }
+
+    .vip-decline:hover {
+      color: #fff;
+    }
+
+    /* —— Centered section titles —— */
+    .vip-section {
+      padding: var(--section-y) 0;
+    }
+
+    .vip-section--soft {
+      background: var(--soft);
+    }
+
+    .vip-section-title {
+      width: var(--vip-wide);
+      margin: 0 auto;
+      padding: 0 max(1.25rem, env(safe-area-inset-left)) 0 max(1.25rem, env(safe-area-inset-right));
+      text-align: center;
+      font-size: clamp(1.25rem, 3vw, 1.65rem);
+      font-weight: 800;
+      line-height: 1.25;
+      letter-spacing: -0.02em;
+      margin-bottom: 2.5rem;
+    }
+
+    .vip-section-title .price {
+      font-weight: 800;
+      color: var(--blue);
+    }
+
+    /* —— Alternating rows (VIP bonus blocks) —— */
+    .vip-rows {
+      width: var(--vip-wide);
+      margin: 0 auto;
+      padding: 0 max(1.25rem, env(safe-area-inset-left)) 0 max(1.25rem, env(safe-area-inset-right));
+      display: flex;
+      flex-direction: column;
+      gap: clamp(2.5rem, 6vw, 3.75rem);
+    }
+
+    .vip-row {
+      display: grid;
+      gap: 1.75rem;
+      align-items: center;
+    }
+
+    @media (min-width: 768px) {
+      .vip-row {
+        grid-template-columns: 1fr 1fr;
+        gap: 2.5rem;
+      }
+      .vip-row--flip .vip-row-media { order: 2; }
+      .vip-row--flip .vip-row-copy { order: 1; }
+    }
+
+    .vip-row-media {
+      border-radius: 1rem;
+      overflow: hidden;
+      box-shadow: 0 18px 40px rgba(15, 23, 42, 0.12);
+      background: #f9fafb;
+      border: 1px solid var(--border);
+      aspect-ratio: 4 / 3;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 1.25rem;
+      color: var(--text-soft);
+      font-size: 0.9375rem;
+      font-weight: 600;
+      line-height: 1.4;
+    }
+
+    .vip-row-media img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    .vip-row-head {
+      display: flex;
+      align-items: flex-start;
+      gap: 0.65rem;
+      margin-bottom: 0.85rem;
+    }
+
+    .vip-dot {
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background: var(--blue);
+      flex-shrink: 0;
+      margin-top: 0.45rem;
+    }
+
+    .vip-row-head h3 {
+      font-size: clamp(1.05rem, 2.2vw, 1.25rem);
+      font-weight: 800;
+      line-height: 1.3;
+      letter-spacing: -0.02em;
+    }
+
+    .vip-row-copy p {
+      font-size: 1.0625rem;
+      line-height: 1.7;
       color: var(--text-body);
       margin-bottom: 1rem;
     }
 
-    .checklist li:last-child {
+    .vip-row-copy p:last-child {
       margin-bottom: 0;
     }
 
-    .checklist li::before {
-      content: "";
-      position: absolute;
-      left: 0;
-      top: 0.55em;
-      width: 0.375rem;
-      height: 0.375rem;
-      border-radius: 50%;
-      background: var(--text);
-    }
-
-    .closing-line {
-      margin-top: 1.75rem;
-      font-size: 1.125rem;
-      line-height: 1.65;
-      color: var(--text-body);
-    }
-
-    .closing-line strong {
+    .vip-row-copy strong {
       color: var(--text);
+      font-weight: 700;
     }
 
-    /* Highlight boxes */
+    .vip-divider {
+      height: 1px;
+      background: var(--border);
+      margin: 0 auto;
+      width: var(--vip-wide);
+      max-width: calc(100% - 2.5rem);
+    }
+
+    .vip-pullquote {
+      text-align: center;
+      font-size: clamp(1.05rem, 2.5vw, 1.2rem);
+      font-weight: 600;
+      line-height: 1.55;
+      color: var(--text-body);
+      max-width: 36rem;
+      margin: 0 auto;
+      padding: 0 1.25rem;
+    }
+
+    /* Stacks below rows */
+    .vip-stack {
+      width: var(--vip-wide);
+      margin: 0 auto;
+      padding: 0 max(1.25rem, env(safe-area-inset-left)) 0 max(1.25rem, env(safe-area-inset-right));
+    }
+
     .highlight-gold {
-      margin-top: 2.25rem;
+      margin-top: 2rem;
       background: var(--gold-bg);
       border: 1px solid var(--gold-border);
       border-radius: 1rem;
@@ -286,7 +435,7 @@
     }
 
     .highlight-info {
-      margin-top: 1.75rem;
+      margin-top: 1.25rem;
       background: var(--info-bg);
       border: 1px solid var(--info-border);
       border-radius: 1rem;
@@ -298,50 +447,48 @@
 
     .highlight-info strong {
       font-weight: 700;
-      color: var(--info-text);
     }
 
-    /* Urgency */
-    .urgency {
-      text-align: center;
-      background: var(--dark);
-      color: #c5cad8;
-      border-radius: 1rem;
-      padding: clamp(2rem, 5vw, 2.75rem);
-      font-size: 1.0625rem;
-      line-height: 1.7;
-      max-width: var(--col);
-      margin-left: auto;
-      margin-right: auto;
-    }
-
-    .urgency strong {
-      color: #fff;
-      font-weight: 700;
-    }
-
-    .urgency .mark {
-      color: var(--green);
-      font-weight: 700;
-    }
-
-    .mid-cta {
-      text-align: center;
-      margin-top: 2rem;
-    }
-
-    /* Proof */
-    .proof-band {
+    /* Social proof band */
+    .vip-proof-band {
       padding: var(--section-y) 0;
-      background: var(--soft);
+      background: var(--page);
+    }
+
+    .vip-stars {
+      text-align: center;
+      font-size: 0.8125rem;
+      font-weight: 800;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      color: var(--text);
+      margin-bottom: 0.5rem;
+    }
+
+    .vip-stars .stars {
+      letter-spacing: 0.15em;
+      color: #ca8a04;
+      margin-right: 0.35rem;
+    }
+
+    .vip-proof-headline {
+      text-align: center;
+      font-size: clamp(1.1rem, 2.8vw, 1.45rem);
+      font-weight: 800;
+      line-height: 1.25;
+      letter-spacing: -0.02em;
+      max-width: 40rem;
+      margin: 0 auto 1.75rem;
+      padding: 0 1.25rem;
     }
 
     .proof-grid {
       display: grid;
       grid-template-columns: repeat(2, 1fr);
       gap: 1rem;
-      max-width: min(52rem, 100%);
+      width: var(--vip-wide);
       margin: 0 auto;
+      padding: 0 max(1.25rem, env(safe-area-inset-left)) 0 max(1.25rem, env(safe-area-inset-right));
     }
 
     @media (max-width: 560px) {
@@ -374,144 +521,207 @@
       display: block;
     }
 
-    /* CTAs */
-    .btn-primary {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      background: var(--blue);
-      color: #fff;
-      font-family: inherit;
-      font-size: 1.0625rem;
-      font-weight: 700;
-      padding: 1rem 2.25rem;
-      border-radius: 999px;
-      text-decoration: none;
-      border: none;
+    /* FAQ */
+    .vip-faq {
+      padding: var(--section-y) 0;
+      background: var(--soft);
+    }
+
+    .vip-faq h2 {
+      text-align: center;
+      font-size: clamp(1.35rem, 3vw, 1.65rem);
+      font-weight: 800;
+      margin-bottom: 1.75rem;
+      letter-spacing: -0.02em;
+    }
+
+    .faq-list {
+      width: min(40rem, calc(100vw - 2.5rem));
+      margin: 0 auto;
+      padding: 0 max(1.25rem, env(safe-area-inset-left)) 0 max(1.25rem, env(safe-area-inset-right));
+      display: flex;
+      flex-direction: column;
+      gap: 0.65rem;
+    }
+
+    .faq-item {
+      border: 1px solid var(--border);
+      border-radius: 0.75rem;
+      overflow: hidden;
+      background: #fff;
+    }
+
+    .faq-item summary {
+      list-style: none;
       cursor: pointer;
-      transition: background 0.2s, transform 0.15s;
-      min-width: min(20rem, 100%);
-      touch-action: manipulation;
+      padding: 1rem 1.15rem;
+      background: var(--soft);
+      font-weight: 700;
+      font-size: 1rem;
+      color: var(--text);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
     }
 
-    .btn-primary:hover {
-      background: var(--blue-hover);
-      transform: translateY(-1px);
+    .faq-item summary::-webkit-details-marker {
+      display: none;
     }
 
-    .btn-primary:focus-visible {
-      outline: 2px solid var(--blue);
-      outline-offset: 3px;
+    .faq-item summary::after {
+      content: "×";
+      font-size: 1.25rem;
+      font-weight: 400;
+      line-height: 1;
+      color: var(--text-soft);
+      flex-shrink: 0;
     }
 
-    .btn-primary--lg {
-      font-size: 1.125rem;
-      padding: 1.125rem 2.5rem;
+    .faq-item[open] summary::after {
+      transform: rotate(0deg);
     }
 
-    /* Offer footer */
-    .offer {
-      background: var(--dark);
+    .faq-a {
+      padding: 1rem 1.15rem 1.15rem;
+      font-size: 0.9375rem;
+      line-height: 1.65;
+      color: var(--text-body);
+    }
+
+    /* Footer CTA */
+    .vip-footer {
+      background: var(--dark-footer);
       padding: var(--section-y) 0;
       text-align: center;
     }
 
-    .offer .content-col {
-      max-width: min(40rem, var(--col));
-    }
-
-    .offer-badge {
-      display: inline-block;
-      background: var(--dark3);
-      border: 1px solid #2a3050;
-      color: #a0c4ff;
-      font-size: clamp(1.5rem, 4vw, 1.875rem);
-      font-weight: 800;
-      padding: 0.65rem 1.5rem;
-      border-radius: 0.75rem;
-      letter-spacing: -0.02em;
-      margin-bottom: 1.25rem;
-    }
-
-    .offer p {
-      font-size: 1.125rem;
-      line-height: 1.65;
-      color: #a0a8c0;
-      margin-bottom: 1.75rem;
-    }
-
-    .offer p strong {
+    .vip-footer h2 {
       color: #fff;
-      font-weight: 700;
+      font-size: clamp(1.25rem, 3vw, 1.55rem);
+      font-weight: 800;
+      line-height: 1.3;
+      max-width: 28rem;
+      margin: 0 auto 1.5rem;
+      letter-spacing: -0.02em;
+      padding: 0 1.25rem;
     }
 
-    .fine-print {
-      margin-top: 1rem;
-      font-size: 0.875rem;
+    .vip-footer .fine-print {
+      margin-top: 1.25rem;
+      font-size: 0.8125rem;
       color: #6b728e;
       line-height: 1.5;
+      padding: 0 1.25rem;
+    }
+
+    .vip-footer-links {
+      margin-top: 1.25rem;
+      font-size: 0.75rem;
+    }
+
+    .vip-footer-links a {
+      color: rgba(255, 255, 255, 0.55);
+      text-decoration: underline;
+      text-underline-offset: 2px;
+    }
+
+    .vip-footer-links a:hover {
+      color: #fff;
     }
   </style>
 </head>
 <body>
 
-  <header class="hero">
-    <div class="content-col">
-      <h1>Steal These 20 YouTube Search Niches Already Making <span class="accent">$1k–$5k/Month</span></h1>
-      <p class="subhead">No guessing. No testing. No wasted months. Just 20 proven niches you can start this week.</p>
-      <div class="hero-cta">
-        <a class="btn-primary btn-primary--lg upsell-cta" href="#offer">Get Instant Access →</a>
+  <div class="vip-strip">
+    <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true">
+      <path d="M11.67 3.5L5.25 10.08 2.33 7.17" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+    </svg>
+    Registered: one more step — grab the niche pack before you upload
+  </div>
+
+  <header class="vip-hero">
+    <div class="vip-hero-inner">
+      <div class="vip-hero-copy">
+        <div class="vip-pill"><span class="vip-pill-dot" aria-hidden="true"></span> Digital pack · Instant access</div>
+        <h1>Steal These 20 YouTube Search Niches Already Making <span class="accent">$1k–$5k/Month</span></h1>
+        <p class="vip-hero-sub">No guessing. No testing. No wasted months. Just 20 proven niches you can start this week.</p>
+        <p class="vip-hero-meta">Full breakdowns · Video ideas · Title formats · Monetisation notes</p>
+        <a class="btn-cta btn-cta--lg upsell-cta" href="#offer">Get instant access for $27 →</a>
+        <a class="vip-decline" href="/lander.html">No thanks — I'll pick a niche on my own</a>
+      </div>
+      <div class="vip-media-block">
+        <div class="vip-media">
+          <div>
+            <strong>Hero video or image</strong>
+            Drop your VSL / screenshot here (replace this block with a &lt;video&gt; or &lt;img&gt;).
+          </div>
+        </div>
+        <div class="vip-countdown"><span>Instant delivery</span> — file sent right after checkout</div>
       </div>
     </div>
   </header>
 
-  <section class="band band--soft band--tight-top" aria-label="Introduction">
-    <div class="content-col prose-flow">
-      <p>You just saw exactly how this model works.</p>
-      <p>The system is simple. The math checks out. The results are real.</p>
-      <p>But here's where 90% of people go wrong before they even upload a single video.</p>
-      <p class="lead">They pick the wrong niche.</p>
-    </div>
-  </section>
+  <section class="vip-section vip-section--soft" aria-label="Why this pack">
+    <h2 class="vip-section-title">Why you should grab the <span class="price">20 niche pack</span> before you publish (yes… it's just <span class="price">$27</span>)</h2>
 
-  <section class="band" aria-label="The cost of the wrong niche">
-    <div class="content-col">
-      <div class="pain-card prose-flow">
-        <p>Wrong niche means low RPM.</p>
-        <p>Low RPM means you could upload hundreds of videos and still make almost nothing.</p>
-        <p>And the brutal part? You won't know it's wrong until 3 months in. After you've already put in the time, hired the VA, and built the keyword bank.</p>
-        <p>We've been there. We wasted months on niches that looked good on paper and paid almost nothing in practice.</p>
-        <p>A gaming channel. A finance channel that was too broad. A tutorials channel in a niche where advertisers just didn't spend.</p>
-        <p><strong>Every one of those cost us time we didn't get back.</strong></p>
-      </div>
-    </div>
-  </section>
-
-  <section class="band band--soft" aria-label="What you get">
-    <div class="content-col">
-      <div class="prose-flow" style="max-width: 36rem; margin: 0 auto 2rem;">
-        <p>So instead of guessing, we did the work for you.</p>
-        <p>We went through our own channels, our students' channels, and hundreds of hours of keyword and RPM research. We pulled out the <strong>20 niches that consistently perform</strong>. The ones with high RPM, evergreen demand, and enough keyword volume to build a real channel on.</p>
-        <p>These are not theories. These are niches with channels actively making money right now.</p>
-      </div>
-
-      <h2 class="block-title">For each of the 20 niches you get:</h2>
-
-      <div class="split">
-        <div class="split-visual" aria-hidden="true">
-          <span>20</span>
-          niches · breakdowns · titles · monetisation
+    <div class="vip-rows">
+      <div class="vip-row">
+        <div class="vip-row-media" role="img" aria-label="Placeholder for niche or RPM graphic">Image: wrong niche / low RPM graphic (optional)</div>
+        <div class="vip-row-copy">
+          <div class="vip-row-head">
+            <span class="vip-dot" aria-hidden="true"></span>
+            <h3>Wrong niche, low RPM, months you don't get back</h3>
+          </div>
+          <p>You just saw exactly how this model works.</p>
+          <p>The system is simple. The math checks out. The results are real.</p>
+          <p>But here's where 90% of people go wrong before they even upload a single video.</p>
+          <p><strong>They pick the wrong niche.</strong></p>
+          <p>Wrong niche means low RPM.</p>
+          <p>Low RPM means you could upload hundreds of videos and still make almost nothing.</p>
+          <p>And the brutal part? You won't know it's wrong until 3 months in. After you've already put in the time, hired the VA, and built the keyword bank.</p>
+          <p>We've been there. We wasted months on niches that looked good on paper and paid almost nothing in practice.</p>
+          <p>A gaming channel. A finance channel that was too broad. A tutorials channel in a niche where advertisers just didn't spend.</p>
+          <p><strong>Every one of those cost us time we didn't get back.</strong></p>
         </div>
-        <ul class="checklist">
-          <li>A full breakdown of what the niche is and who the audience is.</li>
-          <li>Why advertisers pay a premium to reach that audience and what the RPM looks like.</li>
-          <li>3 to 5 specific video ideas you can produce this week.</li>
-          <li>Exact title formats that are already ranking.</li>
-          <li>The primary monetisation method — AdSense, affiliate, or both.</li>
-        </ul>
       </div>
 
-      <p class="closing-line">You are not getting a vague list of categories. You are getting a <strong>ready-to-use research doc</strong> that tells you exactly what to build and why it will make money.</p>
+      <div class="vip-divider" aria-hidden="true"></div>
+
+      <div class="vip-row vip-row--flip">
+        <div class="vip-row-media" role="img" aria-label="Placeholder for research doc mockup">Image: doc / Notion / PDF mockup (optional)</div>
+        <div class="vip-row-copy">
+          <div class="vip-row-head">
+            <span class="vip-dot" aria-hidden="true"></span>
+            <h3>So instead of guessing, we did the work for you</h3>
+          </div>
+          <p>So instead of guessing, we did the work for you.</p>
+          <p>We went through our own channels, our students' channels, and hundreds of hours of keyword and RPM research. We pulled out the <strong>20 niches that consistently perform</strong>. The ones with high RPM, evergreen demand, and enough keyword volume to build a real channel on.</p>
+          <p>These are not theories. These are niches with channels actively making money right now.</p>
+        </div>
+      </div>
+
+      <div class="vip-divider" aria-hidden="true"></div>
+
+      <div class="vip-row">
+        <div class="vip-row-media" role="img" aria-label="Placeholder for deliverables visual">Image: “20 niches” cover or checklist visual (optional)</div>
+        <div class="vip-row-copy">
+          <div class="vip-row-head">
+            <span class="vip-dot" aria-hidden="true"></span>
+            <h3>For each of the 20 niches you get:</h3>
+          </div>
+          <p>A full breakdown of what the niche is and who the audience is.</p>
+          <p>Why advertisers pay a premium to reach that audience and what the RPM looks like.</p>
+          <p>3 to 5 specific video ideas you can produce this week.</p>
+          <p>Exact title formats that are already ranking.</p>
+          <p>The primary monetisation method — AdSense, affiliate, or both.</p>
+          <p>You are not getting a vague list of categories. You are getting a <strong>ready-to-use research doc</strong> that tells you exactly what to build and why it will make money.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="vip-stack" style="margin-top: 2.5rem;">
+      <p class="vip-pullquote">You already know how the model works — the only question is whether you start in a niche that's <span class="hl">proven</span> or figure it out the hard way.</p>
 
       <div class="highlight-gold">
         <p>This is the exact research process we run internally every time we launch a new channel.</p>
@@ -525,41 +735,52 @@
         That is easily <strong>$500 to $1,000</strong> gone, not counting the time.<br><br>
         Or you spend <strong>$27</strong> right now and start in a niche you already know works.
       </div>
+
+      <p class="vip-pullquote" style="margin-top: 2.25rem;">Most people who read this will close the page, go back to guessing, and pick the wrong niche anyway. Three months from now they will wonder why it is not working.</p>
     </div>
   </section>
 
-  <section class="band" aria-label="Decision">
-    <div class="content-col">
-      <div class="urgency">
-        Most people who read this will close the page, go back to guessing, and pick the wrong niche anyway.<br><br>
-        Three months from now they will wonder why it is not working.<br><br>
-        You already know how the model works. The only question is whether you want to start in a niche that is <span class="mark">proven</span> or figure it out the hard way.
-      </div>
-      <div class="mid-cta">
-        <a class="btn-primary btn-primary--lg upsell-cta" href="#offer">Get Instant Access →</a>
-      </div>
+  <section class="vip-proof-band" aria-label="Proof">
+    <p class="vip-stars"><span class="stars" aria-hidden="true">★★★★★</span> Real search channels · real revenue screenshots</p>
+    <p class="vip-proof-headline">Screenshots &amp; proof — add your revenue and channel shots here</p>
+    <div class="proof-grid">
+      <div class="proof-slot">Screenshot placeholder 1</div>
+      <div class="proof-slot">Screenshot placeholder 2</div>
+      <div class="proof-slot">Screenshot placeholder 3</div>
+      <div class="proof-slot">Screenshot placeholder 4</div>
     </div>
   </section>
 
-  <section class="proof-band" aria-label="Results screenshots">
-    <div class="content-col">
-      <div class="proof-grid">
-        <div class="proof-slot">Screenshot placeholder 1</div>
-        <div class="proof-slot">Screenshot placeholder 2</div>
-        <div class="proof-slot">Screenshot placeholder 3</div>
-        <div class="proof-slot">Screenshot placeholder 4</div>
-      </div>
+  <section class="vip-faq" aria-label="FAQ">
+    <h2>Frequently asked questions</h2>
+    <div class="faq-list">
+      <details class="faq-item">
+        <summary>What format do I get?</summary>
+        <div class="faq-a">You'll receive a digital research doc you can open on any device — structured so you can copy ideas, titles, and angles straight into production.</div>
+      </details>
+      <details class="faq-item">
+        <summary>Are these the same niches you use in your own channels?</summary>
+        <div class="faq-a">They're drawn from the same research standards we use internally and with students: RPM, demand, and keyword depth — not random categories.</div>
+      </details>
+      <details class="faq-item">
+        <summary>I'm a beginner. Is this too advanced?</summary>
+        <div class="faq-a">No. If you understand the search-based model, this tells you <strong>where</strong> to point that model so the economics actually work.</div>
+      </details>
+      <details class="faq-item">
+        <summary>How is this different from free niche lists online?</summary>
+        <div class="faq-a">You're not getting a buzzword list. You get <strong>per-niche</strong> breakdowns, angles, title patterns, and how money is made — the stuff free lists skip.</div>
+      </details>
     </div>
   </section>
 
-  <section class="offer" id="offer">
-    <div class="content-col">
-      <div class="offer-badge">$27 · one time</div>
-      <p>Get all <strong>20 niches</strong> with full breakdowns, video ideas, exact titles, and monetisation method for just <strong>$27</strong>.<br>One time. Instant access. Yours to keep.</p>
-      <a class="btn-primary btn-primary--lg upsell-cta" href="#offer">Get Instant Access →</a>
-      <p class="fine-print">Secure checkout · Instant access · Digital delivery</p>
-    </div>
-  </section>
+  <footer class="vip-footer" id="offer">
+    <h2>Get the 20 niche pack &amp; skip months of bad RPM</h2>
+    <a class="btn-cta btn-cta--lg upsell-cta" href="#offer">Get instant access for $27 →</a>
+    <p class="fine-print">Get all <strong style="color:#e5e7eb;">20 niches</strong> with full breakdowns, video ideas, exact titles, and monetisation method for just <strong style="color:#e5e7eb;">$27</strong>. One time. Instant access. Yours to keep.<br>Secure checkout · Instant access · Digital delivery</p>
+    <p class="vip-footer-links">
+      <a href="/lander.html">Back to main offer</a>
+    </p>
+  </footer>
 
   <script>
     (function () {
@@ -571,6 +792,7 @@
           a.target = '_blank';
           a.rel = 'noopener noreferrer';
         } else {
+          a.setAttribute('href', '#offer');
           a.removeAttribute('target');
           a.removeAttribute('rel');
         }
