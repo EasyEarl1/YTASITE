@@ -1,5 +1,12 @@
 {
   "version": 2,
+  "redirects": [
+    {
+      "source": "/w/:code",
+      "destination": "/1k-free?website=:code",
+      "permanent": false
+    }
+  ],
   "buildCommand": null,
   "outputDirectory": ".",
   "framework": null,
