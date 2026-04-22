@@ -164,6 +164,14 @@
       "destination": "/yta-join-thank-you.html"
     },
     {
+      "source": "/yta-call-thank-you",
+      "destination": "/yta-call-thank-you.html"
+    },
+    {
+      "source": "/yta-call-thank-you.html",
+      "destination": "/yta-call-thank-you.html"
+    },
+    {
       "source": "/meetup",
       "destination": "/meetup.html"
     },
