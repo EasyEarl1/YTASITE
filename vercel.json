@@ -156,6 +156,14 @@
       "destination": "/the-1k-month-youtube-plan-viewer.html"
     },
     {
+      "source": "/yta-join-thank-you",
+      "destination": "/yta-join-thank-you.html"
+    },
+    {
+      "source": "/yta-join-thank-you.html",
+      "destination": "/yta-join-thank-you.html"
+    },
+    {
       "source": "/meetup",
       "destination": "/meetup.html"
     },
