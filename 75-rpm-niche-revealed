@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>$75 RPM Niche Revealed</title>
+  <meta name="description" content="Watch the $75 RPM niche reveal and join via email." />
+  <meta name="username" content="user_3ChXMl3oobB5XIr0FpWhkWjRC5b" />
+  <meta name="offer" content="1K FREE PLAN" />
+
+  <script src="https://d15dfsr886zcp9.cloudfront.net/tracker_script.js" defer></script>
+  <script defer src="/_vercel/insights/script.js"></script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="preconnect" href="https://static.klaviyo.com" crossorigin />
+
+  <style>
+    :root {
+      --bg: #ffffff;
+      --card: #ffffff;
+      --border: rgba(15, 23, 42, 0.12);
+      --text: #0f172a;
+      --muted: rgba(15, 23, 42, 0.65);
+      --radius: 18px;
+      --max-width: 920px;
+    }
+
+    * { box-sizing: border-box; }
+    html, body { margin: 0; padding: 0; height: 100%; }
+
+    body {
+      font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    .shell {
+      max-width: var(--max-width);
+      margin: 0 auto;
+      padding: 44px 20px 70px;
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
+    }
+
+    .card {
+      width: 100%;
+      max-width: 760px;
+      border-radius: var(--radius);
+      border: 1px solid var(--border);
+      background: var(--card);
+      padding: 28px 22px;
+      box-shadow: 0 12px 28px rgba(2, 6, 23, 0.08);
+    }
+
+    h1 {
+      margin: 0 0 18px;
+      font-size: clamp(26px, 3.2vw, 38px);
+      letter-spacing: -0.04em;
+      font-weight: 800;
+      text-align: center;
+    }
+
+    .video-box {
+      width: 100%;
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 10px;
+      margin-bottom: 22px;
+      background: #fff;
+      overflow: hidden;
+    }
+
+    wistia-player[media-id='9xa8yvbcaf']:not(:defined) {
+      background: center / contain no-repeat url("https://fast.wistia.com/embed/medias/9xa8yvbcaf/swatch");
+      display: block;
+      filter: blur(5px);
+      padding-top: 56.25%;
+    }
+
+    .klaviyo-form-Wh3Vku {
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      transform: none;
+      transform-origin: top center;
+    }
+
+    .klaviyo-wrap {
+      width: 100%;
+      position: relative;
+      min-height: 360px;
+    }
+
+    .klaviyo-loading {
+      position: absolute;
+      inset: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 18px;
+      background: rgba(255, 255, 255, 0.8);
+      border-radius: inherit;
+      color: rgba(15, 23, 42, 0.7);
+      font-weight: 700;
+      font-size: 14px;
+      text-align: center;
+      pointer-events: none;
+    }
+
+    .tg-dm-widget {
+      margin-top: 18px;
+    }
+
+    .tg-dm-widget a {
+      display: block;
+      width: 100%;
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 14px 16px;
+      text-decoration: none;
+      color: var(--text);
+      background: #f8fafc;
+      transition: transform 0.15s ease, box-shadow 0.15s ease, background 0.15s ease;
+    }
+
+    .tg-dm-widget a:hover {
+      transform: translateY(-1px);
+      box-shadow: 0 8px 18px rgba(2, 6, 23, 0.08);
+      background: #f1f5f9;
+    }
+
+    .tg-dm-widget-kicker,
+    .tg-dm-widget-sub {
+      display: block;
+      line-height: 1.35;
+    }
+
+    .tg-dm-widget-kicker {
+      font-weight: 700;
+      font-size: 14px;
+    }
+
+    .tg-dm-widget-sub {
+      margin-top: 4px;
+      font-weight: 500;
+      font-size: 13px;
+      color: var(--muted);
+    }
+
+    @media (max-width: 520px) {
+      .shell { padding: 28px 12px 50px; }
+      .card {
+        max-width: 100%;
+        padding: 22px 16px;
+        border-radius: 14px;
+      }
+    }
+
+    @media (max-width: 900px) {
+      .card {
+        max-width: 900px;
+        padding: 36px 28px;
+      }
+      .klaviyo-form-Wh3Vku { transform: scale(1.06); }
+    }
+  </style>
+
+  <script async type="text/javascript" src="https://static.klaviyo.com/onsite/js/URMvbK/klaviyo.js?company_id=URMvbK"></script>
+  <script type="text/javascript">
+  !function(){if(!window.klaviyo){window._klOnsite=window._klOnsite||[];try{window.klaviyo=new Proxy({},{get:function(n,i){return"push"===i?function(){var n;(n=window._klOnsite).push.apply(n,arguments)}:function(){for(var n=arguments.length,o=new Array(n),w=0;w<n;w++)o[w]=arguments[w];var t="function"==typeof o[o.length-1]?o.pop():void 0,e=new Promise((function(n){window._klOnsite.push([i].concat(o,[function(i){t&&t(i),n(i)}]))}));return e}}})}catch(n){window.klaviyo=window.klaviyo||[],window.klaviyo.push=function(){var n;(n=window._klOnsite).push.apply(n,arguments)}}}}();
+  </script>
+
+  <script>
+    !function(e,t,n,s,u,a){e.twq||(s=e.twq=function(){s.exe?s.exe.apply(s,arguments):s.queue.push(arguments);},s.version="1.1",s.queue=[],u=t.createElement(n),u.async=!0,u.src="https://static.ads-twitter.com/uwt.js",a=t.getElementsByTagName(n)[0],a.parentNode.insertBefore(u,a))}(window,document,"script");
+    twq("config","of4h6");
+  </script>
+
+  <script src="https://fast.wistia.com/player.js" async></script>
+  <script src="https://fast.wistia.com/embed/9xa8yvbcaf.js" async type="module"></script>
+</head>
+<body>
+  <div class="shell">
+    <main class="card" aria-label="$75 RPM niche revealed page">
+      <h1>$75 RPM Niche Revealed</h1>
+
+      <section class="video-box" aria-label="Video player container">
+        <wistia-player media-id="9xa8yvbcaf" aspect="1.7777777777777777"></wistia-player>
+      </section>
+
+      <section class="klaviyo-wrap" aria-label="Klaviyo form container">
+        <div class="klaviyo-form-Wh3Vku"></div>
+        <div class="klaviyo-loading">Loading your free plan…</div>
+      </section>
+
+      <div class="tg-dm-widget">
+        <a href="https://t.me/ytavision" target="_blank" rel="noopener noreferrer" aria-label="Have a question? Send a DM on Telegram (opens in a new tab)">
+          <span class="tg-dm-widget-kicker">Have a question? Send me a DM</span>
+          <span class="tg-dm-widget-sub">Open Telegram</span>
+        </a>
+      </div>
+    </main>
+  </div>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      var wrapper = document.querySelector(".klaviyo-form-Wh3Vku");
+      var loader = document.querySelector(".klaviyo-loading");
+      if (!wrapper || !loader) return;
+
+      function hideLoader() {
+        loader.style.display = "none";
+      }
+
+      if (wrapper.children && wrapper.children.length > 0) hideLoader();
+
+      var obs = new MutationObserver(function () {
+        if (wrapper.children && wrapper.children.length > 0) {
+          hideLoader();
+          obs.disconnect();
+        }
+      });
+
+      obs.observe(wrapper, { childList: true, subtree: true });
+
+      setTimeout(function () {
+        hideLoader();
+        obs.disconnect();
+      }, 10000);
+    });
+
+    (function () {
+      var upsellPath = "/20-search-niches.html";
+      var navigated = false;
+      window.addEventListener("klaviyoForms", function (e) {
+        if (navigated || !e.detail || e.detail.type !== "submit") return;
+        navigated = true;
+        window.location.assign(upsellPath);
+      });
+    })();
+  </script>
+</body>
+</html>
