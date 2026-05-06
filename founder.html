@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>YT Incubator Offer</title>
+    <style>
+      :root {
+        --bg: #f3f4f6;
+        --card: #ffffff;
+        --text: #111827;
+        --muted: #374151;
+        --green: #67a44b;
+        --button: #111827;
+        --button-hover: #000000;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      body {
+        margin: 0;
+        font-family: Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
+        background: var(--bg);
+        color: var(--text);
+        min-height: 100vh;
+        display: grid;
+        place-items: center;
+        padding: 24px;
+      }
+
+      .offer-card {
+        width: 100%;
+        max-width: 860px;
+        background: var(--card);
+        border-radius: 14px;
+        box-shadow: 0 14px 36px rgba(17, 24, 39, 0.09);
+        padding: 42px 26px;
+        text-align: center;
+      }
+
+      h1 {
+        margin: 0 0 30px;
+        font-size: clamp(2rem, 4vw, 3.25rem);
+        line-height: 1.08;
+      }
+
+      .breakdown {
+        list-style: none;
+        padding: 0;
+        margin: 0 auto;
+        max-width: 780px;
+      }
+
+      .breakdown li {
+        font-size: clamp(1.15rem, 2.7vw, 2rem);
+        line-height: 1.32;
+        margin: 0 0 18px;
+      }
+
+      .value {
+        color: var(--green);
+        font-weight: 800;
+        white-space: nowrap;
+      }
+
+      .total {
+        margin: 26px 0 0;
+        font-size: clamp(2rem, 4.2vw, 3.4rem);
+        font-weight: 700;
+      }
+
+      .cta-wrap {
+        margin-top: 34px;
+      }
+
+      .cta {
+        display: inline-block;
+        text-decoration: none;
+        background: var(--button);
+        color: #ffffff;
+        font-size: clamp(1.05rem, 2vw, 1.3rem);
+        font-weight: 700;
+        padding: 14px 30px;
+        border-radius: 999px;
+        transition: transform 0.2s ease, background 0.2s ease;
+      }
+
+      .cta:hover {
+        background: var(--button-hover);
+        transform: translateY(-1px);
+      }
+
+      .note {
+        margin: 12px 0 0;
+        font-size: 0.95rem;
+        color: var(--muted);
+      }
+    </style>
+  </head>
+  <body>
+    <main class="offer-card">
+      <h1>What you&rsquo;re gonna get...</h1>
+
+      <ul class="breakdown">
+        <li>
+          Lifetime Subscription to our YouTube Search Academy
+          <span class="value">($2,500 Value)</span>
+        </li>
+        <li>
+          1 Year Subscription to the YouTube Search Community + Weekly Calls
+          <span class="value">($468/year)</span>
+        </li>
+        <li>
+          1 Year Subscription to our Keyword Tool
+          <span class="value">($360/year)</span>
+        </li>
+        <li>
+          1 Year Subscription to our Production Tool + system
+          <span class="value">($264/year)</span>
+        </li>
+      </ul>
+
+      <p class="total">
+        Total Value: <span class="value">($3,592)</span>
+      </p>
+
+      <div class="cta-wrap">
+        <a
+          class="cta"
+          href="https://whop.com/checkout/plan_D4V8SvkQKtrgz"
+          target="_blank"
+          rel="noopener noreferrer"
+          >Get Access Now $1,497</a
+        >
+        <p class="note">Secure checkout powered by Whop.</p>
+      </div>
+    </main>
+  </body>
+</html>
