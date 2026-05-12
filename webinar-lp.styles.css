@@ -153,6 +153,47 @@ button:hover,
   line-height: 1.4;
 }
 
+.embed {
+  margin-top: 20px;
+  padding: 20px;
+}
+
+.embed h2 {
+  margin: 0;
+  font-size: clamp(1.2rem, 2.2vw, 1.5rem);
+}
+
+.embed-sub {
+  margin: 8px 0 14px;
+  color: #334155;
+}
+
+.embed-frame-wrap {
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  overflow: hidden;
+  background: #f8fafc;
+}
+
+.embed-frame-wrap iframe {
+  display: block;
+  width: 100%;
+  min-height: 980px;
+  border: 0;
+  background: #fff;
+}
+
+.embed-fallback {
+  margin: 12px 0 0;
+  color: #475569;
+  font-size: 0.9rem;
+}
+
+.embed-fallback a {
+  color: #0c4a6e;
+  font-weight: 600;
+}
+
 .secrets {
   margin-top: 22px;
 }
@@ -213,5 +254,13 @@ button:hover,
 
   .countdown {
     grid-template-columns: repeat(2, minmax(72px, 1fr));
+  }
+
+  .embed {
+    padding: 14px;
+  }
+
+  .embed-frame-wrap iframe {
+    min-height: 880px;
   }
 }
