@@ -180,6 +180,22 @@
       "destination": "/meetup.html"
     },
     {
+      "source": "/yta-chads-masterclass",
+      "destination": "/yta-chads-masterclass.html"
+    },
+    {
+      "source": "/yta-chads-masterclass.html",
+      "destination": "/yta-chads-masterclass.html"
+    },
+    {
+      "source": "/yta-chads-masterclass-thank-you",
+      "destination": "/yta-chads-masterclass-thank-you.html"
+    },
+    {
+      "source": "/yta-chads-masterclass-thank-you.html",
+      "destination": "/yta-chads-masterclass-thank-you.html"
+    },
+    {
       "source": "/(.*)",
       "destination": "/index.html"
     }
