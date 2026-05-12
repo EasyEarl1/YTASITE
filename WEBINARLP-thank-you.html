@@ -38,7 +38,7 @@
             <ol class="steps-list">
               <li><strong>First:</strong> Write down the date and time now.</li>
               <li><strong>Second:</strong> Keep your webinar confirmation email safe.</li>
-              <li><strong>Third:</strong> Show up live at 7:00 PM BST on May 13.</li>
+              <li><strong>Third:</strong> Show up live at 7:00 PM UK time on <span id="next-wed-short"></span>.</li>
             </ol>
           </div>
 
@@ -49,7 +49,7 @@
               Days."
             </h3>
             <p class="ticket-sub">And how to run it in less than 1 hour per week</p>
-            <p class="ticket-date">Wednesday, May 13 at 7:00 PM BST</p>
+            <p class="ticket-date"><span id="next-wed-full"></span> at 7:00 PM UK (London)</p>
 
             <a
               class="cta-btn"
@@ -71,10 +71,11 @@
         <div class="steps-grid">
           <article class="step-card">
             <p class="step-title">Step #1 - Save the date and time now</p>
-            <p class="step-copy">This Wednesday, May 13 at 7:00 PM BST</p>
+            <p class="step-copy">Next session: <span id="next-wed-step"></span> at 7:00 PM UK (London)</p>
             <a
+              id="calendar-link"
               class="small-btn"
-              href="https://calendar.google.com/calendar/render?action=TEMPLATE&text=My+Weird+YouTube+Strategy+Webinar&dates=20260506T180000Z/20260506T190000Z&details=Join+the+webinar+here:+https://register.gotowebinar.com/register/6476718778513758040"
+              href="#"
               target="_blank"
               rel="noreferrer"
               >Add To Calendar</a
@@ -107,5 +108,57 @@
         </div>
       </section>
     </main>
+    <script src="https://cdn.jsdelivr.net/npm/luxon@3.4.4/build/global/luxon.min.js"></script>
+    <script>
+      (function setNextWednesdayLondon() {
+        var DateTime = window.luxon && window.luxon.DateTime;
+        if (!DateTime) return;
+
+        function nextWednesday7pmLondon() {
+          var now = DateTime.now().setZone("Europe/London");
+          var dow = now.weekday;
+          var daysUntilWed = (3 - dow + 7) % 7;
+          var target = now.plus({ days: daysUntilWed }).set({ hour: 19, minute: 0, second: 0, millisecond: 0 });
+          if (target <= now) {
+            target = target.plus({ weeks: 1 });
+          }
+          return target;
+        }
+
+        function toGCalUtcRange(startLondon, durationHours) {
+          var startUtc = startLondon.toUTC();
+          var endUtc = startLondon.plus({ hours: durationHours }).toUTC();
+          function fmt(dt) {
+            return dt.toFormat("yyyyMMdd'T'HHmmss'Z'");
+          }
+          return fmt(startUtc) + "/" + fmt(endUtc);
+        }
+
+        var target = nextWednesday7pmLondon();
+        target = target.setLocale("en-GB");
+
+        var shortLabel = target.toFormat("d MMMM");
+        var fullLabel = target.toFormat("cccc, d MMMM");
+
+        var shortNode = document.getElementById("next-wed-short");
+        var fullNode = document.getElementById("next-wed-full");
+        var stepNode = document.getElementById("next-wed-step");
+        if (shortNode) shortNode.textContent = shortLabel;
+        if (fullNode) fullNode.textContent = fullLabel;
+        if (stepNode) stepNode.textContent = fullLabel;
+
+        var calendarLink = document.getElementById("calendar-link");
+        if (calendarLink) {
+          var dates = toGCalUtcRange(target, 1);
+          var params = new URLSearchParams({
+            action: "TEMPLATE",
+            text: "My Weird YouTube Strategy Webinar",
+            dates: dates,
+            details: "Join the webinar here: https://register.gotowebinar.com/register/6476718778513758040"
+          });
+          calendarLink.href = "https://calendar.google.com/calendar/render?" + params.toString();
+        }
+      })();
+    </script>
   </body>
 </html>
