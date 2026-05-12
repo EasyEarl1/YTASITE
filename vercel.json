@@ -76,6 +76,14 @@
       "destination": "/20-search-niches.html"
     },
     {
+      "source": "/20-search-niches-offer",
+      "destination": "/20-search-niches-offer.html"
+    },
+    {
+      "source": "/20-search-niches-offer.html",
+      "destination": "/20-search-niches-offer.html"
+    },
+    {
       "source": "/whop-bridge",
       "destination": "/whop-bridge.html"
     },
