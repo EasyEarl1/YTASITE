@@ -7,7 +7,7 @@
   <meta name="offer" content="WEBINAR">
   <script src="https://d15dfsr886zcp9.cloudfront.net/tracker_script.js" defer></script>
   <title>Masterclass Live — My Weird YouTube Strategy (Free Training)</title>
-  <meta name="description" content="Watch the free masterclass live: my weird YouTube strategy — full walkthrough on YouTube.">
+  <meta name="description" content="Free masterclass: my weird YouTube strategy — full walkthrough video and how to join the private program.">
   <script defer src="/_vercel/insights/script.js"></script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -101,15 +101,26 @@
       min-height: 200px;
       border: 0;
     }
-    .video-caption {
-      margin-top: 0.85rem;
-      font-size: 0.9rem;
-      font-weight: 600;
-      color: var(--muted);
+    .hero-program-cta {
+      margin-top: 1.25rem;
+      display: flex;
+      justify-content: center;
+      width: min(100%, 56rem);
+      margin-left: auto;
+      margin-right: auto;
     }
-    .video-caption a {
-      color: var(--accent-bright);
-      font-weight: 700;
+    .hero-program-cta .btn-hero {
+      border-radius: 9999px;
+      padding: 0.9rem 1.35rem 0.9rem 1.5rem;
+      max-width: 100%;
+      text-align: center;
+      flex-wrap: wrap;
+      box-shadow:
+        0 6px 28px rgba(34, 197, 94, 0.42),
+        0 0 32px rgba(74, 222, 128, 0.28);
+    }
+    .hero-program-cta .btn-hero span:first-child {
+      text-wrap: balance;
     }
     .btn-hero {
       display: inline-flex;
@@ -538,24 +549,9 @@
       letter-spacing: 0.02em;
       margin: 0;
     }
-
-    /* —— Bottom program CTA —— */
-    .program-cta {
-      padding: clamp(2.25rem, 5vw, 3.25rem) 0 clamp(2.5rem, 6vw, 3.5rem);
-      background: linear-gradient(180deg, var(--bg) 0%, #030806 100%);
-      border-top: 1px solid rgba(52, 211, 153, 0.22);
-      text-align: center;
-    }
-    .program-cta-inner {
-      max-width: 36rem;
-      margin: 0 auto;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      gap: 0.75rem;
-    }
-    .program-cta .btn-hero {
-      margin-top: 0;
+    .cta-final-when a {
+      color: var(--link);
+      font-weight: 700;
     }
   </style>
 </head>
@@ -567,21 +563,26 @@
       <p class="hero-sub">And how to clone it in 90 minutes per day, even as a complete beginner</p>
       <div class="video-shell" id="watch">
         <iframe
-          src="https://www.youtube.com/embed/muIJ-tr0OIY"
-          title="My Weird YouTube Strategy — live masterclass"
+          src="https://www.youtube.com/embed/AdFXIc3jY30"
+          title="Masterclass training video"
           allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
           allowfullscreen
           loading="eager"
           referrerpolicy="strict-origin-when-cross-origin"
         ></iframe>
       </div>
-      <p class="video-caption">
-        Prefer the YouTube app?
-        <a href="https://www.youtube.com/live/muIJ-tr0OIY?feature=share" target="_blank" rel="noopener noreferrer">Open this stream on YouTube</a>
-      </p>
+      <div class="hero-program-cta">
+        <a
+          class="btn-hero"
+          href="https://learn.ytachads.com/founder.html"
+        >
+          <span>Join our private program today</span>
+          <span class="btn-hero-arrow" aria-hidden="true">→</span>
+        </a>
+      </div>
       <div class="hero-event">
         <span class="hero-event-label">Free Live Masterclass</span>
-        <span class="hero-event-time">Streaming on YouTube — watch embedded above</span>
+        <span class="hero-event-time">Watch the full training above</span>
       </div>
     </div>
   </header>
@@ -765,10 +766,10 @@
         <p class="cta-final-deck">Same training as the registration page — now playing on YouTube. Use the player here or at the top of the page.</p>
       </div>
       <div class="cta-final-action">
-        <div class="video-shell" aria-label="YouTube masterclass embed">
+        <div class="video-shell" aria-label="Training video embed">
           <iframe
-            src="https://www.youtube.com/embed/muIJ-tr0OIY"
-            title="My Weird YouTube Strategy — live masterclass"
+            src="https://www.youtube.com/embed/AdFXIc3jY30"
+            title="Masterclass training video"
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
             allowfullscreen
             loading="lazy"
@@ -776,24 +777,9 @@
           ></iframe>
         </div>
         <p class="cta-final-when">
-          <a href="https://www.youtube.com/live/muIJ-tr0OIY?feature=share" target="_blank" rel="noopener noreferrer" style="color:var(--link);">Open on YouTube</a>
-          ·
-          <a href="#watch" style="color:var(--muted);">Top player</a>
+          <a href="#watch">Jump to main video</a>
         </p>
       </div>
-    </div>
-  </section>
-
-  <section class="program-cta" aria-labelledby="program-cta-heading">
-    <div class="wrap program-cta-inner">
-      <a
-        class="btn-hero"
-        id="program-cta-heading"
-        href="https://learn.ytachads.com/founder.html"
-      >
-        <span>Join our private program today</span>
-        <span class="btn-hero-arrow" aria-hidden="true">→</span>
-      </a>
     </div>
   </section>
 </body>
