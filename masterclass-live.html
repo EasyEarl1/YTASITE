@@ -111,6 +111,40 @@
       color: var(--accent-bright);
       font-weight: 700;
     }
+    .btn-hero {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.75rem;
+      min-height: 3.2rem;
+      padding: 0 1.25rem 0 1.45rem;
+      font-size: 1.05rem;
+      font-weight: 700;
+      text-decoration: none;
+      color: #042f1a;
+      background: linear-gradient(180deg, #86efac 0%, #4ade80 35%, #22c55e 100%);
+      border: none;
+      border-radius: 12px;
+      box-shadow: 0 6px 28px rgba(34, 197, 94, 0.42);
+      transition: transform 0.15s ease, box-shadow 0.15s ease;
+    }
+    .btn-hero:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 10px 36px rgba(34, 197, 94, 0.55);
+    }
+    .btn-hero-arrow {
+      flex-shrink: 0;
+      width: 2.35rem;
+      height: 2.35rem;
+      border-radius: 50%;
+      background: rgba(4, 47, 26, 0.18);
+      color: #042f1a;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.1rem;
+      line-height: 1;
+    }
     .hero-event {
       margin-top: 1.1rem;
     }
@@ -504,6 +538,25 @@
       letter-spacing: 0.02em;
       margin: 0;
     }
+
+    /* —— Bottom program CTA —— */
+    .program-cta {
+      padding: clamp(2.25rem, 5vw, 3.25rem) 0 clamp(2.5rem, 6vw, 3.5rem);
+      background: linear-gradient(180deg, var(--bg) 0%, #030806 100%);
+      border-top: 1px solid rgba(52, 211, 153, 0.22);
+      text-align: center;
+    }
+    .program-cta-inner {
+      max-width: 36rem;
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0.75rem;
+    }
+    .program-cta .btn-hero {
+      margin-top: 0;
+    }
   </style>
 </head>
 <body>
@@ -728,6 +781,19 @@
           <a href="#watch" style="color:var(--muted);">Top player</a>
         </p>
       </div>
+    </div>
+  </section>
+
+  <section class="program-cta" aria-labelledby="program-cta-heading">
+    <div class="wrap program-cta-inner">
+      <a
+        class="btn-hero"
+        id="program-cta-heading"
+        href="https://learn.ytachads.com/founder.html"
+      >
+        <span>Join our private program today</span>
+        <span class="btn-hero-arrow" aria-hidden="true">→</span>
+      </a>
     </div>
   </section>
 </body>
