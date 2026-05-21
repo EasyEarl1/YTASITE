@@ -1,378 +1,1410 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>YouTube Micro-Niche Replay Page</title>
-<meta name="username" content="user_3ChXMl3oobB5XIr0FpWhkWjRC5b">
-<meta name="offer" content="YT INCUBATOR">
-<script src="https://d15dfsr886zcp9.cloudfront.net/tracker_script.js" defer></script>
-<script defer src="/_vercel/insights/script.js"></script>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-<style>
-  :root {
-    --bg: #eef0f8;
-    --card: #ffffff;
-    --ink: #0f1117;
-    --muted: #4a4f6a;
-    --line: #d0d5ea;
-    --blue: #2563eb;
-    --green: #16a34a;
-    --red: #b91c1c;
-    --yellow: #fde68a;
-    --dark: #0f172a;
-    --max: 1040px;
-  }
-
-  * { box-sizing: border-box; }
-  body {
-    margin: 0;
-    font-family: Inter, system-ui, -apple-system, Segoe UI, sans-serif;
-    background: var(--bg);
-    color: var(--ink);
-    line-height: 1.6;
-  }
-
-  .urgency-bar {
-    position: sticky;
-    top: 0;
-    z-index: 200;
-    background: var(--red);
-    color: #fff;
-    text-align: center;
-    font-weight: 800;
-    font-size: 0.95rem;
-    padding: 11px 14px;
-    border-bottom: 1px solid #7f1d1d;
-  }
-  .urgency-bar .timer {
-    color: var(--yellow);
-    white-space: nowrap;
-  }
-
-  .container {
-    width: min(var(--max), calc(100% - 32px));
-    margin: 0 auto;
-  }
-  .section { padding: 34px 0; }
-
-  .headline {
-    text-align: center;
-    padding-top: 26px;
-  }
-  h1 {
-    margin: 0 0 12px;
-    font-size: clamp(1.8rem, 4.7vw, 2.9rem);
-    line-height: 1.14;
-    letter-spacing: -0.02em;
-  }
-  .subhead {
-    margin: 0 auto;
-    max-width: 820px;
-    color: var(--muted);
-    font-size: clamp(1rem, 2.2vw, 1.2rem);
-  }
-
-  .video-card {
-    background: var(--card);
-    border: 1px solid var(--line);
-    border-radius: 14px;
-    padding: 14px;
-  }
-  .video-card iframe {
-    display: block;
-    width: 100%;
-    aspect-ratio: 16/9;
-    border: 0;
-    border-radius: 10px;
-    background: #000;
-  }
-  .video-note {
-    margin: 12px 4px 2px;
-    font-size: 0.95rem;
-    color: var(--muted);
-  }
-
-  .cta {
-    text-align: center;
-    margin-top: 18px;
-  }
-  .btn-primary {
-    display: inline-block;
-    width: min(560px, 100%);
-    text-decoration: none;
-    background: #ea580c;
-    color: #fff;
-    border-radius: 12px;
-    padding: 15px 18px;
-    font-weight: 800;
-    font-size: 1.06rem;
-  }
-  .cta-sub {
-    margin-top: 8px;
-    color: #7f1d1d;
-    font-weight: 600;
-    font-size: 0.92rem;
-  }
-
-  .stack-box {
-    background: var(--card);
-    border: 2px solid #111827;
-    border-radius: 14px;
-    padding: 24px;
-    box-shadow: 0 10px 30px rgba(15, 23, 42, 0.08);
-  }
-  .stack-title {
-    margin: 0 0 6px;
-    font-size: clamp(1.45rem, 3vw, 1.9rem);
-    line-height: 1.2;
-  }
-  .stack-sub {
-    margin: 0 0 18px;
-    color: var(--muted);
-    font-size: 0.96rem;
-  }
-  .stack-list {
-    list-style: none;
-    margin: 0;
-    padding: 0;
-    display: grid;
-    gap: 10px;
-  }
-  .stack-list li {
-    border: 1px solid #e5e7eb;
-    border-radius: 10px;
-    background: #f9fafb;
-    padding: 12px 14px;
-    display: flex;
-    justify-content: space-between;
-    align-items: baseline;
-    gap: 8px;
-    font-size: 0.98rem;
-    font-weight: 600;
-  }
-  .val {
-    color: var(--green);
-    font-weight: 800;
-    white-space: nowrap;
-  }
-  .stack-total {
-    margin: 14px 0 0;
-    border: 1px solid #bbf7d0;
-    background: #f0fdf4;
-    border-radius: 10px;
-    padding: 12px 14px;
-    font-size: 1.06rem;
-    font-weight: 800;
-    text-align: center;
-  }
-  .stack-invest {
-    margin: 8px 0 0;
-    font-size: 1.03rem;
-    font-weight: 800;
-    text-align: center;
-    color: #111827;
-  }
-
-  .integrity {
-    background: var(--dark);
-    color: #d1d5db;
-    border-radius: 12px;
-    border: 1px solid #1e293b;
-    padding: 16px;
-    margin-top: 16px;
-    font-size: 0.95rem;
-  }
-  .integrity strong { color: #fff; }
-
-  .section-title {
-    margin: 0 0 12px;
-    font-size: clamp(1.45rem, 3.8vw, 2.1rem);
-    line-height: 1.2;
-    letter-spacing: -0.02em;
-  }
-  .proof-sub {
-    margin: 0 0 16px;
-    color: var(--muted);
-    font-size: 0.98rem;
-  }
-
-  .proof-wall {
-    display: grid;
-    grid-template-columns: repeat(4, minmax(0, 1fr));
-    gap: 8px;
-  }
-  .proof-item {
-    margin: 0;
-    border: 1px solid var(--line);
-    border-radius: 10px;
-    overflow: hidden;
-    background: #f3f4f6;
-    line-height: 0;
-  }
-  .proof-item img {
-    width: 100%;
-    height: auto;
-    display: block;
-  }
-
-  .dual-cta {
-    margin-top: 18px;
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: 10px;
-  }
-  .btn-secondary {
-    display: inline-block;
-    width: 100%;
-    text-align: center;
-    text-decoration: none;
-    background: #111827;
-    color: #fff;
-    border-radius: 10px;
-    padding: 14px 16px;
-    font-weight: 700;
-  }
-  .btn-telegram {
-    display: inline-block;
-    width: 100%;
-    text-align: center;
-    text-decoration: none;
-    background: transparent;
-    border: 1.5px solid #2563eb;
-    color: #2563eb;
-    border-radius: 10px;
-    padding: 13px 16px;
-    font-weight: 700;
-  }
-
-  .safety {
-    margin-top: 18px;
-    background: #ecfeff;
-    border: 1px solid #a5f3fc;
-    border-radius: 12px;
-    padding: 14px;
-    font-size: 0.95rem;
-    color: #0f172a;
-  }
-
-  @media (max-width: 900px) {
-    .proof-wall { grid-template-columns: repeat(3, minmax(0, 1fr)); }
-  }
-  @media (max-width: 700px) {
-    .proof-wall { grid-template-columns: repeat(2, minmax(0, 1fr)); }
-    .stack-list li {
-      flex-direction: column;
-      align-items: flex-start;
-      gap: 4px;
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="username" content="user_3ChXMl3oobB5XIr0FpWhkWjRC5b">
+  <meta name="offer" content="WEBINAR">
+  <script src="https://d15dfsr886zcp9.cloudfront.net/tracker_script.js" defer></script>
+  <title>Faceless YouTube Search Monopolies | Masterclass Replay</title>
+  <meta name="description" content="How to build faceless YouTube search channels that pay every month. $34,928 every 90 days without going on camera.">
+  <script defer src="/_vercel/insights/script.js"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <script src="https://fast.wistia.com/player.js" async></script>
+  <script src="https://fast.wistia.com/embed/09lmxjzmu8.js" async type="module"></script>
+  <style>
+    :root {
+      --bg: #050d0a;
+      --surface: #0a1612;
+      --surface2: #0f1f18;
+      --surface3: #142820;
+      --border: #1a3d2e;
+      --text: #ecfdf5;
+      --muted: #8fb5a6;
+      --sub: #a7d4c0;
+      --accent: #4ade80;
+      --accent-bright: #86efac;
+      --accent-deep: #059669;
+      --link: #5eead4;
+      --gold: #fbbf24;
+      --gold-dim: #d4a017;
+      --danger: #f87171;
+      --max: 72rem;
     }
-  }
-  @media (max-width: 480px) {
-    .proof-wall { grid-template-columns: 1fr; }
-  }
-</style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html {
+      scroll-behavior: smooth;
+      font-size: 80%;
+    }
+    body {
+      font-family: Inter, system-ui, -apple-system, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      font-size: 1.0625rem;
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+      padding-top: max(2.75rem, calc(2.35rem + env(safe-area-inset-top, 0px)));
+      padding-bottom: max(5rem, calc(4rem + env(safe-area-inset-bottom, 0px)));
+    }
+    a { color: var(--link); }
+    .wrap { width: min(var(--max), calc(100% - 2rem)); margin: 0 auto; }
+    .section { padding: clamp(2rem, 5vw, 3.25rem) 0; border-bottom: 1px solid var(--border); }
+    .eyebrow {
+      display: block;
+      font-size: 0.7rem;
+      font-weight: 800;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--accent-bright);
+      margin-bottom: 0.5rem;
+    }
+    h2.sec-title {
+      font-size: clamp(1.35rem, 3.2vw, 1.9rem);
+      font-weight: 800;
+      letter-spacing: -0.02em;
+      color: #fff;
+      margin-bottom: 0.65rem;
+      line-height: 1.15;
+    }
+    .sec-sub {
+      margin: 0 0 1.25rem;
+      max-width: 40rem;
+      color: var(--sub);
+      font-size: clamp(0.95rem, 2vw, 1.05rem);
+      line-height: 1.55;
+    }
+
+    /* Scarcity bar */
+    .scarcity-bar {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 300;
+      background: #000;
+      color: var(--gold);
+      text-align: center;
+      font-weight: 800;
+      font-size: clamp(0.72rem, 2.2vw, 0.9rem);
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      padding: 0.55rem 0.75rem;
+      padding-top: max(0.55rem, env(safe-area-inset-top, 0px));
+      border-bottom: 1px solid rgba(251, 191, 36, 0.35);
+      line-height: 1.35;
+    }
+
+    /* Hero */
+    .hero {
+      padding: clamp(1rem, 3vw, 1.75rem) 1.25rem clamp(1.5rem, 4vw, 2.5rem);
+      background: radial-gradient(ellipse 90% 60% at 50% 0%, rgba(52, 211, 153, 0.14), transparent 55%), #07120e;
+      text-align: center;
+    }
+    .hero-inner { max-width: 52rem; margin: 0 auto; }
+    .hero h1 {
+      font-size: clamp(1.45rem, 4.2vw, 2.55rem);
+      font-weight: 800;
+      line-height: 1.1;
+      letter-spacing: -0.03em;
+      color: #fff;
+      margin: 0 auto 0.65rem;
+    }
+    .hero-sub {
+      margin: 0 auto;
+      max-width: 40rem;
+      font-size: clamp(0.95rem, 2.1vw, 1.15rem);
+      font-weight: 500;
+      line-height: 1.5;
+      color: var(--sub);
+    }
+    .video-shell {
+      margin-top: 1.25rem;
+      width: min(100%, 56rem);
+      margin-left: auto;
+      margin-right: auto;
+      border-radius: 14px;
+      overflow: hidden;
+      border: 1px solid rgba(52, 211, 153, 0.35);
+      box-shadow: 0 12px 48px rgba(0, 0, 0, 0.45);
+      background: #000;
+      line-height: 0;
+    }
+    .video-shell iframe {
+      display: block;
+      width: 100%;
+      aspect-ratio: 16 / 9;
+      border: 0;
+    }
+    .hero-cta-row {
+      margin-top: 1.15rem;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0.65rem;
+    }
+    @media (min-width: 520px) {
+      .hero-cta-row { flex-direction: row; justify-content: center; flex-wrap: wrap; }
+    }
+
+    /* Buttons */
+    .btn-primary {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.5rem;
+      min-height: 3rem;
+      padding: 0 1.35rem;
+      font-size: clamp(0.88rem, 2vw, 1rem);
+      font-weight: 800;
+      text-decoration: none;
+      color: #042f1a;
+      background: linear-gradient(180deg, var(--gold) 0%, #eab308 50%, var(--gold-dim) 100%);
+      border: none;
+      border-radius: 9999px;
+      box-shadow: 0 6px 28px rgba(251, 191, 36, 0.35);
+      transition: transform 0.15s ease, box-shadow 0.15s ease;
+      text-align: center;
+      -webkit-tap-highlight-color: transparent;
+    }
+    .btn-primary:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 10px 36px rgba(251, 191, 36, 0.45);
+    }
+    .btn-ghost {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 3rem;
+      padding: 0 1.25rem;
+      font-size: clamp(0.85rem, 2vw, 0.95rem);
+      font-weight: 700;
+      text-decoration: none;
+      color: #fff;
+      background: transparent;
+      border: 2px solid rgba(255, 255, 255, 0.65);
+      border-radius: 9999px;
+      transition: background 0.15s ease, border-color 0.15s ease;
+      -webkit-tap-highlight-color: transparent;
+    }
+    .btn-ghost:hover {
+      background: rgba(255, 255, 255, 0.08);
+      border-color: #fff;
+    }
+    .btn-green {
+      background: linear-gradient(180deg, #86efac 0%, #4ade80 35%, #22c55e 100%);
+      color: #042f1a;
+      box-shadow: 0 6px 28px rgba(34, 197, 94, 0.42);
+    }
+    .btn-green:hover { box-shadow: 0 10px 36px rgba(34, 197, 94, 0.55); }
+
+    /* Money model */
+    .money-section { background: var(--surface); }
+    .model-card {
+      background: var(--surface2);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 1.1rem 1.15rem;
+      margin-bottom: 1rem;
+    }
+    .model-title {
+      font-size: 1.05rem;
+      font-weight: 800;
+      color: #fff;
+      margin-bottom: 0.35rem;
+    }
+    .model-desc { color: var(--sub); font-size: 0.95rem; line-height: 1.5; }
+    .model-desc em { color: var(--accent-bright); font-style: normal; font-weight: 600; }
+    .model-tagline {
+      margin-top: 0.75rem;
+      padding-top: 0.75rem;
+      border-top: 1px solid var(--border);
+      font-weight: 700;
+      color: var(--text);
+      font-size: 0.92rem;
+    }
+    .exit-mult-grid {
+      display: grid;
+      gap: 0.65rem;
+      margin: 1rem 0;
+    }
+    @media (min-width: 480px) { .exit-mult-grid { grid-template-columns: 1fr 1fr; } }
+    .exit-mult-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 0.5rem;
+      padding: 0.75rem 1rem;
+      background: var(--surface3);
+      border: 1px solid rgba(74, 222, 128, 0.25);
+      border-radius: 10px;
+      font-weight: 700;
+      font-size: 0.9rem;
+    }
+    .exit-mult-row .out { color: var(--accent-bright); }
+    .roi-line {
+      font-size: 0.95rem;
+      color: var(--sub);
+      line-height: 1.5;
+    }
+    .roi-line strong { color: var(--text); }
+
+    /* Exit proof cards (lander layout, dark theme) */
+    .exits-section { background: var(--bg); }
+    .exits-section .sec-sub { max-width: none; }
+    .exit-card {
+      background: var(--surface2);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 1.25rem 1.35rem;
+      margin-bottom: 0.85rem;
+      width: 100%;
+    }
+    .exit-card:last-child { margin-bottom: 0; }
+    .exit-card-top {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      gap: 0.75rem;
+      margin-bottom: 0.75rem;
+    }
+    .exit-tag {
+      font-size: 0.75rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-bottom: 0.3rem;
+    }
+    .exit-amount {
+      font-size: clamp(1.65rem, 3.5vw, 2rem);
+      font-weight: 800;
+      color: #fff;
+      letter-spacing: -0.02em;
+      line-height: 1.1;
+    }
+    .exit-roi-badge {
+      font-size: 0.875rem;
+      font-weight: 700;
+      color: var(--accent-bright);
+      background: rgba(74, 222, 128, 0.12);
+      border: 1px solid rgba(74, 222, 128, 0.35);
+      border-radius: 6px;
+      padding: 0.35rem 0.75rem;
+      white-space: nowrap;
+      flex-shrink: 0;
+    }
+    .exit-proof-shot {
+      margin: 0 0 0.9rem;
+      border-radius: 12px;
+      overflow: hidden;
+      border: 1px solid var(--border);
+      background: #0a0e0c;
+      line-height: 0;
+    }
+    .exit-proof-shot img {
+      width: 100%;
+      height: auto;
+      max-height: min(360px, 48vh);
+      object-fit: contain;
+      object-position: top center;
+      display: block;
+    }
+    .exit-proof-pair {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 0.5rem;
+      margin: 0 0 0.9rem;
+      align-items: start;
+    }
+    .exit-proof-pair .exit-proof-shot {
+      margin: 0;
+    }
+    .exit-proof-pair .exit-proof-shot img {
+      max-height: min(300px, 42vh);
+    }
+    .exit-detail {
+      font-size: 0.9375rem;
+      color: var(--sub);
+      line-height: 1.55;
+      border-top: 1px solid var(--border);
+      padding-top: 0.75rem;
+      margin-bottom: 0;
+    }
+    .exit-math {
+      font-size: 0.9375rem;
+      font-weight: 700;
+      color: var(--text);
+      background: rgba(52, 211, 153, 0.08);
+      border: 1px solid rgba(52, 211, 153, 0.2);
+      border-radius: 8px;
+      padding: 0.7rem 1rem;
+      margin-top: 0.75rem;
+      display: flex;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 0.35rem 0.5rem;
+      line-height: 1.35;
+    }
+    .exit-math .arrow { color: var(--link); font-weight: 800; }
+    .exit-math .result { color: var(--accent-bright); }
+    .exit-proof-bar {
+      background: rgba(52, 211, 153, 0.08);
+      border: 1px solid rgba(52, 211, 153, 0.2);
+      border-radius: 8px;
+      padding: 0.55rem 0.85rem;
+      margin-top: 0.65rem;
+      font-size: 0.8125rem;
+      color: var(--sub);
+      font-weight: 600;
+      line-height: 1.4;
+    }
+
+    /* System */
+    .system-section { background: var(--surface); }
+    .hook-box {
+      margin: 0 0 1.35rem;
+      padding: 1rem 1.15rem;
+      background: rgba(251, 191, 36, 0.08);
+      border: 1px solid rgba(251, 191, 36, 0.25);
+      border-radius: 12px;
+      font-size: clamp(1rem, 2.2vw, 1.15rem);
+      font-weight: 700;
+      color: var(--text);
+      line-height: 1.4;
+      text-align: center;
+    }
+    .hook-box span { color: var(--gold); }
+    .sys-item {
+      display: grid;
+      grid-template-columns: auto 1fr;
+      gap: 0.85rem 1rem;
+      padding: 1rem 0;
+      border-bottom: 1px solid var(--border);
+    }
+    .sys-item:last-child { border-bottom: none; }
+    .sys-num {
+      width: 2.25rem;
+      height: 2.25rem;
+      border-radius: 50%;
+      background: rgba(74, 222, 128, 0.15);
+      border: 1px solid rgba(74, 222, 128, 0.4);
+      color: var(--accent-bright);
+      font-weight: 800;
+      font-size: 0.95rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+    .sys-title { font-weight: 800; color: #fff; margin-bottom: 0.25rem; font-size: 1rem; }
+    .sys-stmt { color: var(--sub); font-size: 0.92rem; line-height: 1.45; margin-bottom: 0.35rem; }
+    .sys-out {
+      font-size: 0.82rem;
+      font-weight: 700;
+      color: var(--accent);
+    }
+
+    /* Your Host */
+    .host-section {
+      background: var(--surface2);
+      border-bottom: 1px solid var(--border);
+    }
+    .host-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      box-shadow: 0 12px 40px rgba(0, 0, 0, 0.3);
+      padding: clamp(1.35rem, 3vw, 2rem) clamp(1.1rem, 2.5vw, 1.5rem);
+    }
+    .host-title {
+      text-align: center;
+      font-size: clamp(1.35rem, 3vw, 1.8rem);
+      font-weight: 800;
+      color: var(--accent-bright);
+      margin: 0 0 clamp(1.1rem, 2.5vw, 1.65rem);
+      letter-spacing: -0.02em;
+    }
+    .host-grid {
+      display: grid;
+      gap: clamp(1.25rem, 3vw, 2rem);
+      align-items: start;
+    }
+    @media (min-width: 768px) {
+      .host-grid {
+        grid-template-columns: minmax(0, clamp(220px, 28vw, 300px)) minmax(0, 1fr);
+        gap: clamp(1.5rem, 3vw, 2.25rem);
+        align-items: center;
+      }
+    }
+    .host-media {
+      text-align: center;
+    }
+    .host-photo {
+      border-radius: 14px;
+      overflow: hidden;
+      border: 1px solid var(--border);
+      background: #0a0e0c;
+      line-height: 0;
+    }
+    .host-photo img {
+      display: block;
+      width: 100%;
+      height: auto;
+    }
+    .host-photo-fallback {
+      padding: 2rem 1rem;
+      font-size: 0.78rem;
+      color: var(--muted);
+      text-align: center;
+    }
+    .host-name {
+      margin-top: 0.85rem;
+      font-size: 1.05rem;
+      font-weight: 800;
+      color: #fff;
+    }
+    .host-bio p {
+      margin: 0 0 0.85rem;
+      color: var(--sub);
+      font-size: 0.97rem;
+      line-height: 1.58;
+    }
+    @media (min-width: 768px) {
+      .host-bio p { font-size: 1.02rem; line-height: 1.62; }
+    }
+    .host-bio p:last-child { margin-bottom: 0; }
+    .host-bio strong { color: #fff; }
+    .host-bio-highlight {
+      margin-top: 0.5rem;
+      padding: 0.7rem 0.85rem 0.7rem 1rem;
+      border-left: 4px solid var(--accent);
+      border-radius: 0 10px 10px 0;
+      background: linear-gradient(90deg, rgba(74, 222, 128, 0.12), transparent);
+      font-weight: 600;
+      color: var(--text);
+      line-height: 1.5;
+    }
+    .host-cta {
+      margin-top: 1.25rem;
+      text-align: center;
+    }
+    .host-cta a {
+      font-size: 0.92rem;
+      font-weight: 700;
+      color: var(--accent-bright);
+      text-decoration: underline;
+      text-underline-offset: 3px;
+    }
+    .host-cta a:hover { color: var(--link); }
+
+    /* Proof masonry */
+    .proof-section { background: var(--bg); }
+    .proof-masonry {
+      column-count: 1;
+      column-gap: 0.85rem;
+    }
+    @media (min-width: 560px) { .proof-masonry { column-count: 2; } }
+    @media (min-width: 1024px) { .proof-masonry { column-count: 3; } }
+    .proof-masonry figure {
+      margin: 0 0 0.85rem;
+      display: inline-block;
+      width: 100%;
+      break-inside: avoid;
+      border-radius: 12px;
+      overflow: hidden;
+      border: 1px solid var(--border);
+      background: var(--surface2);
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.35);
+      line-height: 0;
+    }
+    .proof-masonry img {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    /* Bautista testimonial (Wistia) */
+    .testimonial-section {
+      background: var(--surface);
+      text-align: center;
+    }
+    .testimonial-heading {
+      font-size: clamp(1.35rem, 3.2vw, 1.85rem);
+      font-weight: 800;
+      color: #fff;
+      letter-spacing: -0.02em;
+      line-height: 1.15;
+      margin-bottom: 0.5rem;
+    }
+    .testimonial-subhead {
+      font-size: clamp(0.95rem, 2.1vw, 1.05rem);
+      font-weight: 500;
+      color: var(--sub);
+      line-height: 1.5;
+      max-width: 36rem;
+      margin: 0 auto 1.15rem;
+    }
+    .testimonial-wrap {
+      max-width: min(52rem, 100%);
+      margin: 0 auto;
+      padding: 0.85rem;
+      background: var(--surface2);
+      border: 1px solid rgba(52, 211, 153, 0.28);
+      border-radius: 14px;
+      box-shadow: 0 12px 40px rgba(0, 0, 0, 0.35);
+    }
+    .testimonial-embed {
+      border-radius: 10px;
+      overflow: hidden;
+      width: 100%;
+      background: #000;
+      line-height: 0;
+    }
+    .testimonial-embed wistia-player {
+      display: block;
+      width: 100%;
+    }
+    wistia-player[media-id='09lmxjzmu8']:not(:defined) {
+      background: center / contain no-repeat url('https://fast.wistia.com/embed/medias/09lmxjzmu8/swatch');
+      display: block;
+      filter: blur(5px);
+      padding-top: 55.94%;
+    }
+
+    /* Student cards */
+    .students-section { background: var(--surface2); }
+    .t-card {
+      background: var(--surface2);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 1.1rem 1.15rem;
+      margin-bottom: 0.85rem;
+    }
+    .t-head {
+      display: flex;
+      align-items: center;
+      gap: 0.85rem;
+      margin-bottom: 0.75rem;
+    }
+    .t-avatar {
+      width: 3rem;
+      height: 3rem;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 2px solid var(--border);
+    }
+    .t-display-name { font-weight: 800; color: #fff; font-size: 1rem; }
+    .t-role { font-size: 0.78rem; color: var(--muted); font-weight: 600; }
+    .t-quote {
+      font-size: 0.95rem;
+      color: var(--sub);
+      line-height: 1.5;
+      margin-bottom: 0.75rem;
+      font-style: italic;
+    }
+    .t-bottom {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      gap: 0.75rem;
+      padding-top: 0.65rem;
+      border-top: 1px solid var(--border);
+    }
+    .t-name { font-size: 0.82rem; font-weight: 700; color: var(--text); }
+    .t-timeline { font-size: 0.75rem; color: var(--muted); }
+    .t-result {
+      font-size: 0.95rem;
+      font-weight: 800;
+      color: var(--gold);
+      white-space: nowrap;
+    }
+    .neb-bar {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 0.5rem;
+      margin-bottom: 1.25rem;
+    }
+    @media (min-width: 520px) { .neb-bar { grid-template-columns: repeat(4, 1fr); } }
+    .neb-item {
+      text-align: center;
+      padding: 0.65rem 0.5rem;
+      background: var(--surface3);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+    }
+    .neb-x { font-size: 1.25rem; font-weight: 800; color: var(--accent); }
+    .neb-label { font-size: 0.68rem; font-weight: 700; color: var(--muted); text-transform: uppercase; letter-spacing: 0.04em; }
+
+    /* Filter */
+    .fit-section { background: var(--surface2); }
+    .fit-stack { display: flex; flex-direction: column; gap: 1rem; max-width: 56rem; margin: 0 auto; }
+    .fit-box {
+      border-radius: 14px;
+      padding: clamp(1.15rem, 3vw, 1.5rem);
+      border: 1px solid var(--border);
+    }
+    .fit-box--yes { background: rgba(74, 222, 128, 0.06); border-color: rgba(74, 222, 128, 0.35); }
+    .fit-box--no { background: rgba(248, 113, 113, 0.06); border-color: rgba(248, 113, 113, 0.3); }
+    .fit-box h2 {
+      margin: 0 0 0.85rem;
+      font-size: clamp(1.05rem, 2.2vw, 1.25rem);
+      font-weight: 800;
+      color: #fff;
+    }
+    .fit-list { list-style: none; display: flex; flex-direction: column; gap: 0.85rem; }
+    .fit-list li { display: flex; gap: 0.75rem; align-items: flex-start; }
+    .fit-icon { flex-shrink: 0; width: 1.35rem; margin-top: 0.15rem; }
+    .fit-copy { color: var(--sub); font-size: 0.95rem; line-height: 1.5; }
+    .fit-copy strong { color: var(--text); }
+    .fit-capital {
+      margin-top: 1rem;
+      padding: 0.85rem 1rem;
+      background: rgba(0, 0, 0, 0.35);
+      border: 1px solid rgba(251, 191, 36, 0.35);
+      border-radius: 10px;
+      font-size: 0.92rem;
+      font-weight: 700;
+      color: var(--gold);
+      text-align: center;
+      line-height: 1.45;
+    }
+
+    /* FAQ */
+    .faq-section { background: var(--bg); }
+    .faq-accordion {
+      max-width: 44rem;
+      margin: 0 auto;
+      border-top: 1px solid var(--border);
+    }
+    .faq-item { border-bottom: 1px solid var(--border); }
+    .faq-item summary {
+      list-style: none;
+      cursor: pointer;
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      gap: 0.75rem;
+      padding: 1rem 0;
+      font-size: 0.95rem;
+      font-weight: 700;
+      color: #fff;
+      user-select: none;
+      -webkit-tap-highlight-color: transparent;
+    }
+    .faq-item summary::-webkit-details-marker { display: none; }
+    .faq-item summary:hover { color: var(--accent-bright); }
+    .faq-summary-main {
+      display: flex;
+      align-items: flex-start;
+      gap: 0.65rem;
+      flex: 1;
+      min-width: 0;
+      text-align: left;
+    }
+    .faq-icon {
+      width: 1.35rem;
+      height: 1.35rem;
+      border-radius: 50%;
+      background: rgba(74, 222, 128, 0.15);
+      border: 1px solid rgba(74, 222, 128, 0.35);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      margin-top: 0.1rem;
+    }
+    .faq-icon svg { width: 0.55rem; height: 0.55rem; }
+    .faq-icon path { stroke: var(--accent-bright); }
+    .faq-chevron {
+      flex-shrink: 0;
+      width: 1.25rem;
+      height: 1.25rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--muted);
+      transition: transform 0.2s ease, color 0.15s ease;
+    }
+    .faq-item[open] .faq-chevron {
+      transform: rotate(180deg);
+      color: var(--accent-bright);
+    }
+    .faq-chevron svg { width: 0.7rem; height: 0.7rem; display: block; }
+    .faq-a {
+      font-size: 0.9rem;
+      color: var(--sub);
+      line-height: 1.6;
+      padding: 0 0 1rem 2rem;
+    }
+    .faq-a strong { color: var(--text); font-weight: 700; }
+    .faq-a .hl { color: var(--accent-bright); font-weight: 700; }
+
+    /* Decision box / close */
+    .close-section {
+      background: linear-gradient(180deg, var(--surface) 0%, var(--bg) 100%);
+      padding: clamp(2.5rem, 6vw, 3.5rem) 0;
+    }
+    .value-stack {
+      max-width: 32rem;
+      margin: 0 auto 1.75rem;
+      padding: clamp(1.25rem, 3vw, 1.65rem);
+      background: var(--surface2);
+      border: 1px solid rgba(251, 191, 36, 0.35);
+      border-radius: 14px;
+      text-align: left;
+    }
+    .value-stack h2 {
+      text-align: center;
+      font-size: clamp(1.15rem, 2.8vw, 1.45rem);
+      font-weight: 800;
+      color: var(--gold);
+      margin-bottom: 1rem;
+    }
+    .value-stack ul { list-style: none; }
+    .value-stack li {
+      padding: 0.55rem 0;
+      border-bottom: 1px solid var(--border);
+      font-size: 0.95rem;
+      color: var(--text);
+      line-height: 1.4;
+    }
+    .value-stack li:last-child { border-bottom: none; }
+    .value-stack .val { color: var(--accent-bright); font-weight: 800; }
+    .value-total {
+      margin-top: 0.85rem;
+      padding-top: 0.85rem;
+      border-top: 2px solid rgba(251, 191, 36, 0.4);
+      font-size: clamp(1.1rem, 2.5vw, 1.35rem);
+      font-weight: 800;
+      color: #fff;
+      text-align: center;
+    }
+    .value-total .val { color: var(--gold); }
+    .value-limited {
+      margin-top: 0.65rem;
+      padding-top: 0.85rem;
+      border-top: 1px solid var(--border);
+      text-align: center;
+      font-size: 0.9rem;
+      font-weight: 700;
+      color: var(--sub);
+      letter-spacing: 0.02em;
+    }
+    .value-limited .price {
+      display: block;
+      margin-top: 0.35rem;
+      font-size: clamp(1.75rem, 4vw, 2.35rem);
+      font-weight: 800;
+      color: var(--gold);
+      letter-spacing: -0.02em;
+      line-height: 1.1;
+    }
+    .value-limited .price-note {
+      display: block;
+      margin-top: 0.25rem;
+      font-size: 0.78rem;
+      font-weight: 600;
+      color: var(--muted);
+    }
+    .decision-box {
+      max-width: 40rem;
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+      gap: 0.85rem;
+    }
+    @media (min-width: 640px) {
+      .decision-box {
+        flex-direction: row;
+        align-items: stretch;
+      }
+      .decision-box .decision-col { flex: 1; display: flex; flex-direction: column; }
+    }
+    .decision-col .btn-primary,
+    .decision-col .btn-ghost {
+      width: 100%;
+      min-height: 3.35rem;
+      padding: 0.85rem 1rem;
+    }
+    .audit-disclaimer {
+      margin-top: 0.75rem;
+      font-size: 0.82rem;
+      color: var(--muted);
+      line-height: 1.55;
+      text-align: center;
+      max-width: 36rem;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    .inline-cta {
+      margin-top: 1.5rem;
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0.65rem;
+    }
+    @media (min-width: 520px) {
+      .inline-cta { flex-direction: row; justify-content: center; flex-wrap: wrap; }
+    }
+
+    /* Book-a-call widget */
+    .book-call-widget {
+      position: fixed;
+      right: max(12px, env(safe-area-inset-right, 0px));
+      bottom: max(12px, env(safe-area-inset-bottom, 0px));
+      z-index: 250;
+      max-width: min(260px, calc(100vw - 24px));
+    }
+    .book-call-widget a {
+      display: flex;
+      flex-direction: column;
+      gap: 3px;
+      text-decoration: none;
+      background: var(--surface2);
+      border: 1px solid rgba(251, 191, 36, 0.4);
+      border-radius: 12px;
+      padding: 12px 14px;
+      box-shadow: 0 8px 28px rgba(0, 0, 0, 0.45);
+      transition: transform 0.15s ease;
+      -webkit-tap-highlight-color: transparent;
+    }
+    .book-call-widget a:hover { transform: translateY(-2px); }
+    .book-call-widget-kicker {
+      font-size: 0.82rem;
+      font-weight: 700;
+      color: var(--text);
+      line-height: 1.3;
+    }
+    .book-call-widget-sub {
+      font-size: 0.75rem;
+      font-weight: 600;
+      color: var(--gold);
+    }
+  </style>
 </head>
 <body>
-  <div class="urgency-bar">
-    ⚠️ FINAL CALL: The $1,003 Case Study Scholarship &amp; One-Pay Bonuses expire in:
-    <span class="timer" id="countdown">23:59:59</span>
+  <div class="scarcity-bar" role="status">
+    UPDATE: 8 of 10 &ldquo;Case Study&rdquo; spots have been filled. ONLY 2 SPOTS REMAINING.
   </div>
 
-  <main class="container">
-    <section class="section headline">
-      <h1>The $34,528 YouTube Roadmap: Build, Automate, &amp; Flip 'Micro-Moat' Channels.</h1>
-      <p class="subhead">Watch the raw, 20-minute surgical training below to see the $1 production factory and the 6-figure exit strategy.</p>
-    </section>
+  <header class="hero" id="watch">
+    <div class="hero-inner wrap">
+      <h1>How I Generate $34,928 Every 90 Days Building Faceless &ldquo;Search Monopolies&rdquo; on YouTube</h1>
+      <p class="hero-sub">How I build faceless YouTube search channels that pay monthly, without going on camera or chasing trends.</p>
+      <div class="video-shell">
+        <iframe
+          src="https://www.youtube.com/embed/AdFXIc3jY30"
+          title="Masterclass training video"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+          allowfullscreen
+          loading="eager"
+          referrerpolicy="strict-origin-when-cross-origin"
+        ></iframe>
+      </div>
+      <div class="hero-cta-row">
+        <a class="btn-primary" href="#join">Claim One of 2 Remaining Spots</a>
+        <a class="btn-ghost" href="https://calendly.com/sigmayt/ytachads" target="_blank" rel="noopener noreferrer">Book a strategy call</a>
+      </div>
+    </div>
+  </header>
 
-    <section class="section" style="padding-top: 4px;">
-      <div class="video-card">
-        <iframe src="https://www.youtube-nocookie.com/embed/5E0I1ZWvZZw?rel=0&modestbranding=1&playsinline=1" title="Webinar Replay" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-        <p class="video-note">Note: This is a raw recording for our private group. Skip to the 15:00 mark for the Autopilot Factory breakdown.</p>
+  <section class="section money-section">
+    <div class="wrap">
+      <span class="eyebrow">How the money works</span>
+      <h2 class="sec-title">Channels you can sell, not just post on</h2>
+      <p class="sec-sub">Search traffic builds monthly income you can keep or sell for roughly <strong>10 to 25 times monthly profit</strong>.</p>
+
+      <div class="model-card">
+        <p class="model-title">Build to $2k to $5k/month in profit per channel</p>
+        <p class="model-desc">Each channel is built on <em>people already searching</em>, not viral spikes, not personality, not luck.</p>
+        <p class="model-tagline"><strong>This isn&rsquo;t one viral video.</strong> It&rsquo;s search traffic that keeps paying whether you post or not.</p>
       </div>
 
-      <div class="cta">
-        <a class="btn-primary" href="#offer">Join the Case Study Group ($1,497)</a>
-        <div class="cta-sub">One-time investment. Save $1,003 today.</div>
+      <p class="model-title" style="margin-bottom:0.65rem;color:var(--gold);">Then sell for 10 to 25 times monthly profit</p>
+      <div class="exit-mult-grid">
+        <div class="exit-mult-row"><span>$3k/mo asset</span><span class="out">$30k to $75k exit</span></div>
+        <div class="exit-mult-row"><span>$5k/mo asset</span><span class="out">$50k to $125k exit</span></div>
       </div>
-    </section>
 
-    <section class="section" id="offer">
-      <div class="stack-box">
-        <h2 class="stack-title">THE STACK (The Visual Value)</h2>
-        <p class="stack-sub">Everything you unlock immediately when you join today:</p>
+      <p class="roi-line">Invest once. Earn it back from the channel. Then <strong>keep the monthly income</strong> or <strong>sell the channel</strong> at a 25x multiple.</p>
 
-        <ul class="stack-list">
-          <li><span>YouTube Micro-Niche Masterclass</span> <span class="val">($2,500 Value)</span></li>
-          <li><span>Bonus #1: The 1 Video Factory Templates</span> <span class="val">($997 Value)</span></li>
-          <li><span>Bonus #2: The 2024 "Hot Niche" Spreadsheet</span> <span class="val">($497 Value)</span></li>
-          <li><span>Bonus #3: Private Discord &amp; Weekly Mastermind</span> <span class="val">($1,997 Value)</span></li>
-          <li><span>EXCLUSIVE ONE-PAY BONUS: 1-on-1 Niche Verification Call</span> <span class="val">(Priceless)</span></li>
+      <div class="inline-cta">
+        <a class="btn-green btn-primary" href="#join">See the Full Stack Below</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="section exits-section">
+    <div class="wrap">
+      <span class="eyebrow">Channel exits</span>
+      <h2 class="sec-title">Real exits. Offers accepted and paid.</h2>
+      <p class="sec-sub">Two exits. Offers accepted, contracts signed, money transferred.</p>
+
+      <article class="exit-card">
+        <div class="exit-card-top">
+          <div>
+            <div class="exit-tag">Exit 1</div>
+            <div class="exit-amount">$20,000</div>
+          </div>
+          <div class="exit-roi-badge">10x on capital</div>
+        </div>
+        <div class="exit-proof-pair">
+          <div class="exit-proof-shot">
+            <img src="revv/exit%202.png" alt="Screenshot: $20,000 channel exit proof 1" width="1200" height="800" loading="lazy" decoding="async">
+          </div>
+          <div class="exit-proof-shot">
+            <img src="revv/exit%201.2.png" alt="Screenshot: $20,000 channel exit proof 2" width="1200" height="800" loading="lazy" decoding="async">
+          </div>
+        </div>
+        <div class="exit-detail">Built from scratch using the search-based model. Offer accepted, agreement signed, channel transferred.</div>
+        <div class="exit-math">
+          <span>$2,000 invested</span>
+          <span class="arrow">→</span>
+          <span>~$1k/mo profit</span>
+          <span class="arrow">→</span>
+          <span class="result">$20,000 exit</span>
+        </div>
+        <div class="exit-proof-bar">Offer accepted · Contract signed · Payment received</div>
+      </article>
+
+      <article class="exit-card">
+        <div class="exit-card-top">
+          <div>
+            <div class="exit-tag">Exit 2</div>
+            <div class="exit-amount">$53,000</div>
+          </div>
+          <div class="exit-roi-badge">~13x return</div>
+        </div>
+        <div class="exit-proof-shot">
+          <img src="revv/exit1.png" alt="Screenshot: $53,000 channel exit" width="1200" height="800" loading="lazy" decoding="async">
+        </div>
+        <div class="exit-detail">No audience. No face. Same system taught inside the programme.</div>
+        <div class="exit-math">
+          <span>$4,000 invested</span>
+          <span class="arrow">→</span>
+          <span>~$2k/mo passive profit</span>
+          <span class="arrow">→</span>
+          <span class="result">$53,000 exit</span>
+        </div>
+        <div class="exit-proof-bar">Offer accepted · Contract signed · Payment received</div>
+      </article>
+    </div>
+  </section>
+
+  <section class="section system-section">
+    <div class="wrap">
+      <span class="eyebrow">Inside YT Incubator</span>
+      <h2 class="sec-title">The 6-step asset development system</h2>
+      <p class="sec-sub">Same system behind the <strong>$20k</strong> and <strong>$53k</strong> exits.</p>
+      <div class="hook-box">This isn&rsquo;t posting for views.<br><span>It&rsquo;s building channels that pay every month and can be sold later.</span></div>
+
+      <div class="sys-item">
+        <div class="sys-num">1</div>
+        <div>
+          <p class="sys-title">Niche &amp; Keyword System</p>
+          <p class="sys-stmt">Pick niches where people are already searching and ad rates are strong. No guessing.</p>
+          <p class="sys-out">Start in markets that can realistically hit $2k to $5k/month</p>
+        </div>
+      </div>
+      <div class="sys-item">
+        <div class="sys-num">2</div>
+        <div>
+          <p class="sys-title">Search-Based Video Strategy</p>
+          <p class="sys-stmt">Make videos people are already searching for, with titles and structure built to keep getting views.</p>
+          <p class="sys-out">Predictable traffic that grows whether you post or not</p>
+        </div>
+      </div>
+      <div class="sys-item">
+        <div class="sys-num">3</div>
+        <div>
+          <p class="sys-title">The $1 Production Factory</p>
+          <p class="sys-stmt">Our 6-minute process to make strong videos for about $1 each, with as much automation as you want.</p>
+          <p class="sys-out">Scale to hundreds of videos without becoming the bottleneck</p>
+        </div>
+      </div>
+      <div class="sys-item">
+        <div class="sys-num">4</div>
+        <div>
+          <p class="sys-title">Monetisation System</p>
+          <p class="sys-stmt">Set up channels in niches where each view is worth more. Profit per video, not vanity views.</p>
+          <p class="sys-out">Small channels generating meaningful monthly cashflow</p>
+        </div>
+      </div>
+      <div class="sys-item">
+        <div class="sys-num">5</div>
+        <div>
+          <p class="sys-title">Scaling System</p>
+          <p class="sys-stmt">Replicate winners, expand adjacent keywords, build a library of assets that compounds.</p>
+          <p class="sys-out">Grow from your first $1k to $5k/month steadily, not in random spikes</p>
+        </div>
+      </div>
+      <div class="sys-item">
+        <div class="sys-num">6</div>
+        <div>
+          <p class="sys-title">Exit Framework</p>
+          <p class="sys-stmt">Position your channel as sellable digital property from day one. Real exits: $20k and $53k.</p>
+          <p class="sys-out">You&rsquo;re building something you can sell later, not just monthly income</p>
+        </div>
+      </div>
+
+      <div class="inline-cta">
+        <a class="btn-primary" href="#join">Claim your spot ($1,497)</a>
+        <a class="btn-ghost" href="https://calendly.com/sigmayt/ytachads" target="_blank" rel="noopener noreferrer">Book a strategy call</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="section host-section" id="harvey">
+    <div class="wrap">
+      <div class="host-card">
+        <h2 class="host-title">Your Host</h2>
+        <div class="host-grid">
+          <div class="host-media">
+            <figure class="host-photo" aria-label="Harvey Causer">
+              <img
+                src="me.jpg"
+                alt="Harvey Causer"
+                loading="lazy"
+                decoding="async"
+                onload="this.nextElementSibling.style.display='none'"
+                onerror="this.style.display='none'"
+              />
+              <div class="host-photo-fallback">Add photo: <code>me.jpg</code> in the site root</div>
+            </figure>
+            <p class="host-name">Harvey Causer</p>
+          </div>
+          <div class="host-bio">
+            <p>
+              I&rsquo;m Harvey. Not long ago I was in a $400/month room, eating peanut butter sandwiches, cutting my own hair to save money. I tried every business model you can imagine trying to get rich.
+            </p>
+            <p>
+              Then I found YouTube search: faceless channels you can run without being the face of the brand. Today I run multiple automated channels doing about <strong>$15k to $20k per month</strong> combined. No camera. No trend chasing. No going viral.
+            </p>
+            <p>
+              In the video I walk through the same steps my students and I use: picking the right niche, cheap production, and how selling a channel actually works.
+            </p>
+            <p class="host-bio-highlight">
+              This is the real process. Not theory. What we actually do to build and sell search-based YouTube channels.
+            </p>
+          </div>
+        </div>
+        <p class="host-cta"><a href="#watch">Jump to the video player</a></p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section proof-section" aria-labelledby="wall-heading">
+    <div class="wrap">
+      <span class="eyebrow">Wall of Chads</span>
+      <h2 class="sec-title" id="wall-heading">Real results from students</h2>
+      <div class="proof-masonry" aria-label="Student results screenshots">
+        <figure><img src="rs1.png" alt="Student result screenshot" loading="lazy" decoding="async"></figure>
+        <figure><img src="rs3.png" alt="Student result screenshot" loading="lazy" decoding="async"></figure>
+        <figure><img src="rs4.png" alt="Student result screenshot" loading="lazy" decoding="async"></figure>
+        <figure><img src="rs5.png" alt="Student result screenshot" loading="lazy" decoding="async"></figure>
+        <figure><img src="rs6.png" alt="Student result screenshot" loading="lazy" decoding="async"></figure>
+        <figure><img src="rs7.png" alt="Student result screenshot" loading="lazy" decoding="async"></figure>
+        <figure><img src="rs8.png" alt="Student result screenshot" loading="lazy" decoding="async"></figure>
+        <figure><img src="rs9.png" alt="Student result screenshot" loading="lazy" decoding="async"></figure>
+        <figure><img src="rs11.png" alt="Student result screenshot" loading="lazy" decoding="async"></figure>
+        <figure><img src="rs12.png" alt="Student result screenshot" loading="lazy" decoding="async"></figure>
+        <figure><img src="revv/REV2.png" alt="Revenue screenshot" loading="lazy" decoding="async"></figure>
+        <figure><img src="revv/REV%203.png" alt="Analytics screenshot" loading="lazy" decoding="async"></figure>
+        <figure><img src="revv/rev%205.png" alt="Earnings screenshot" loading="lazy" decoding="async"></figure>
+        <figure><img src="revv/rev%208.png" alt="Monthly revenue screenshot" loading="lazy" decoding="async"></figure>
+        <figure><img src="revv/REV%204.png" alt="Estimated revenue screenshot" loading="lazy" decoding="async"></figure>
+        <figure><img src="revv/rev%207.jpeg" alt="Payment proof screenshot" loading="lazy" decoding="async"></figure>
+      </div>
+    </div>
+  </section>
+
+  <section class="section testimonial-section" aria-labelledby="bautista-video-heading">
+    <div class="wrap">
+      <span class="eyebrow">Featured story</span>
+      <h2 class="testimonial-heading" id="bautista-video-heading">Bautista&rsquo;s Journey With Us</h2>
+      <p class="testimonial-subhead">Bautista went from zero to $2,000/mo by following the Search-Based model</p>
+      <div class="testimonial-wrap">
+        <div class="testimonial-embed">
+          <wistia-player media-id="09lmxjzmu8" aspect="1.7877094972067038"></wistia-player>
+        </div>
+      </div>
+      <div class="inline-cta" style="margin-top:1.25rem;">
+        <a class="btn-primary" href="#join">Claim One of 2 Remaining Spots</a>
+        <a class="btn-ghost" href="https://calendly.com/sigmayt/ytachads" target="_blank" rel="noopener noreferrer">Book a strategy call</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="section students-section">
+    <div class="wrap">
+      <span class="eyebrow">Student wins</span>
+      <h2 class="sec-title">No face. No fame. No audience required.</h2>
+      <div class="neb-bar" aria-hidden="true">
+        <div class="neb-item"><div class="neb-x">0</div><div class="neb-label">Prior experience</div></div>
+        <div class="neb-item"><div class="neb-x">0</div><div class="neb-label">Existing audience</div></div>
+        <div class="neb-item"><div class="neb-x">0</div><div class="neb-label">On camera</div></div>
+        <div class="neb-item"><div class="neb-x">0</div><div class="neb-label">Tech skills</div></div>
+      </div>
+
+      <article class="t-card">
+        <div class="t-head">
+          <img src="assets/bautista-p-500.png" alt="" class="t-avatar" width="48" height="48" loading="lazy">
+          <div><div class="t-display-name">Bautista</div><div class="t-role">YTA CHADS member</div></div>
+        </div>
+        <p class="t-quote">&ldquo;I&rsquo;m at $2k/month already and about to launch another channel that should do $1k+. I&rsquo;m just following the system exactly as taught.&rdquo;</p>
+        <div class="t-bottom"><div><div class="t-name">Search-based channels</div><div class="t-timeline">Scaling portfolio</div></div><div class="t-result">$2k/month+</div></div>
+      </article>
+      <article class="t-card">
+        <div class="t-head">
+          <img src="assets/mtt-p-500.png" alt="" class="t-avatar" width="48" height="48" loading="lazy">
+          <div><div class="t-display-name">MotoTube</div><div class="t-role">YTA CHADS member</div></div>
+        </div>
+        <p class="t-quote">&ldquo;Some videos get barely 100 views and still make $600. That&rsquo;s when I realized this asset model actually works.&rdquo;</p>
+        <div class="t-bottom"><div><div class="t-name">High-RPM niche</div><div class="t-timeline">Search traffic</div></div><div class="t-result">$600+ / video</div></div>
+      </article>
+      <article class="t-card">
+        <div class="t-head">
+          <img src="assets/ck-jake-p-500.png" alt="" class="t-avatar" width="48" height="48" loading="lazy">
+          <div><div class="t-display-name">CK Jake</div><div class="t-role">YTA CHADS member</div></div>
+        </div>
+        <p class="t-quote">&ldquo;I just got my first payment into my bank account. Steady growth, not hype cycles.&rdquo;</p>
+        <div class="t-bottom"><div><div class="t-name">First payout</div><div class="t-timeline">Asset live</div></div><div class="t-result">Payment received</div></div>
+      </article>
+      <article class="t-card">
+        <div class="t-head">
+          <img src="assets/adarsh-p-500.png" alt="" class="t-avatar" width="48" height="48" loading="lazy">
+          <div><div class="t-display-name">Adarsh</div><div class="t-role">YTA CHADS member</div></div>
+        </div>
+        <p class="t-quote">&ldquo;I spent more on other courses chasing viral content. This gave me a clear path to consistent income.&rdquo;</p>
+        <div class="t-bottom"><div><div class="t-name">After other courses</div><div class="t-timeline">Clear path</div></div><div class="t-result">Income clarity</div></div>
+      </article>
+      <article class="t-card">
+        <div class="t-head">
+          <img src="assets/atte-p-500.png" alt="" class="t-avatar" width="48" height="48" loading="lazy">
+          <div><div class="t-display-name">Atte</div><div class="t-role">YTA CHADS member</div></div>
+        </div>
+        <p class="t-quote">&ldquo;I&rsquo;ve spent over $20,000 on YouTube courses and freelancers. This is the first system that produced consistent results.&rdquo;</p>
+        <div class="t-bottom"><div><div class="t-name">$20k+ spent elsewhere</div><div class="t-timeline">Finally works</div></div><div class="t-result">Consistent results</div></div>
+      </article>
+      <article class="t-card">
+        <div class="t-head">
+          <img src="assets/jono-p-500.png" alt="" class="t-avatar" width="48" height="48" loading="lazy">
+          <div><div class="t-display-name">Jono</div><div class="t-role">YTA CHADS member</div></div>
+        </div>
+        <p class="t-quote">&ldquo;This changed how I see YouTube. Not a side hustle. A real business I can grow and sell.&rdquo;</p>
+        <div class="t-bottom"><div><div class="t-name">Mindset shift</div><div class="t-timeline">Channel owner</div></div><div class="t-result">Scalable model</div></div>
+      </article>
+
+      <div class="inline-cta">
+        <a class="btn-primary" href="#join">Join the Next 2 Partners</a>
+        <a class="btn-ghost" href="https://calendly.com/sigmayt/ytachads" target="_blank" rel="noopener noreferrer">Book a strategy call</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="section faq-section" aria-labelledby="faq-heading">
+    <div class="wrap">
+      <span class="eyebrow">Before you join</span>
+      <h2 class="sec-title" id="faq-heading">If you&rsquo;re thinking &ldquo;this looks good&hellip; but will it work for me?&rdquo;</h2>
+      <p class="sec-sub">Here&rsquo;s what people ask before joining:</p>
+
+      <div class="faq-accordion">
+        <details class="faq-item" name="faq">
+          <summary>
+            <span class="faq-summary-main">
+              <span class="faq-icon" aria-hidden="true"><svg viewBox="0 0 10 10" fill="none"><path d="M5 1v4M5 7.5v.5" stroke-width="1.5" stroke-linecap="round"/></svg></span>
+              Do I need any experience?
+            </span>
+            <span class="faq-chevron" aria-hidden="true"><svg viewBox="0 0 12 12" fill="none"><path d="M3 4.5L6 7.5L9 4.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+          </summary>
+          <div class="faq-a">No. Most people start from zero. You follow a clear process for building search channels, not guesswork. Experience helps, but it has never been the deciding factor.</div>
+        </details>
+        <details class="faq-item" name="faq">
+          <summary>
+            <span class="faq-summary-main">
+              <span class="faq-icon" aria-hidden="true"><svg viewBox="0 0 10 10" fill="none"><path d="M5 1v4M5 7.5v.5" stroke-width="1.5" stroke-linecap="round"/></svg></span>
+              Do I need to show my face?
+            </span>
+            <span class="faq-chevron" aria-hidden="true"><svg viewBox="0 0 12 12" fill="none"><path d="M3 4.5L6 7.5L9 4.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+          </summary>
+          <div class="faq-a">No. This is <strong>entirely faceless</strong>. You build around what people search for, not a personal brand, not a following, and not being on camera.</div>
+        </details>
+        <details class="faq-item" name="faq">
+          <summary>
+            <span class="faq-summary-main">
+              <span class="faq-icon" aria-hidden="true"><svg viewBox="0 0 10 10" fill="none"><path d="M5 1v4M5 7.5v.5" stroke-width="1.5" stroke-linecap="round"/></svg></span>
+              How long does it take to make money?
+            </span>
+            <span class="faq-chevron" aria-hidden="true"><svg viewBox="0 0 12 12" fill="none"><path d="M3 4.5L6 7.5L9 4.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+          </summary>
+          <div class="faq-a">Most channels take <strong>3 to 6 months</strong> to reach <strong>$2k to $5k/month</strong>. The focus is steady monthly growth, not one viral hit.</div>
+        </details>
+        <details class="faq-item" name="faq">
+          <summary>
+            <span class="faq-summary-main">
+              <span class="faq-icon" aria-hidden="true"><svg viewBox="0 0 10 10" fill="none"><path d="M5 1v4M5 7.5v.5" stroke-width="1.5" stroke-linecap="round"/></svg></span>
+              How much time does this take per week?
+            </span>
+            <span class="faq-chevron" aria-hidden="true"><svg viewBox="0 0 12 12" fill="none"><path d="M3 4.5L6 7.5L9 4.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+          </summary>
+          <div class="faq-a">You don&rsquo;t need full-time hours. The $1 production setup is built to be <strong>fast and easy to hand off</strong>. You run the process, you don&rsquo;t live in an editing bay.</div>
+        </details>
+        <details class="faq-item" name="faq">
+          <summary>
+            <span class="faq-summary-main">
+              <span class="faq-icon" aria-hidden="true"><svg viewBox="0 0 10 10" fill="none"><path d="M5 1v4M5 7.5v.5" stroke-width="1.5" stroke-linecap="round"/></svg></span>
+              What if I don&rsquo;t make my money back?
+            </span>
+            <span class="faq-chevron" aria-hidden="true"><svg viewBox="0 0 12 12" fill="none"><path d="M3 4.5L6 7.5L9 4.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+          </summary>
+          <div class="faq-a">The goal is to <span class="hl">earn back your $1,497</span> from the channel first, then grow or sell. Not one lucky month. Income that keeps coming until the channel has paid for itself.</div>
+        </details>
+        <details class="faq-item" name="faq">
+          <summary>
+            <span class="faq-summary-main">
+              <span class="faq-icon" aria-hidden="true"><svg viewBox="0 0 10 10" fill="none"><path d="M5 1v4M5 7.5v.5" stroke-width="1.5" stroke-linecap="round"/></svg></span>
+              Isn&rsquo;t YouTube too saturated?
+            </span>
+            <span class="faq-chevron" aria-hidden="true"><svg viewBox="0 0 12 12" fill="none"><path d="M3 4.5L6 7.5L9 4.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+          </summary>
+          <div class="faq-a">Not for this model. Crowded niches hurt trend channels and personality brands. <strong>Search channels target people already looking for answers</strong>, every day, whether something is trending or not.</div>
+        </details>
+        <details class="faq-item" name="faq">
+          <summary>
+            <span class="faq-summary-main">
+              <span class="faq-icon" aria-hidden="true"><svg viewBox="0 0 10 10" fill="none"><path d="M5 1v4M5 7.5v.5" stroke-width="1.5" stroke-linecap="round"/></svg></span>
+              Why not just figure this out myself?
+            </span>
+            <span class="faq-chevron" aria-hidden="true"><svg viewBox="0 0 12 12" fill="none"><path d="M3 4.5L6 7.5L9 4.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+          </summary>
+          <div class="faq-a">You can. Most people <strong>waste 6 to 12 months</strong> on the wrong niche or videos that never stack up. This gives you the full process from day one.</div>
+        </details>
+      </div>
+
+      <div class="inline-cta">
+        <a class="btn-primary" href="#join">Get access ($1,497)</a>
+        <a class="btn-ghost" href="https://calendly.com/sigmayt/ytachads" target="_blank" rel="noopener noreferrer">Book a strategy call</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="section fit-section" aria-labelledby="fit-yes-heading">
+    <div class="wrap">
+      <div class="fit-stack">
+        <div class="fit-box fit-box--yes">
+          <h2 id="fit-yes-heading">This is for you if...</h2>
+          <ul class="fit-list">
+            <li>
+              <span class="fit-icon" aria-hidden="true"><svg viewBox="0 0 24 24" width="20" height="20"><circle cx="12" cy="12" r="12" fill="#22c55e"/><path d="M7 12.5l3 3 7-7" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none"/></svg></span>
+              <p class="fit-copy"><strong>You want income from channels you own.</strong> You&rsquo;re tired of posting for views and want something that pays every month.</p>
+            </li>
+            <li>
+              <span class="fit-icon" aria-hidden="true"><svg viewBox="0 0 24 24" width="20" height="20"><circle cx="12" cy="12" r="12" fill="#22c55e"/><path d="M7 12.5l3 3 7-7" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none"/></svg></span>
+              <p class="fit-copy"><strong>You want to stay off camera.</strong> You&rsquo;re fine making money on YouTube without building a personal brand.</p>
+            </li>
+            <li>
+              <span class="fit-icon" aria-hidden="true"><svg viewBox="0 0 24 24" width="20" height="20"><circle cx="12" cy="12" r="12" fill="#22c55e"/><path d="M7 12.5l3 3 7-7" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none"/></svg></span>
+              <p class="fit-copy"><strong>You want to run production, not edit every video yourself.</strong> You&rsquo;re ready to use the $1 production setup and grow more than one channel.</p>
+            </li>
+            <li>
+              <span class="fit-icon" aria-hidden="true"><svg viewBox="0 0 24 24" width="20" height="20"><circle cx="12" cy="12" r="12" fill="#22c55e"/><path d="M7 12.5l3 3 7-7" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none"/></svg></span>
+              <p class="fit-copy"><strong>You might sell later.</strong> You see a $2k/month channel as something worth $50k+ to a buyer, and you want to know how that works.</p>
+            </li>
+          </ul>
+        </div>
+        <div class="fit-box fit-box--no">
+          <h2 id="fit-no-heading">This is NOT for you if...</h2>
+          <ul class="fit-list">
+            <li>
+              <span class="fit-icon" aria-hidden="true"><svg viewBox="0 0 24 24" width="20" height="20"><circle cx="12" cy="12" r="12" fill="#ef4444"/><path d="M8 8l8 8M16 8l-8 8" stroke="#fff" stroke-width="2" stroke-linecap="round" fill="none"/></svg></span>
+              <p class="fit-copy"><strong>You need fame and your face on camera.</strong> If likes and being seen are the whole point, this will feel boring.</p>
+            </li>
+            <li>
+              <span class="fit-icon" aria-hidden="true"><svg viewBox="0 0 24 24" width="20" height="20"><circle cx="12" cy="12" r="12" fill="#ef4444"/><path d="M8 8l8 8M16 8l-8 8" stroke="#fff" stroke-width="2" stroke-linecap="round" fill="none"/></svg></span>
+              <p class="fit-copy"><strong>You only want one viral hit.</strong> If you&rsquo;re chasing a jackpot instead of steady monthly income, you won&rsquo;t stick with the process.</p>
+            </li>
+            <li>
+              <span class="fit-icon" aria-hidden="true"><svg viewBox="0 0 24 24" width="20" height="20"><circle cx="12" cy="12" r="12" fill="#ef4444"/><path d="M8 8l8 8M16 8l-8 8" stroke="#fff" stroke-width="2" stroke-linecap="round" fill="none"/></svg></span>
+              <p class="fit-copy"><strong>You&rsquo;re not ready to start.</strong> If you want to &ldquo;think about it&rdquo; for months without putting money in and building, this isn&rsquo;t for you.</p>
+            </li>
+          </ul>
+        </div>
+        <p class="fit-capital">We do not offer payment plans. I am taking on 10 people who have the money set aside and are ready to build.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="close-section" id="join" aria-labelledby="close-heading">
+    <div class="wrap">
+      <span class="eyebrow" style="text-align:center;display:block;">The close</span>
+      <h2 class="sec-title" id="close-heading" style="text-align:center;">What you&rsquo;re getting</h2>
+
+      <div class="value-stack">
+        <h2>Complete Value Stack</h2>
+        <ul>
+          <li>YouTube Search Academy <span class="val">($2,500 Value)</span></li>
+          <li>1 Year Search Community + Weekly Calls <span class="val">($468 Value)</span></li>
+          <li>1 Year Keyword Research Tool <span class="val">($360 Value)</span></li>
+          <li>1 Year Production Tool + System <span class="val">($264 Value)</span></li>
         </ul>
-
-        <div class="stack-total">Total Real-World Value: <span class="val">$5,991+</span></div>
-        <div class="stack-invest">Your Investment Today: $1,497</div>
-
-        <div class="integrity">
-          We already have 113 students building their assets. But for this final 2024 cohort, I am looking for 10 specific people to turn into <strong>'Hall of Fame' results.</strong> I want to work with you 1-on-1 to hit that $34k roadmap so I can feature your story. Because I'm trading a lower price for your future testimonial, you're getting this <strong>$1,003 scholarship if you join before midnight.</strong>
-        </div>
-
-        <div class="dual-cta">
-          <a class="btn-secondary" href="https://whop.com/checkout/14uxJ1cerLzyNafQK5-vJIt-s9VD-6dzY-mJxtegJmR0qx/" target="_blank" rel="noopener noreferrer">Join the Case Study Group ($1,497)</a>
-          <a class="btn-telegram" href="https://t.me/ytavision" target="_blank" rel="noopener noreferrer">Questions? Message me on Telegram</a>
-        </div>
-      </div>
-    </section>
-
-    <section class="section">
-      <h2 class="section-title">Join 113+ Others Building YouTube Digital Real Estate</h2>
-      <p class="proof-sub">Raw wins from students, dashboard snapshots, and payment proof.</p>
-
-      <div class="proof-wall" aria-label="Wall of proof screenshots">
-        <figure class="proof-item"><img src="revv/REV2.png" alt="YouTube revenue screenshot" loading="lazy" decoding="async"></figure>
-        <figure class="proof-item"><img src="revv/REV%204.png" alt="YouTube estimated revenue screenshot" loading="lazy" decoding="async"></figure>
-        <figure class="proof-item"><img src="revv/rev%207.jpeg" alt="YouTube payment screenshot" loading="lazy" decoding="async"></figure>
-        <figure class="proof-item"><img src="revv/REV%203.png" alt="YouTube analytics screenshot" loading="lazy" decoding="async"></figure>
-        <figure class="proof-item"><img src="revv/rev%205.png" alt="YouTube earnings screenshot" loading="lazy" decoding="async"></figure>
-        <figure class="proof-item"><img src="revv/rev%208.png" alt="YouTube monthly earnings screenshot" loading="lazy" decoding="async"></figure>
-        <figure class="proof-item"><img src="revv/exit%202.png" alt="Exit proof screenshot" loading="lazy" decoding="async"></figure>
-        <figure class="proof-item"><img src="revv/exit%201.2.png" alt="Exit agreement screenshot" loading="lazy" decoding="async"></figure>
-        <figure class="proof-item"><img src="revv/exit1.png" alt="Channel sale payout screenshot" loading="lazy" decoding="async"></figure>
-        <figure class="proof-item"><img src="100k.png" alt="Proof image from offer assets" loading="lazy" decoding="async"></figure>
-        <figure class="proof-item"><img src="image23242.png" alt="Performance proof image" loading="lazy" decoding="async"></figure>
-        <figure class="proof-item"><img src="4c670030-b17c-40b7-b59c-d536529f241f.jfif" alt="Additional proof screenshot" loading="lazy" decoding="async"></figure>
+        <p class="value-total">TOTAL VALUE: <span class="val">$3,592</span></p>
+        <p class="value-limited">
+          Limited partner price today:
+          <span class="price">$1,497</span>
+          <span class="price-note">Only 2 case-study spots left at this rate</span>
+        </p>
       </div>
 
-      <div class="safety">
-        Still on the fence? If you have one final question about your specific niche or want to make sure this is the right fit, message me directly on Telegram.
-        <div style="margin-top: 10px;">
-          <a class="btn-telegram" href="https://t.me/ytavision" target="_blank" rel="noopener noreferrer">Message me on Telegram</a>
+      <div class="decision-box">
+        <div class="decision-col">
+          <a
+            class="btn-primary"
+            href="https://whop.com/checkout/plan_D4V8SvkQKtrgz"
+            target="_blank"
+            rel="noopener noreferrer"
+          >CLAIM ONE OF THE 2 REMAINING SPOTS ($1,497)</a>
+        </div>
+        <div class="decision-col">
+          <a
+            class="btn-ghost"
+            href="https://calendly.com/sigmayt/ytachads"
+            target="_blank"
+            rel="noopener noreferrer"
+          >BOOK A STRATEGY CALL</a>
         </div>
       </div>
-    </section>
-  </main>
 
-<script>
-  const countdownEl = document.getElementById('countdown');
-  const now = new Date();
-  const midnight = new Date(now);
-  midnight.setHours(24, 0, 0, 0);
+      <p class="audit-disclaimer">I&rsquo;m taking on 10 people who are ready to invest and build, not just watch videos. If you have the $1,497 set aside but want to talk it through first, book a quick strategy call. We&rsquo;ll see if this makes sense for you before you buy.</p>
 
-  function tick() {
-    const diff = midnight - new Date();
-    if (diff <= 0) {
-      countdownEl.textContent = '00:00:00';
-      return;
-    }
-    const h = String(Math.floor(diff / 3600000)).padStart(2, '0');
-    const m = String(Math.floor((diff % 3600000) / 60000)).padStart(2, '0');
-    const s = String(Math.floor((diff % 60000) / 1000)).padStart(2, '0');
-    countdownEl.textContent = `${h}:${m}:${s}`;
-  }
+      <p style="text-align:center;margin-top:1rem;font-size:0.85rem;color:var(--muted);">Secure checkout powered by Whop.</p>
+    </div>
+  </section>
 
-  tick();
-  setInterval(tick, 1000);
-</script>
+  <div class="book-call-widget">
+    <a
+      href="https://calendly.com/sigmayt/ytachads"
+      target="_blank"
+      rel="noopener noreferrer"
+      aria-label="Book a strategy call (opens in a new tab)"
+    >
+      <span class="book-call-widget-kicker">Want to talk it through?</span>
+      <span class="book-call-widget-sub">Book a strategy call</span>
+    </a>
+  </div>
+
+  <script>
+    document.querySelectorAll('a[href^="#"]').forEach(function (a) {
+      a.addEventListener('click', function (e) {
+        var target = document.querySelector(a.getAttribute('href'));
+        if (target) {
+          e.preventDefault();
+          target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+      });
+    });
+  </script>
 </body>
 </html>

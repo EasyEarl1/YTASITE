@@ -6,17 +6,20 @@
   <meta name="username" content="user_3ChXMl3oobB5XIr0FpWhkWjRC5b">
   <meta name="offer" content="WEBINAR">
   <script src="https://d15dfsr886zcp9.cloudfront.net/tracker_script.js" defer></script>
-  <title>Masterclass Live — My Weird YouTube Strategy (Free Training)</title>
-  <meta name="description" content="Free masterclass: my weird YouTube strategy — full walkthrough video and how to join the private program.">
+  <title>Faceless YouTube Search Monopolies | Masterclass Replay</title>
+  <meta name="description" content="How to build faceless YouTube search channels that pay every month. $34,928 every 90 days without going on camera.">
   <script defer src="/_vercel/insights/script.js"></script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <script src="https://fast.wistia.com/player.js" async></script>
+  <script src="https://fast.wistia.com/embed/09lmxjzmu8.js" async type="module"></script>
   <style>
     :root {
       --bg: #050d0a;
       --surface: #0a1612;
       --surface2: #0f1f18;
+      --surface3: #142820;
       --border: #1a3d2e;
       --text: #ecfdf5;
       --muted: #8fb5a6;
@@ -26,11 +29,15 @@
       --accent-deep: #059669;
       --link: #5eead4;
       --gold: #fbbf24;
+      --gold-dim: #d4a017;
       --danger: #f87171;
       --max: 72rem;
     }
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-    html { scroll-behavior: smooth; }
+    html {
+      scroll-behavior: smooth;
+      font-size: 80%;
+    }
     body {
       font-family: Inter, system-ui, -apple-system, sans-serif;
       background: var(--bg);
@@ -38,103 +45,78 @@
       font-size: 1.0625rem;
       line-height: 1.6;
       -webkit-font-smoothing: antialiased;
-      padding-top: max(3.35rem, calc(2.85rem + env(safe-area-inset-top, 0px)));
-      padding-bottom: max(5.75rem, calc(4.75rem + env(safe-area-inset-bottom, 0px)));
+      padding-top: max(2.75rem, calc(2.35rem + env(safe-area-inset-top, 0px)));
+      padding-bottom: max(5rem, calc(4rem + env(safe-area-inset-bottom, 0px)));
     }
     a { color: var(--link); }
     .wrap { width: min(var(--max), calc(100% - 2rem)); margin: 0 auto; }
-
-    /* —— Top offer banner —— */
-    .offer-banner {
-      position: fixed;
-      top: 0;
-      left: 0;
-      right: 0;
-      z-index: 200;
-      padding: 0.45rem 1rem 0.55rem;
-      padding-top: max(0.45rem, env(safe-area-inset-top, 0px));
-      background: linear-gradient(180deg, #ef4444 0%, #b91c1c 100%);
-      border-bottom: 1px solid rgba(0, 0, 0, 0.2);
-      box-shadow: 0 4px 16px rgba(0, 0, 0, 0.35);
-    }
-    .offer-banner-inner {
-      max-width: var(--max);
-      margin: 0 auto;
-      text-align: center;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      gap: 0.15rem;
-      padding: 0 0.25rem;
-    }
-    @media (min-width: 520px) {
-      .offer-banner-inner {
-        flex-direction: row;
-        flex-wrap: wrap;
-        justify-content: center;
-        gap: 0.35rem 0.5rem;
-      }
-    }
-    .offer-banner-line {
-      margin: 0;
-      font-size: clamp(0.8rem, 2.4vw, 0.95rem);
-      font-weight: 700;
-      color: #fff;
-      letter-spacing: 0.02em;
-      line-height: 1.35;
-    }
-    .offer-banner-line strong {
-      font-weight: 800;
-      font-variant-numeric: tabular-nums;
-      margin-left: 0.25rem;
-      text-shadow: 0 1px 0 rgba(0, 0, 0, 0.2);
-    }
-    .offer-banner-sub {
-      margin: 0;
-      font-size: clamp(0.68rem, 1.8vw, 0.78rem);
-      font-weight: 600;
-      color: rgba(255, 255, 255, 0.88);
-      letter-spacing: 0.03em;
-    }
-
-    .section-label {
+    .section { padding: clamp(2rem, 5vw, 3.25rem) 0; border-bottom: 1px solid var(--border); }
+    .eyebrow {
+      display: block;
       font-size: 0.7rem;
       font-weight: 800;
       letter-spacing: 0.12em;
       text-transform: uppercase;
       color: var(--accent-bright);
-      margin-bottom: 0.35rem;
+      margin-bottom: 0.5rem;
+    }
+    h2.sec-title {
+      font-size: clamp(1.35rem, 3.2vw, 1.9rem);
+      font-weight: 800;
+      letter-spacing: -0.02em;
+      color: #fff;
+      margin-bottom: 0.65rem;
+      line-height: 1.15;
+    }
+    .sec-sub {
+      margin: 0 0 1.25rem;
+      max-width: 40rem;
+      color: var(--sub);
+      font-size: clamp(0.95rem, 2vw, 1.05rem);
+      line-height: 1.55;
     }
 
-    /* —— Hero —— */
+    /* Scarcity bar */
+    .scarcity-bar {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 300;
+      background: #000;
+      color: var(--gold);
+      text-align: center;
+      font-weight: 800;
+      font-size: clamp(0.72rem, 2.2vw, 0.9rem);
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      padding: 0.55rem 0.75rem;
+      padding-top: max(0.55rem, env(safe-area-inset-top, 0px));
+      border-bottom: 1px solid rgba(251, 191, 36, 0.35);
+      line-height: 1.35;
+    }
+
+    /* Hero */
     .hero {
-      padding: clamp(1.1rem, 3.5vw, 1.85rem) 1.25rem clamp(1.35rem, 4.5vw, 2.35rem);
-      background: radial-gradient(ellipse 90% 60% at 50% 0%, rgba(52, 211, 153, 0.16), transparent 55%), #07120e;
-      border-bottom: 1px solid var(--border);
+      padding: clamp(1rem, 3vw, 1.75rem) 1.25rem clamp(1.5rem, 4vw, 2.5rem);
+      background: radial-gradient(ellipse 90% 60% at 50% 0%, rgba(52, 211, 153, 0.14), transparent 55%), #07120e;
       text-align: center;
     }
-    .hero-inner {
-      max-width: 52rem;
-      margin: 0 auto;
-    }
+    .hero-inner { max-width: 52rem; margin: 0 auto; }
     .hero h1 {
-      font-size: clamp(1.6rem, 4.6vw, 2.65rem);
+      font-size: clamp(1.45rem, 4.2vw, 2.55rem);
       font-weight: 800;
       line-height: 1.1;
       letter-spacing: -0.03em;
       color: #fff;
-      margin: 0 auto;
-      max-width: 20ch;
-    }
-    @media (min-width: 520px) {
-      .hero h1 { max-width: 100%; }
+      margin: 0 auto 0.65rem;
     }
     .hero-sub {
-      margin: 0.65rem auto 0;
-      max-width: 38rem;
-      font-size: clamp(0.98rem, 2.1vw, 1.22rem);
+      margin: 0 auto;
+      max-width: 40rem;
+      font-size: clamp(0.95rem, 2.1vw, 1.15rem);
       font-weight: 500;
-      line-height: 1.45;
+      line-height: 1.5;
       color: var(--sub);
     }
     .video-shell {
@@ -145,7 +127,7 @@
       border-radius: 14px;
       overflow: hidden;
       border: 1px solid rgba(52, 211, 153, 0.35);
-      box-shadow: 0 12px 48px rgba(0, 0, 0, 0.45), 0 0 0 1px rgba(255, 255, 255, 0.04) inset;
+      box-shadow: 0 12px 48px rgba(0, 0, 0, 0.45);
       background: #000;
       line-height: 0;
     }
@@ -153,591 +135,766 @@
       display: block;
       width: 100%;
       aspect-ratio: 16 / 9;
-      height: auto;
-      min-height: 200px;
       border: 0;
     }
-    .hero-program-cta {
-      margin-top: 1.25rem;
+    .hero-cta-row {
+      margin-top: 1.15rem;
       display: flex;
-      justify-content: center;
-      width: min(100%, 56rem);
-      margin-left: auto;
-      margin-right: auto;
+      flex-direction: column;
+      align-items: center;
+      gap: 0.65rem;
     }
-    .hero-program-cta .btn-hero {
-      border-radius: 9999px;
-      padding: 0.9rem 1.35rem 0.9rem 1.5rem;
-      max-width: 100%;
-      text-align: center;
-      flex-wrap: wrap;
-      box-shadow:
-        0 6px 28px rgba(34, 197, 94, 0.42),
-        0 0 32px rgba(74, 222, 128, 0.28);
+    @media (min-width: 520px) {
+      .hero-cta-row { flex-direction: row; justify-content: center; flex-wrap: wrap; }
     }
-    .hero-program-cta .btn-hero span:first-child {
-      text-wrap: balance;
-    }
-    @media (max-width: 520px) {
-      .hero-program-cta .btn-hero {
-        min-height: 2.45rem;
-        padding: 0.5rem 0.85rem 0.5rem 1rem;
-        font-size: 0.8rem;
-        gap: 0.45rem;
-        box-shadow:
-          0 4px 18px rgba(34, 197, 94, 0.38),
-          0 0 20px rgba(74, 222, 128, 0.2);
-      }
-      .hero-program-cta .btn-hero .btn-hero-arrow {
-        width: 1.85rem;
-        height: 1.85rem;
-        font-size: 0.92rem;
-      }
-    }
-    .btn-hero {
+
+    /* Buttons */
+    .btn-primary {
       display: inline-flex;
       align-items: center;
       justify-content: center;
-      gap: 0.75rem;
-      min-height: 3.2rem;
-      padding: 0 1.25rem 0 1.45rem;
-      font-size: 1.05rem;
-      font-weight: 700;
+      gap: 0.5rem;
+      min-height: 3rem;
+      padding: 0 1.35rem;
+      font-size: clamp(0.88rem, 2vw, 1rem);
+      font-weight: 800;
       text-decoration: none;
       color: #042f1a;
-      background: linear-gradient(180deg, #86efac 0%, #4ade80 35%, #22c55e 100%);
+      background: linear-gradient(180deg, var(--gold) 0%, #eab308 50%, var(--gold-dim) 100%);
       border: none;
-      border-radius: 12px;
-      box-shadow: 0 6px 28px rgba(34, 197, 94, 0.42);
+      border-radius: 9999px;
+      box-shadow: 0 6px 28px rgba(251, 191, 36, 0.35);
       transition: transform 0.15s ease, box-shadow 0.15s ease;
+      text-align: center;
+      -webkit-tap-highlight-color: transparent;
     }
-    .btn-hero:hover {
+    .btn-primary:hover {
       transform: translateY(-2px);
-      box-shadow: 0 10px 36px rgba(34, 197, 94, 0.55);
+      box-shadow: 0 10px 36px rgba(251, 191, 36, 0.45);
     }
-    .btn-hero-arrow {
-      flex-shrink: 0;
-      width: 2.35rem;
-      height: 2.35rem;
-      border-radius: 50%;
-      background: rgba(4, 47, 26, 0.18);
+    .btn-ghost {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 3rem;
+      padding: 0 1.25rem;
+      font-size: clamp(0.85rem, 2vw, 0.95rem);
+      font-weight: 700;
+      text-decoration: none;
+      color: #fff;
+      background: transparent;
+      border: 2px solid rgba(255, 255, 255, 0.65);
+      border-radius: 9999px;
+      transition: background 0.15s ease, border-color 0.15s ease;
+      -webkit-tap-highlight-color: transparent;
+    }
+    .btn-ghost:hover {
+      background: rgba(255, 255, 255, 0.08);
+      border-color: #fff;
+    }
+    .btn-green {
+      background: linear-gradient(180deg, #86efac 0%, #4ade80 35%, #22c55e 100%);
       color: #042f1a;
+      box-shadow: 0 6px 28px rgba(34, 197, 94, 0.42);
+    }
+    .btn-green:hover { box-shadow: 0 10px 36px rgba(34, 197, 94, 0.55); }
+
+    /* Money model */
+    .money-section { background: var(--surface); }
+    .model-card {
+      background: var(--surface2);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 1.1rem 1.15rem;
+      margin-bottom: 1rem;
+    }
+    .model-title {
+      font-size: 1.05rem;
+      font-weight: 800;
+      color: #fff;
+      margin-bottom: 0.35rem;
+    }
+    .model-desc { color: var(--sub); font-size: 0.95rem; line-height: 1.5; }
+    .model-desc em { color: var(--accent-bright); font-style: normal; font-weight: 600; }
+    .model-tagline {
+      margin-top: 0.75rem;
+      padding-top: 0.75rem;
+      border-top: 1px solid var(--border);
+      font-weight: 700;
+      color: var(--text);
+      font-size: 0.92rem;
+    }
+    .exit-mult-grid {
+      display: grid;
+      gap: 0.65rem;
+      margin: 1rem 0;
+    }
+    @media (min-width: 480px) { .exit-mult-grid { grid-template-columns: 1fr 1fr; } }
+    .exit-mult-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 0.5rem;
+      padding: 0.75rem 1rem;
+      background: var(--surface3);
+      border: 1px solid rgba(74, 222, 128, 0.25);
+      border-radius: 10px;
+      font-weight: 700;
+      font-size: 0.9rem;
+    }
+    .exit-mult-row .out { color: var(--accent-bright); }
+    .roi-line {
+      font-size: 0.95rem;
+      color: var(--sub);
+      line-height: 1.5;
+    }
+    .roi-line strong { color: var(--text); }
+
+    /* Exit proof cards (lander layout, dark theme) */
+    .exits-section { background: var(--bg); }
+    .exits-section .sec-sub { max-width: none; }
+    .exit-card {
+      background: var(--surface2);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 1.25rem 1.35rem;
+      margin-bottom: 0.85rem;
+      width: 100%;
+    }
+    .exit-card:last-child { margin-bottom: 0; }
+    .exit-card-top {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      gap: 0.75rem;
+      margin-bottom: 0.75rem;
+    }
+    .exit-tag {
+      font-size: 0.75rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-bottom: 0.3rem;
+    }
+    .exit-amount {
+      font-size: clamp(1.65rem, 3.5vw, 2rem);
+      font-weight: 800;
+      color: #fff;
+      letter-spacing: -0.02em;
+      line-height: 1.1;
+    }
+    .exit-roi-badge {
+      font-size: 0.875rem;
+      font-weight: 700;
+      color: var(--accent-bright);
+      background: rgba(74, 222, 128, 0.12);
+      border: 1px solid rgba(74, 222, 128, 0.35);
+      border-radius: 6px;
+      padding: 0.35rem 0.75rem;
+      white-space: nowrap;
+      flex-shrink: 0;
+    }
+    .exit-proof-shot {
+      margin: 0 0 0.9rem;
+      border-radius: 12px;
+      overflow: hidden;
+      border: 1px solid var(--border);
+      background: #0a0e0c;
+      line-height: 0;
+    }
+    .exit-proof-shot img {
+      width: 100%;
+      height: auto;
+      max-height: min(360px, 48vh);
+      object-fit: contain;
+      object-position: top center;
+      display: block;
+    }
+    .exit-proof-pair {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 0.5rem;
+      margin: 0 0 0.9rem;
+      align-items: start;
+    }
+    .exit-proof-pair .exit-proof-shot {
+      margin: 0;
+    }
+    .exit-proof-pair .exit-proof-shot img {
+      max-height: min(300px, 42vh);
+    }
+    .exit-detail {
+      font-size: 0.9375rem;
+      color: var(--sub);
+      line-height: 1.55;
+      border-top: 1px solid var(--border);
+      padding-top: 0.75rem;
+      margin-bottom: 0;
+    }
+    .exit-math {
+      font-size: 0.9375rem;
+      font-weight: 700;
+      color: var(--text);
+      background: rgba(52, 211, 153, 0.08);
+      border: 1px solid rgba(52, 211, 153, 0.2);
+      border-radius: 8px;
+      padding: 0.7rem 1rem;
+      margin-top: 0.75rem;
+      display: flex;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 0.35rem 0.5rem;
+      line-height: 1.35;
+    }
+    .exit-math .arrow { color: var(--link); font-weight: 800; }
+    .exit-math .result { color: var(--accent-bright); }
+    .exit-proof-bar {
+      background: rgba(52, 211, 153, 0.08);
+      border: 1px solid rgba(52, 211, 153, 0.2);
+      border-radius: 8px;
+      padding: 0.55rem 0.85rem;
+      margin-top: 0.65rem;
+      font-size: 0.8125rem;
+      color: var(--sub);
+      font-weight: 600;
+      line-height: 1.4;
+    }
+
+    /* System */
+    .system-section { background: var(--surface); }
+    .hook-box {
+      margin: 0 0 1.35rem;
+      padding: 1rem 1.15rem;
+      background: rgba(251, 191, 36, 0.08);
+      border: 1px solid rgba(251, 191, 36, 0.25);
+      border-radius: 12px;
+      font-size: clamp(1rem, 2.2vw, 1.15rem);
+      font-weight: 700;
+      color: var(--text);
+      line-height: 1.4;
+      text-align: center;
+    }
+    .hook-box span { color: var(--gold); }
+    .sys-item {
+      display: grid;
+      grid-template-columns: auto 1fr;
+      gap: 0.85rem 1rem;
+      padding: 1rem 0;
+      border-bottom: 1px solid var(--border);
+    }
+    .sys-item:last-child { border-bottom: none; }
+    .sys-num {
+      width: 2.25rem;
+      height: 2.25rem;
+      border-radius: 50%;
+      background: rgba(74, 222, 128, 0.15);
+      border: 1px solid rgba(74, 222, 128, 0.4);
+      color: var(--accent-bright);
+      font-weight: 800;
+      font-size: 0.95rem;
       display: flex;
       align-items: center;
       justify-content: center;
-      font-size: 1.1rem;
-      line-height: 1;
+      flex-shrink: 0;
     }
-    .hero-event {
-      margin-top: 1.1rem;
-    }
-    .hero-event-label {
-      display: block;
-      font-weight: 800;
-      font-size: 0.92rem;
-      color: var(--accent);
-      margin-bottom: 0.25rem;
-    }
-    .hero-event-time {
-      display: block;
+    .sys-title { font-weight: 800; color: #fff; margin-bottom: 0.25rem; font-size: 1rem; }
+    .sys-stmt { color: var(--sub); font-size: 0.92rem; line-height: 1.45; margin-bottom: 0.35rem; }
+    .sys-out {
+      font-size: 0.82rem;
       font-weight: 700;
-      font-size: clamp(0.95rem, 2.1vw, 1.12rem);
-      color: #fff;
+      color: var(--accent);
     }
 
-    /* —— Your Host (light card) —— */
+    /* Your Host */
     .host-section {
-      padding: clamp(1.75rem, 4vw, 2.75rem) 0;
-      background: #e8f5ef;
-      border-bottom: 1px solid #c4e5d4;
+      background: var(--surface2);
+      border-bottom: 1px solid var(--border);
     }
     .host-card {
-      background: #fff;
+      background: var(--surface);
+      border: 1px solid var(--border);
       border-radius: 16px;
-      box-shadow:
-        0 12px 40px rgba(15, 23, 42, 0.08),
-        0 2px 8px rgba(15, 23, 42, 0.04);
-      padding: clamp(1.5rem, 4vw, 2.35rem) clamp(1.2rem, 3vw, 2rem);
-      max-width: 72rem;
-      margin: 0 auto;
+      box-shadow: 0 12px 40px rgba(0, 0, 0, 0.3);
+      padding: clamp(1.35rem, 3vw, 2rem) clamp(1.1rem, 2.5vw, 1.5rem);
     }
     .host-title {
       text-align: center;
       font-size: clamp(1.35rem, 3vw, 1.8rem);
       font-weight: 800;
-      color: #047857;
-      margin: 0 0 clamp(1.25rem, 3vw, 1.85rem);
+      color: var(--accent-bright);
+      margin: 0 0 clamp(1.1rem, 2.5vw, 1.65rem);
       letter-spacing: -0.02em;
     }
     .host-grid {
       display: grid;
-      gap: clamp(1.5rem, 3.5vw, 2.25rem);
-      align-items: stretch;
+      gap: clamp(1.25rem, 3vw, 2rem);
+      align-items: start;
     }
     @media (min-width: 768px) {
       .host-grid {
-        grid-template-columns: minmax(0, clamp(240px, 26vw, 300px)) minmax(0, 1fr);
-        gap: 2rem clamp(1.75rem, 3.5vw, 2.75rem);
-        align-items: stretch;
-      }
-    }
-    @media (min-width: 1100px) {
-      .host-grid {
-        grid-template-columns: minmax(0, 320px) minmax(0, 1fr);
+        grid-template-columns: minmax(0, clamp(220px, 28vw, 300px)) minmax(0, 1fr);
+        gap: clamp(1.5rem, 3vw, 2.25rem);
+        align-items: center;
       }
     }
     .host-media {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: flex-start;
       text-align: center;
-      max-width: min(400px, 100%);
-      margin: 0 auto;
-    }
-    @media (min-width: 768px) {
-      .host-media {
-        margin: 0;
-        max-width: none;
-        width: 100%;
-        justify-content: center;
-        min-height: 100%;
-      }
     }
     .host-photo {
-      margin: 0 auto;
-      display: block;
-      width: 100%;
-      max-width: 100%;
       border-radius: 14px;
       overflow: hidden;
-      border: 1px solid #e5e7eb;
-      background: #f9fafb;
-      position: relative;
+      border: 1px solid var(--border);
+      background: #0a0e0c;
       line-height: 0;
-      min-height: 100px;
     }
     .host-photo img {
       display: block;
       width: 100%;
       height: auto;
-      max-width: 100%;
     }
     .host-photo-fallback {
-      position: absolute;
-      inset: 0;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      padding: 1rem;
-      text-align: center;
+      padding: 2rem 1rem;
       font-size: 0.78rem;
-      color: #64748b;
-      line-height: 1.45;
+      color: var(--muted);
+      text-align: center;
     }
     .host-name {
-      margin-top: 1rem;
-      font-size: 1.12rem;
+      margin-top: 0.85rem;
+      font-size: 1.05rem;
       font-weight: 800;
-      color: #0f172a;
-      letter-spacing: -0.02em;
-      line-height: 1.25;
-    }
-    .host-bio {
-      min-width: 0;
-      max-width: 40rem;
-    }
-    @media (min-width: 768px) {
-      .host-bio {
-        justify-self: stretch;
-        padding-top: 0.15rem;
-        max-width: none;
-      }
+      color: #fff;
     }
     .host-bio p {
-      margin: 0 0 0.9rem;
-      color: #3d5248;
+      margin: 0 0 0.85rem;
+      color: var(--sub);
       font-size: 0.97rem;
       line-height: 1.58;
     }
     @media (min-width: 768px) {
-      .host-bio p {
-        font-size: 1.02rem;
-        line-height: 1.62;
-      }
+      .host-bio p { font-size: 1.02rem; line-height: 1.62; }
     }
-    .host-bio p:last-child {
-      margin-bottom: 0;
-    }
+    .host-bio p:last-child { margin-bottom: 0; }
+    .host-bio strong { color: #fff; }
     .host-bio-highlight {
-      margin-top: 0.35rem;
-      padding: 0.65rem 0.75rem 0.65rem 1rem;
-      border-left: 4px solid #10b981;
+      margin-top: 0.5rem;
+      padding: 0.7rem 0.85rem 0.7rem 1rem;
+      border-left: 4px solid var(--accent);
       border-radius: 0 10px 10px 0;
-      background: linear-gradient(90deg, rgba(209, 250, 229, 0.75), rgba(255, 255, 255, 0));
+      background: linear-gradient(90deg, rgba(74, 222, 128, 0.12), transparent);
       font-weight: 600;
-      color: #065f46;
+      color: var(--text);
       line-height: 1.5;
     }
     .host-cta {
-      margin-top: clamp(1.35rem, 3vw, 2rem);
+      margin-top: 1.25rem;
       text-align: center;
     }
-    .host-cta-note {
-      font-size: 0.95rem;
-      font-weight: 600;
-      color: #047857;
-      margin: 0;
+    .host-cta a {
+      font-size: 0.92rem;
+      font-weight: 700;
+      color: var(--accent-bright);
+      text-decoration: underline;
+      text-underline-offset: 3px;
     }
-    .host-cta-note a {
-      color: #059669;
-      font-weight: 800;
-    }
+    .host-cta a:hover { color: var(--link); }
 
-    /* —— For you / Not for you —— */
-    .fit-section {
-      padding: clamp(1.75rem, 4vw, 2.75rem) 0;
-      background: #e6f4ec;
-      border-bottom: 1px solid #c9e4d6;
-    }
-    .fit-stack {
-      display: flex;
-      flex-direction: column;
-      gap: clamp(1rem, 2.5vw, 1.35rem);
-      max-width: 56rem;
-      margin: 0 auto;
-    }
-    .fit-box {
-      border-radius: 18px;
-      padding: clamp(1.25rem, 3vw, 1.65rem) clamp(1.1rem, 2.5vw, 1.5rem);
-      border: 1px solid transparent;
-    }
-    .fit-box--yes {
-      background: #ecfdf5;
-      border-color: #bbf7d0;
-    }
-    .fit-box--no {
-      background: #fef2f2;
-      border-color: #fecaca;
-    }
-    .fit-box h2 {
-      margin: 0 0 1rem;
-      font-size: clamp(1.05rem, 2.2vw, 1.3rem);
-      font-weight: 800;
-      color: #0f172a;
-      letter-spacing: -0.02em;
-    }
-    .fit-list {
-      list-style: none;
-      margin: 0;
-      padding: 0;
-      display: flex;
-      flex-direction: column;
-      gap: 1rem;
-    }
-    .fit-list li {
-      display: flex;
-      align-items: flex-start;
-      gap: 0.85rem;
-    }
-    .fit-icon {
-      flex-shrink: 0;
-      width: 1.5rem;
-      height: 1.5rem;
-      margin-top: 0.2rem;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
-    .fit-icon svg {
-      width: 1.5rem;
-      height: 1.5rem;
-      display: block;
-    }
-    .fit-copy {
-      flex: 1;
-      min-width: 0;
-      margin: 0;
-      color: #1e293b;
-      font-size: clamp(0.94rem, 1.9vw, 1.02rem);
-      line-height: 1.58;
-    }
-
-    /* —— Secrets —— */
-    .secrets {
-      padding: clamp(0.65rem, 2vw, 1.1rem) 0 clamp(1rem, 3vw, 1.65rem);
-      background: var(--surface);
-      border-bottom: 1px solid var(--border);
-    }
-    h2.sec-title {
-      font-size: clamp(1.35rem, 3vw, 1.85rem);
-      font-weight: 800;
-      letter-spacing: -0.02em;
-      margin-bottom: 1.5rem;
-    }
-    .secrets h2.sec-title {
-      font-size: clamp(1.1rem, 2.5vw, 1.45rem);
-      margin-top: 0;
-      margin-bottom: 0.65rem;
-      line-height: 1.2;
-    }
-    .pillars {
-      display: grid;
-      gap: 0.65rem;
-    }
-    @media (min-width: 768px) {
-      .pillars { grid-template-columns: repeat(3, 1fr); }
-    }
-    .pillar {
-      background: var(--surface2);
-      border: 1px solid var(--border);
-      border-radius: 10px;
-      padding: 0.95rem 0.9rem;
-    }
-    .pillar-tag {
-      font-size: 0.68rem;
-      font-weight: 800;
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-      color: var(--muted);
-      margin-bottom: 0.5rem;
-    }
-    .pillar h3 {
-      font-size: 0.98rem;
-      font-weight: 800;
-      margin-bottom: 0.45rem;
-      line-height: 1.22;
-      color: var(--text);
-    }
-    .pillar p {
-      font-size: 0.86rem;
-      color: var(--muted);
-      line-height: 1.45;
-    }
-
-    /* —— Proof —— */
-    .proof {
-      padding: clamp(2.5rem, 6vw, 4rem) 0;
-      border-bottom: 1px solid var(--border);
-    }
-    .proof--masonry {
-      background: #ecfdf5;
-      border-bottom: 1px solid #bbf7d0;
-    }
-    .proof--masonry .sec-title {
-      color: #0f172a;
-    }
+    /* Proof masonry */
+    .proof-section { background: var(--bg); }
     .proof-masonry {
-      margin-top: clamp(1.25rem, 3vw, 1.75rem);
       column-count: 1;
-      column-gap: clamp(0.85rem, 2vw, 1.35rem);
+      column-gap: 0.85rem;
     }
-    @media (min-width: 560px) {
-      .proof-masonry { column-count: 2; }
-    }
-    @media (min-width: 1024px) {
-      .proof-masonry { column-count: 3; }
-    }
+    @media (min-width: 560px) { .proof-masonry { column-count: 2; } }
+    @media (min-width: 1024px) { .proof-masonry { column-count: 3; } }
     .proof-masonry figure {
-      margin: 0 0 clamp(0.85rem, 2vw, 1.25rem);
+      margin: 0 0 0.85rem;
       display: inline-block;
       width: 100%;
-      vertical-align: top;
       break-inside: avoid;
-      page-break-inside: avoid;
-      -webkit-column-break-inside: avoid;
-      border-radius: 14px;
+      border-radius: 12px;
       overflow: hidden;
-      border: 1px solid #bbf7d0;
-      background: #fff;
-      box-shadow: 0 1px 3px rgba(6, 78, 59, 0.06), 0 4px 14px rgba(6, 78, 59, 0.04);
+      border: 1px solid var(--border);
+      background: var(--surface2);
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.35);
       line-height: 0;
     }
     .proof-masonry img {
       width: 100%;
       height: auto;
       display: block;
-      vertical-align: top;
     }
 
-    /* —— Telegram CTA —— */
-    .telegram-cta {
-      padding: clamp(2rem, 5vw, 2.85rem) 0;
-      background: linear-gradient(180deg, var(--surface2) 0%, var(--surface) 100%);
-      border-bottom: 1px solid var(--border);
-    }
-    .telegram-cta-inner {
-      max-width: 38rem;
-      margin: 0 auto;
+    /* Bautista testimonial (Wistia) */
+    .testimonial-section {
+      background: var(--surface);
       text-align: center;
     }
-    .telegram-cta-title {
+    .testimonial-heading {
       font-size: clamp(1.35rem, 3.2vw, 1.85rem);
       font-weight: 800;
-      letter-spacing: -0.02em;
-      color: #f8fafc;
-      margin: 0 0 0.55rem;
-      line-height: 1.15;
-    }
-    .telegram-cta-deck {
-      margin: 0 0 1.35rem;
-      font-size: clamp(0.98rem, 2vw, 1.08rem);
-      font-weight: 500;
-      line-height: 1.55;
-      color: var(--sub);
-    }
-    .btn-telegram {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      gap: 0.55rem;
-      min-height: 3rem;
-      padding: 0 1.35rem;
-      font-size: 1.02rem;
-      font-weight: 700;
-      text-decoration: none;
       color: #fff;
-      background: linear-gradient(180deg, #34b6f5 0%, #229ed9 45%, #1a8cc7 100%);
-      border: 1px solid rgba(255, 255, 255, 0.12);
-      border-radius: 9999px;
-      box-shadow: 0 6px 24px rgba(34, 158, 217, 0.35);
-      transition: transform 0.15s ease, box-shadow 0.15s ease;
+      letter-spacing: -0.02em;
+      line-height: 1.15;
+      margin-bottom: 0.5rem;
     }
-    .btn-telegram:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 10px 32px rgba(34, 158, 217, 0.45);
+    .testimonial-subhead {
+      font-size: clamp(0.95rem, 2.1vw, 1.05rem);
+      font-weight: 500;
+      color: var(--sub);
+      line-height: 1.5;
+      max-width: 36rem;
+      margin: 0 auto 1.15rem;
     }
-    .btn-telegram svg {
-      flex-shrink: 0;
-      width: 1.35rem;
-      height: 1.35rem;
+    .testimonial-wrap {
+      max-width: min(52rem, 100%);
+      margin: 0 auto;
+      padding: 0.85rem;
+      background: var(--surface2);
+      border: 1px solid rgba(52, 211, 153, 0.28);
+      border-radius: 14px;
+      box-shadow: 0 12px 40px rgba(0, 0, 0, 0.35);
+    }
+    .testimonial-embed {
+      border-radius: 10px;
+      overflow: hidden;
+      width: 100%;
+      background: #000;
+      line-height: 0;
+    }
+    .testimonial-embed wistia-player {
       display: block;
+      width: 100%;
+    }
+    wistia-player[media-id='09lmxjzmu8']:not(:defined) {
+      background: center / contain no-repeat url('https://fast.wistia.com/embed/medias/09lmxjzmu8/swatch');
+      display: block;
+      filter: blur(5px);
+      padding-top: 55.94%;
     }
 
-    /* —— Sticky Telegram bar —— */
-    .telegram-sticky {
-      position: fixed;
-      bottom: 0;
-      left: 0;
-      right: 0;
-      z-index: 100;
-      padding: 0.65rem 1rem;
-      padding-bottom: max(0.65rem, env(safe-area-inset-bottom, 0px));
-      background: rgba(5, 13, 10, 0.94);
-      -webkit-backdrop-filter: blur(12px);
-      backdrop-filter: blur(12px);
-      border-top: 1px solid rgba(52, 211, 153, 0.25);
-      box-shadow: 0 -10px 40px rgba(0, 0, 0, 0.45);
+    /* Student cards */
+    .students-section { background: var(--surface2); }
+    .t-card {
+      background: var(--surface2);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 1.1rem 1.15rem;
+      margin-bottom: 0.85rem;
     }
-    .telegram-sticky-inner {
-      width: min(var(--max), calc(100% - 2rem));
+    .t-head {
+      display: flex;
+      align-items: center;
+      gap: 0.85rem;
+      margin-bottom: 0.75rem;
+    }
+    .t-avatar {
+      width: 3rem;
+      height: 3rem;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 2px solid var(--border);
+    }
+    .t-display-name { font-weight: 800; color: #fff; font-size: 1rem; }
+    .t-role { font-size: 0.78rem; color: var(--muted); font-weight: 600; }
+    .t-quote {
+      font-size: 0.95rem;
+      color: var(--sub);
+      line-height: 1.5;
+      margin-bottom: 0.75rem;
+      font-style: italic;
+    }
+    .t-bottom {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      gap: 0.75rem;
+      padding-top: 0.65rem;
+      border-top: 1px solid var(--border);
+    }
+    .t-name { font-size: 0.82rem; font-weight: 700; color: var(--text); }
+    .t-timeline { font-size: 0.75rem; color: var(--muted); }
+    .t-result {
+      font-size: 0.95rem;
+      font-weight: 800;
+      color: var(--gold);
+      white-space: nowrap;
+    }
+    .neb-bar {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 0.5rem;
+      margin-bottom: 1.25rem;
+    }
+    @media (min-width: 520px) { .neb-bar { grid-template-columns: repeat(4, 1fr); } }
+    .neb-item {
+      text-align: center;
+      padding: 0.65rem 0.5rem;
+      background: var(--surface3);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+    }
+    .neb-x { font-size: 1.25rem; font-weight: 800; color: var(--accent); }
+    .neb-label { font-size: 0.68rem; font-weight: 700; color: var(--muted); text-transform: uppercase; letter-spacing: 0.04em; }
+
+    /* Filter */
+    .fit-section { background: var(--surface2); }
+    .fit-stack { display: flex; flex-direction: column; gap: 1rem; max-width: 56rem; margin: 0 auto; }
+    .fit-box {
+      border-radius: 14px;
+      padding: clamp(1.15rem, 3vw, 1.5rem);
+      border: 1px solid var(--border);
+    }
+    .fit-box--yes { background: rgba(74, 222, 128, 0.06); border-color: rgba(74, 222, 128, 0.35); }
+    .fit-box--no { background: rgba(248, 113, 113, 0.06); border-color: rgba(248, 113, 113, 0.3); }
+    .fit-box h2 {
+      margin: 0 0 0.85rem;
+      font-size: clamp(1.05rem, 2.2vw, 1.25rem);
+      font-weight: 800;
+      color: #fff;
+    }
+    .fit-list { list-style: none; display: flex; flex-direction: column; gap: 0.85rem; }
+    .fit-list li { display: flex; gap: 0.75rem; align-items: flex-start; }
+    .fit-icon { flex-shrink: 0; width: 1.35rem; margin-top: 0.15rem; }
+    .fit-copy { color: var(--sub); font-size: 0.95rem; line-height: 1.5; }
+    .fit-copy strong { color: var(--text); }
+    .fit-capital {
+      margin-top: 1rem;
+      padding: 0.85rem 1rem;
+      background: rgba(0, 0, 0, 0.35);
+      border: 1px solid rgba(251, 191, 36, 0.35);
+      border-radius: 10px;
+      font-size: 0.92rem;
+      font-weight: 700;
+      color: var(--gold);
+      text-align: center;
+      line-height: 1.45;
+    }
+
+    /* FAQ */
+    .faq-section { background: var(--bg); }
+    .faq-accordion {
+      max-width: 44rem;
       margin: 0 auto;
+      border-top: 1px solid var(--border);
+    }
+    .faq-item { border-bottom: 1px solid var(--border); }
+    .faq-item summary {
+      list-style: none;
+      cursor: pointer;
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      gap: 0.75rem;
+      padding: 1rem 0;
+      font-size: 0.95rem;
+      font-weight: 700;
+      color: #fff;
+      user-select: none;
+      -webkit-tap-highlight-color: transparent;
+    }
+    .faq-item summary::-webkit-details-marker { display: none; }
+    .faq-item summary:hover { color: var(--accent-bright); }
+    .faq-summary-main {
+      display: flex;
+      align-items: flex-start;
+      gap: 0.65rem;
+      flex: 1;
+      min-width: 0;
+      text-align: left;
+    }
+    .faq-icon {
+      width: 1.35rem;
+      height: 1.35rem;
+      border-radius: 50%;
+      background: rgba(74, 222, 128, 0.15);
+      border: 1px solid rgba(74, 222, 128, 0.35);
       display: flex;
       align-items: center;
       justify-content: center;
-      gap: 0.75rem 1.25rem;
-      flex-wrap: wrap;
+      flex-shrink: 0;
+      margin-top: 0.1rem;
     }
-    .telegram-sticky-copy {
-      margin: 0;
-      font-size: clamp(0.88rem, 2.4vw, 0.98rem);
-      font-weight: 700;
-      color: var(--text);
-      letter-spacing: -0.01em;
-      text-align: center;
-      line-height: 1.3;
-    }
-    .btn-telegram--compact {
-      min-height: 2.6rem;
-      padding: 0 1.05rem;
-      font-size: 0.92rem;
-      gap: 0.45rem;
-    }
-    .btn-telegram--compact svg {
-      width: 1.15rem;
-      height: 1.15rem;
-    }
-
-    /* —— Final CTA —— */
-    .cta-final {
-      padding: clamp(2.25rem, 5vw, 3.5rem) 0 clamp(2.5rem, 6vw, 3.75rem);
-      background: linear-gradient(180deg, var(--surface) 0%, var(--bg) 100%);
-      border-top: 1px solid rgba(52, 211, 153, 0.28);
-    }
-    .cta-final-inner {
-      display: grid;
-      gap: clamp(1.75rem, 4vw, 2.5rem);
+    .faq-icon svg { width: 0.55rem; height: 0.55rem; }
+    .faq-icon path { stroke: var(--accent-bright); }
+    .faq-chevron {
+      flex-shrink: 0;
+      width: 1.25rem;
+      height: 1.25rem;
+      display: flex;
       align-items: center;
+      justify-content: center;
+      color: var(--muted);
+      transition: transform 0.2s ease, color 0.15s ease;
+    }
+    .faq-item[open] .faq-chevron {
+      transform: rotate(180deg);
+      color: var(--accent-bright);
+    }
+    .faq-chevron svg { width: 0.7rem; height: 0.7rem; display: block; }
+    .faq-a {
+      font-size: 0.9rem;
+      color: var(--sub);
+      line-height: 1.6;
+      padding: 0 0 1rem 2rem;
+    }
+    .faq-a strong { color: var(--text); font-weight: 700; }
+    .faq-a .hl { color: var(--accent-bright); font-weight: 700; }
+
+    /* Decision box / close */
+    .close-section {
+      background: linear-gradient(180deg, var(--surface) 0%, var(--bg) 100%);
+      padding: clamp(2.5rem, 6vw, 3.5rem) 0;
+    }
+    .value-stack {
+      max-width: 32rem;
+      margin: 0 auto 1.75rem;
+      padding: clamp(1.25rem, 3vw, 1.65rem);
+      background: var(--surface2);
+      border: 1px solid rgba(251, 191, 36, 0.35);
+      border-radius: 14px;
+      text-align: left;
+    }
+    .value-stack h2 {
+      text-align: center;
+      font-size: clamp(1.15rem, 2.8vw, 1.45rem);
+      font-weight: 800;
+      color: var(--gold);
+      margin-bottom: 1rem;
+    }
+    .value-stack ul { list-style: none; }
+    .value-stack li {
+      padding: 0.55rem 0;
+      border-bottom: 1px solid var(--border);
+      font-size: 0.95rem;
+      color: var(--text);
+      line-height: 1.4;
+    }
+    .value-stack li:last-child { border-bottom: none; }
+    .value-stack .val { color: var(--accent-bright); font-weight: 800; }
+    .value-total {
+      margin-top: 0.85rem;
+      padding-top: 0.85rem;
+      border-top: 2px solid rgba(251, 191, 36, 0.4);
+      font-size: clamp(1.1rem, 2.5vw, 1.35rem);
+      font-weight: 800;
+      color: #fff;
       text-align: center;
     }
-    @media (min-width: 768px) {
-      .cta-final-inner {
-        grid-template-columns: 1fr 1fr;
-        gap: clamp(2rem, 5vw, 3rem);
-        text-align: left;
-      }
-      .cta-final-inner .cta-final-copy {
-        text-align: left;
-      }
-      .cta-final-inner .cta-final-action {
-        align-items: stretch;
-      }
+    .value-total .val { color: var(--gold); }
+    .value-limited {
+      margin-top: 0.65rem;
+      padding-top: 0.85rem;
+      border-top: 1px solid var(--border);
+      text-align: center;
+      font-size: 0.9rem;
+      font-weight: 700;
+      color: var(--sub);
+      letter-spacing: 0.02em;
     }
-    .cta-final-title {
+    .value-limited .price {
+      display: block;
+      margin-top: 0.35rem;
       font-size: clamp(1.75rem, 4vw, 2.35rem);
       font-weight: 800;
-      letter-spacing: -0.03em;
-      color: #f8fafc;
+      color: var(--gold);
+      letter-spacing: -0.02em;
       line-height: 1.1;
-      margin-bottom: 0.65rem;
     }
-    .cta-final-deck {
-      font-size: clamp(1rem, 2.2vw, 1.2rem);
+    .value-limited .price-note {
+      display: block;
+      margin-top: 0.25rem;
+      font-size: 0.78rem;
       font-weight: 600;
-      line-height: 1.45;
-      color: var(--sub);
-      max-width: 28rem;
+      color: var(--muted);
+    }
+    .decision-box {
+      max-width: 40rem;
       margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+      gap: 0.85rem;
     }
-    @media (min-width: 768px) {
-      .cta-final-deck { margin: 0; }
+    @media (min-width: 640px) {
+      .decision-box {
+        flex-direction: row;
+        align-items: stretch;
+      }
+      .decision-box .decision-col { flex: 1; display: flex; flex-direction: column; }
     }
-    .cta-final-action {
+    .decision-col .btn-primary,
+    .decision-col .btn-ghost {
+      width: 100%;
+      min-height: 3.35rem;
+      padding: 0.85rem 1rem;
+    }
+    .audit-disclaimer {
+      margin-top: 0.75rem;
+      font-size: 0.82rem;
+      color: var(--muted);
+      line-height: 1.55;
+      text-align: center;
+      max-width: 36rem;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    .inline-cta {
+      margin-top: 1.5rem;
+      text-align: center;
       display: flex;
       flex-direction: column;
       align-items: center;
-      gap: 1rem;
+      gap: 0.65rem;
     }
-    .cta-final .video-shell {
-      margin-top: 0;
-      width: 100%;
+    @media (min-width: 520px) {
+      .inline-cta { flex-direction: row; justify-content: center; flex-wrap: wrap; }
     }
-    .cta-final-when {
-      font-size: clamp(0.88rem, 1.8vw, 1rem);
-      font-weight: 600;
-      color: var(--muted);
-      letter-spacing: 0.02em;
-      margin: 0;
+
+    /* Book-a-call widget */
+    .book-call-widget {
+      position: fixed;
+      right: max(12px, env(safe-area-inset-right, 0px));
+      bottom: max(12px, env(safe-area-inset-bottom, 0px));
+      z-index: 250;
+      max-width: min(260px, calc(100vw - 24px));
     }
-    .cta-final-when a {
-      color: var(--link);
+    .book-call-widget a {
+      display: flex;
+      flex-direction: column;
+      gap: 3px;
+      text-decoration: none;
+      background: var(--surface2);
+      border: 1px solid rgba(251, 191, 36, 0.4);
+      border-radius: 12px;
+      padding: 12px 14px;
+      box-shadow: 0 8px 28px rgba(0, 0, 0, 0.45);
+      transition: transform 0.15s ease;
+      -webkit-tap-highlight-color: transparent;
+    }
+    .book-call-widget a:hover { transform: translateY(-2px); }
+    .book-call-widget-kicker {
+      font-size: 0.82rem;
       font-weight: 700;
+      color: var(--text);
+      line-height: 1.3;
+    }
+    .book-call-widget-sub {
+      font-size: 0.75rem;
+      font-weight: 600;
+      color: var(--gold);
     }
   </style>
 </head>
 <body>
-  <div class="offer-banner" role="region" aria-label="Offer countdown">
-    <div class="offer-banner-inner">
-      <p class="offer-banner-line">Masterclass Offer Ends In<strong id="offer-countdown"> —</strong></p>
-      <p class="offer-banner-sub">Countdown to Saturday 00:00 UK time (London)</p>
-    </div>
+  <div class="scarcity-bar" role="status">
+    UPDATE: 8 of 10 &ldquo;Case Study&rdquo; spots have been filled. ONLY 2 SPOTS REMAINING.
   </div>
-  <header class="hero">
+
+  <header class="hero" id="watch">
     <div class="hero-inner wrap">
-      <p class="section-label">Masterclass Live</p>
-      <h1>My Weird YouTube Strategy Making Me $34,928 Every 90 Days</h1>
-      <p class="hero-sub">And how to clone it in 90 minutes per day, even as a complete beginner</p>
-      <div class="video-shell" id="watch">
+      <h1>How I Generate $34,928 Every 90 Days Building Faceless &ldquo;Search Monopolies&rdquo; on YouTube</h1>
+      <p class="hero-sub">How I build faceless YouTube search channels that pay monthly, without going on camera or chasing trends.</p>
+      <div class="video-shell">
         <iframe
           src="https://www.youtube.com/embed/AdFXIc3jY30"
           title="Masterclass training video"
@@ -747,46 +904,160 @@
           referrerpolicy="strict-origin-when-cross-origin"
         ></iframe>
       </div>
-      <div class="hero-program-cta">
-        <a
-          class="btn-hero"
-          href="https://learn.ytachads.com/founder.html"
-        >
-          <span>Join our private program today</span>
-          <span class="btn-hero-arrow" aria-hidden="true">→</span>
-        </a>
-      </div>
-      <div class="hero-event">
-        <span class="hero-event-label">Free Live Masterclass</span>
-        <span class="hero-event-time">Watch the full training above</span>
+      <div class="hero-cta-row">
+        <a class="btn-primary" href="#join">Claim One of 2 Remaining Spots</a>
+        <a class="btn-ghost" href="https://calendly.com/sigmayt/ytachads" target="_blank" rel="noopener noreferrer">Book a strategy call</a>
       </div>
     </div>
   </header>
 
-  <section class="secrets">
+  <section class="section money-section">
     <div class="wrap">
-      <h2 class="sec-title">What you&rsquo;ll learn on the call</h2>
-      <div class="pillars">
-        <article class="pillar">
-          <p class="pillar-tag">Secret #1</p>
-          <h3>The Micro-Moat discovery</h3>
-          <p>How to find underpriced search niches big creators ignore — still deep enough to replace a salary when you own the shelf, not the spotlight.</p>
-        </article>
-        <article class="pillar">
-          <p class="pillar-tag">Secret #2</p>
-          <h3>The $1 production factory</h3>
-          <p>The tight framework we use to ship top-tier watch time without you becoming the bottleneck — production cost stays stupid low.</p>
-        </article>
-        <article class="pillar">
-          <p class="pillar-tag">Secret #3</p>
-          <h3>The 6-figure exit playbook</h3>
-          <p>How to treat a channel like property you can sell — I&rsquo;ll show how two exits combined for <strong>$73,000</strong> so you see what buyers actually pay for.</p>
-        </article>
+      <span class="eyebrow">How the money works</span>
+      <h2 class="sec-title">Channels you can sell, not just post on</h2>
+      <p class="sec-sub">Search traffic builds monthly income you can keep or sell for roughly <strong>10 to 25 times monthly profit</strong>.</p>
+
+      <div class="model-card">
+        <p class="model-title">Build to $2k to $5k/month in profit per channel</p>
+        <p class="model-desc">Each channel is built on <em>people already searching</em>, not viral spikes, not personality, not luck.</p>
+        <p class="model-tagline"><strong>This isn&rsquo;t one viral video.</strong> It&rsquo;s search traffic that keeps paying whether you post or not.</p>
+      </div>
+
+      <p class="model-title" style="margin-bottom:0.65rem;color:var(--gold);">Then sell for 10 to 25 times monthly profit</p>
+      <div class="exit-mult-grid">
+        <div class="exit-mult-row"><span>$3k/mo asset</span><span class="out">$30k to $75k exit</span></div>
+        <div class="exit-mult-row"><span>$5k/mo asset</span><span class="out">$50k to $125k exit</span></div>
+      </div>
+
+      <p class="roi-line">Invest once. Earn it back from the channel. Then <strong>keep the monthly income</strong> or <strong>sell the channel</strong> at a 25x multiple.</p>
+
+      <div class="inline-cta">
+        <a class="btn-green btn-primary" href="#join">See the Full Stack Below</a>
       </div>
     </div>
   </section>
 
-  <section class="host-section" id="harvey">
+  <section class="section exits-section">
+    <div class="wrap">
+      <span class="eyebrow">Channel exits</span>
+      <h2 class="sec-title">Real exits. Offers accepted and paid.</h2>
+      <p class="sec-sub">Two exits. Offers accepted, contracts signed, money transferred.</p>
+
+      <article class="exit-card">
+        <div class="exit-card-top">
+          <div>
+            <div class="exit-tag">Exit 1</div>
+            <div class="exit-amount">$20,000</div>
+          </div>
+          <div class="exit-roi-badge">10x on capital</div>
+        </div>
+        <div class="exit-proof-pair">
+          <div class="exit-proof-shot">
+            <img src="revv/exit%202.png" alt="Screenshot: $20,000 channel exit proof 1" width="1200" height="800" loading="lazy" decoding="async">
+          </div>
+          <div class="exit-proof-shot">
+            <img src="revv/exit%201.2.png" alt="Screenshot: $20,000 channel exit proof 2" width="1200" height="800" loading="lazy" decoding="async">
+          </div>
+        </div>
+        <div class="exit-detail">Built from scratch using the search-based model. Offer accepted, agreement signed, channel transferred.</div>
+        <div class="exit-math">
+          <span>$2,000 invested</span>
+          <span class="arrow">→</span>
+          <span>~$1k/mo profit</span>
+          <span class="arrow">→</span>
+          <span class="result">$20,000 exit</span>
+        </div>
+        <div class="exit-proof-bar">Offer accepted · Contract signed · Payment received</div>
+      </article>
+
+      <article class="exit-card">
+        <div class="exit-card-top">
+          <div>
+            <div class="exit-tag">Exit 2</div>
+            <div class="exit-amount">$53,000</div>
+          </div>
+          <div class="exit-roi-badge">~13x return</div>
+        </div>
+        <div class="exit-proof-shot">
+          <img src="revv/exit1.png" alt="Screenshot: $53,000 channel exit" width="1200" height="800" loading="lazy" decoding="async">
+        </div>
+        <div class="exit-detail">No audience. No face. Same system taught inside the programme.</div>
+        <div class="exit-math">
+          <span>$4,000 invested</span>
+          <span class="arrow">→</span>
+          <span>~$2k/mo passive profit</span>
+          <span class="arrow">→</span>
+          <span class="result">$53,000 exit</span>
+        </div>
+        <div class="exit-proof-bar">Offer accepted · Contract signed · Payment received</div>
+      </article>
+    </div>
+  </section>
+
+  <section class="section system-section">
+    <div class="wrap">
+      <span class="eyebrow">Inside YT Incubator</span>
+      <h2 class="sec-title">The 6-step asset development system</h2>
+      <p class="sec-sub">Same system behind the <strong>$20k</strong> and <strong>$53k</strong> exits.</p>
+      <div class="hook-box">This isn&rsquo;t posting for views.<br><span>It&rsquo;s building channels that pay every month and can be sold later.</span></div>
+
+      <div class="sys-item">
+        <div class="sys-num">1</div>
+        <div>
+          <p class="sys-title">Niche &amp; Keyword System</p>
+          <p class="sys-stmt">Pick niches where people are already searching and ad rates are strong. No guessing.</p>
+          <p class="sys-out">Start in markets that can realistically hit $2k to $5k/month</p>
+        </div>
+      </div>
+      <div class="sys-item">
+        <div class="sys-num">2</div>
+        <div>
+          <p class="sys-title">Search-Based Video Strategy</p>
+          <p class="sys-stmt">Make videos people are already searching for, with titles and structure built to keep getting views.</p>
+          <p class="sys-out">Predictable traffic that grows whether you post or not</p>
+        </div>
+      </div>
+      <div class="sys-item">
+        <div class="sys-num">3</div>
+        <div>
+          <p class="sys-title">The $1 Production Factory</p>
+          <p class="sys-stmt">Our 6-minute process to make strong videos for about $1 each, with as much automation as you want.</p>
+          <p class="sys-out">Scale to hundreds of videos without becoming the bottleneck</p>
+        </div>
+      </div>
+      <div class="sys-item">
+        <div class="sys-num">4</div>
+        <div>
+          <p class="sys-title">Monetisation System</p>
+          <p class="sys-stmt">Set up channels in niches where each view is worth more. Profit per video, not vanity views.</p>
+          <p class="sys-out">Small channels generating meaningful monthly cashflow</p>
+        </div>
+      </div>
+      <div class="sys-item">
+        <div class="sys-num">5</div>
+        <div>
+          <p class="sys-title">Scaling System</p>
+          <p class="sys-stmt">Replicate winners, expand adjacent keywords, build a library of assets that compounds.</p>
+          <p class="sys-out">Grow from your first $1k to $5k/month steadily, not in random spikes</p>
+        </div>
+      </div>
+      <div class="sys-item">
+        <div class="sys-num">6</div>
+        <div>
+          <p class="sys-title">Exit Framework</p>
+          <p class="sys-stmt">Position your channel as sellable digital property from day one. Real exits: $20k and $53k.</p>
+          <p class="sys-out">You&rsquo;re building something you can sell later, not just monthly income</p>
+        </div>
+      </div>
+
+      <div class="inline-cta">
+        <a class="btn-primary" href="#join">Claim your spot ($1,497)</a>
+        <a class="btn-ghost" href="https://calendly.com/sigmayt/ytachads" target="_blank" rel="noopener noreferrer">Book a strategy call</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="section host-section" id="harvey">
     <div class="wrap">
       <div class="host-card">
         <h2 class="host-title">Your Host</h2>
@@ -801,9 +1072,7 @@
                 onload="this.nextElementSibling.style.display='none'"
                 onerror="this.style.display='none'"
               />
-              <div class="host-photo-fallback">
-                Add photo: <code style="color:#047857;">me.jpg</code> in the site root
-              </div>
+              <div class="host-photo-fallback">Add photo: <code>me.jpg</code> in the site root</div>
             </figure>
             <p class="host-name">Harvey Causer</p>
           </div>
@@ -812,120 +1081,37 @@
               I&rsquo;m Harvey. Not long ago I was in a $400/month room, eating peanut butter sandwiches, cutting my own hair to save money. I tried every business model you can imagine trying to get rich.
             </p>
             <p>
-              Then I found YouTube search: faceless channels built like digital assets, not personality brands. Today I run multiple automated channels doing about <strong>$15k–$20k per month</strong> combined. No face on camera. No trend chasing, and no going viral.
+              Then I found YouTube search: faceless channels you can run without being the face of the brand. Today I run multiple automated channels doing about <strong>$15k to $20k per month</strong> combined. No camera. No trend chasing. No going viral.
             </p>
             <p>
-              On this call I&rsquo;m walking you through the same roadmap over 100 of my students and I use to build these assets - Micro-Niches, $1 production, and how exits actually work.
+              In the video I walk through the same steps my students and I use: picking the right niche, cheap production, and how selling a channel actually works.
             </p>
             <p class="host-bio-highlight">
-              This free training isn&rsquo;t fluff. It&rsquo;s the full playbook ordinary people are using to get rich with YouTube.
+              This is the real process. Not theory. What we actually do to build and sell search-based YouTube channels.
             </p>
           </div>
         </div>
-        <div class="host-cta">
-          <p class="host-cta-note">
-            <a href="#watch">Jump to the video player</a>
-          </p>
-        </div>
+        <p class="host-cta"><a href="#watch">Jump to the video player</a></p>
       </div>
     </div>
   </section>
 
-  <section class="fit-section" aria-labelledby="fit-yes-heading">
+  <section class="section proof-section" aria-labelledby="wall-heading">
     <div class="wrap">
-      <div class="fit-stack">
-        <div class="fit-box fit-box--yes">
-          <h2 id="fit-yes-heading">This is for you if...</h2>
-          <ul class="fit-list" aria-labelledby="fit-yes-heading">
-            <li>
-              <span class="fit-icon fit-icon--yes" aria-hidden="true">
-                <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <circle cx="12" cy="12" r="12" fill="#22c55e"/>
-                  <path d="M7 12.5l3 3 7-7" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                </svg>
-              </span>
-              <p class="fit-copy"><strong>You want to be an Asset Owner, not a Content Slave.</strong> You&rsquo;re tired of the &ldquo;Social&rdquo; treadmill and want to build digital real estate that pays you while you sleep.</p>
-            </li>
-            <li>
-              <span class="fit-icon fit-icon--yes" aria-hidden="true">
-                <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <circle cx="12" cy="12" r="12" fill="#22c55e"/>
-                  <path d="M7 12.5l3 3 7-7" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                </svg>
-              </span>
-              <p class="fit-copy"><strong>You value privacy over fame.</strong> You want the profit of a Top-1% YouTuber without ever showing your face or having strangers recognize you at the grocery store.</p>
-            </li>
-            <li>
-              <span class="fit-icon fit-icon--yes" aria-hidden="true">
-                <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <circle cx="12" cy="12" r="12" fill="#22c55e"/>
-                  <path d="M7 12.5l3 3 7-7" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                </svg>
-              </span>
-              <p class="fit-copy"><strong>You want to be the Director, not the Editor.</strong> You&rsquo;re ready to install a &ldquo;$1 Production Factory&rdquo; so you can focus on scaling your portfolio, not spending 40 hours a week in Premiere Pro.</p>
-            </li>
-            <li>
-              <span class="fit-icon fit-icon--yes" aria-hidden="true">
-                <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <circle cx="12" cy="12" r="12" fill="#22c55e"/>
-                  <path d="M7 12.5l3 3 7-7" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                </svg>
-              </span>
-              <p class="fit-copy"><strong>You are ready for a 6-Figure Exit.</strong> You understand that a channel making $2k/mo is a $50,000 asset, and you want the roadmap to flip it.</p>
-            </li>
-          </ul>
-        </div>
-        <div class="fit-box fit-box--no">
-          <h2 id="fit-no-heading">This is NOT for you if...</h2>
-          <ul class="fit-list" aria-labelledby="fit-no-heading">
-            <li>
-              <span class="fit-icon fit-icon--no" aria-hidden="true">
-                <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <circle cx="12" cy="12" r="12" fill="#ef4444"/>
-                  <path d="M8 8l8 8M16 8l-8 8" stroke="#fff" stroke-width="2" stroke-linecap="round"/>
-                </svg>
-              </span>
-              <p class="fit-copy"><strong>You need a &ldquo;Dopamine Hit&rdquo; from likes.</strong> If you need to be &ldquo;famous&rdquo; and see your face on camera to feel successful, this faceless strategy will bore you.</p>
-            </li>
-            <li>
-              <span class="fit-icon fit-icon--no" aria-hidden="true">
-                <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <circle cx="12" cy="12" r="12" fill="#ef4444"/>
-                  <path d="M8 8l8 8M16 8l-8 8" stroke="#fff" stroke-width="2" stroke-linecap="round"/>
-                </svg>
-              </span>
-              <p class="fit-copy"><strong>You are looking for a &ldquo;Shiny Object.&rdquo;</strong> This is a real business model based on search math. If you want a &ldquo;get-rich-quick&rdquo; hack that will be patched in two weeks, look elsewhere.</p>
-            </li>
-            <li>
-              <span class="fit-icon fit-icon--no" aria-hidden="true">
-                <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <circle cx="12" cy="12" r="12" fill="#ef4444"/>
-                  <path d="M8 8l8 8M16 8l-8 8" stroke="#fff" stroke-width="2" stroke-linecap="round"/>
-                </svg>
-              </span>
-              <p class="fit-copy"><strong>You have a &ldquo;Lottery&rdquo; Mindset.</strong> If you&rsquo;re more interested in &ldquo;going viral&rdquo; than building a consistent, flat-graph income stream, you won&rsquo;t follow the system.</p>
-            </li>
-          </ul>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section class="proof proof--masonry">
-    <div class="wrap">
-      <h2 class="sec-title">REAL Results From REAL People</h2>
+      <span class="eyebrow">Wall of Chads</span>
+      <h2 class="sec-title" id="wall-heading">Real results from students</h2>
       <div class="proof-masonry" aria-label="Student results screenshots">
-        <figure><img src="rs1.png" alt="Student result: channel analytics shared in community chat" loading="lazy" decoding="async"></figure>
-        <figure><img src="rs3.png" alt="Student result: YouTube Studio revenue and growth over one year" loading="lazy" decoding="async"></figure>
-        <figure><img src="rs4.png" alt="Student result: 365-day channel views and estimated revenue" loading="lazy" decoding="async"></figure>
-        <figure><img src="rs5.png" alt="Student result: YouTube Studio analytics screenshot" loading="lazy" decoding="async"></figure>
-        <figure><img src="rs6.png" alt="Student result: YouTube Studio analytics screenshot" loading="lazy" decoding="async"></figure>
-        <figure><img src="rs7.png" alt="Student result: YouTube Studio analytics screenshot" loading="lazy" decoding="async"></figure>
-        <figure><img src="rs8.png" alt="Student result: estimated revenue over 28 days" loading="lazy" decoding="async"></figure>
-        <figure><img src="rs9.png" alt="Student result: YouTube Studio analytics screenshot" loading="lazy" decoding="async"></figure>
-        <figure><img src="rs11.png" alt="Student result: YouTube Studio estimated revenue (90 days)" loading="lazy" decoding="async"></figure>
-        <figure><img src="rs12.png" alt="Student result: YouTube Studio analytics screenshot" loading="lazy" decoding="async"></figure>
-        <figure><img src="revv/REV2.png" alt="Revenue dashboard screenshot" loading="lazy" decoding="async"></figure>
+        <figure><img src="rs1.png" alt="Student result screenshot" loading="lazy" decoding="async"></figure>
+        <figure><img src="rs3.png" alt="Student result screenshot" loading="lazy" decoding="async"></figure>
+        <figure><img src="rs4.png" alt="Student result screenshot" loading="lazy" decoding="async"></figure>
+        <figure><img src="rs5.png" alt="Student result screenshot" loading="lazy" decoding="async"></figure>
+        <figure><img src="rs6.png" alt="Student result screenshot" loading="lazy" decoding="async"></figure>
+        <figure><img src="rs7.png" alt="Student result screenshot" loading="lazy" decoding="async"></figure>
+        <figure><img src="rs8.png" alt="Student result screenshot" loading="lazy" decoding="async"></figure>
+        <figure><img src="rs9.png" alt="Student result screenshot" loading="lazy" decoding="async"></figure>
+        <figure><img src="rs11.png" alt="Student result screenshot" loading="lazy" decoding="async"></figure>
+        <figure><img src="rs12.png" alt="Student result screenshot" loading="lazy" decoding="async"></figure>
+        <figure><img src="revv/REV2.png" alt="Revenue screenshot" loading="lazy" decoding="async"></figure>
         <figure><img src="revv/REV%203.png" alt="Analytics screenshot" loading="lazy" decoding="async"></figure>
         <figure><img src="revv/rev%205.png" alt="Earnings screenshot" loading="lazy" decoding="async"></figure>
         <figure><img src="revv/rev%208.png" alt="Monthly revenue screenshot" loading="lazy" decoding="async"></figure>
@@ -935,116 +1121,290 @@
     </div>
   </section>
 
-  <section class="telegram-cta" aria-labelledby="telegram-cta-heading">
-    <div class="wrap telegram-cta-inner">
-      <h2 class="telegram-cta-title" id="telegram-cta-heading">Still have questions?</h2>
-      <p class="telegram-cta-deck">Send me a message on Telegram — I read what you send and reply when I can.</p>
-      <a
-        class="btn-telegram"
-        href="https://t.me/ytavision"
-        target="_blank"
-        rel="noopener noreferrer"
-      >
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" xmlns="http://www.w3.org/2000/svg">
-          <path d="M22 2L11 13M22 2l-7 20-4-9-9-4 20-7z"/>
-        </svg>
-        <span>Message me on Telegram</span>
-      </a>
+  <section class="section testimonial-section" aria-labelledby="bautista-video-heading">
+    <div class="wrap">
+      <span class="eyebrow">Featured story</span>
+      <h2 class="testimonial-heading" id="bautista-video-heading">Bautista&rsquo;s Journey With Us</h2>
+      <p class="testimonial-subhead">Bautista went from zero to $2,000/mo by following the Search-Based model</p>
+      <div class="testimonial-wrap">
+        <div class="testimonial-embed">
+          <wistia-player media-id="09lmxjzmu8" aspect="1.7877094972067038"></wistia-player>
+        </div>
+      </div>
+      <div class="inline-cta" style="margin-top:1.25rem;">
+        <a class="btn-primary" href="#join">Claim One of 2 Remaining Spots</a>
+        <a class="btn-ghost" href="https://calendly.com/sigmayt/ytachads" target="_blank" rel="noopener noreferrer">Book a strategy call</a>
+      </div>
     </div>
   </section>
 
-  <section class="cta-final" id="register" aria-labelledby="cta-final-heading">
-    <div class="wrap cta-final-inner">
-      <div class="cta-final-copy">
-        <h2 class="cta-final-title" id="cta-final-heading">Watch the full walkthrough</h2>
-        <p class="cta-final-deck">Same training as the registration page — now playing on YouTube. Use the player here or at the top of the page.</p>
+  <section class="section students-section">
+    <div class="wrap">
+      <span class="eyebrow">Student wins</span>
+      <h2 class="sec-title">No face. No fame. No audience required.</h2>
+      <div class="neb-bar" aria-hidden="true">
+        <div class="neb-item"><div class="neb-x">0</div><div class="neb-label">Prior experience</div></div>
+        <div class="neb-item"><div class="neb-x">0</div><div class="neb-label">Existing audience</div></div>
+        <div class="neb-item"><div class="neb-x">0</div><div class="neb-label">On camera</div></div>
+        <div class="neb-item"><div class="neb-x">0</div><div class="neb-label">Tech skills</div></div>
       </div>
-      <div class="cta-final-action">
-        <div class="video-shell" aria-label="Training video embed">
-          <iframe
-            src="https://www.youtube.com/embed/AdFXIc3jY30"
-            title="Masterclass training video"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-            allowfullscreen
-            loading="lazy"
-            referrerpolicy="strict-origin-when-cross-origin"
-          ></iframe>
+
+      <article class="t-card">
+        <div class="t-head">
+          <img src="assets/bautista-p-500.png" alt="" class="t-avatar" width="48" height="48" loading="lazy">
+          <div><div class="t-display-name">Bautista</div><div class="t-role">YTA CHADS member</div></div>
         </div>
-        <p class="cta-final-when">
-          <a href="#watch">Jump to main video</a>
+        <p class="t-quote">&ldquo;I&rsquo;m at $2k/month already and about to launch another channel that should do $1k+. I&rsquo;m just following the system exactly as taught.&rdquo;</p>
+        <div class="t-bottom"><div><div class="t-name">Search-based channels</div><div class="t-timeline">Scaling portfolio</div></div><div class="t-result">$2k/month+</div></div>
+      </article>
+      <article class="t-card">
+        <div class="t-head">
+          <img src="assets/mtt-p-500.png" alt="" class="t-avatar" width="48" height="48" loading="lazy">
+          <div><div class="t-display-name">MotoTube</div><div class="t-role">YTA CHADS member</div></div>
+        </div>
+        <p class="t-quote">&ldquo;Some videos get barely 100 views and still make $600. That&rsquo;s when I realized this asset model actually works.&rdquo;</p>
+        <div class="t-bottom"><div><div class="t-name">High-RPM niche</div><div class="t-timeline">Search traffic</div></div><div class="t-result">$600+ / video</div></div>
+      </article>
+      <article class="t-card">
+        <div class="t-head">
+          <img src="assets/ck-jake-p-500.png" alt="" class="t-avatar" width="48" height="48" loading="lazy">
+          <div><div class="t-display-name">CK Jake</div><div class="t-role">YTA CHADS member</div></div>
+        </div>
+        <p class="t-quote">&ldquo;I just got my first payment into my bank account. Steady growth, not hype cycles.&rdquo;</p>
+        <div class="t-bottom"><div><div class="t-name">First payout</div><div class="t-timeline">Asset live</div></div><div class="t-result">Payment received</div></div>
+      </article>
+      <article class="t-card">
+        <div class="t-head">
+          <img src="assets/adarsh-p-500.png" alt="" class="t-avatar" width="48" height="48" loading="lazy">
+          <div><div class="t-display-name">Adarsh</div><div class="t-role">YTA CHADS member</div></div>
+        </div>
+        <p class="t-quote">&ldquo;I spent more on other courses chasing viral content. This gave me a clear path to consistent income.&rdquo;</p>
+        <div class="t-bottom"><div><div class="t-name">After other courses</div><div class="t-timeline">Clear path</div></div><div class="t-result">Income clarity</div></div>
+      </article>
+      <article class="t-card">
+        <div class="t-head">
+          <img src="assets/atte-p-500.png" alt="" class="t-avatar" width="48" height="48" loading="lazy">
+          <div><div class="t-display-name">Atte</div><div class="t-role">YTA CHADS member</div></div>
+        </div>
+        <p class="t-quote">&ldquo;I&rsquo;ve spent over $20,000 on YouTube courses and freelancers. This is the first system that produced consistent results.&rdquo;</p>
+        <div class="t-bottom"><div><div class="t-name">$20k+ spent elsewhere</div><div class="t-timeline">Finally works</div></div><div class="t-result">Consistent results</div></div>
+      </article>
+      <article class="t-card">
+        <div class="t-head">
+          <img src="assets/jono-p-500.png" alt="" class="t-avatar" width="48" height="48" loading="lazy">
+          <div><div class="t-display-name">Jono</div><div class="t-role">YTA CHADS member</div></div>
+        </div>
+        <p class="t-quote">&ldquo;This changed how I see YouTube. Not a side hustle. A real business I can grow and sell.&rdquo;</p>
+        <div class="t-bottom"><div><div class="t-name">Mindset shift</div><div class="t-timeline">Channel owner</div></div><div class="t-result">Scalable model</div></div>
+      </article>
+
+      <div class="inline-cta">
+        <a class="btn-primary" href="#join">Join the Next 2 Partners</a>
+        <a class="btn-ghost" href="https://calendly.com/sigmayt/ytachads" target="_blank" rel="noopener noreferrer">Book a strategy call</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="section faq-section" aria-labelledby="faq-heading">
+    <div class="wrap">
+      <span class="eyebrow">Before you join</span>
+      <h2 class="sec-title" id="faq-heading">If you&rsquo;re thinking &ldquo;this looks good&hellip; but will it work for me?&rdquo;</h2>
+      <p class="sec-sub">Here&rsquo;s what people ask before joining:</p>
+
+      <div class="faq-accordion">
+        <details class="faq-item" name="faq">
+          <summary>
+            <span class="faq-summary-main">
+              <span class="faq-icon" aria-hidden="true"><svg viewBox="0 0 10 10" fill="none"><path d="M5 1v4M5 7.5v.5" stroke-width="1.5" stroke-linecap="round"/></svg></span>
+              Do I need any experience?
+            </span>
+            <span class="faq-chevron" aria-hidden="true"><svg viewBox="0 0 12 12" fill="none"><path d="M3 4.5L6 7.5L9 4.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+          </summary>
+          <div class="faq-a">No. Most people start from zero. You follow a clear process for building search channels, not guesswork. Experience helps, but it has never been the deciding factor.</div>
+        </details>
+        <details class="faq-item" name="faq">
+          <summary>
+            <span class="faq-summary-main">
+              <span class="faq-icon" aria-hidden="true"><svg viewBox="0 0 10 10" fill="none"><path d="M5 1v4M5 7.5v.5" stroke-width="1.5" stroke-linecap="round"/></svg></span>
+              Do I need to show my face?
+            </span>
+            <span class="faq-chevron" aria-hidden="true"><svg viewBox="0 0 12 12" fill="none"><path d="M3 4.5L6 7.5L9 4.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+          </summary>
+          <div class="faq-a">No. This is <strong>entirely faceless</strong>. You build around what people search for, not a personal brand, not a following, and not being on camera.</div>
+        </details>
+        <details class="faq-item" name="faq">
+          <summary>
+            <span class="faq-summary-main">
+              <span class="faq-icon" aria-hidden="true"><svg viewBox="0 0 10 10" fill="none"><path d="M5 1v4M5 7.5v.5" stroke-width="1.5" stroke-linecap="round"/></svg></span>
+              How long does it take to make money?
+            </span>
+            <span class="faq-chevron" aria-hidden="true"><svg viewBox="0 0 12 12" fill="none"><path d="M3 4.5L6 7.5L9 4.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+          </summary>
+          <div class="faq-a">Most channels take <strong>3 to 6 months</strong> to reach <strong>$2k to $5k/month</strong>. The focus is steady monthly growth, not one viral hit.</div>
+        </details>
+        <details class="faq-item" name="faq">
+          <summary>
+            <span class="faq-summary-main">
+              <span class="faq-icon" aria-hidden="true"><svg viewBox="0 0 10 10" fill="none"><path d="M5 1v4M5 7.5v.5" stroke-width="1.5" stroke-linecap="round"/></svg></span>
+              How much time does this take per week?
+            </span>
+            <span class="faq-chevron" aria-hidden="true"><svg viewBox="0 0 12 12" fill="none"><path d="M3 4.5L6 7.5L9 4.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+          </summary>
+          <div class="faq-a">You don&rsquo;t need full-time hours. The $1 production setup is built to be <strong>fast and easy to hand off</strong>. You run the process, you don&rsquo;t live in an editing bay.</div>
+        </details>
+        <details class="faq-item" name="faq">
+          <summary>
+            <span class="faq-summary-main">
+              <span class="faq-icon" aria-hidden="true"><svg viewBox="0 0 10 10" fill="none"><path d="M5 1v4M5 7.5v.5" stroke-width="1.5" stroke-linecap="round"/></svg></span>
+              What if I don&rsquo;t make my money back?
+            </span>
+            <span class="faq-chevron" aria-hidden="true"><svg viewBox="0 0 12 12" fill="none"><path d="M3 4.5L6 7.5L9 4.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+          </summary>
+          <div class="faq-a">The goal is to <span class="hl">earn back your $1,497</span> from the channel first, then grow or sell. Not one lucky month. Income that keeps coming until the channel has paid for itself.</div>
+        </details>
+        <details class="faq-item" name="faq">
+          <summary>
+            <span class="faq-summary-main">
+              <span class="faq-icon" aria-hidden="true"><svg viewBox="0 0 10 10" fill="none"><path d="M5 1v4M5 7.5v.5" stroke-width="1.5" stroke-linecap="round"/></svg></span>
+              Isn&rsquo;t YouTube too saturated?
+            </span>
+            <span class="faq-chevron" aria-hidden="true"><svg viewBox="0 0 12 12" fill="none"><path d="M3 4.5L6 7.5L9 4.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+          </summary>
+          <div class="faq-a">Not for this model. Crowded niches hurt trend channels and personality brands. <strong>Search channels target people already looking for answers</strong>, every day, whether something is trending or not.</div>
+        </details>
+        <details class="faq-item" name="faq">
+          <summary>
+            <span class="faq-summary-main">
+              <span class="faq-icon" aria-hidden="true"><svg viewBox="0 0 10 10" fill="none"><path d="M5 1v4M5 7.5v.5" stroke-width="1.5" stroke-linecap="round"/></svg></span>
+              Why not just figure this out myself?
+            </span>
+            <span class="faq-chevron" aria-hidden="true"><svg viewBox="0 0 12 12" fill="none"><path d="M3 4.5L6 7.5L9 4.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+          </summary>
+          <div class="faq-a">You can. Most people <strong>waste 6 to 12 months</strong> on the wrong niche or videos that never stack up. This gives you the full process from day one.</div>
+        </details>
+      </div>
+
+      <div class="inline-cta">
+        <a class="btn-primary" href="#join">Get access ($1,497)</a>
+        <a class="btn-ghost" href="https://calendly.com/sigmayt/ytachads" target="_blank" rel="noopener noreferrer">Book a strategy call</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="section fit-section" aria-labelledby="fit-yes-heading">
+    <div class="wrap">
+      <div class="fit-stack">
+        <div class="fit-box fit-box--yes">
+          <h2 id="fit-yes-heading">This is for you if...</h2>
+          <ul class="fit-list">
+            <li>
+              <span class="fit-icon" aria-hidden="true"><svg viewBox="0 0 24 24" width="20" height="20"><circle cx="12" cy="12" r="12" fill="#22c55e"/><path d="M7 12.5l3 3 7-7" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none"/></svg></span>
+              <p class="fit-copy"><strong>You want income from channels you own.</strong> You&rsquo;re tired of posting for views and want something that pays every month.</p>
+            </li>
+            <li>
+              <span class="fit-icon" aria-hidden="true"><svg viewBox="0 0 24 24" width="20" height="20"><circle cx="12" cy="12" r="12" fill="#22c55e"/><path d="M7 12.5l3 3 7-7" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none"/></svg></span>
+              <p class="fit-copy"><strong>You want to stay off camera.</strong> You&rsquo;re fine making money on YouTube without building a personal brand.</p>
+            </li>
+            <li>
+              <span class="fit-icon" aria-hidden="true"><svg viewBox="0 0 24 24" width="20" height="20"><circle cx="12" cy="12" r="12" fill="#22c55e"/><path d="M7 12.5l3 3 7-7" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none"/></svg></span>
+              <p class="fit-copy"><strong>You want to run production, not edit every video yourself.</strong> You&rsquo;re ready to use the $1 production setup and grow more than one channel.</p>
+            </li>
+            <li>
+              <span class="fit-icon" aria-hidden="true"><svg viewBox="0 0 24 24" width="20" height="20"><circle cx="12" cy="12" r="12" fill="#22c55e"/><path d="M7 12.5l3 3 7-7" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none"/></svg></span>
+              <p class="fit-copy"><strong>You might sell later.</strong> You see a $2k/month channel as something worth $50k+ to a buyer, and you want to know how that works.</p>
+            </li>
+          </ul>
+        </div>
+        <div class="fit-box fit-box--no">
+          <h2 id="fit-no-heading">This is NOT for you if...</h2>
+          <ul class="fit-list">
+            <li>
+              <span class="fit-icon" aria-hidden="true"><svg viewBox="0 0 24 24" width="20" height="20"><circle cx="12" cy="12" r="12" fill="#ef4444"/><path d="M8 8l8 8M16 8l-8 8" stroke="#fff" stroke-width="2" stroke-linecap="round" fill="none"/></svg></span>
+              <p class="fit-copy"><strong>You need fame and your face on camera.</strong> If likes and being seen are the whole point, this will feel boring.</p>
+            </li>
+            <li>
+              <span class="fit-icon" aria-hidden="true"><svg viewBox="0 0 24 24" width="20" height="20"><circle cx="12" cy="12" r="12" fill="#ef4444"/><path d="M8 8l8 8M16 8l-8 8" stroke="#fff" stroke-width="2" stroke-linecap="round" fill="none"/></svg></span>
+              <p class="fit-copy"><strong>You only want one viral hit.</strong> If you&rsquo;re chasing a jackpot instead of steady monthly income, you won&rsquo;t stick with the process.</p>
+            </li>
+            <li>
+              <span class="fit-icon" aria-hidden="true"><svg viewBox="0 0 24 24" width="20" height="20"><circle cx="12" cy="12" r="12" fill="#ef4444"/><path d="M8 8l8 8M16 8l-8 8" stroke="#fff" stroke-width="2" stroke-linecap="round" fill="none"/></svg></span>
+              <p class="fit-copy"><strong>You&rsquo;re not ready to start.</strong> If you want to &ldquo;think about it&rdquo; for months without putting money in and building, this isn&rsquo;t for you.</p>
+            </li>
+          </ul>
+        </div>
+        <p class="fit-capital">We do not offer payment plans. I am taking on 10 people who have the money set aside and are ready to build.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="close-section" id="join" aria-labelledby="close-heading">
+    <div class="wrap">
+      <span class="eyebrow" style="text-align:center;display:block;">The close</span>
+      <h2 class="sec-title" id="close-heading" style="text-align:center;">What you&rsquo;re getting</h2>
+
+      <div class="value-stack">
+        <h2>Complete Value Stack</h2>
+        <ul>
+          <li>YouTube Search Academy <span class="val">($2,500 Value)</span></li>
+          <li>1 Year Search Community + Weekly Calls <span class="val">($468 Value)</span></li>
+          <li>1 Year Keyword Research Tool <span class="val">($360 Value)</span></li>
+          <li>1 Year Production Tool + System <span class="val">($264 Value)</span></li>
+        </ul>
+        <p class="value-total">TOTAL VALUE: <span class="val">$3,592</span></p>
+        <p class="value-limited">
+          Limited partner price today:
+          <span class="price">$1,497</span>
+          <span class="price-note">Only 2 case-study spots left at this rate</span>
         </p>
       </div>
+
+      <div class="decision-box">
+        <div class="decision-col">
+          <a
+            class="btn-primary"
+            href="https://whop.com/checkout/plan_D4V8SvkQKtrgz"
+            target="_blank"
+            rel="noopener noreferrer"
+          >CLAIM ONE OF THE 2 REMAINING SPOTS ($1,497)</a>
+        </div>
+        <div class="decision-col">
+          <a
+            class="btn-ghost"
+            href="https://calendly.com/sigmayt/ytachads"
+            target="_blank"
+            rel="noopener noreferrer"
+          >BOOK A STRATEGY CALL</a>
+        </div>
+      </div>
+
+      <p class="audit-disclaimer">I&rsquo;m taking on 10 people who are ready to invest and build, not just watch videos. If you have the $1,497 set aside but want to talk it through first, book a quick strategy call. We&rsquo;ll see if this makes sense for you before you buy.</p>
+
+      <p style="text-align:center;margin-top:1rem;font-size:0.85rem;color:var(--muted);">Secure checkout powered by Whop.</p>
     </div>
   </section>
 
-  <div class="telegram-sticky" role="region" aria-label="Questions? Message on Telegram">
-    <div class="telegram-sticky-inner">
-      <p class="telegram-sticky-copy">Still have questions? Send me a message on Telegram.</p>
-      <a
-        class="btn-telegram btn-telegram--compact"
-        href="https://t.me/ytavision"
-        target="_blank"
-        rel="noopener noreferrer"
-      >
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" xmlns="http://www.w3.org/2000/svg">
-          <path d="M22 2L11 13M22 2l-7 20-4-9-9-4 20-7z"/>
-        </svg>
-        <span>Message me on Telegram</span>
-      </a>
-    </div>
+  <div class="book-call-widget">
+    <a
+      href="https://calendly.com/sigmayt/ytachads"
+      target="_blank"
+      rel="noopener noreferrer"
+      aria-label="Book a strategy call (opens in a new tab)"
+    >
+      <span class="book-call-widget-kicker">Want to talk it through?</span>
+      <span class="book-call-widget-sub">Book a strategy call</span>
+    </a>
   </div>
 
-  <script src="https://cdn.jsdelivr.net/npm/luxon@3.4.4/build/global/luxon.min.js"></script>
   <script>
-    (function () {
-      var DateTime = window.luxon && window.luxon.DateTime;
-      var el = document.getElementById("offer-countdown");
-      if (!DateTime || !el) return;
-
-      function nextSaturdayMidnightUK() {
-        var now = DateTime.now().setZone("Europe/London");
-        var startOfToday = now.startOf("day");
-        var w = startOfToday.weekday;
-        var add;
-        if (w < 6) {
-          add = 6 - w;
-        } else if (w === 6) {
-          add = 0;
-        } else {
-          add = 6;
+    document.querySelectorAll('a[href^="#"]').forEach(function (a) {
+      a.addEventListener('click', function (e) {
+        var target = document.querySelector(a.getAttribute('href'));
+        if (target) {
+          e.preventDefault();
+          target.scrollIntoView({ behavior: 'smooth', block: 'start' });
         }
-        var cand = startOfToday.plus({ days: add }).set({ hour: 0, minute: 0, second: 0, millisecond: 0 });
-        if (cand <= now) {
-          cand = cand.plus({ weeks: 1 });
-        }
-        return cand;
-      }
-
-      var target = nextSaturdayMidnightUK();
-
-      function formatRemaining(diffMs) {
-        if (diffMs <= 0) return "0d 00h 00m 00s";
-        var totalSec = Math.floor(diffMs / 1000);
-        var days = Math.floor(totalSec / 86400);
-        var hours = Math.floor((totalSec % 86400) / 3600);
-        var mins = Math.floor((totalSec % 3600) / 60);
-        var secs = totalSec % 60;
-        return days + "d " + String(hours).padStart(2, "0") + "h " + String(mins).padStart(2, "0") + "m " + String(secs).padStart(2, "0") + "s";
-      }
-
-      function tick() {
-        var now = DateTime.now();
-        var diffMs = target.toMillis() - now.toMillis();
-        if (diffMs <= 0) {
-          target = nextSaturdayMidnightUK();
-          diffMs = target.toMillis() - now.toMillis();
-        }
-        el.textContent = " " + formatRemaining(diffMs);
-      }
-
-      tick();
-      setInterval(tick, 1000);
-    })();
+      });
+    });
   </script>
 </body>
 </html>
