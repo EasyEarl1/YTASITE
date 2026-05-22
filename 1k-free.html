@@ -181,15 +181,17 @@
       }, 10000);
     });
 
-    // After a successful Klaviyo submit, go to the thank-you page (/20-search-niches.html).
-    // Also set the same URL in Klaviyo: Form → Behaviors → "Redirect to URL" → e.g. https://learn.ytachads.com/20-search-niches.html
+    // After Klaviyo submit: bridge page records RevTrack email signup, then opens Telegram.
+    // In Klaviyo form settings, set redirect to the same URL (or leave blank and use this script only):
+    // https://learn.ytachads.com/1k-free-access
     (function () {
-      var upsellPath = "/20-search-niches.html";
+      var accessPath = "/1k-free-access.html";
       var navigated = false;
       window.addEventListener("klaviyoForms", function (e) {
         if (navigated || !e.detail || e.detail.type !== "submit") return;
         navigated = true;
-        window.location.assign(upsellPath);
+        var qs = window.location.search || "";
+        window.location.assign(accessPath + qs);
       });
     })();
   </script>

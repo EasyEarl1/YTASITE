@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Get your $1k plan on Telegram</title>
+  <meta name="description" content="You are in. Open Telegram to get your free $1k/month YouTube plan.">
+  <meta name="robots" content="noindex, nofollow">
+  <meta name="username" content="user_3ChXMl3oobB5XIr0FpWhkWjRC5b">
+  <meta name="offer" content="1K FREE PLAN">
+  <script src="https://d15dfsr886zcp9.cloudfront.net/tracker_script.js" defer></script>
+  <script src="https://d15dfsr886zcp9.cloudfront.net/emailSignupThankYouScript.js" defer></script>
+  <script defer src="/_vercel/insights/script.js"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: Inter, system-ui, -apple-system, Segoe UI, sans-serif;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      background: linear-gradient(165deg, #0a0e1a 0%, #121a2e 55%, #0f172a 100%);
+      color: #f8fafc;
+      font-size: 1.0625rem;
+      line-height: 1.65;
+      -webkit-font-smoothing: antialiased;
+    }
+    .strip {
+      background: #050814;
+      color: rgba(255, 255, 255, 0.92);
+      font-size: clamp(0.9rem, 2.2vw, 1.05rem);
+      font-weight: 600;
+      text-align: center;
+      padding: clamp(0.85rem, 2.5vw, 1.15rem) 1.25rem;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    }
+    main {
+      flex: 1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: clamp(2rem, 6vw, 4rem) 1.25rem;
+    }
+    .card {
+      width: min(32rem, 100%);
+      text-align: center;
+      padding: clamp(1.5rem, 4vw, 2.25rem);
+      background: rgba(15, 23, 42, 0.55);
+      border: 1px solid rgba(148, 163, 184, 0.2);
+      border-radius: 18px;
+    }
+    h1 {
+      font-size: clamp(1.6rem, 4vw, 2.1rem);
+      font-weight: 800;
+      letter-spacing: -0.03em;
+      line-height: 1.15;
+      margin-bottom: 0.85rem;
+    }
+    .lead {
+      color: #cbd5e1;
+      margin-bottom: 1.5rem;
+      font-size: clamp(1rem, 2.3vw, 1.12rem);
+    }
+    .countdown {
+      font-size: 0.95rem;
+      color: #94a3b8;
+      margin-bottom: 1.25rem;
+    }
+    .btn-tg {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.5rem;
+      width: 100%;
+      max-width: 20rem;
+      margin: 0 auto;
+      padding: 0.95rem 1.35rem;
+      border-radius: 9999px;
+      background: linear-gradient(180deg, #2aabee 0%, #229ed9 100%);
+      color: #fff;
+      font-size: 1.05rem;
+      font-weight: 800;
+      text-decoration: none;
+      box-shadow: 0 10px 32px rgba(34, 158, 217, 0.35);
+      transition: transform 0.15s ease, box-shadow 0.15s ease;
+    }
+    .btn-tg:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 14px 36px rgba(34, 158, 217, 0.45);
+    }
+    .note {
+      margin-top: 1.25rem;
+      font-size: 0.88rem;
+      color: #64748b;
+    }
+    .note a {
+      color: #60a5fa;
+      font-weight: 600;
+    }
+  </style>
+</head>
+<body>
+  <div class="strip">You&rsquo;re in — one last step on Telegram</div>
+  <main>
+    <div class="card">
+      <h1>Get your free plan</h1>
+      <p class="lead">
+        Your email is saved. Tap below to open Telegram and grab the <strong>$1k/month YouTube plan</strong> inside the channel.
+      </p>
+      <p class="countdown" id="countdown" aria-live="polite">Opening Telegram in 3 seconds&hellip;</p>
+      <a class="btn-tg" id="tg-cta" href="#" rel="noopener noreferrer">
+        Get access on Telegram
+      </a>
+      <p class="note">
+        Also check your inbox (Spam and Promotions). Prefer the web version?
+        <a href="/plan">Open the plan here</a>.
+      </p>
+    </div>
+  </main>
+  <script>
+    (function () {
+      var TELEGRAM_ACCESS_URL = "https://t.me/ytachads/2507";
+
+      var params = new URLSearchParams(window.location.search);
+      var tgUrl = params.get("tg") || TELEGRAM_ACCESS_URL;
+      var autoRedirect = params.get("auto") !== "0";
+      var delaySec = Math.max(2, parseInt(params.get("delay") || "3", 10) || 3);
+
+      var cta = document.getElementById("tg-cta");
+      var countdownEl = document.getElementById("countdown");
+      cta.href = tgUrl;
+
+      function goTelegram() {
+        window.location.href = tgUrl;
+      }
+
+      cta.addEventListener("click", function (e) {
+        e.preventDefault();
+        goTelegram();
+      });
+
+      if (!autoRedirect) {
+        countdownEl.textContent = "Tap the button when you are ready.";
+        return;
+      }
+
+      var left = delaySec;
+      function tick() {
+        if (left <= 0) {
+          countdownEl.textContent = "Opening Telegram now\u2026";
+          goTelegram();
+          return;
+        }
+        countdownEl.textContent =
+          left === 1
+            ? "Opening Telegram in 1 second\u2026"
+            : "Opening Telegram in " + left + " seconds\u2026";
+        left -= 1;
+        setTimeout(tick, 1000);
+      }
+
+      setTimeout(tick, 800);
+    })();
+  </script>
+</body>
+</html>

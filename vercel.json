@@ -88,6 +88,14 @@
       "destination": "/1k-free.html"
     },
     {
+      "source": "/1k-free-access",
+      "destination": "/1k-free-access.html"
+    },
+    {
+      "source": "/1k-free-access.html",
+      "destination": "/1k-free-access.html"
+    },
+    {
       "source": "/20-search-niches",
       "destination": "/20-search-niches.html"
     },
