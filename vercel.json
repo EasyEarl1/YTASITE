@@ -15,6 +15,16 @@
       "source": "/masterclass-live.html",
       "destination": "/lander",
       "permanent": false
+    },
+    {
+      "source": "/the-1k-month-youtube-plan-viewer",
+      "destination": "/plan",
+      "permanent": true
+    },
+    {
+      "source": "/the-1k-month-youtube-plan-viewer.html",
+      "destination": "/plan",
+      "permanent": true
     }
   ],
   "buildCommand": null,
@@ -156,6 +166,14 @@
     {
       "source": "/lander.html",
       "destination": "/lander.html"
+    },
+    {
+      "source": "/plan",
+      "destination": "/the-1k-month-youtube-plan-viewer.html"
+    },
+    {
+      "source": "/plan.html",
+      "destination": "/the-1k-month-youtube-plan-viewer.html"
     },
     {
       "source": "/the-1k-month-youtube-plan",
