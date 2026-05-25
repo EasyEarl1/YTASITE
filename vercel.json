@@ -169,11 +169,11 @@
     },
     {
       "source": "/lander",
-      "destination": "/lander.html"
+      "destination": "/book-call.html"
     },
     {
       "source": "/lander.html",
-      "destination": "/lander.html"
+      "destination": "/book-call.html"
     },
     {
       "source": "/book-call",
