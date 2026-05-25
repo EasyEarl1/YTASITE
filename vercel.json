@@ -176,6 +176,14 @@
       "destination": "/lander.html"
     },
     {
+      "source": "/book-call",
+      "destination": "/book-call.html"
+    },
+    {
+      "source": "/book-call.html",
+      "destination": "/book-call.html"
+    },
+    {
       "source": "/plan",
       "destination": "/the-1k-month-youtube-plan-viewer.html"
     },
