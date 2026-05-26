@@ -1,904 +1,789 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>YTA CHADS - Build a $5k/month YouTube Search Business</title>
-    <link rel="stylesheet" href="styles.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
-    
-    <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-9V7MHPL83H"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Build a $5&ndash;$10k/m YouTube Search Business | YTA Chads</title>
+  <meta name="description" content="Watch how we build faceless YouTube search channels that pay $5k to $10k per month, then book a free strategy call.">
+  <meta name="username" content="user_3ChXMl3oobB5XIr0FpWhkWjRC5b">
+  <meta name="offer" content="YT INCUBATOR">
+  <script src="https://d15dfsr886zcp9.cloudfront.net/tracker_script.js" defer></script>
+  <script defer src="/_vercel/insights/script.js"></script>
+  <script src="https://fast.wistia.com/player.js" async></script>
+  <script src="https://fast.wistia.com/embed/97oie221dh.js" async type="module"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #050508;
+      --text: #f8fafc;
+      --muted: rgba(248, 250, 252, 0.72);
+      --blue: #2d8cff;
+      --blue-hover: #1a7af0;
+      --max: 56rem;
+      --proof-max: 72rem;
+      --border: rgba(45, 140, 255, 0.28);
+      --surface: rgba(255, 255, 255, 0.04);
+    }
 
-      gtag('config', 'G-9V7MHPL83H');
-    </script>
-    
-    <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=GT-KT54SNLM"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
-      gtag('config', 'GT-KT54SNLM');
-    </script>
-    
-    <!-- Google Tag Manager -->
-    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-    })(window,document,'script','dataLayer','GTM-PGHLH746');</script>
-    <!-- End Google Tag Manager -->
+    body {
+      font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      min-height: 100vh;
+      background: var(--bg);
+      color: var(--text);
+      font-size: 1.0625rem;
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+      overflow-x: hidden;
+    }
 
-    <!-- Vercel Web Analytics -->
-    <script defer src="/_vercel/insights/script.js"></script>
+    #space-dust {
+      position: fixed;
+      inset: 0;
+      z-index: 0;
+      pointer-events: none;
+    }
 
-    <!-- X conversion tracking base code -->
-    <script>
-    !function(e,t,n,s,u,a){e.twq||(s=e.twq=function(){s.exe?s.exe.apply(s,arguments):s.queue.push(arguments);
-    },s.version='1.1',s.queue=[],u=t.createElement(n),u.async=!0,u.src='https://static.ads-twitter.com/uwt.js',
-    a=t.getElementsByTagName(n)[0],a.parentNode.insertBefore(u,a))}(window,document,'script');
-    twq('config','of4h6');
-    </script>
-    <!-- End X conversion tracking base code -->
+    .page {
+      position: relative;
+      z-index: 1;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .topbar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+      padding: clamp(1rem, 3vw, 1.35rem) clamp(1.25rem, 4vw, 2rem);
+      max-width: calc(var(--max) + 4rem);
+      margin: 0 auto;
+      width: 100%;
+    }
+
+    .brand {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.65rem;
+      text-decoration: none;
+      color: var(--text);
+    }
+
+    .brand-logo {
+      height: 2.35rem;
+      width: auto;
+      display: block;
+    }
+
+    .brand-name {
+      font-size: 1rem;
+      font-weight: 800;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+    }
+
+    a.btn-schedule,
+    a.btn-schedule:link,
+    a.btn-schedule:visited,
+    a.btn-schedule:hover,
+    a.btn-schedule:active,
+    a.btn-schedule:focus {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 2.5rem;
+      padding: 0 1.15rem;
+      border-radius: 9999px;
+      background: var(--blue) !important;
+      color: #ffffff !important;
+      font-size: 0.92rem;
+      font-weight: 700;
+      text-decoration: none !important;
+      white-space: nowrap;
+      transition: background 0.15s ease, transform 0.15s ease;
+    }
+
+    a.btn-schedule:hover,
+    a.btn-schedule:focus {
+      background: var(--blue-hover) !important;
+      transform: translateY(-1px);
+    }
+
+    .hero {
+      text-align: center;
+      padding: 0 clamp(1.25rem, 4vw, 2rem) clamp(2.5rem, 6vw, 4rem);
+      max-width: var(--max);
+      margin: 0 auto;
+      width: 100%;
+    }
+
+    .hero h1 {
+      font-size: clamp(1.75rem, 5vw, 2.75rem);
+      font-weight: 800;
+      letter-spacing: -0.03em;
+      line-height: 1.12;
+      color: #fff;
+      max-width: 22ch;
+      margin: 0 auto 1rem;
+    }
+
+    @media (min-width: 520px) {
+      .hero h1 { max-width: none; }
+    }
+
+    .hero-eyebrow {
+      font-size: clamp(0.68rem, 1.8vw, 0.78rem);
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--muted);
+      max-width: 40rem;
+      margin: 0 auto 1.35rem;
+      line-height: 1.5;
+    }
+
+    .video-wrap {
+      border-radius: 14px;
+      overflow: hidden;
+      border: 1px solid rgba(45, 140, 255, 0.45);
+      box-shadow: 0 16px 48px rgba(0, 0, 0, 0.55);
+      background: #000;
+      line-height: 0;
+    }
+
+    .video-wrap wistia-player {
+      display: block;
+      width: 100%;
+    }
+
+    wistia-player[media-id='97oie221dh']:not(:defined) {
+      background: center / contain no-repeat url('https://fast.wistia.com/embed/medias/97oie221dh/swatch');
+      display: block;
+      filter: blur(5px);
+      padding-top: 56.25%;
+    }
+
+    .cta-bar {
+      margin-top: 1.35rem;
+      display: flex;
+      flex-direction: column;
+      align-items: stretch;
+      gap: 1rem;
+      padding: 1.15rem 1.25rem;
+      border-radius: 14px;
+      border: 1px solid var(--blue);
+      background: rgba(0, 0, 0, 0.55);
+    }
+
+    @media (min-width: 640px) {
+      .cta-bar {
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+        gap: 1.25rem;
+        padding: 1.1rem 1.35rem;
+      }
+    }
+
+    .cta-bar-text {
+      font-size: clamp(1.05rem, 2.5vw, 1.25rem);
+      font-weight: 800;
+      color: #fff;
+      text-align: center;
+    }
+
+    @media (min-width: 640px) {
+      .cta-bar-text { text-align: left; }
+    }
+
+    .cta-bar .btn-schedule {
+      min-height: 3rem;
+      padding: 0 1.5rem;
+      font-size: 1rem;
+      border-radius: 12px;
+      flex-shrink: 0;
+    }
+
+    @media (min-width: 640px) {
+      .cta-bar .btn-schedule { align-self: center; }
+    }
+
+    .proof {
+      width: 100%;
+      max-width: var(--proof-max);
+      margin: 0 auto;
+      padding: 0 clamp(1.25rem, 4vw, 2rem) clamp(3rem, 8vw, 5rem);
+    }
+
+    .proof-block {
+      margin-bottom: clamp(2.5rem, 6vw, 3.5rem);
+    }
+
+    .proof-eyebrow {
+      display: block;
+      font-size: 0.72rem;
+      font-weight: 800;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--blue);
+      margin-bottom: 0.45rem;
+      text-align: center;
+    }
+
+    .proof h2 {
+      font-size: clamp(1.35rem, 3.5vw, 2rem);
+      font-weight: 800;
+      letter-spacing: -0.03em;
+      line-height: 1.15;
+      color: #fff;
+      text-align: center;
+      margin-bottom: 0.65rem;
+    }
+
+    .proof-lead {
+      text-align: center;
+      color: var(--muted);
+      font-size: clamp(0.95rem, 2.2vw, 1.05rem);
+      max-width: 40rem;
+      margin: 0 auto 1.35rem;
+      line-height: 1.55;
+    }
+
+    .stats-pill {
+      text-align: center;
+      padding: 1rem 1.25rem;
+      border-radius: 12px;
+      border: 1px solid var(--border);
+      background: rgba(0, 0, 0, 0.5);
+      font-size: clamp(0.88rem, 2vw, 0.98rem);
+      font-weight: 600;
+      color: var(--muted);
+      line-height: 1.5;
+      margin-bottom: 2rem;
+    }
+
+    .stats-pill strong { color: #fff; }
+
+    .proof-masonry {
+      column-count: 1;
+      column-gap: 0.85rem;
+    }
+
+    @media (min-width: 560px) {
+      .proof-masonry { column-count: 2; }
+    }
+
+    @media (min-width: 1024px) {
+      .proof-masonry { column-count: 3; }
+    }
+
+    .proof-masonry figure {
+      margin: 0 0 0.85rem;
+      display: inline-block;
+      width: 100%;
+      break-inside: avoid;
+      border-radius: 12px;
+      overflow: hidden;
+      border: 1px solid var(--border);
+      background: var(--surface);
+      box-shadow: 0 8px 28px rgba(0, 0, 0, 0.4);
+      line-height: 0;
+    }
+
+    .proof-masonry img {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    .exit-grid {
+      display: grid;
+      gap: 1rem;
+    }
+
+    @media (min-width: 700px) {
+      .exit-grid { grid-template-columns: 1fr 1fr; }
+    }
+
+    .exit-card {
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 1.15rem;
+      background: rgba(0, 0, 0, 0.45);
+    }
+
+    .exit-tag {
+      font-size: 0.72rem;
+      font-weight: 800;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--blue);
+    }
+
+    .exit-amount {
+      font-size: clamp(1.5rem, 4vw, 2rem);
+      font-weight: 800;
+      color: #fff;
+      margin: 0.2rem 0 0.75rem;
+    }
+
+    .exit-shot {
+      border-radius: 10px;
+      overflow: hidden;
+      border: 1px solid var(--border);
+      margin-bottom: 0.75rem;
+      line-height: 0;
+    }
+
+    .exit-shot img {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    .exit-pair {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0.5rem;
+      margin-bottom: 0.75rem;
+    }
+
+    .exit-detail {
+      font-size: 0.88rem;
+      color: var(--muted);
+      line-height: 1.5;
+      margin-bottom: 0.65rem;
+    }
+
+    .exit-math {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 0.35rem 0.5rem;
+      font-size: 0.82rem;
+      font-weight: 600;
+      color: #e2e8f0;
+    }
+
+    .exit-math .result {
+      color: #86efac;
+      font-weight: 800;
+    }
+
+    .testimonials-grid {
+      display: grid;
+      gap: 0.85rem;
+    }
+
+    @media (min-width: 640px) {
+      .testimonials-grid { grid-template-columns: 1fr 1fr; }
+    }
+
+    @media (min-width: 1100px) {
+      .testimonials-grid { grid-template-columns: repeat(3, 1fr); }
+    }
+
+    .t-card {
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 1.1rem 1.15rem;
+      background: rgba(0, 0, 0, 0.45);
+      text-align: left;
+    }
+
+    .t-head {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      margin-bottom: 0.7rem;
+    }
+
+    .t-avatar {
+      width: 2.75rem;
+      height: 2.75rem;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 2px solid var(--border);
+      flex-shrink: 0;
+    }
+
+    .t-display-name {
+      font-weight: 800;
+      color: #fff;
+      font-size: 0.98rem;
+    }
+
+    .t-role {
+      font-size: 0.75rem;
+      color: var(--muted);
+      font-weight: 600;
+    }
+
+    .t-stars {
+      font-size: 0.75rem;
+      color: #fbbf24;
+      letter-spacing: 0.05em;
+      margin-bottom: 0.35rem;
+    }
+
+    .t-quote {
+      font-size: 0.92rem;
+      color: rgba(248, 250, 252, 0.88);
+      line-height: 1.55;
+      font-style: italic;
+      margin-bottom: 0.75rem;
+    }
+
+    .t-bottom {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      gap: 0.75rem;
+      padding-top: 0.65rem;
+      border-top: 1px solid rgba(255, 255, 255, 0.08);
+    }
+
+    .t-name {
+      font-size: 0.78rem;
+      font-weight: 700;
+      color: #e2e8f0;
+    }
+
+    .t-timeline {
+      font-size: 0.72rem;
+      color: var(--muted);
+    }
+
+    .t-result {
+      font-size: 0.9rem;
+      font-weight: 800;
+      color: #86efac;
+      white-space: nowrap;
+    }
+
+    .proof .cta-bar {
+      margin-top: 0.5rem;
+    }
+  </style>
 </head>
 <body>
-    <!-- Google Tag Manager (noscript) -->
-    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PGHLH746"
-    height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-    <!-- End Google Tag Manager (noscript) -->
-    <!-- Header -->
-    <header class="header">
-        <div class="container">
-            <div class="logo">YTA CHADS</div>
-            <nav class="nav">
-                <div style="display: flex; gap: 15px; align-items: center;">
-                    <a href="calculator.html" class="btn-secondary">Channel Calculator</a>
-                    <a href="https://calendly.com/sigmayt/ytachads" target="_blank" class="btn-secondary">Book a Call</a>
-                    <a href="#pricing" class="btn-secondary">Learn More Now</a>
-                </div>
-            </nav>
-        </div>
+  <canvas id="space-dust" aria-hidden="true"></canvas>
+
+  <div class="page">
+    <header class="topbar">
+      <a class="brand" href="https://learn.ytachads.com/lander" aria-label="YTA CHADS">
+        <img
+          class="brand-logo"
+          src="assets/yta-chads-logo.png"
+          alt=""
+          width="120"
+          height="48"
+          decoding="async"
+        >
+        <span class="brand-name">YTA CHADS</span>
+      </a>
+      <a
+        class="btn-schedule"
+        href="https://calendly.com/sigmayt/discovery-call-clone"
+        target="_blank"
+        rel="noopener noreferrer"
+      >Schedule Call</a>
     </header>
 
-    <!-- Social Proof Banner -->
-    <section class="social-proof-banner">
-        <div class="container">
-            <div class="avatars">
-                <img src="assets/jono-p-500.png" alt="Student" class="avatar">
-                <img src="assets/atte-p-500.png" alt="Student" class="avatar">
-                <img src="assets/joel-p-500.png" alt="Student" class="avatar">
-                <img src="assets/adarsh-p-500.png" alt="Student" class="avatar">
-                <img src="assets/bautista-p-500.png" alt="Student" class="avatar">
-            </div>
-            <p>Trusted by 100+ YouTube Business Owners</p>
-            <div class="rating">
-                <span class="stars">★★★★★</span>
-                <span>Excellent 5/5</span>
-            </div>
+    <main class="hero">
+      <h1>Build a $5&ndash;$10k/m YouTube Search Business</h1>
+      <p class="hero-eyebrow">Watch the video, then book a call below if you want help building your first channel.</p>
+
+      <div class="video-wrap">
+        <wistia-player media-id="97oie221dh" aspect="1.7777777777777777"></wistia-player>
+      </div>
+
+      <div class="cta-bar">
+        <p class="cta-bar-text">Join over 100+ students</p>
+        <a
+          class="btn-schedule"
+          href="https://calendly.com/sigmayt/discovery-call-clone"
+          target="_blank"
+          rel="noopener noreferrer"
+        >Schedule Call</a>
+      </div>
+    </main>
+
+    <section class="proof" aria-label="Student results and testimonials">
+      <div class="proof-block">
+        <p class="stats-pill">
+          <strong>$300,000+</strong> generated by students &middot;
+          <strong>2 channel exits</strong> ($20k + $53k) &middot;
+          Students hitting <strong>$1k&ndash;$6k/month</strong> consistently
+        </p>
+        <span class="proof-eyebrow">Wall of proof</span>
+        <h2>Real results from students</h2>
+        <p class="proof-lead">Screenshots from AdSense, YouTube Studio, and member channels. No stock photos.</p>
+        <div class="proof-masonry" aria-label="Student results screenshots">
+          <figure><img src="rs1.png" alt="Student result screenshot" loading="lazy" decoding="async"></figure>
+          <figure><img src="rs3.png" alt="Student result screenshot" loading="lazy" decoding="async"></figure>
+          <figure><img src="rs4.png" alt="Student result screenshot" loading="lazy" decoding="async"></figure>
+          <figure><img src="rs5.png" alt="Student result screenshot" loading="lazy" decoding="async"></figure>
+          <figure><img src="rs6.png" alt="Student result screenshot" loading="lazy" decoding="async"></figure>
+          <figure><img src="rs7.png" alt="Student result screenshot" loading="lazy" decoding="async"></figure>
+          <figure><img src="rs8.png" alt="Student result screenshot" loading="lazy" decoding="async"></figure>
+          <figure><img src="rs9.png" alt="Student result screenshot" loading="lazy" decoding="async"></figure>
+          <figure><img src="rs11.png" alt="Student result screenshot" loading="lazy" decoding="async"></figure>
+          <figure><img src="rs12.png" alt="Student result screenshot" loading="lazy" decoding="async"></figure>
+          <figure><img src="revv/REV2.png" alt="YouTube revenue screenshot" loading="lazy" decoding="async"></figure>
+          <figure><img src="revv/REV%203.png" alt="YouTube analytics screenshot" loading="lazy" decoding="async"></figure>
+          <figure><img src="revv/rev%205.png" alt="YouTube earnings screenshot" loading="lazy" decoding="async"></figure>
+          <figure><img src="revv/rev%208.png" alt="Monthly revenue screenshot" loading="lazy" decoding="async"></figure>
+          <figure><img src="revv/REV%204.png" alt="Estimated revenue screenshot" loading="lazy" decoding="async"></figure>
+          <figure><img src="revv/rev%207.jpeg" alt="Payment proof screenshot" loading="lazy" decoding="async"></figure>
         </div>
+      </div>
+
+      <div class="proof-block">
+        <span class="proof-eyebrow">Channel exits</span>
+        <h2>Real exits. Offers accepted and paid.</h2>
+        <p class="proof-lead">Same search-based system students use to build monthly income and sell the channel later.</p>
+        <div class="exit-grid">
+          <article class="exit-card">
+            <div class="exit-tag">Exit 1</div>
+            <div class="exit-amount">$20,000</div>
+            <div class="exit-pair">
+              <div class="exit-shot"><img src="revv/exit%202.png" alt="$20,000 channel exit proof" loading="lazy" decoding="async"></div>
+              <div class="exit-shot"><img src="revv/exit%201.2.png" alt="$20,000 channel exit proof" loading="lazy" decoding="async"></div>
+            </div>
+            <p class="exit-detail">Built from scratch with the search model. Offer accepted, contract signed, channel transferred.</p>
+            <div class="exit-math">
+              <span>$2,000 invested</span>
+              <span>&rarr;</span>
+              <span>~$1k/mo profit</span>
+              <span>&rarr;</span>
+              <span class="result">$20,000 exit</span>
+            </div>
+          </article>
+          <article class="exit-card">
+            <div class="exit-tag">Exit 2</div>
+            <div class="exit-amount">$53,000</div>
+            <div class="exit-shot"><img src="revv/exit1.png" alt="$53,000 channel exit proof" loading="lazy" decoding="async"></div>
+            <p class="exit-detail">No audience. No face. Same system taught inside the programme.</p>
+            <div class="exit-math">
+              <span>$4,000 invested</span>
+              <span>&rarr;</span>
+              <span>~$2k/mo passive profit</span>
+              <span>&rarr;</span>
+              <span class="result">$53,000 exit</span>
+            </div>
+          </article>
+        </div>
+      </div>
+
+      <div class="proof-block">
+        <span class="proof-eyebrow">Student wins</span>
+        <h2>What members are saying</h2>
+        <p class="proof-lead">No face. No fame. No audience required.</p>
+        <div class="testimonials-grid">
+          <article class="t-card">
+            <div class="t-head">
+              <img src="assets/bautista-p-500.png" alt="" class="t-avatar" width="48" height="48" loading="lazy">
+              <div><div class="t-display-name">Bautista</div><div class="t-role">YTA Chads member</div></div>
+            </div>
+            <div class="t-stars" aria-hidden="true">★★★★★</div>
+            <p class="t-quote">&ldquo;I&rsquo;m making $2k/m passively and I&rsquo;m about to get another channel monetized which will start at at least $1k a month. I&rsquo;m following the process just like I&rsquo;m taught.&rdquo;</p>
+            <div class="t-bottom"><div><div class="t-name">Search-based channels</div><div class="t-timeline">Scaling portfolio</div></div><div class="t-result">$2k/month+</div></div>
+          </article>
+          <article class="t-card">
+            <div class="t-head">
+              <img src="assets/mtt-p-500.png" alt="" class="t-avatar" width="48" height="48" loading="lazy">
+              <div><div class="t-display-name">MotoTube</div><div class="t-role">YTA Chads member</div></div>
+            </div>
+            <div class="t-stars" aria-hidden="true">★★★★★</div>
+            <p class="t-quote">&ldquo;Boring videos that get 100 views and generate $600 are amazing. This method works.&rdquo;</p>
+            <div class="t-bottom"><div><div class="t-name">High-RPM niche</div><div class="t-timeline">Search traffic</div></div><div class="t-result">$600+ / video</div></div>
+          </article>
+          <article class="t-card">
+            <div class="t-head">
+              <img src="assets/ck-jake-p-500.png" alt="" class="t-avatar" width="48" height="48" loading="lazy">
+              <div><div class="t-display-name">CK Jake</div><div class="t-role">YTA Chads member</div></div>
+            </div>
+            <div class="t-stars" aria-hidden="true">★★★★★</div>
+            <p class="t-quote">&ldquo;Today I received my first payment in my bank account. Slow and steady guaranteed growth. The only method that worked for me.&rdquo;</p>
+            <div class="t-bottom"><div><div class="t-name">First payout</div><div class="t-timeline">Asset live</div></div><div class="t-result">Payment received</div></div>
+          </article>
+          <article class="t-card">
+            <div class="t-head">
+              <img src="assets/adarsh-p-500.png" alt="" class="t-avatar" width="48" height="48" loading="lazy">
+              <div><div class="t-display-name">Adarsh</div><div class="t-role">YTA Chads member</div></div>
+            </div>
+            <div class="t-stars" aria-hidden="true">★★★★★</div>
+            <p class="t-quote">&ldquo;YTA Chads gave me a clear, repeatable path to income without relying on luck or the algorithm. Best value I found.&rdquo;</p>
+            <div class="t-bottom"><div><div class="t-name">After other courses</div><div class="t-timeline">Consistent earnings</div></div><div class="t-result">Income clarity</div></div>
+          </article>
+          <article class="t-card">
+            <div class="t-head">
+              <img src="assets/atte-p-500.png" alt="" class="t-avatar" width="48" height="48" loading="lazy">
+              <div><div class="t-display-name">Atte</div><div class="t-role">YTA Chads member</div></div>
+            </div>
+            <div class="t-stars" aria-hidden="true">★★★★★</div>
+            <p class="t-quote">&ldquo;I&rsquo;ve spent over $20,000 on YouTube courses and freelancers. This is the first system that produced consistent results instead of guesswork.&rdquo;</p>
+            <div class="t-bottom"><div><div class="t-name">$20k+ spent elsewhere</div><div class="t-timeline">Finally works</div></div><div class="t-result">Consistent results</div></div>
+          </article>
+          <article class="t-card">
+            <div class="t-head">
+              <img src="assets/jono-p-500.png" alt="" class="t-avatar" width="48" height="48" loading="lazy">
+              <div><div class="t-display-name">Jono</div><div class="t-role">YTA Chads member</div></div>
+            </div>
+            <div class="t-stars" aria-hidden="true">★★★★★</div>
+            <p class="t-quote">&ldquo;Joining YTA Chads changed how I see YouTube. Not a side hustle, but a real, scalable business if you put the work in.&rdquo;</p>
+            <div class="t-bottom"><div><div class="t-name">Mindset shift</div><div class="t-timeline">Long-term build</div></div><div class="t-result">Scalable model</div></div>
+          </article>
+          <article class="t-card">
+            <div class="t-head">
+              <img src="assets/g-we.png" alt="" class="t-avatar" width="48" height="48" loading="lazy">
+              <div><div class="t-display-name">G We</div><div class="t-role">YTA Chads member</div></div>
+            </div>
+            <div class="t-stars" aria-hidden="true">★★★★★</div>
+            <p class="t-quote">&ldquo;Members moving from cents a day to $100+ days in a few months. Channels hitting first &pound;10 days and 1,000-view days. The snowball effect is real.&rdquo;</p>
+            <div class="t-bottom"><div><div class="t-name">Community growth</div><div class="t-timeline">Compounding</div></div><div class="t-result">$100+ days</div></div>
+          </article>
+          <article class="t-card">
+            <div class="t-head">
+              <img src="assets/hanees-p-500.png" alt="" class="t-avatar" width="48" height="48" loading="lazy">
+              <div><div class="t-display-name">Hannes</div><div class="t-role">YTA Chads member</div></div>
+            </div>
+            <div class="t-stars" aria-hidden="true">★★★★★</div>
+            <p class="t-quote">&ldquo;I applied Harvey&rsquo;s tips on a channel that wasn&rsquo;t even fully search-based, and they still worked in my niche.&rdquo;</p>
+            <div class="t-bottom"><div><div class="t-name">Existing channel</div><div class="t-timeline">Tips applied</div></div><div class="t-result">Still worked</div></div>
+          </article>
+          <article class="t-card">
+            <div class="t-head">
+              <img src="assets/joel-p-500.png" alt="" class="t-avatar" width="48" height="48" loading="lazy">
+              <div><div class="t-display-name">Joel</div><div class="t-role">YTA Chads member</div></div>
+            </div>
+            <div class="t-stars" aria-hidden="true">★★★★★</div>
+            <p class="t-quote">&ldquo;I tried ecom, freelancing, side hustles. Nothing clicked like YouTube automation. The difference was YTA Chads.&rdquo;</p>
+            <div class="t-bottom"><div><div class="t-name">After other models</div><div class="t-timeline">Finally clicked</div></div><div class="t-result">Automation</div></div>
+          </article>
+          <article class="t-card">
+            <div class="t-head">
+              <img src="assets/Jon-p-500.png" alt="" class="t-avatar" width="48" height="48" loading="lazy">
+              <div><div class="t-display-name">Jon</div><div class="t-role">YTA Chads member</div></div>
+            </div>
+            <div class="t-stars" aria-hidden="true">★★★★★</div>
+            <p class="t-quote">&ldquo;I hardly put work into the channel and it still brings good money every month. Data-driven and systemized. Anyone can do it.&rdquo;</p>
+            <div class="t-bottom"><div><div class="t-name">Low maintenance</div><div class="t-timeline">Monthly income</div></div><div class="t-result">Passive income</div></div>
+          </article>
+          <article class="t-card">
+            <div class="t-head">
+              <img src="assets/lrs-p-500.png" alt="" class="t-avatar" width="48" height="48" loading="lazy">
+              <div><div class="t-display-name">Lars Bloom</div><div class="t-role">YTA Chads member</div></div>
+            </div>
+            <div class="t-stars" aria-hidden="true">★★★★★</div>
+            <p class="t-quote">&ldquo;I needed structure, tools, and guidance. Friends said it wouldn&rsquo;t work. Inside the program it opened my mind to what&rsquo;s possible.&rdquo;</p>
+            <div class="t-bottom"><div><div class="t-name">Structure + tools</div><div class="t-timeline">Mindset shift</div></div><div class="t-result">Clear path</div></div>
+          </article>
+          <article class="t-card">
+            <div class="t-head">
+              <img src="assets/konrad-p-500.png" alt="" class="t-avatar" width="48" height="48" loading="lazy">
+              <div><div class="t-display-name">Konrad</div><div class="t-role">YTA Chads member</div></div>
+            </div>
+            <div class="t-stars" aria-hidden="true">★★★★★</div>
+            <p class="t-quote">&ldquo;Build recurring revenue and passive income slowly but surely. The community and tools are great. I share advice with members every week.&rdquo;</p>
+            <div class="t-bottom"><div><div class="t-name">Recurring revenue</div><div class="t-timeline">Active community</div></div><div class="t-result">Passive income</div></div>
+          </article>
+        </div>
+      </div>
+
+      <div class="cta-bar">
+        <p class="cta-bar-text">Ready to see if you&rsquo;re a fit?</p>
+        <a
+          class="btn-schedule"
+          href="https://calendly.com/sigmayt/discovery-call-clone"
+          target="_blank"
+          rel="noopener noreferrer"
+        >Schedule Call</a>
+      </div>
     </section>
+  </div>
 
-    <!-- Hero Section -->
-    <section class="hero">
-        <div class="container">
-            <p class="hero-label">Using OUR STEP-BY-STEP SYSTEM</p>
-            <h1 class="hero-title">Build a fully automated $5k/month profit YouTube Search business in 90 days</h1>
-            <p class="hero-description">Growing a profitable YouTube business SHOULDN'T require luck, virality, or guessing. I'll show you how to build a data-driven YouTube Search system that generates predictable profit - without wasting months testing ideas that never work.</p>
-            <div class="hero-video">
-                <div style="padding:56.25% 0 0 0;position:relative;">
-                    <iframe src="https://fast.wistia.net/embed/iframe/5timzfm9tn?videoFoam=true" title="YTA CHADS Video" allow="autoplay; fullscreen" allowtransparency="true" frameborder="0" scrolling="no" class="wistia_embed" name="wistia_embed" width="100%" height="100%" style="position:absolute;top:0;left:0;width:100%;height:100%;"></iframe>
-                </div>
-                <script src="https://fast.wistia.net/assets/external/E-v1.js" async></script>
-            </div>
-            <div style="text-align: center; margin-top: 50px; display: flex; gap: 20px; justify-content: center; flex-wrap: wrap; align-items: center;">
-                <a href="#pricing" class="btn-primary" style="padding: 16px 32px;">Learn More Now</a>
-                <a href="https://calendly.com/sigmayt/ytachads" target="_blank" class="btn-secondary" style="padding: 16px 32px;">Book a Call</a>
-            </div>
-        </div>
-    </section>
+  <script>
+    (function () {
+      var canvas = document.getElementById("space-dust");
+      if (!canvas) return;
 
-    <!-- Testimonials Section 1 -->
-    <section class="testimonials-section">
-        <div class="container">
-            <h2 class="section-title">Real Student Testimonials</h2>
-            <p class="section-subtitle">Don't just take it from us, check out what our students have to say.</p>
-            <div class="testimonials-grid">
-                <div class="testimonial-card">
-                    <div class="testimonial-header">
-                        <img src="assets/jono-p-500.png" alt="Jono" class="testimonial-avatar">
-                        <div class="testimonial-info">
-                            <div class="stars">★★★★★</div>
-                            <p class="testimonial-author">Jono</p>
-                        </div>
-                    </div>
-                    <p class="testimonial-text">"Joining YTA Chads genuinely changed how I see YouTube, not as a side hustle, but as a real, scalable business. If you're willing to put the work in and play the long game, it's one of the best decisions you can make."</p>
-                </div>
-                <div class="testimonial-card">
-                    <div class="testimonial-header">
-                        <img src="assets/g-we.png" alt="G We" class="testimonial-avatar">
-                        <div class="testimonial-info">
-                            <div class="stars">★★★★★</div>
-                            <p class="testimonial-author">G We</p>
-                        </div>
-                    </div>
-                    <p class="testimonial-text">"Being part of the YTA Chads Private Community has been an incredibly positive and transformative experience. The resources, tools, and support provided have genuinely changed how I approach YouTube, leading to tangible growth and significant results.
+      var ctx = canvas.getContext("2d");
+      var dpr = Math.min(window.devicePixelRatio || 1, 2);
+      var particles = [];
+      var count = 120;
+      var reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+      var tick = 0;
 
-The results speak for themselves. Numerous members, including myself, have shared inspiring growth charts, moving from mere cents a day to substantial daily earnings in just a few months. It's incredible to see channels transition from 50c a day... to $100+ in 4 months or hit first £10 day milestones and first 1000 view day. The snowball effect has started is a common sentiment, proving the long-term viability of the strategy taught here.
+      function resize() {
+        var w = window.innerWidth;
+        var h = window.innerHeight;
+        canvas.width = Math.floor(w * dpr);
+        canvas.height = Math.floor(h * dpr);
+        canvas.style.width = w + "px";
+        canvas.style.height = h + "px";
+        ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+      }
 
-If you're looking to scale your YouTube efforts and achieve substantial passive income, I wholeheartedly recommend joining this community."</p>
-                </div>
-                <div class="testimonial-card">
-                    <div class="testimonial-header">
-                        <img src="assets/atte-p-500.png" alt="ATTE" class="testimonial-avatar">
-                        <div class="testimonial-info">
-                            <div class="stars">★★★★★</div>
-                            <p class="testimonial-author">ATTE</p>
-                        </div>
-                    </div>
-                    <p class="testimonial-text">"Over the past two years, I've spent well over $20,000 on different YouTube courses, services, AI tools, and freelancers. For me, the biggest difference between these other courses and YTA CHADS is simple: this process actually makes sense. And it keeps making sense even when you don't see instant results. Because this isn't about overnight success - it's about steady growth that compounds over time."</p>
-                </div>
-                <div class="testimonial-card">
-                    <div class="testimonial-header">
-                        <img src="assets/hanees-p-500.png" alt="Hannes" class="testimonial-avatar">
-                        <div class="testimonial-info">
-                            <div class="stars">★★★★★</div>
-                            <p class="testimonial-author">Hannes</p>
-                        </div>
-                    </div>
-                    <p class="testimonial-text">"I already have a YouTube channel that is not fully search-based, but I applied some tips and tricks from Harvey, and it turned out they even worked in the niche I operate in."</p>
-                </div>
-                <div class="testimonial-card">
-                    <div class="testimonial-header">
-                        <img src="assets/bautista-p-500.png" alt="Bautista" class="testimonial-avatar">
-                        <div class="testimonial-info">
-                            <div class="stars">★★★★★</div>
-                            <p class="testimonial-author">Bautista</p>
-                        </div>
-                    </div>
-                    <p class="testimonial-text">"I'm making $2k/m passively and I'm about to get another channel monetized which will start at atleast $1k a month. This wasn't luck. Im not an outlier. I'm following the process just like I'm taught"</p>
-                </div>
-                <div class="testimonial-card">
-                    <div class="testimonial-header">
-                        <img src="assets/adarsh-p-500.png" alt="Adarsh" class="testimonial-avatar">
-                        <div class="testimonial-info">
-                            <div class="stars">★★★★★</div>
-                            <p class="testimonial-author">Adarsh</p>
-                        </div>
-                    </div>
-                    <p class="testimonial-text">"YTAchads gave me a clear, repeatable path to income on YouTube, without having to rely on luck or the algorithm. I spent far more on other courses that promised results but left me chasing virality; this program's search-first method started bringing consistent earnings very quickly, and Alex and Harvey's support has been spot on. Honestly, best value I found."</p>
-                </div>
-                <div class="testimonial-card">
-                    <div class="testimonial-header">
-                        <img src="assets/joel-p-500.png" alt="Joel" class="testimonial-avatar">
-                        <div class="testimonial-info">
-                            <div class="stars">★★★★★</div>
-                            <p class="testimonial-author">Joel</p>
-                        </div>
-                    </div>
-                    <p class="testimonial-text">"I've tried a lot of things in the online space over the years - ecom, freelancing, side hustles, all of it and nothing has clicked for me the way YouTube automation has. The difference was YTA Chads."</p>
-                </div>
-                <div class="testimonial-card">
-                    <div class="testimonial-header">
-                        <img src="assets/Jon-p-500.png" alt="Jon" class="testimonial-avatar">
-                        <div class="testimonial-info">
-                            <div class="stars">★★★★★</div>
-                            <p class="testimonial-author">Jon</p>
-                        </div>
-                    </div>
-                    <p class="testimonial-text">"Right now I hardly put any work into the channel and it still brings in good money every month. I really like that it's a very data driven and systemized approach that anyone can do"</p>
-                </div>
-                <div class="testimonial-card">
-                    <div class="testimonial-header">
-                        <img src="assets/ck-jake-p-500.png" alt="CK JAKE" class="testimonial-avatar">
-                        <div class="testimonial-info">
-                            <div class="stars">★★★★★</div>
-                            <p class="testimonial-author">CK JAKE</p>
-                        </div>
-                    </div>
-                    <p class="testimonial-text">"Today I received my first payment in my bank account. This is the only method that worked for me. The method is long-term and works great - it's more of a slow and steady guaranteed growth."</p>
-                </div>
-                <div class="testimonial-card">
-                    <div class="testimonial-header">
-                        <img src="assets/lrs-p-500.png" alt="Lars Bloom" class="testimonial-avatar">
-                        <div class="testimonial-info">
-                            <div class="stars">★★★★★</div>
-                            <p class="testimonial-author">Lars Bloom</p>
-                        </div>
-                    </div>
-                    <p class="testimonial-text">"The course is honestly just nice. I'm genuinly greatful for it. What I needed was a structure, the tools and the guidence to show me everything, and the the program does that. My friends told me it wouldn't work and make money, but once I was inside it really opened my mind to what's possible with YouTube"</p>
-                </div>
-                <div class="testimonial-card">
-                    <div class="testimonial-header">
-                        <img src="assets/konrad-p-500.png" alt="Konrad" class="testimonial-avatar">
-                        <div class="testimonial-info">
-                            <div class="stars">★★★★★</div>
-                            <p class="testimonial-author">Konrad</p>
-                        </div>
-                    </div>
-                    <p class="testimonial-text">"If you want to slowly but surely invest some money and build some recurring revenue and passive income this is great for you. The community & tools are great. I've met a lot of guys in the community who are very nice and open who I talk to a lot and share advice with"</p>
-                </div>
-                <div class="testimonial-card">
-                    <div class="testimonial-header">
-                        <img src="assets/mtt-p-500.png" alt="MotoTube" class="testimonial-avatar">
-                        <div class="testimonial-info">
-                            <div class="stars">★★★★★</div>
-                            <p class="testimonial-author">MotoTube</p>
-                        </div>
-                    </div>
-                    <p class="testimonial-text">"This method works guys, you'll be amazed how good it is. Boring videos that gets 100 views and generate 600$ are amazing"</p>
-                </div>
-                <div class="testimonial-card">
-                    <div class="testimonial-header">
-                        <img src="assets/adriens.png" alt="Adriens" class="testimonial-avatar">
-                        <div class="testimonial-info">
-                            <div class="stars">★★★★★</div>
-                            <p class="testimonial-author">Adriens</p>
-                        </div>
-                    </div>
-                    <p class="testimonial-text">"Out of all the side hustles I've done, this is by far the easiest money I've made online. Already seeing steady incline with profits while I essentially just live my life - genuinely a cheat code to money and time freedom."</p>
-                </div>
-            </div>
-        </div>
-    </section>
+      function seed() {
+        particles = [];
+        var w = window.innerWidth;
+        var h = window.innerHeight;
+        for (var i = 0; i < count; i += 1) {
+          particles.push({
+            x: Math.random() * w,
+            y: Math.random() * h,
+            r: Math.random() * 1.6 + 0.35,
+            vx: (Math.random() - 0.5) * 0.18,
+            vy: (Math.random() - 0.5) * 0.14,
+            base: Math.random() * 0.35 + 0.12,
+            phase: Math.random() * Math.PI * 2
+          });
+        }
+      }
 
-    <!-- Results Section -->
-    <section class="results-section">
-        <div class="container">
-            <h2 class="section-title">YTA CHADS Student Results</h2>
-            <p class="section-subtitle">Notice the stability. This is evergreen search traffic compounding over time.</p>
-            <div class="results-grid">
-                <div class="result-card">
-                    <img src="assets/resukts/1.png" alt="Student Result 1" class="result-image">
-                </div>
-                <div class="result-card">
-                    <img src="assets/resukts/2.png" alt="Student Result 2" class="result-image">
-                </div>
-                <div class="result-card">
-                    <img src="assets/resukts/3.png" alt="Student Result 3" class="result-image">
-                </div>
-                <div class="result-card">
-                    <img src="assets/resukts/4.png" alt="Student Result 4" class="result-image">
-                </div>
-                <div class="result-card">
-                    <img src="assets/resukts/5.jpeg" alt="Student Result 5" class="result-image">
-                </div>
-                <div class="result-card">
-                    <img src="assets/resukts/6.png" alt="Student Result 6" class="result-image">
-                </div>
-                <div class="result-card">
-                    <img src="assets/resukts/7.jpeg" alt="Student Result 7" class="result-image">
-                </div>
-                <div class="result-card">
-                    <img src="assets/resukts/8.png" alt="Student Result 8" class="result-image">
-                </div>
-                <div class="result-card">
-                    <img src="assets/resukts/9.png" alt="Student Result 9" class="result-image">
-                </div>
-                <div class="result-card">
-                    <img src="assets/resukts/10.png" alt="Student Result 10" class="result-image">
-                </div>
-                <div class="result-card">
-                    <img src="assets/resukts/11.png" alt="Student Result 11" class="result-image">
-                </div>
-                <div class="result-card">
-                    <img src="assets/resukts/12.png" alt="Student Result 12" class="result-image">
-                </div>
-                <div class="result-card">
-                    <img src="assets/resukts/13.png" alt="Student Result 13" class="result-image">
-                </div>
-                <div class="result-card">
-                    <img src="assets/resukts/14.png" alt="Student Result 14" class="result-image">
-                </div>
-                <div class="result-card">
-                    <img src="assets/resukts/15.png" alt="Student Result 15" class="result-image">
-                </div>
-                <div class="result-card">
-                    <img src="assets/resukts/16.png" alt="Student Result 16" class="result-image">
-                </div>
-                <div class="result-card">
-                    <img src="assets/resukts/17.png" alt="Student Result 17" class="result-image">
-                </div>
-                <div class="result-card">
-                    <img src="assets/resukts/18.jpeg" alt="Student Result 18" class="result-image">
-                </div>
-                <div class="result-card">
-                    <img src="assets/resukts/19.png" alt="Student Result 19" class="result-image">
-                </div>
-                <div class="result-card">
-                    <img src="assets/resukts/20.png" alt="Student Result 20" class="result-image">
-                </div>
-                <div class="result-card">
-                    <img src="assets/resukts/j2.jfif" alt="Student Result j2" class="result-image">
-                </div>
-                <div class="result-card">
-                    <img src="assets/resukts/j3.jfif" alt="Student Result j3" class="result-image">
-                </div>
-                <div class="result-card">
-                    <img src="assets/resukts/b1.jfif" alt="Student Result b1" class="result-image">
-                </div>
-                <div class="result-card">
-                    <img src="assets/resukts/b2.jfif" alt="Student Result b2" class="result-image">
-                </div>
-                <div class="result-card">
-                    <img src="assets/resukts/b3.jfif" alt="Student Result b3" class="result-image">
-                </div>
-                <div class="result-card">
-                    <img src="assets/resukts/b4.jfif" alt="Student Result b4" class="result-image">
-                </div>
-            </div>
-            <div style="text-align: center; margin-top: 40px; display: flex; gap: 20px; justify-content: center; flex-wrap: wrap; align-items: center;">
-                <a href="#pricing" class="btn-primary" style="padding: 16px 32px;">Get Instant Access</a>
-                <a href="https://calendly.com/sigmayt/ytachads" target="_blank" class="btn-secondary" style="padding: 16px 32px;">Book a Call</a>
-            </div>
-        </div>
-    </section>
+      function draw() {
+        var w = window.innerWidth;
+        var h = window.innerHeight;
+        ctx.clearRect(0, 0, w, h);
+        tick += reducedMotion ? 0 : 0.012;
 
-    <!-- Problem/Solution Section -->
-    <section class="problem-solution">
-        <div class="container">
-            <h2 class="section-title">Most people FAIL at YouTube because they chase VIRALITY</h2>
-            <p class="section-subtitle">Instead of chasing trends and trying to go viral, we tap into evergreen search traffic for consistent, predictable revenue.</p>
-            
-            <div class="warning-box">
-                <h3>Want overnight success? This is NOT for you.</h3>
-                <div class="warning-box-content">
-                    <div class="not-for-you">
-                        <h4>This is NOT for you:</h4>
-                        <ul>
-                            <li>❌ If you are chasing viral hits</li>
-                            <li>❌ If you want instant money</li>
-                            <li>❌ if you hate structured systems</li>
-                            <li>❌ if you quit when results aren't immediate</li>
-                        </ul>
-                    </div>
-                    <div class="is-for-you">
-                        <h4>Who this IS for:</h4>
-                        <ul>
-                            <li>✅ This is for long-term builders</li>
-                            <li>✅ If you want structured systems</li>
-                            <li>✅ if you prefer predictable growth</li>
-                            <li>✅ If you value consistent income</li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
+        for (var i = 0; i < particles.length; i += 1) {
+          var p = particles[i];
+          if (!reducedMotion) {
+            p.x += p.vx;
+            p.y += p.vy;
+            if (p.x < -4) p.x = w + 4;
+            if (p.x > w + 4) p.x = -4;
+            if (p.y < -4) p.y = h + 4;
+            if (p.y > h + 4) p.y = -4;
+          }
 
-            <div class="comparison">
-                <div class="comparison-item">
-                    <img src="assets/BROWSE.png" alt="Browse Traffic" class="comparison-image">
-                    <h3>Traditional YouTube Automation channels are extremely volatile and die quickly</h3>
-                </div>
-                <div class="comparison-item highlight">
-                    <img src="assets/SEARCH.png" alt="Search Traffic" class="comparison-image">
-                    <h3>Search channels stay consistent - even after not uploading for years!</h3>
-                </div>
-            </div>
+          var alpha = p.base + Math.sin(tick + p.phase) * 0.14;
+          alpha = Math.min(0.65, Math.max(0.08, alpha));
+          ctx.beginPath();
+          ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
+          ctx.fillStyle = "rgba(255, 255, 255, " + alpha + ")";
+          ctx.fill();
+        }
 
-            <div class="saturation-section">
-                <h3>Isn't YouTube Saturated?</h3>
-                <p class="answer">Only if you compete for virality.</p>
-                <h4>We build out channels on existing demand</h4>
-                <ul class="checkmarks">
-                    <li>Millions of searches happening daily</li>
-                    <li>Evergreen problems people actively look for</li>
-                    <li>Traffic that compounds instead of spikes</li>
-                    <li>Demand you tap into - not create</li>
-                </ul>
-            </div>
-        </div>
-    </section>
+        requestAnimationFrame(draw);
+      }
 
-    <!-- What's Included Section -->
-    <section class="whats-included">
-        <div class="container">
-            <h2 class="section-title">The Most Comprehensive & Effective YouTube Search Business Mentorship Ever Created</h2>
-            <p class="section-subtitle">You Get Everything You Need To Build & Monetise Your YouTube Search Business, Based On The Proven Strategies We've Used To Generate Consistent Revenue</p>
-            
-            <div class="whats-included-video">
-                <div style="padding:56.25% 0 0 0;position:relative;">
-                    <iframe src="https://fast.wistia.net/embed/iframe/arxzvumuq3?videoFoam=true" title="What's Inside YTA CHADS" allow="autoplay; fullscreen" allowtransparency="true" frameborder="0" scrolling="no" class="wistia_embed" name="wistia_embed" width="100%" height="100%" style="position:absolute;top:0;left:0;width:100%;height:100%;"></iframe>
-                </div>
-                <script src="https://fast.wistia.net/assets/external/E-v1.js" async></script>
-            </div>
-            
-            <div class="timeline-container">
-                <!-- Item 1 -->
-                <div class="timeline-item">
-                    <div class="timeline-visual">
-                        <div class="timeline-card">
-                            <div class="timeline-card-label">YTA CHADS</div>
-                            <div class="timeline-card-icon">📹</div>
-                            <div class="timeline-card-price">INCLUDED</div>
-                        </div>
-                    </div>
-                    <div class="timeline-number">1</div>
-                    <div class="timeline-content">
-                        <h3>29 Part Video Course</h3>
-                        <p>This is the exact blueprint we follow when we launch a new search channel, split up in 29 easy to follow video modules. Learn how to setup & brand your channel, Identify high paying niches & keywords, Create videos that actually rank, and build a team to efficiently scale & exit your channel.</p>
-                    </div>
-                </div>
-
-                <!-- Item 2 -->
-                <div class="timeline-item reverse">
-                    <div class="timeline-content">
-                        <h3>Private Network Group</h3>
-                        <p>Here you'll be able to connect with people building YouTube search channels. All the way from people doing $20k/m, down to people who have just hit their first $1k/m. Network, Learn & grow together.</p>
-                    </div>
-                    <div class="timeline-number">2</div>
-                    <div class="timeline-visual">
-                        <div class="timeline-card">
-                            <div class="timeline-card-label">Private Network</div>
-                            <div class="timeline-card-icon">👥</div>
-                            <div class="timeline-card-price">INCLUDED</div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Item 3 -->
-                <div class="timeline-item">
-                    <div class="timeline-visual">
-                        <div class="timeline-card">
-                            <div class="timeline-card-label">Weekly Calls</div>
-                            <div class="timeline-card-icon">📞</div>
-                            <div class="timeline-card-price">INCLUDED</div>
-                        </div>
-                    </div>
-                    <div class="timeline-number">3</div>
-                    <div class="timeline-content">
-                        <h3>Weekly Calls</h3>
-                        <p>Jump on a call with us once week to get direct feedback to your questions. Impliment what you learn into the channel was a fast feedback loop.</p>
-                    </div>
-                </div>
-
-                <!-- Item 4 -->
-                <div class="timeline-item reverse">
-                    <div class="timeline-content">
-                        <h3>YTA Production Tool</h3>
-                        <p>Scale your YouTube business with our exclusive production tool. Designed to help you generate a high quality search based video for just $1.</p>
-                    </div>
-                    <div class="timeline-number">4</div>
-                    <div class="timeline-visual">
-                        <div class="timeline-card">
-                            <div class="timeline-card-label">Production Tool</div>
-                            <div class="timeline-card-icon">🎬</div>
-                            <div class="timeline-card-price">INCLUDED</div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Item 5 -->
-                <div class="timeline-item">
-                    <div class="timeline-visual">
-                        <div class="timeline-card">
-                            <div class="timeline-card-label">Keyword Search</div>
-                            <div class="timeline-card-icon">🔍</div>
-                            <div class="timeline-card-price">INCLUDED</div>
-                        </div>
-                    </div>
-                    <div class="timeline-number">5</div>
-                    <div class="timeline-content">
-                        <h3>Keyword Search Tool</h3>
-                        <p>Stop wasting time on low-paying content. Our proprietary AI instantly identifies the highest-paying, lowest-competition keywords that will make you money from day one. AI powered keyword discovery for proven 15x ROI.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Modules Section -->
-    <section class="modules-section">
-        <div class="container">
-            <h2 class="section-title">Here's EVERYTHING You Get Inside YTA CHADS</h2>
-            <p class="section-subtitle">5 Modules, 29 Lessons, Hours of VALUE, 0 FLUFF.</p>
-            <div class="modules-list">
-                <div class="module-item">
-                    <div class="module-number">1</div>
-                    <div class="module-content">
-                        <h3>Module 1: Channel Setup & Branding</h3>
-                        <p>Learn how to properly set up and brand your YouTube channel for search success</p>
-                    </div>
-                </div>
-                <div class="module-item">
-                    <div class="module-number">2</div>
-                    <div class="module-content">
-                        <h3>Module 2: Niche & Keyword Research</h3>
-                        <p>Identify high-paying niches and keywords that will generate consistent revenue</p>
-                    </div>
-                </div>
-                <div class="module-item">
-                    <div class="module-number">3</div>
-                    <div class="module-content">
-                        <h3>Module 3: Video Creation & Optimization</h3>
-                        <p>Create videos that actually rank and generate views from search traffic</p>
-                    </div>
-                </div>
-                <div class="module-item">
-                    <div class="module-number">4</div>
-                    <div class="module-content">
-                        <h3>Module 4: Scaling & Team Building</h3>
-                        <p>Build a team to efficiently scale your channel and prepare for exit</p>
-                    </div>
-                </div>
-                <div class="module-item">
-                    <div class="module-number">5</div>
-                    <div class="module-content">
-                        <h3>Module 5: Monetization & Optimization</h3>
-                        <p>Maximize your revenue and optimize your channel for long-term profitability</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- More Testimonials -->
-    <section class="testimonials-section">
-        <div class="container">
-            <h2 class="section-title">Real People, Real Results</h2>
-            <p class="section-subtitle">Don't just take it from us, check out what our students have to say.</p>
-            <div class="testimonials-grid">
-                <div class="testimonial-card">
-                    <div class="testimonial-header">
-                        <img src="assets/jono-p-500.png" alt="Jono" class="testimonial-avatar">
-                        <div class="testimonial-info">
-                            <div class="stars">★★★★★</div>
-                            <p class="testimonial-author">Jono</p>
-                        </div>
-                    </div>
-                    <p class="testimonial-text">"Joining YTA Chads genuinely changed how I see YouTube, not as a side hustle, but as a real, scalable business. If you're willing to put the work in and play the long game, it's one of the best decisions you can make."</p>
-                </div>
-                <div class="testimonial-card">
-                    <div class="testimonial-header">
-                        <img src="assets/atte-p-500.png" alt="ATTE" class="testimonial-avatar">
-                        <div class="testimonial-info">
-                            <div class="stars">★★★★★</div>
-                            <p class="testimonial-author">ATTE</p>
-                        </div>
-                    </div>
-                    <p class="testimonial-text">"Over the past two years, I've spent well over $20,000 on different YouTube courses, services, AI tools, and freelancers. For me, the biggest difference between these other courses and YTA CHADS is simple: this process actually makes sense."</p>
-                </div>
-                <div class="testimonial-card">
-                    <div class="testimonial-header">
-                        <img src="assets/joel-p-500.png" alt="Joel" class="testimonial-avatar">
-                        <div class="testimonial-info">
-                            <div class="stars">★★★★★</div>
-                            <p class="testimonial-author">Joel</p>
-                        </div>
-                    </div>
-                    <p class="testimonial-text">"I've tried a lot of things in the online space over the years - ecom, freelancing, side hustles, all of it and nothing has clicked for me the way YouTube automation has. The difference was YTA Chads."</p>
-                </div>
-                <div class="testimonial-card">
-                    <div class="testimonial-header">
-                        <img src="assets/adriens.png" alt="Adriens" class="testimonial-avatar">
-                        <div class="testimonial-info">
-                            <div class="stars">★★★★★</div>
-                            <p class="testimonial-author">Adriens</p>
-                        </div>
-                    </div>
-                    <p class="testimonial-text">"Out of all the side hustles I've done, this is by far the easiest money I've made online. Already seeing steady incline with profits while I essentially just live my life - genuinely a cheat code to money and time freedom."</p>
-                </div>
-                <div class="testimonial-card">
-                    <div class="testimonial-header">
-                        <img src="assets/g-we.png" alt="G We" class="testimonial-avatar">
-                        <div class="testimonial-info">
-                            <div class="stars">★★★★★</div>
-                            <p class="testimonial-author">G We</p>
-                        </div>
-                    </div>
-                    <p class="testimonial-text">"Being part of the YTA Chads Private Community has been an incredibly positive and transformative experience. The resources, tools, and support provided have genuinely changed how I approach YouTube, leading to tangible growth and significant results. The results speak for themselves. Numerous members, including myself, have shared inspiring growth charts, moving from mere cents a day to substantial daily earnings in just a few months."</p>
-                </div>
-                <div class="testimonial-card">
-                    <div class="testimonial-header">
-                        <img src="assets/bautista-p-500.png" alt="Bautista" class="testimonial-avatar">
-                        <div class="testimonial-info">
-                            <div class="stars">★★★★★</div>
-                            <p class="testimonial-author">Bautista</p>
-                        </div>
-                    </div>
-                    <p class="testimonial-text">"I'm making $2k/m passively and I'm about to get another channel monetized which will start at atleast $1k a month. This wasn't luck. Im not an outlier. I'm following the process just like I'm taught"</p>
-                </div>
-                <div class="testimonial-card">
-                    <div class="testimonial-header">
-                        <img src="assets/adarsh-p-500.png" alt="Adarsh" class="testimonial-avatar">
-                        <div class="testimonial-info">
-                            <div class="stars">★★★★★</div>
-                            <p class="testimonial-author">Adarsh</p>
-                        </div>
-                    </div>
-                    <p class="testimonial-text">"YTAchads gave me a clear, repeatable path to income on YouTube, without having to rely on luck or the algorithm. I spent far more on other courses that promised results but left me chasing virality; this program's search-first method started bringing consistent earnings very quickly, and Alex and Harvey's support has been spot on. Honestly, best value I found."</p>
-                </div>
-                <div class="testimonial-card">
-                    <div class="testimonial-header">
-                        <img src="assets/Jon-p-500.png" alt="Jon" class="testimonial-avatar">
-                        <div class="testimonial-info">
-                            <div class="stars">★★★★★</div>
-                            <p class="testimonial-author">Jon</p>
-                        </div>
-                    </div>
-                    <p class="testimonial-text">"Right now I hardly put any work into the channel and it still brings in good money every month. I really like that it's a very data driven and systemized approach that anyone can do"</p>
-                </div>
-                <div class="testimonial-card">
-                    <div class="testimonial-header">
-                        <img src="assets/ck-jake-p-500.png" alt="CK JAKE" class="testimonial-avatar">
-                        <div class="testimonial-info">
-                            <div class="stars">★★★★★</div>
-                            <p class="testimonial-author">CK JAKE</p>
-                        </div>
-                    </div>
-                    <p class="testimonial-text">"Today I received my first payment in my bank account. This is the only method that worked for me. The method is long-term and works great - it's more of a slow and steady guaranteed growth."</p>
-                </div>
-                <div class="testimonial-card">
-                    <div class="testimonial-header">
-                        <img src="assets/hanees-p-500.png" alt="Hannes" class="testimonial-avatar">
-                        <div class="testimonial-info">
-                            <div class="stars">★★★★★</div>
-                            <p class="testimonial-author">Hannes</p>
-                        </div>
-                    </div>
-                    <p class="testimonial-text">"I already have a YouTube channel that is not fully search-based, but I applied some tips and tricks from Harvey, and it turned out they even worked in the niche I operate in."</p>
-                </div>
-            </div>
-            <div style="text-align: center; margin-top: 40px; display: flex; gap: 20px; justify-content: center; flex-wrap: wrap; align-items: center;">
-                <a href="#pricing" class="btn-primary" style="padding: 16px 32px;">Get Instant Access</a>
-                <a href="https://calendly.com/sigmayt/ytachads" target="_blank" class="btn-secondary" style="padding: 16px 32px;">Book a Call</a>
-            </div>
-        </div>
-    </section>
-
-    <!-- Testimonial Video Section -->
-    <section class="testimonial-video-section">
-        <div class="container">
-            <h2 class="section-title">Hear From Our Students</h2>
-            <p class="section-subtitle">Watch this testimonial from one of our successful students</p>
-            <div class="testimonial-video-container">
-                <div style="padding:56.25% 0 0 0;position:relative;">
-                    <iframe src="https://fast.wistia.net/embed/iframe/09lmxjzmu8?videoFoam=true" title="Student Testimonial Video" allow="autoplay; fullscreen" allowtransparency="true" frameborder="0" scrolling="no" class="wistia_embed" name="wistia_embed" width="100%" height="100%" style="position:absolute;top:0;left:0;width:100%;height:100%;"></iframe>
-                </div>
-                <script src="https://fast.wistia.net/assets/external/E-v1.js" async></script>
-            </div>
-        </div>
-    </section>
-
-    <!-- Book a Call Section -->
-    <section class="book-call-section">
-        <div class="container">
-            <h2 class="section-title">Want to Speak With Us First?</h2>
-            <p class="section-subtitle">Book a call to discuss your goals and see if YTA CHADS is the right fit for you</p>
-            <div class="book-call-buttons">
-                <a href="https://calendly.com/sigmayt/ytachads" target="_blank" class="btn-primary btn-large">Book a Call</a>
-                <a href="#pricing" class="btn-secondary btn-large">Skip to Pricing</a>
-            </div>
-        </div>
-    </section>
-
-    <!-- Pricing Section -->
-    <section id="pricing" class="pricing-section">
-        <div class="container">
-            <div class="pricing-intro">
-                <h2 class="pricing-intro-title">Build an income-producing asset, not another unstable hustle</h2>
-                <p class="pricing-intro-text">We build channels on proven search demand - not trends, luck, or algorithm gambling.</p>
-            </div>
-            
-            <div class="pricing-card">
-                <div class="pricing-header">
-                    <div class="price-tag">£1,500 / $2,000</div>
-                    <h3>Mentorship, Private Group, Weekly Calls & Software</h3>
-                </div>
-                <ul class="pricing-features">
-                    <li>✓ Lifetime access to the course including all new modules produced</li>
-                    <li>✓ Access to our private Telegram networking group</li>
-                    <li>✓ Weekly group mentorship calls for fast feedback</li>
-                    <li>✓ Access to our production tool to create videos for $1</li>
-                    <li>✓ Access to our keyword tool to find the highest paying video titles</li>
-                </ul>
-                <a href="https://whop.com/checkout/plan_D6vTzVMyxfVMW" target="_blank" class="btn-primary btn-large">Join Now</a>
-                <p class="pricing-or">OR</p>
-                <a href="https://whop.com/checkout/4cnoLEAik6O22lXa0x-B3qU-Ye7c-1eKB-esl4syvU3A2E/" target="_blank" class="btn-secondary btn-large">PAY IN 2 MONTHLY INSTALLMENTS OF £750/$1000</a>
-                <p class="pricing-or">OR</p>
-                <div style="text-align: center;">
-                    <a href="https://calendly.com/sigmayt/ytachads" target="_blank" class="btn-secondary btn-large">Book a Call First</a>
-                </div>
-                <div class="payment-logos">
-                    <img src="assets/resukts/Visa-logo-white.webp" alt="Visa" class="payment-logo">
-                    <img src="assets/resukts/6570d668df4688e1970d40c4_Apple_Pay_logo 1.png" alt="Apple Pay" class="payment-logo">
-                </div>
-            </div>
-            
-            <div class="pricing-testimonials">
-                <div class="pricing-testimonial-card">
-                    <div class="testimonial-header">
-                        <img src="assets/bautista-p-500.png" alt="Bautista" class="testimonial-avatar">
-                        <div class="testimonial-info">
-                            <div class="stars">★★★★★</div>
-                            <p class="testimonial-author">Bautista</p>
-                        </div>
-                    </div>
-                    <p class="testimonial-text">"I'm making $2k/m passively and I'm about to get another channel monetized which will start at atleast $1k a month. This wasn't luck. Im not an outlier. I'm following the process just like I'm taught"</p>
-                </div>
-                <div class="pricing-testimonial-card">
-                    <div class="testimonial-header">
-                        <img src="assets/adarsh-p-500.png" alt="Adarsh" class="testimonial-avatar">
-                        <div class="testimonial-info">
-                            <div class="stars">★★★★★</div>
-                            <p class="testimonial-author">Adarsh</p>
-                        </div>
-                    </div>
-                    <p class="testimonial-text">"YTAchads gave me a clear, repeatable path to income on YouTube, without having to rely on luck or the algorithm. I spent far more on other courses that promised results but left me chasing virality; this program's search-first method started bringing consistent earnings very quickly. Honestly, best value I found."</p>
-                </div>
-                <div class="pricing-testimonial-card">
-                    <div class="testimonial-header">
-                        <img src="assets/Jon-p-500.png" alt="Jon" class="testimonial-avatar">
-                        <div class="testimonial-info">
-                            <div class="stars">★★★★★</div>
-                            <p class="testimonial-author">Jon</p>
-                        </div>
-                    </div>
-                    <p class="testimonial-text">"Right now I hardly put any work into the channel and it still brings in good money every month. I really like that it's a very data driven and systemized approach that anyone can do"</p>
-                </div>
-                <div class="pricing-testimonial-card">
-                    <div class="testimonial-header">
-                        <img src="assets/joel-p-500.png" alt="Joel" class="testimonial-avatar">
-                        <div class="testimonial-info">
-                            <div class="stars">★★★★★</div>
-                            <p class="testimonial-author">Joel</p>
-                        </div>
-                    </div>
-                    <p class="testimonial-text">"I've tried a lot of things in the online space over the years - ecom, freelancing, side hustles, all of it and nothing has clicked for me the way YouTube automation has. The difference was YTA Chads."</p>
-                </div>
-                <div class="pricing-testimonial-card">
-                    <div class="testimonial-header">
-                        <img src="assets/atte-p-500.png" alt="ATTE" class="testimonial-avatar">
-                        <div class="testimonial-info">
-                            <div class="stars">★★★★★</div>
-                            <p class="testimonial-author">ATTE</p>
-                        </div>
-                    </div>
-                    <p class="testimonial-text">"Over the past two years, I've spent well over $20,000 on different YouTube courses, services, AI tools, and freelancers. For me, the biggest difference between these other courses and YTA CHADS is simple: this process actually makes sense."</p>
-                </div>
-                <div class="pricing-testimonial-card">
-                    <div class="testimonial-header">
-                        <img src="assets/adriens.png" alt="Adriens" class="testimonial-avatar">
-                        <div class="testimonial-info">
-                            <div class="stars">★★★★★</div>
-                            <p class="testimonial-author">Adriens</p>
-                        </div>
-                    </div>
-                    <p class="testimonial-text">"Out of all the side hustles I've done, this is by far the easiest money I've made online. Already seeing steady incline with profits while I essentially just live my life - genuinely a cheat code to money and time freedom."</p>
-                </div>
-                <div class="pricing-testimonial-card">
-                    <div class="testimonial-header">
-                        <img src="assets/ck-jake-p-500.png" alt="CK JAKE" class="testimonial-avatar">
-                        <div class="testimonial-info">
-                            <div class="stars">★★★★★</div>
-                            <p class="testimonial-author">CK JAKE</p>
-                        </div>
-                    </div>
-                    <p class="testimonial-text">"Today I received my first payment in my bank account. This is the only method that worked for me. The method is long-term and works great - it's more of a slow and steady guaranteed growth."</p>
-                </div>
-                <div class="pricing-testimonial-card">
-                    <div class="testimonial-header">
-                        <img src="assets/jono-p-500.png" alt="Jono" class="testimonial-avatar">
-                        <div class="testimonial-info">
-                            <div class="stars">★★★★★</div>
-                            <p class="testimonial-author">Jono</p>
-                        </div>
-                    </div>
-                    <p class="testimonial-text">"Joining YTA Chads genuinely changed how I see YouTube, not as a side hustle, but as a real, scalable business. If you're willing to put the work in and play the long game, it's one of the best decisions you can make."</p>
-                </div>
-                <div class="pricing-testimonial-card">
-                    <div class="testimonial-header">
-                        <img src="assets/lrs-p-500.png" alt="Lars Bloom" class="testimonial-avatar">
-                        <div class="testimonial-info">
-                            <div class="stars">★★★★★</div>
-                            <p class="testimonial-author">Lars Bloom</p>
-                        </div>
-                    </div>
-                    <p class="testimonial-text">"The course is honestly just nice. I'm genuinly greatful for it. What I needed was a structure, the tools and the guidence to show me everything, and the the program does that. My friends told me it wouldn't work and make money, but once I was inside it really opened my mind to what's possible with YouTube"</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- FAQ Section -->
-    <section class="faq-section">
-        <div class="container">
-            <h2 class="section-title">Frequently Asked Questions</h2>
-            <div class="faq-container">
-                <div class="faq-item">
-                    <button class="faq-question">
-                        <span>Who is this course for?</span>
-                        <span class="faq-icon">+</span>
-                    </button>
-                    <div class="faq-answer">
-                        <p>This course is for anyone looking to build a profitable YouTube business using search-based content. It's perfect for long-term builders who want structured systems and predictable growth.</p>
-                    </div>
-                </div>
-                <div class="faq-item">
-                    <button class="faq-question">
-                        <span>How long does it take to see results?</span>
-                        <span class="faq-icon">+</span>
-                    </button>
-                    <div class="faq-answer">
-                        <p>This is not about overnight success. Most students start seeing results within 90 days, with steady growth compounding over time. The system is designed for long-term, sustainable income.</p>
-                    </div>
-                </div>
-                <div class="faq-item">
-                    <button class="faq-question">
-                        <span>Do I need experience with YouTube?</span>
-                        <span class="faq-icon">+</span>
-                    </button>
-                    <div class="faq-answer">
-                        <p>No prior experience is required. The course is designed to take you from zero to a profitable YouTube search business, with step-by-step guidance throughout.</p>
-                    </div>
-                </div>
-                <div class="faq-item">
-                    <button class="faq-question">
-                        <span>What makes this different from other YouTube courses?</span>
-                        <span class="faq-icon">+</span>
-                    </button>
-                    <div class="faq-answer">
-                        <p>Unlike courses that focus on virality and trends, we teach a data-driven, search-based system that generates predictable, consistent revenue. This method compounds over time rather than relying on viral hits.</p>
-                    </div>
-                </div>
-                <div class="faq-item">
-                    <button class="faq-question">
-                        <span>Is there ongoing support?</span>
-                        <span class="faq-icon">+</span>
-                    </button>
-                    <div class="faq-answer">
-                        <p>Yes! You get access to our private Telegram networking group and weekly group mentorship calls where you can get direct feedback and support from the team and community.</p>
-                    </div>
-                </div>
-                <div class="faq-item">
-                    <button class="faq-question">
-                        <span>Can I pay in installments?</span>
-                        <span class="faq-icon">+</span>
-                    </button>
-                    <div class="faq-answer">
-                        <p>Yes, we offer a 2-month payment plan of £750/$1000 per month.</p>
-                    </div>
-                </div>
-            </div>
-            <p class="faq-contact">Got a question? <a href="https://t.me/ytavision" target="_blank">Send me a direct message here</a></p>
-        </div>
-    </section>
-
-    <!-- Footer -->
-    <footer class="footer">
-        <div class="container">
-            <div class="footer-content">
-                <div class="footer-brand">
-                    <div class="logo">YTA CHADS</div>
-                </div>
-                <div class="footer-links">
-                    <div class="footer-section">
-                        <h4>Support</h4>
-                        <ul>
-                            <li><a href="#">Privacy Policy</a></li>
-                            <li><a href="#">Terms & Conditions</a></li>
-                            <li><a href="#">Refund Policy</a></li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-            <div class="footer-bottom">
-                <p>&copy; 2025 YTA CHADS. All rights reserved.</p>
-            </div>
-        </div>
-    </footer>
-
-    <script src="script.js"></script>
-  <script async type="text/javascript" src="https://static.klaviyo.com/onsite/js/URMvbK/klaviyo.js?company_id=URMvbK"></script>
-  <script type="text/javascript">
-  !function(){if(!window.klaviyo){window._klOnsite=window._klOnsite||[];try{window.klaviyo=new Proxy({},{get:function(n,i){return"push"===i?function(){var n;(n=window._klOnsite).push.apply(n,arguments)}:function(){for(var n=arguments.length,o=new Array(n),w=0;w<n;w++)o[w]=arguments[w];var t="function"==typeof o[o.length-1]?o.pop():void 0,e=new Promise((function(n){window._klOnsite.push([i].concat(o,[function(i){t&&t(i),n(i)}]))}));return e}}})}catch(n){window.klaviyo=window.klaviyo||[],window.klaviyo.push=function(){var n;(n=window._klOnsite).push.apply(n,arguments)}}}}();
+      resize();
+      seed();
+      draw();
+      window.addEventListener("resize", function () {
+        resize();
+        seed();
+      });
+    })();
   </script>
 </body>
 </html>
-
