@@ -65,23 +65,26 @@
     return true;
   }
 
+  /* One standard event per funnel stage — each meaning exactly one thing:
+   *   Lead              email opt-in          (top of funnel)
+   *   SubmitApplication application submitted  (optional middle step)
+   *   Schedule          call booked            (bottom of funnel)
+   * Each deduped across tabs so one person counts once per stage. */
   function trackLead() {
     if (!claim('yta_lead_fired')) return;
     fbq('track', 'Lead');
   }
   window.ytaTrackLead = trackLead;
 
-  /* A confirmed booking fires BOTH:
-   *   Lead     - what the ad campaign currently optimises toward
-   *   Schedule - the booking itself, kept separate so that if Lead ever
-   *              moves to an earlier step (e.g. an application form), the
-   *              true booking count stays intact and comparable.
-   * Each is deduped independently, per session. */
+  function trackApplication() {
+    if (!claim('yta_application_fired')) return;
+    fbq('track', 'SubmitApplication');
+  }
+  window.ytaTrackApplication = trackApplication;
+
   function trackBooking() {
-    // On /free-training the application form already claimed the Lead, so
-    // this is a no-op there. On the older Calendly-link pages the booking
-    // IS the lead, so it still fires. Either way: at most one Lead.
-    trackLead();
+    // Booking is Schedule ONLY. Lead belongs to the opt-in step, so a
+    // booking never fires Lead — that keeps each event meaning one thing.
     if (!claim('yta_booking_fired')) return;
     fbq('track', 'Schedule');
   }
@@ -115,10 +118,10 @@
   }, true);
 
   /* --- Typeform application form ---------------------------------
-   * The form sits under the VSL and ends with the booking link, so a
-   * completed form is the lead. Typeform posts messages to the parent
-   * window; accept the known submit signals defensively since the exact
-   * payload key has varied across embed versions.
+   * A completed application is the SubmitApplication event (NOT Lead - the
+   * email opt-in owns Lead). Typeform posts messages to the parent window;
+   * accept the known submit signals defensively since the exact payload key
+   * has varied across embed versions.
    */
   window.addEventListener('message', function (e) {
     if (!e.origin || e.origin.indexOf('typeform.com') === -1) return;
@@ -132,7 +135,7 @@
     // matches form-submit and form-submitted
     if (/form-?submit|submit-?form|form_submit/i.test(type)) {
       once('FormSubmit');
-      trackLead();
+      trackApplication();
     }
   });
 
