@@ -21,6 +21,18 @@
 (function () {
   var PIXEL_ID = '2258815231190030';
 
+  /* Fire ONLY on the live domain. Preview deployments (*.vercel.app) and
+   * localhost load this exact same script with the same pixel id, so without
+   * this guard every QA/preview/test visit pollutes production Lead / Schedule
+   * / PageView data. Real users only ever hit ytachads.com, so this changes
+   * nothing for them and silences all internal/preview traffic. */
+  if (!/(^|\.)ytachads\.com$/i.test(window.location.hostname)) {
+    // stub so pages that call these never error on preview/localhost
+    window.fbq = window.fbq || function () {};
+    window.ytaTrackLead = window.ytaTrackApplication = window.ytaTrackBooking = function () {};
+    return;
+  }
+
   /* --- Meta Pixel base code --- */
   !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
   n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
