@@ -248,6 +248,14 @@
       "destination": "/yta-chads-masterclass-thank-you.html"
     },
     {
+      "source": "/congrats",
+      "destination": "/congrats.html"
+    },
+    {
+      "source": "/congrats.html",
+      "destination": "/congrats.html"
+    },
+    {
       "source": "/free-training",
       "destination": "/free-training.html"
     },

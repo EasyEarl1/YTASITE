@@ -51,16 +51,32 @@
   }
   window.ytaTrackLead = trackLead;
 
-  /* --- Lead: booking completed ----------------------------------- */
+  /* A confirmed booking fires BOTH:
+   *   Lead     - what the ad campaign currently optimises toward
+   *   Schedule - the booking itself, kept separate so that if Lead ever
+   *              moves to an earlier step (e.g. an application form), the
+   *              true booking count stays intact and comparable.
+   * Each is deduped independently, per session. */
+  function trackBooking() {
+    trackLead();
+    try {
+      if (sessionStorage.getItem('yta_booking_fired')) return;
+      sessionStorage.setItem('yta_booking_fired', '1');
+    } catch (err) { /* storage blocked - still fires once below */ }
+    fbq('track', 'Schedule');
+  }
+  window.ytaTrackBooking = trackBooking;
+
+  /* --- Booking completed ----------------------------------------- */
 
   /* 1. inside the Calendly popup/embed */
   window.addEventListener('message', function (e) {
     if (!e.origin || e.origin.indexOf('calendly.com') === -1) return;
-    if (e.data && e.data.event === 'calendly.event_scheduled') trackLead();
+    if (e.data && e.data.event === 'calendly.event_scheduled') trackBooking();
   });
 
-  /* 2. the booking confirmation page */
-  if (/yta-call-thank-you/i.test(window.location.pathname)) trackLead();
+  /* 2. a booking confirmation page (Calendly redirect target) */
+  if (/yta-call-thank-you|congrats/i.test(window.location.pathname)) trackBooking();
 
   /* --- InitiateCheckout: clicked through to Calendly --------------
    * Covers BOTH patterns used across the site:
