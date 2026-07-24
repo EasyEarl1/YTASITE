@@ -12,10 +12,6 @@
   <meta property="og:description" content="Free training + a call with our team if you want help launching your first faceless YouTube channel." />
   <meta property="og:type" content="website" />
 
-  <!-- Calendly -->
-  <link rel="stylesheet" href="https://assets.calendly.com/assets/external/widget.css" />
-  <script src="https://assets.calendly.com/assets/external/widget.js" async></script>
-
   <!-- Wistia VSL -->
   <script src="https://fast.wistia.com/player.js" async></script>
   <script src="https://fast.wistia.com/embed/97oie221dh.js" async type="module"></script>
@@ -92,6 +88,12 @@
       display: block; filter: blur(5px); padding-top: 56.25%;
     }
     .cta-block { margin: 26px auto 0; max-width: 440px; }
+
+    /* Application form (Typeform) */
+    .apply-cue { margin: 26px 0 0; font-weight: 800; font-size: 15px; color: var(--accent); }
+    .tf-wrap { margin: 14px auto 0; max-width: 660px; border-radius: var(--radius); overflow: hidden; border: 1px solid var(--line); box-shadow: 0 18px 50px rgba(11,11,18,.13); background: #fff; }
+    .tf-wrap div[data-tf-live] { min-height: 560px; }
+    @media (max-width: 640px) { .tf-wrap div[data-tf-live] { min-height: 520px; } }
 
     /* Section scaffolding */
     section { padding: 46px 0; }
@@ -232,12 +234,15 @@
         <wistia-player media-id="97oie221dh" aspect="1.7777"></wistia-player>
       </div>
 
-      <div class="cta-block">
-        <button class="btn block js-book">Book Your Free Strategy Call
-          <small>45-minute session · limited spots each month</small>
-        </button>
-        <p class="btn-note">No pitch fest. You'll leave with a real plan whether you enroll or not.</p>
+      <p class="apply-cue">Apply below <span aria-hidden="true">&darr;</span></p>
+
+      <!-- Application form. The booking link sits at the end of the form,
+           so every applicant is qualified and their details captured first. -->
+      <div id="apply" class="tf-wrap">
+        <div data-tf-live="01KY928879FG97211NFW38C4Q0"></div>
       </div>
+
+      <p class="btn-note">Takes about 2 minutes. No pitch fest &mdash; you'll leave the call with a real plan whether you enrol or not.</p>
     </div>
   </section>
 
@@ -281,7 +286,7 @@
         <figure><img src="revv/REV%204.png" alt="Estimated revenue screenshot" loading="lazy" decoding="async"></figure>
         <figure><img src="revv/rev%207.jpeg" alt="Payment proof screenshot" loading="lazy" decoding="async"></figure>
       </div>
-      <div class="cta-block"><button class="btn block js-book">Book Your Free Strategy Call</button></div>
+      <div class="cta-block"><a href="#apply" class="btn block js-apply">Apply For Coaching</a></div>
     </div>
   </section>
 
@@ -487,9 +492,9 @@
           <p>The call is about 45 minutes. Building a real channel takes consistent effort over weeks and months — results depend entirely on the work you put in.</p>
         </details>
       </div>
-      <div class="cta-block final"><button class="btn block js-book">Book Your Free Strategy Call
+      <div class="cta-block final"><a href="#apply" class="btn block js-apply">Apply For Coaching
         <small>Limited spots each month</small>
-      </button></div>
+      </a></div>
     </div>
   </section>
 
@@ -512,24 +517,10 @@
 
   <!-- ============ STICKY MOBILE CTA ============ -->
   <div class="sticky-cta">
-    <button class="btn block js-book">Book Your Free Strategy Call</button>
+    <a href="#apply" class="btn block js-apply">Apply For Coaching</a>
   </div>
 
-  <script>
-    (function () {
-      var CAL_URL = 'https://calendly.com/sigmayt/discovery-call-clone';
-      function openCal(e) {
-        if (e) e.preventDefault();
-        if (window.Calendly && Calendly.initPopupWidget) {
-          Calendly.initPopupWidget({ url: CAL_URL });
-        } else {
-          window.open(CAL_URL, '_blank');
-        }
-      }
-      document.querySelectorAll('.js-book').forEach(function (b) {
-        b.addEventListener('click', openCal);
-      });
-    })();
-  </script>
+  <!-- Typeform application embed -->
+  <script src="//embed.typeform.com/next/embed.js"></script>
 </body>
 </html>

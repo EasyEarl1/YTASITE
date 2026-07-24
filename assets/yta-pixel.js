@@ -90,7 +90,31 @@
       once('CTAClick');
       fbq('track', 'InitiateCheckout');
     }
+    // scroll-to-application CTAs on /free-training
+    if (el.closest('.js-apply')) once('ApplyClick');
   }, true);
+
+  /* --- Typeform application form ---------------------------------
+   * The form sits under the VSL and ends with the booking link, so a
+   * completed form is the lead. Typeform posts messages to the parent
+   * window; accept the known submit signals defensively since the exact
+   * payload key has varied across embed versions.
+   */
+  window.addEventListener('message', function (e) {
+    if (!e.origin || e.origin.indexOf('typeform.com') === -1) return;
+    var d = e.data;
+    if (!d) return;
+    var type = (typeof d === 'string') ? d : (d.type || d.event || '');
+    if (typeof type !== 'string') return;
+    // observed live: "form-ready", "form-started", "form-screen-changed"
+    if (/form-?ready/i.test(type))   once('FormView');
+    if (/form-?started/i.test(type)) once('FormStart');
+    // matches form-submit and form-submitted
+    if (/form-?submit|submit-?form|form_submit/i.test(type)) {
+      once('FormSubmit');
+      trackLead();
+    }
+  });
 
   /* --- VSL engagement (Wistia) -----------------------------------
    * The single most useful signal on a VSL page: did they press play,
