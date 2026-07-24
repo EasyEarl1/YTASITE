@@ -41,12 +41,32 @@
     fbq('trackCustom', name);
   }
 
-  // Lead: only once per session (survives the Calendly redirect)
-  function trackLead() {
+  /* Claim a conversion once per time window, ACROSS TABS.
+   * localStorage (not sessionStorage) because the journey spans tabs:
+   * the form is submitted on this page, then Calendly may open in a new
+   * tab and redirect to /congrats - a fresh sessionStorage would let the
+   * same person be counted twice.
+   * If storage is blocked entirely we fire rather than lose the conversion:
+   * under-counting is worse than a rare duplicate. */
+  var DEDUPE_MS = 6 * 60 * 60 * 1000; // 6 hours = one funnel journey
+  function claim(key) {
+    var now = Date.now();
     try {
-      if (sessionStorage.getItem('yta_lead_fired')) return;
-      sessionStorage.setItem('yta_lead_fired', '1');
-    } catch (err) { /* storage blocked - still fires once below */ }
+      var prev = parseInt(localStorage.getItem(key) || '0', 10);
+      if (prev && (now - prev) < DEDUPE_MS) return false;
+      localStorage.setItem(key, String(now));
+      return true;
+    } catch (err) { /* fall through to sessionStorage */ }
+    try {
+      if (sessionStorage.getItem(key)) return false;
+      sessionStorage.setItem(key, String(now));
+      return true;
+    } catch (err) { /* storage unavailable */ }
+    return true;
+  }
+
+  function trackLead() {
+    if (!claim('yta_lead_fired')) return;
     fbq('track', 'Lead');
   }
   window.ytaTrackLead = trackLead;
@@ -58,11 +78,11 @@
    *              true booking count stays intact and comparable.
    * Each is deduped independently, per session. */
   function trackBooking() {
+    // On /free-training the application form already claimed the Lead, so
+    // this is a no-op there. On the older Calendly-link pages the booking
+    // IS the lead, so it still fires. Either way: at most one Lead.
     trackLead();
-    try {
-      if (sessionStorage.getItem('yta_booking_fired')) return;
-      sessionStorage.setItem('yta_booking_fired', '1');
-    } catch (err) { /* storage blocked - still fires once below */ }
+    if (!claim('yta_booking_fired')) return;
     fbq('track', 'Schedule');
   }
   window.ytaTrackBooking = trackBooking;
