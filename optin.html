@@ -126,12 +126,14 @@
 
         <!-- RIGHT: screengrab / preview -->
         <div class="shot">
-          <!-- REPLACE with a real screenshot of the training/VSL:
-               <img src="assets/training-preview.png" alt="Free training preview"> -->
-          <div class="shot-ph">
+          <img src="assets/training-preview.png"
+               alt="YouTube channel analytics dashboard showing 5.9M views and $71,534 estimated revenue"
+               onerror="this.style.display='none';var ph=document.getElementById('shot-ph');if(ph)ph.style.display='grid';" />
+          <!-- fallback shown only if the image file is missing -->
+          <div class="shot-ph" id="shot-ph" style="display:none">
             <div>
               <span class="tag">Add preview image</span><br>
-              Drop a screenshot of the training here<br>(replace the <code>.shot-ph</code> div with an &lt;img&gt;)
+              Save the screenshot to <code>assets/training-preview.png</code>
             </div>
           </div>
         </div>
@@ -141,6 +143,9 @@
   </main>
 
   <footer>
+    <p style="max-width:680px;margin:0 auto 12px;line-height:1.6">
+      Results are not typical and are not a guarantee of future earnings. The figures shown reflect exceptional results and depend on effort, skill, and market conditions. This site is not affiliated with or endorsed by YouTube, Google, or Meta.
+    </p>
     <a href="/privacy">Privacy Policy</a> ·
     <a href="/terms">Terms</a> ·
     © 2026 YTA Chads
