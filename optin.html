@@ -172,6 +172,10 @@
 
     function goNext(email) {
       if (window.fbq) fbq('trackCustom', 'OptIn');
+      // In the opt-in-gated funnel the email capture IS the Lead. Fire the
+      // standard Lead too (deduped in the shared tracker), so the campaign
+      // keeps optimising and the booking later fires only Schedule.
+      if (window.ytaTrackLead) window.ytaTrackLead();
       var sep = NEXT_URL.indexOf('?') > -1 ? '&' : '?';
       window.location.href = NEXT_URL + sep + 'email=' + encodeURIComponent(email);
     }
