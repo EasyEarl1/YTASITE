@@ -168,6 +168,40 @@
       padding-top: 56.25%;
     }
 
+    .apply-cue {
+      margin-top: 1.5rem;
+      text-align: center;
+      font-weight: 800;
+      font-size: 0.95rem;
+      letter-spacing: 0.02em;
+      color: var(--blue);
+    }
+
+    /* Typeform renders its own light UI, so it sits in a bordered card
+       to read as intentional against the dark page. */
+    .tf-wrap {
+      margin: 0.8rem auto 0;
+      border-radius: 14px;
+      overflow: hidden;
+      border: 1px solid rgba(45, 140, 255, 0.45);
+      box-shadow: 0 16px 48px rgba(0, 0, 0, 0.55);
+      background: #fff;
+    }
+
+    .tf-wrap div[data-tf-live] { min-height: 560px; }
+
+    @media (max-width: 640px) {
+      .tf-wrap div[data-tf-live] { min-height: 520px; }
+    }
+
+    .apply-note {
+      margin-top: 0.85rem;
+      text-align: center;
+      font-size: 0.88rem;
+      font-weight: 600;
+      color: var(--muted);
+    }
+
     .cta-bar {
       margin-top: 1.35rem;
       display: flex;
@@ -491,31 +525,26 @@
         >
         <span class="brand-name">YTA CHADS</span>
       </a>
-      <a
-        class="btn-schedule"
-        href="https://calendly.com/sigmayt/discovery-call-clone"
-        target="_blank"
-        rel="noopener noreferrer"
-      >Schedule Call</a>
+      <a class="btn-schedule js-apply" href="#apply">Apply Now</a>
     </header>
 
     <main class="hero">
       <h1>Build a $5&ndash;$10k/m YouTube Search Business</h1>
-      <p class="hero-eyebrow">Watch the video, then book a call below if you want help building your first channel.</p>
+      <p class="hero-eyebrow">Watch the video, then apply below if you want help building your first channel.</p>
 
       <div class="video-wrap">
         <wistia-player media-id="97oie221dh" aspect="1.7777777777777777"></wistia-player>
       </div>
 
-      <div class="cta-bar">
-        <p class="cta-bar-text">Join over 100+ students</p>
-        <a
-          class="btn-schedule"
-          href="https://calendly.com/sigmayt/discovery-call-clone"
-          target="_blank"
-          rel="noopener noreferrer"
-        >Schedule Call</a>
+      <p class="apply-cue">Apply below <span aria-hidden="true">&darr;</span></p>
+
+      <!-- Application form. The booking link sits at the end of the form,
+           so every applicant is qualified and their details captured first. -->
+      <div id="apply" class="tf-wrap">
+        <div data-tf-live="01KY928879FG97211NFW38C4Q0"></div>
       </div>
+
+      <p class="apply-note">Join over 100+ students &middot; takes about 2 minutes</p>
     </main>
 
     <section class="proof" aria-label="Student results and testimonials">
@@ -703,12 +732,7 @@
 
       <div class="cta-bar">
         <p class="cta-bar-text">Ready to see if you&rsquo;re a fit?</p>
-        <a
-          class="btn-schedule"
-          href="https://calendly.com/sigmayt/discovery-call-clone"
-          target="_blank"
-          rel="noopener noreferrer"
-        >Schedule Call</a>
+        <a class="btn-schedule js-apply" href="#apply">Apply Now</a>
       </div>
     </section>
   </div>
@@ -789,5 +813,8 @@
       });
     })();
   </script>
+
+  <!-- Typeform application embed -->
+  <script src="//embed.typeform.com/next/embed.js"></script>
 </body>
 </html>
