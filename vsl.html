@@ -1,0 +1,546 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Build a Faceless YouTube Business | YTA Chads</title>
+  <meta name="description" content="Watch the free training, then book a call with our team if you'd like help launching your first faceless YouTube channel — no camera, no face, no editing experience needed." />
+  <meta name="robots" content="index,follow" />
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Build a Faceless YouTube Business | YTA Chads" />
+  <meta property="og:description" content="Free training + a call with our team if you want help launching your first faceless YouTube channel." />
+  <meta property="og:type" content="website" />
+
+  <!-- Calendly -->
+  <link rel="stylesheet" href="https://assets.calendly.com/assets/external/widget.css" />
+  <script src="https://assets.calendly.com/assets/external/widget.js" async></script>
+
+  <!-- Wistia VSL -->
+  <script src="https://fast.wistia.com/player.js" async></script>
+  <script src="https://fast.wistia.com/embed/97oie221dh.js" async type="module"></script>
+
+  <style>
+    :root {
+      --accent: #7c3aed;
+      --accent-dark: #6d28d9;
+      --ink: #0b0b12;
+      --muted: #5b6170;
+      --line: #eceef2;
+      --bg-soft: #f6f5fb;
+      --green: #16a34a;
+      --red: #dc2626;
+      --radius: 16px;
+      --maxw: 720px;
+    }
+    * { box-sizing: border-box; }
+    html { -webkit-text-size-adjust: 100%; scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      color: var(--ink);
+      background: #fff;
+      line-height: 1.55;
+      -webkit-font-smoothing: antialiased;
+    }
+    img { max-width: 100%; display: block; }
+    a { color: inherit; }
+
+    .wrap { max-width: var(--maxw); margin: 0 auto; padding: 0 20px; }
+    .wide { max-width: 960px; }
+
+    /* Header */
+    header.site {
+      border-bottom: 1px solid var(--line);
+      position: sticky; top: 0; z-index: 40;
+      background: rgba(255,255,255,.9);
+      backdrop-filter: saturate(180%) blur(8px);
+    }
+    .site .bar { display: flex; align-items: center; justify-content: space-between; height: 62px; }
+    .logo { display: flex; align-items: center; gap: 9px; font-weight: 800; letter-spacing: -.02em; font-size: 18px; }
+    .logo .mark {
+      width: 26px; height: 26px; border-radius: 7px; display: grid; place-items: center;
+      background: var(--accent); color: #fff;
+    }
+    .logo .mark svg { width: 13px; height: 13px; }
+    .rating { display: flex; align-items: center; gap: 7px; font-size: 13px; color: var(--muted); }
+    .stars { color: #f5a623; letter-spacing: 1px; }
+
+    /* Buttons */
+    .btn {
+      display: inline-flex; align-items: center; justify-content: center; gap: 8px;
+      background: var(--accent); color: #fff; text-decoration: none; font-weight: 700;
+      border: 0; cursor: pointer; border-radius: 12px; padding: 16px 26px; font-size: 17px;
+      line-height: 1.1; box-shadow: 0 8px 22px rgba(124,58,237,.28); transition: transform .12s ease, background .12s ease;
+      text-align: center;
+    }
+    .btn:hover { background: var(--accent-dark); transform: translateY(-1px); }
+    .btn.block { display: flex; width: 100%; }
+    .btn small { display: block; font-weight: 500; font-size: 12px; opacity: .85; margin-top: 3px; }
+    .btn-note { text-align: center; font-size: 13px; color: var(--muted); margin-top: 10px; }
+
+    /* Hero */
+    .hero { text-align: center; padding: 46px 0 8px; }
+    .eyebrow { color: var(--accent); font-weight: 800; text-transform: uppercase; letter-spacing: .16em; font-size: 12px; margin: 0 0 14px; }
+    h1 { font-size: clamp(30px, 6vw, 46px); line-height: 1.08; letter-spacing: -.025em; margin: 0 auto; max-width: 15ch; font-weight: 800; }
+    h1 .hl { color: var(--accent); }
+    .sub { color: var(--muted); font-size: clamp(16px, 2.6vw, 19px); max-width: 46ch; margin: 18px auto 0; }
+
+    .video-shell { margin: 30px auto 0; max-width: 680px; border-radius: var(--radius); overflow: hidden; box-shadow: 0 20px 60px rgba(11,11,18,.14); border: 1px solid var(--line); }
+    wistia-player[media-id='97oie221dh']:not(:defined) {
+      background: center / contain no-repeat url('https://fast.wistia.com/embed/medias/97oie221dh/swatch');
+      display: block; filter: blur(5px); padding-top: 56.25%;
+    }
+    .cta-block { margin: 26px auto 0; max-width: 440px; }
+
+    /* Section scaffolding */
+    section { padding: 46px 0; }
+    section.soft { background: var(--bg-soft); border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
+    .kicker { text-align: center; color: var(--accent); font-weight: 800; text-transform: uppercase; letter-spacing: .14em; font-size: 12px; margin: 0 0 10px; }
+    h2 { text-align: center; font-size: clamp(24px, 4.6vw, 34px); letter-spacing: -.02em; margin: 0 auto; max-width: 18ch; font-weight: 800; }
+    .lede { text-align: center; color: var(--muted); max-width: 52ch; margin: 12px auto 0; }
+
+    /* Requirements */
+    .req { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; max-width: 560px; margin: 30px auto 0; }
+    .req .item { background: #fff; border: 1px solid var(--line); border-radius: 12px; padding: 16px; display: flex; gap: 11px; align-items: center; font-weight: 600; font-size: 15px; }
+    .check { flex: 0 0 auto; width: 22px; height: 22px; border-radius: 50%; background: rgba(22,163,74,.12); color: var(--green); display: grid; place-items: center; }
+    .check svg { width: 12px; height: 12px; }
+
+    /* Stats pill */
+    .stats-pill { max-width: 640px; margin: 0 auto 8px; text-align: center; background: #fff; border: 1px solid var(--line); border-radius: 12px; padding: 14px 18px; font-size: 15px; color: var(--muted); font-weight: 600; }
+    .stats-pill strong { color: var(--ink); }
+
+    /* Proof masonry */
+    .masonry { column-count: 1; column-gap: 12px; margin-top: 24px; }
+    .masonry figure { margin: 0 0 12px; break-inside: avoid; border-radius: 12px; overflow: hidden; border: 1px solid var(--line); box-shadow: 0 6px 20px rgba(11,11,18,.08); line-height: 0; }
+    .masonry img { width: 100%; height: auto; display: block; }
+    @media (min-width: 560px) { .masonry { column-count: 2; } }
+    @media (min-width: 980px) { .masonry { column-count: 3; } }
+
+    /* Exits */
+    .exit-grid { display: grid; gap: 14px; max-width: 760px; margin: 26px auto 0; }
+    @media (min-width: 700px) { .exit-grid { grid-template-columns: 1fr 1fr; } }
+    .exit-card { background: #fff; border: 1px solid var(--line); border-radius: 14px; padding: 18px; border-top: 3px solid var(--green); }
+    .exit-tag { font-size: 12px; font-weight: 800; letter-spacing: .08em; text-transform: uppercase; color: var(--accent); }
+    .exit-amount { font-size: 30px; font-weight: 800; margin: 2px 0 12px; letter-spacing: -.02em; }
+    .exit-shot { border-radius: 10px; overflow: hidden; border: 1px solid var(--line); margin-bottom: 12px; line-height: 0; }
+    .exit-shot img { width: 100%; height: auto; display: block; }
+    .exit-pair { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; margin-bottom: 12px; }
+    .exit-detail { font-size: 14px; color: var(--muted); margin-bottom: 10px; }
+    .exit-math { display: flex; flex-wrap: wrap; gap: 4px 8px; align-items: center; font-size: 13px; font-weight: 600; color: #2b2f3a; }
+    .exit-math .result { color: var(--green); font-weight: 800; }
+
+    /* Testimonials */
+    .t-grid { display: grid; gap: 12px; margin-top: 26px; }
+    @media (min-width: 640px) { .t-grid { grid-template-columns: 1fr 1fr; } }
+    @media (min-width: 1040px) { .t-grid { grid-template-columns: repeat(3, 1fr); } }
+    .t-card { background: #fff; border: 1px solid var(--line); border-radius: 14px; padding: 18px; text-align: left; }
+    .t-head { display: flex; align-items: center; gap: 11px; margin-bottom: 10px; }
+    .t-avatar { width: 44px; height: 44px; border-radius: 50%; object-fit: cover; border: 2px solid var(--line); flex: 0 0 auto; }
+    .t-display-name { font-weight: 800; font-size: 15px; }
+    .t-role { font-size: 12px; color: var(--muted); font-weight: 600; }
+    .t-stars { color: #f5a623; font-size: 13px; letter-spacing: 1px; margin-bottom: 6px; }
+    .t-quote { font-size: 14.5px; color: #2b2f3a; font-style: italic; line-height: 1.55; margin-bottom: 12px; }
+    .t-bottom { display: flex; justify-content: space-between; align-items: flex-end; gap: 10px; padding-top: 10px; border-top: 1px solid var(--line); }
+    .t-name { font-size: 12px; font-weight: 700; color: #2b2f3a; }
+    .t-timeline { font-size: 11px; color: var(--muted); }
+    .t-result { font-size: 14px; font-weight: 800; color: var(--green); white-space: nowrap; }
+
+    /* For you / not for you */
+    .split { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; max-width: 760px; margin: 30px auto 0; }
+    .col { background: #fff; border: 1px solid var(--line); border-radius: 14px; padding: 22px; }
+    .col h3 { margin: 0 0 14px; font-size: 16px; }
+    .col.yes { border-top: 3px solid var(--green); }
+    .col.no { border-top: 3px solid var(--red); }
+    .col ul { list-style: none; margin: 0; padding: 0; display: grid; gap: 12px; }
+    .col li { display: flex; gap: 10px; font-size: 14.5px; color: #2b2f3a; }
+    .col.yes li::before { content: "✓"; color: var(--green); font-weight: 800; }
+    .col.no li::before { content: "✕"; color: var(--red); font-weight: 800; }
+
+    /* Founder */
+    .founder { max-width: 640px; margin: 30px auto 0; background: #fff; border: 1px solid var(--line); border-radius: 16px; padding: 26px; }
+    .founder .top { display: flex; gap: 18px; align-items: center; }
+    .founder .avatar { flex: 0 0 auto; width: 78px; height: 78px; border-radius: 50%; background: var(--bg-soft); border: 2px dashed #cfd2dd; display: grid; place-items: center; color: #9aa; font-size: 11px; text-align: center; }
+    .stats { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; margin-top: 22px; padding-top: 20px; border-top: 1px solid var(--line); }
+    .stats .n { font-size: 22px; font-weight: 800; color: var(--accent); }
+    .stats .l { font-size: 11px; text-transform: uppercase; letter-spacing: .08em; color: var(--muted); margin-top: 3px; }
+
+    /* FAQ */
+    .faq { max-width: 640px; margin: 30px auto 0; display: grid; gap: 10px; }
+    details { background: #fff; border: 1px solid var(--line); border-radius: 12px; padding: 4px 18px; }
+    details summary { cursor: pointer; list-style: none; font-weight: 700; padding: 14px 0; display: flex; justify-content: space-between; align-items: center; gap: 12px; }
+    details summary::-webkit-details-marker { display: none; }
+    details summary::after { content: "+"; color: var(--accent); font-size: 22px; font-weight: 400; line-height: 1; }
+    details[open] summary::after { content: "–"; }
+    details p { margin: 0 0 16px; color: var(--muted); font-size: 15px; }
+
+    /* Final CTA */
+    .final { text-align: center; }
+
+    /* Footer + compliance */
+    footer { background: #0b0b12; color: #aeb2c0; font-size: 13px; padding: 40px 0 48px; }
+    footer .links { display: flex; gap: 22px; justify-content: center; flex-wrap: wrap; margin-bottom: 18px; }
+    footer .links a { color: #d6d9e4; text-decoration: none; font-weight: 600; }
+    footer .links a:hover { color: #fff; }
+    footer .copy { text-align: center; color: #7f8496; margin-bottom: 22px; }
+    .disclaimer { max-width: 760px; margin: 0 auto; color: #7f8496; font-size: 12px; line-height: 1.7; }
+    .disclaimer p { margin: 0 0 12px; }
+    .disclaimer strong { color: #c3c7d4; }
+
+    /* Sticky mobile CTA */
+    .sticky-cta { position: fixed; left: 0; right: 0; bottom: 0; z-index: 50; padding: 10px 16px calc(10px + env(safe-area-inset-bottom)); background: rgba(255,255,255,.94); backdrop-filter: blur(8px); border-top: 1px solid var(--line); display: none; }
+    @media (max-width: 640px) {
+      .req, .grid-3, .grid-2, .split, .stats { grid-template-columns: 1fr; }
+      .stats { grid-template-columns: repeat(3, 1fr); }
+      .founder .top { flex-direction: column; text-align: center; }
+      .sticky-cta { display: block; }
+      body { padding-bottom: 84px; }
+    }
+  </style>
+  <!-- Vercel Web Analytics -->
+  <script defer src="/_vercel/insights/script.js"></script>
+
+  <!-- Meta Pixel -->
+  <script src="/assets/yta-pixel.js"></script>
+  <noscript><img height="1" width="1" style="display:none" alt=""
+    src="https://www.facebook.com/tr?id=2258815231190030&ev=PageView&noscript=1"></noscript>
+</head>
+<body>
+
+  <!-- ============ HEADER ============ -->
+  <header class="site">
+    <div class="wrap wide bar">
+      <div class="logo">
+        <img src="assets/yta-chads-logo.png" alt="" style="height:28px;width:auto;display:block;" />
+        YTA Chads
+      </div>
+      <div class="rating">
+        <span class="stars">★★★★★</span>
+        <span>Trusted by 100+ students</span>
+      </div>
+    </div>
+  </header>
+
+  <!-- ============ HERO ============ -->
+  <section class="hero">
+    <div class="wrap">
+      <p class="eyebrow">Faceless YouTube · Free Training</p>
+      <h1>Build a <span class="hl">Faceless YouTube</span> Business Without Ever Being On Camera</h1>
+      <p class="sub">Watch the short training below. Then, if you'd like our team to help you launch your first channel, book a free call — no camera, no face, and no editing experience needed.</p>
+
+      <div class="video-shell">
+        <wistia-player media-id="97oie221dh" aspect="1.7777"></wistia-player>
+      </div>
+
+      <div class="cta-block">
+        <button class="btn block js-book">Book Your Free Strategy Call
+          <small>45-minute session · limited spots each month</small>
+        </button>
+        <p class="btn-note">No pitch fest. You'll leave with a real plan whether you enroll or not.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ REQUIREMENTS ============ -->
+  <section class="soft">
+    <div class="wrap">
+      <p class="kicker">Anybody can do this</p>
+      <h2>Here's what you actually need</h2>
+      <p class="lede">That's it. Our process is built for beginners starting from zero.</p>
+      <div class="req">
+        <div class="item"><span class="check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M20 6L9 17l-5-5"/></svg></span> A computer</div>
+        <div class="item"><span class="check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M20 6L9 17l-5-5"/></svg></span> No camera needed</div>
+        <div class="item"><span class="check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M20 6L9 17l-5-5"/></svg></span> No editing experience</div>
+        <div class="item"><span class="check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M20 6L9 17l-5-5"/></svg></span> Willingness to follow a simple process</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ REAL RESULTS ============ -->
+  <section>
+    <div class="wrap wide">
+      <p class="kicker">Wall of proof</p>
+      <h2>Real results from students</h2>
+      <p class="lede">Screenshots from AdSense, YouTube Studio, and member channels. No stock photos. Results are not typical — see the disclaimer below.</p>
+      <p class="stats-pill"><strong>$300,000+</strong> generated by students &middot; <strong>2 channel exits</strong> ($20k + $53k) &middot; Students hitting <strong>$1k&ndash;$6k/month</strong></p>
+      <div class="masonry">
+        <figure><img src="rs1.png" alt="Student result screenshot" loading="lazy" decoding="async"></figure>
+        <figure><img src="rs3.png" alt="Student result screenshot" loading="lazy" decoding="async"></figure>
+        <figure><img src="rs4.png" alt="Student result screenshot" loading="lazy" decoding="async"></figure>
+        <figure><img src="rs5.png" alt="Student result screenshot" loading="lazy" decoding="async"></figure>
+        <figure><img src="rs6.png" alt="Student result screenshot" loading="lazy" decoding="async"></figure>
+        <figure><img src="rs7.png" alt="Student result screenshot" loading="lazy" decoding="async"></figure>
+        <figure><img src="rs8.png" alt="Student result screenshot" loading="lazy" decoding="async"></figure>
+        <figure><img src="rs9.png" alt="Student result screenshot" loading="lazy" decoding="async"></figure>
+        <figure><img src="rs11.png" alt="Student result screenshot" loading="lazy" decoding="async"></figure>
+        <figure><img src="rs12.png" alt="Student result screenshot" loading="lazy" decoding="async"></figure>
+        <figure><img src="revv/REV2.png" alt="YouTube revenue screenshot" loading="lazy" decoding="async"></figure>
+        <figure><img src="revv/REV%203.png" alt="YouTube analytics screenshot" loading="lazy" decoding="async"></figure>
+        <figure><img src="revv/rev%205.png" alt="YouTube earnings screenshot" loading="lazy" decoding="async"></figure>
+        <figure><img src="revv/rev%208.png" alt="Monthly revenue screenshot" loading="lazy" decoding="async"></figure>
+        <figure><img src="revv/REV%204.png" alt="Estimated revenue screenshot" loading="lazy" decoding="async"></figure>
+        <figure><img src="revv/rev%207.jpeg" alt="Payment proof screenshot" loading="lazy" decoding="async"></figure>
+      </div>
+      <div class="cta-block"><button class="btn block js-book">Book Your Free Strategy Call</button></div>
+    </div>
+  </section>
+
+  <!-- ============ REAL EXITS ============ -->
+  <section class="soft">
+    <div class="wrap">
+      <p class="kicker">Channel exits</p>
+      <h2>Real exits. Offers accepted and paid.</h2>
+      <p class="lede">The same search-based system students use to build monthly income and sell the channel later.</p>
+      <div class="exit-grid">
+        <article class="exit-card">
+          <div class="exit-tag">Exit 1</div>
+          <div class="exit-amount">$20,000</div>
+          <div class="exit-pair">
+            <div class="exit-shot"><img src="revv/exit%202.png" alt="$20,000 channel exit proof" loading="lazy" decoding="async"></div>
+            <div class="exit-shot"><img src="revv/exit%201.2.png" alt="$20,000 channel exit proof" loading="lazy" decoding="async"></div>
+          </div>
+          <p class="exit-detail">Built from scratch with the search model. Offer accepted, contract signed, channel transferred.</p>
+          <div class="exit-math"><span>$2,000 invested</span><span>&rarr;</span><span>~$1k/mo profit</span><span>&rarr;</span><span class="result">$20,000 exit</span></div>
+        </article>
+        <article class="exit-card">
+          <div class="exit-tag">Exit 2</div>
+          <div class="exit-amount">$53,000</div>
+          <div class="exit-shot"><img src="revv/exit1.png" alt="$53,000 channel exit proof" loading="lazy" decoding="async"></div>
+          <p class="exit-detail">No audience. No face. Same system taught inside the programme.</p>
+          <div class="exit-math"><span>$4,000 invested</span><span>&rarr;</span><span>~$2k/mo passive profit</span><span>&rarr;</span><span class="result">$53,000 exit</span></div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ QUALIFY ============ -->
+  <section>
+    <div class="wrap">
+      <h2>Be honest with yourself</h2>
+      <p class="lede">We only take a handful of new students each month. Better to opt out now than show up to the call expecting something we don't do.</p>
+      <div class="split">
+        <div class="col yes">
+          <h3>This is for you if…</h3>
+          <ul>
+            <li>You want income that compounds, not just more hours for more money</li>
+            <li>You'll follow a step-by-step process without going rogue halfway through</li>
+            <li>You have a few hours per week and are willing to invest in real coaching</li>
+            <li>You want privacy — you don't want to be on camera or build a personal brand</li>
+          </ul>
+        </div>
+        <div class="col no">
+          <h3>This is NOT for you if…</h3>
+          <ul>
+            <li>You want a get-rich-quick scheme or passive income in 30 days</li>
+            <li>You want to "do it your way" instead of following a proven system</li>
+            <li>You're not ready to invest and want a free DIY course</li>
+            <li>You need guaranteed income — results always depend on your execution</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ TESTIMONIALS ============ -->
+  <section class="soft">
+    <div class="wrap wide">
+      <p class="kicker">Student wins</p>
+      <h2>What members are saying</h2>
+      <p class="lede">No face. No fame. No audience required.</p>
+      <div class="t-grid">
+        <article class="t-card">
+          <div class="t-head">
+            <img src="assets/bautista-p-500.png" alt="" class="t-avatar" width="44" height="44" loading="lazy">
+            <div><div class="t-display-name">Bautista</div><div class="t-role">YTA Chads member</div></div>
+          </div>
+          <div class="t-stars" aria-hidden="true">★★★★★</div>
+          <p class="t-quote">&ldquo;I&rsquo;m making $2k/m passively and I&rsquo;m about to get another channel monetized which will start at at least $1k a month. I&rsquo;m following the process just like I&rsquo;m taught.&rdquo;</p>
+          <div class="t-bottom"><div><div class="t-name">Search-based channels</div><div class="t-timeline">Scaling portfolio</div></div><div class="t-result">$2k/month+</div></div>
+        </article>
+        <article class="t-card">
+          <div class="t-head">
+            <img src="assets/mtt-p-500.png" alt="" class="t-avatar" width="44" height="44" loading="lazy">
+            <div><div class="t-display-name">MotoTube</div><div class="t-role">YTA Chads member</div></div>
+          </div>
+          <div class="t-stars" aria-hidden="true">★★★★★</div>
+          <p class="t-quote">&ldquo;Boring videos that get 100 views and generate $600 are amazing. This method works.&rdquo;</p>
+          <div class="t-bottom"><div><div class="t-name">High-RPM niche</div><div class="t-timeline">Search traffic</div></div><div class="t-result">$600+ / video</div></div>
+        </article>
+        <article class="t-card">
+          <div class="t-head">
+            <img src="assets/ck-jake-p-500.png" alt="" class="t-avatar" width="44" height="44" loading="lazy">
+            <div><div class="t-display-name">CK Jake</div><div class="t-role">YTA Chads member</div></div>
+          </div>
+          <div class="t-stars" aria-hidden="true">★★★★★</div>
+          <p class="t-quote">&ldquo;Today I received my first payment in my bank account. Slow and steady growth. The only method that worked for me.&rdquo;</p>
+          <div class="t-bottom"><div><div class="t-name">First payout</div><div class="t-timeline">Asset live</div></div><div class="t-result">Payment received</div></div>
+        </article>
+        <article class="t-card">
+          <div class="t-head">
+            <img src="assets/adarsh-p-500.png" alt="" class="t-avatar" width="44" height="44" loading="lazy">
+            <div><div class="t-display-name">Adarsh</div><div class="t-role">YTA Chads member</div></div>
+          </div>
+          <div class="t-stars" aria-hidden="true">★★★★★</div>
+          <p class="t-quote">&ldquo;YTA Chads gave me a clear, repeatable path to income without relying on luck or the algorithm. Best value I found.&rdquo;</p>
+          <div class="t-bottom"><div><div class="t-name">After other courses</div><div class="t-timeline">Consistent earnings</div></div><div class="t-result">Income clarity</div></div>
+        </article>
+        <article class="t-card">
+          <div class="t-head">
+            <img src="assets/atte-p-500.png" alt="" class="t-avatar" width="44" height="44" loading="lazy">
+            <div><div class="t-display-name">Atte</div><div class="t-role">YTA Chads member</div></div>
+          </div>
+          <div class="t-stars" aria-hidden="true">★★★★★</div>
+          <p class="t-quote">&ldquo;I&rsquo;ve spent over $20,000 on YouTube courses and freelancers. This is the first system that produced consistent results instead of guesswork.&rdquo;</p>
+          <div class="t-bottom"><div><div class="t-name">$20k+ spent elsewhere</div><div class="t-timeline">Finally works</div></div><div class="t-result">Consistent results</div></div>
+        </article>
+        <article class="t-card">
+          <div class="t-head">
+            <img src="assets/jono-p-500.png" alt="" class="t-avatar" width="44" height="44" loading="lazy">
+            <div><div class="t-display-name">Jono</div><div class="t-role">YTA Chads member</div></div>
+          </div>
+          <div class="t-stars" aria-hidden="true">★★★★★</div>
+          <p class="t-quote">&ldquo;Joining YTA Chads changed how I see YouTube. Not a side hustle, but a real, scalable business if you put the work in.&rdquo;</p>
+          <div class="t-bottom"><div><div class="t-name">Mindset shift</div><div class="t-timeline">Long-term build</div></div><div class="t-result">Scalable model</div></div>
+        </article>
+        <article class="t-card">
+          <div class="t-head">
+            <img src="assets/g-we.png" alt="" class="t-avatar" width="44" height="44" loading="lazy">
+            <div><div class="t-display-name">G We</div><div class="t-role">YTA Chads member</div></div>
+          </div>
+          <div class="t-stars" aria-hidden="true">★★★★★</div>
+          <p class="t-quote">&ldquo;Members moving from cents a day to $100+ days in a few months. Channels hitting first &pound;10 days and 1,000-view days. The snowball effect is real.&rdquo;</p>
+          <div class="t-bottom"><div><div class="t-name">Community growth</div><div class="t-timeline">Compounding</div></div><div class="t-result">$100+ days</div></div>
+        </article>
+        <article class="t-card">
+          <div class="t-head">
+            <img src="assets/hanees-p-500.png" alt="" class="t-avatar" width="44" height="44" loading="lazy">
+            <div><div class="t-display-name">Hannes</div><div class="t-role">YTA Chads member</div></div>
+          </div>
+          <div class="t-stars" aria-hidden="true">★★★★★</div>
+          <p class="t-quote">&ldquo;I applied Harvey&rsquo;s tips on a channel that wasn&rsquo;t even fully search-based, and they still worked in my niche.&rdquo;</p>
+          <div class="t-bottom"><div><div class="t-name">Existing channel</div><div class="t-timeline">Tips applied</div></div><div class="t-result">Still worked</div></div>
+        </article>
+        <article class="t-card">
+          <div class="t-head">
+            <img src="assets/joel-p-500.png" alt="" class="t-avatar" width="44" height="44" loading="lazy">
+            <div><div class="t-display-name">Joel</div><div class="t-role">YTA Chads member</div></div>
+          </div>
+          <div class="t-stars" aria-hidden="true">★★★★★</div>
+          <p class="t-quote">&ldquo;I tried ecom, freelancing, side hustles. Nothing clicked like YouTube automation. The difference was YTA Chads.&rdquo;</p>
+          <div class="t-bottom"><div><div class="t-name">After other models</div><div class="t-timeline">Finally clicked</div></div><div class="t-result">Automation</div></div>
+        </article>
+        <article class="t-card">
+          <div class="t-head">
+            <img src="assets/Jon-p-500.png" alt="" class="t-avatar" width="44" height="44" loading="lazy">
+            <div><div class="t-display-name">Jon</div><div class="t-role">YTA Chads member</div></div>
+          </div>
+          <div class="t-stars" aria-hidden="true">★★★★★</div>
+          <p class="t-quote">&ldquo;I hardly put work into the channel and it still brings good money every month. Data-driven and systemized. Anyone can do it.&rdquo;</p>
+          <div class="t-bottom"><div><div class="t-name">Low maintenance</div><div class="t-timeline">Monthly income</div></div><div class="t-result">Passive income</div></div>
+        </article>
+        <article class="t-card">
+          <div class="t-head">
+            <img src="assets/lrs-p-500.png" alt="" class="t-avatar" width="44" height="44" loading="lazy">
+            <div><div class="t-display-name">Lars Bloom</div><div class="t-role">YTA Chads member</div></div>
+          </div>
+          <div class="t-stars" aria-hidden="true">★★★★★</div>
+          <p class="t-quote">&ldquo;I needed structure, tools, and guidance. Friends said it wouldn&rsquo;t work. Inside the program it opened my mind to what&rsquo;s possible.&rdquo;</p>
+          <div class="t-bottom"><div><div class="t-name">Structure + tools</div><div class="t-timeline">Mindset shift</div></div><div class="t-result">Clear path</div></div>
+        </article>
+        <article class="t-card">
+          <div class="t-head">
+            <img src="assets/konrad-p-500.png" alt="" class="t-avatar" width="44" height="44" loading="lazy">
+            <div><div class="t-display-name">Konrad</div><div class="t-role">YTA Chads member</div></div>
+          </div>
+          <div class="t-stars" aria-hidden="true">★★★★★</div>
+          <p class="t-quote">&ldquo;Build recurring revenue and passive income slowly but surely. The community and tools are great. I share advice with members every week.&rdquo;</p>
+          <div class="t-bottom"><div><div class="t-name">Recurring revenue</div><div class="t-timeline">Active community</div></div><div class="t-result">Passive income</div></div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ FAQ ============ -->
+  <section>
+    <div class="wrap">
+      <h2>Here's what happens on the call</h2>
+      <p class="lede">It's not a pitch. You'll leave with a real plan whether you enroll or not.</p>
+      <div class="faq">
+        <details open>
+          <summary>Who will I actually be talking to?</summary>
+          <p>A real coach from our team — not a commission-only setter reading a script. Someone who's worked directly with students building faceless channels.</p>
+        </details>
+        <details>
+          <summary>What will we actually cover?</summary>
+          <p>We'll look at where you're starting from, pick a niche direction that fits you, and map out the exact next steps to launch your first faceless channel.</p>
+        </details>
+        <details>
+          <summary>Is this a sales pitch?</summary>
+          <p>No. If we think we can help and it's a fit, we'll tell you how coaching works. If it's not a fit, we'll tell you that too — and you'll still leave with a plan.</p>
+        </details>
+        <details>
+          <summary>Do I need to show my face on camera?</summary>
+          <p>Never. The entire model is built around faceless content — no camera, no personal brand required.</p>
+        </details>
+        <details>
+          <summary>How long does it take?</summary>
+          <p>The call is about 45 minutes. Building a real channel takes consistent effort over weeks and months — results depend entirely on the work you put in.</p>
+        </details>
+      </div>
+      <div class="cta-block final"><button class="btn block js-book">Book Your Free Strategy Call
+        <small>Limited spots each month</small>
+      </button></div>
+    </div>
+  </section>
+
+  <!-- ============ FOOTER + COMPLIANCE ============ -->
+  <footer>
+    <div class="wrap wide">
+      <div class="links">
+        <a href="/privacy">Privacy Policy</a>
+        <a href="/terms">Terms of Service</a>
+        <a href="/earnings">Earnings Disclaimer</a>
+      </div>
+      <div class="copy">© 2026 YTA Chads. All rights reserved.</div>
+      <div class="disclaimer">
+        <p><strong>Results are not typical.</strong> The income examples, case studies, and testimonials shown on this page represent exceptional outcomes and are not a guarantee that you will achieve similar results. Your results depend on many factors including your effort, skill, experience, consistency, and market conditions. YTA Chads makes no guarantee of any income or specific result from our information, coaching, or services. Nothing on this website is a promise or guarantee of future earnings.</p>
+        <p>This site is not a part of the Facebook, Instagram, or Meta websites or Meta Platforms, Inc. Additionally, this site is NOT endorsed by Facebook, Instagram, or Meta in any way. FACEBOOK, INSTAGRAM, and META are trademarks of Meta Platforms, Inc.</p>
+        <p>This site is not a part of the YouTube or Google websites or Google Inc. Additionally, this site is NOT endorsed by YouTube or Google in any way. YOUTUBE and GOOGLE are trademarks of Google Inc.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ============ STICKY MOBILE CTA ============ -->
+  <div class="sticky-cta">
+    <button class="btn block js-book">Book Your Free Strategy Call</button>
+  </div>
+
+  <script>
+    (function () {
+      var CAL_URL = 'https://calendly.com/sigmayt/discovery-call-clone';
+
+      // Carry the email from the opt-in step so Calendly is pre-filled and
+      // we never ask for it twice.
+      var email = '';
+      try {
+        var e = new URLSearchParams(window.location.search).get('email');
+        if (e && /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(e.trim())) email = e.trim();
+      } catch (err) { /* no param */ }
+
+      function openCal(e) {
+        if (e) e.preventDefault();
+        if (window.Calendly && Calendly.initPopupWidget) {
+          var opts = { url: CAL_URL };
+          if (email) opts.prefill = { email: email };
+          Calendly.initPopupWidget(opts);
+        } else {
+          window.open(email ? CAL_URL + '?email=' + encodeURIComponent(email) : CAL_URL, '_blank');
+        }
+      }
+      document.querySelectorAll('.js-book').forEach(function (b) {
+        b.addEventListener('click', openCal);
+      });
+    })();
+  </script>
+</body>
+</html>

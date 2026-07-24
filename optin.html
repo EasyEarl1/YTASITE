@@ -30,26 +30,36 @@
       display:flex;flex-direction:column;
     }
     img{max-width:100%;display:block}
-    .wrap{max-width:560px;margin:0 auto;padding:0 20px;width:100%}
+    .wrap{max-width:1040px;margin:0 auto;padding:0 22px;width:100%}
 
     header.site{border-bottom:1px solid var(--line)}
     .bar{display:flex;align-items:center;justify-content:center;height:60px;gap:9px;
       font-weight:800;font-size:18px;letter-spacing:-.02em}
 
-    main{flex:1;display:flex;align-items:center;padding:44px 0}
-    .card{text-align:center}
+    main{flex:1;display:flex;align-items:center;padding:40px 0}
+
+    .grid{display:grid;grid-template-columns:1.05fr .95fr;gap:44px;align-items:center}
+    @media (max-width:860px){ .grid{grid-template-columns:1fr;gap:28px} }
 
     .eyebrow{color:var(--accent);font-weight:800;text-transform:uppercase;
-      letter-spacing:.16em;font-size:12px;margin:0 0 16px}
-    h1{font-size:clamp(28px,6vw,42px);line-height:1.08;letter-spacing:-.025em;
-      margin:0 auto;max-width:16ch;font-weight:800}
+      letter-spacing:.16em;font-size:12px;margin:0 0 14px}
+    h1{font-size:clamp(28px,4.6vw,42px);line-height:1.08;letter-spacing:-.025em;
+      margin:0;max-width:16ch;font-weight:800}
     h1 .hl{color:var(--accent)}
-    .sub{color:var(--muted);font-size:clamp(16px,2.6vw,18px);max-width:44ch;margin:18px auto 0}
+    .sub{color:var(--muted);font-size:clamp(16px,2.4vw,18px);max-width:46ch;margin:16px 0 0}
+
+    /* Bullet points */
+    ul.points{list-style:none;margin:22px 0 0;padding:0;display:grid;gap:12px}
+    ul.points li{display:flex;gap:11px;align-items:flex-start;font-size:15.5px;font-weight:500}
+    .tick{flex:0 0 auto;width:22px;height:22px;border-radius:50%;
+      background:rgba(124,58,237,.12);color:var(--accent);display:grid;place-items:center;margin-top:1px}
+    .tick svg{width:12px;height:12px}
+    ul.points b{font-weight:800}
 
     /* Opt-in form */
-    form{margin:30px auto 0;max-width:420px}
+    form{margin:26px 0 0;max-width:440px}
     .field{width:100%;font-size:16px;padding:16px 18px;border:1.5px solid var(--line);
-      border-radius:12px;outline:none;transition:border-color .12s ease;text-align:center}
+      border-radius:12px;outline:none;transition:border-color .12s ease}
     .field:focus{border-color:var(--accent)}
     .field.invalid{border-color:var(--red)}
     .btn{margin-top:12px;width:100%;background:var(--accent);color:#fff;font-weight:800;
@@ -58,11 +68,18 @@
     .btn:hover{background:var(--accent-dark);transform:translateY(-1px)}
     .btn[disabled]{opacity:.65;cursor:default;transform:none}
     .err{color:var(--red);font-size:14px;font-weight:600;margin:10px 0 0;min-height:1.2em}
-    .trust{color:var(--muted);font-size:13px;margin:16px auto 0;max-width:40ch}
+    .trust{color:var(--muted);font-size:13px;margin:12px 0 0}
 
-    .points{display:flex;flex-wrap:wrap;justify-content:center;gap:8px 18px;margin:26px auto 0;max-width:460px}
-    .points span{display:inline-flex;align-items:center;gap:6px;font-size:13.5px;font-weight:600;color:#2b2f3a}
-    .points svg{width:15px;height:15px;color:var(--green);flex:0 0 auto}
+    /* Screengrab / preview image */
+    .shot{border-radius:var(--radius);overflow:hidden;border:1px solid var(--line);
+      box-shadow:0 24px 60px rgba(11,11,18,.16)}
+    .shot img{width:100%;height:auto;display:block}
+    /* placeholder shown until a real screenshot is dropped in */
+    .shot-ph{aspect-ratio:16/10;display:grid;place-items:center;text-align:center;padding:24px;
+      background:repeating-linear-gradient(45deg,#fafafd,#fafafd 14px,#f2f2f8 14px,#f2f2f8 28px);
+      color:#8a8fa0;font-size:14px;font-weight:600}
+    .shot-ph .tag{display:inline-block;background:#fff;border:1px solid #d9dbe6;border-radius:999px;
+      padding:3px 12px;font-size:11px;letter-spacing:.06em;text-transform:uppercase;color:var(--accent);margin-bottom:10px}
 
     footer{border-top:1px solid var(--line);text-align:center;padding:20px;color:var(--muted);font-size:12px}
     footer a{color:#8b90a0;text-decoration:none;margin:0 8px}
@@ -78,24 +95,47 @@
   </header>
 
   <main>
-    <div class="wrap card">
-      <p class="eyebrow">Free Training</p>
-      <h1>Where should we send your <span class="hl">free training?</span></h1>
-      <p class="sub">Enter your best email and we'll unlock the training on building a faceless YouTube business — no camera, no face, no editing experience needed.</p>
+    <div class="wrap">
+      <div class="grid">
 
-      <form id="optin" novalidate>
-        <input id="email" class="field" type="email" name="email" inputmode="email"
-               autocomplete="email" placeholder="Enter your best email" required />
-        <button id="submit" class="btn" type="submit">Unlock The Free Training →</button>
-        <p class="err" id="err" role="alert"></p>
-      </form>
+        <!-- LEFT: copy + form -->
+        <div>
+          <p class="eyebrow">Free Training</p>
+          <h1>How to build a <span class="hl">faceless YouTube business</span> without ever being on camera</h1>
+          <p class="sub">Enter your email and we'll unlock the free training — the exact search-based system our students use.</p>
 
-      <p class="trust">We respect your privacy. Unsubscribe anytime. No spam.</p>
+          <ul class="points">
+            <li><span class="tick"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M20 6L9 17l-5-5"/></svg></span>
+              <span>The <b>search-based system</b> students use to reach $1k–$6k/month</span></li>
+            <li><span class="tick"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M20 6L9 17l-5-5"/></svg></span>
+              <span>How to pick a <b>high-RPM niche</b> that pays $15+ per 1,000 views</span></li>
+            <li><span class="tick"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M20 6L9 17l-5-5"/></svg></span>
+              <span><b>No camera, no face, no editing experience</b> — beginner friendly</span></li>
+            <li><span class="tick"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M20 6L9 17l-5-5"/></svg></span>
+              <span>How members have <b>exited channels for $20k–$53k</b></span></li>
+          </ul>
 
-      <div class="points">
-        <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M20 6L9 17l-5-5"/></svg> No camera needed</span>
-        <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M20 6L9 17l-5-5"/></svg> No editing experience</span>
-        <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M20 6L9 17l-5-5"/></svg> Beginner friendly</span>
+          <form id="optin" novalidate>
+            <input id="email" class="field" type="email" name="email" inputmode="email"
+                   autocomplete="email" placeholder="Enter your best email" required />
+            <button id="submit" class="btn" type="submit">Unlock The Free Training →</button>
+            <p class="err" id="err" role="alert"></p>
+          </form>
+          <p class="trust">We respect your privacy. Unsubscribe anytime. No spam.</p>
+        </div>
+
+        <!-- RIGHT: screengrab / preview -->
+        <div class="shot">
+          <!-- REPLACE with a real screenshot of the training/VSL:
+               <img src="assets/training-preview.png" alt="Free training preview"> -->
+          <div class="shot-ph">
+            <div>
+              <span class="tag">Add preview image</span><br>
+              Drop a screenshot of the training here<br>(replace the <code>.shot-ph</code> div with an &lt;img&gt;)
+            </div>
+          </div>
+        </div>
+
       </div>
     </div>
   </main>
@@ -109,31 +149,23 @@
   <script>
   (function () {
     /* ================= CONFIG =================
-     * Your Klaviyo LIST ID (the short public list id, e.g. "Tdf5rz").
-     * Find it in Klaviyo → Audience → Lists → your list → Settings → "List ID".
-     * Until this is set, the form still works for testing the flow but does
-     * NOT save the email to Klaviyo. */
+     * Your Klaviyo LIST ID (short public id, e.g. "Tdf5rz").
+     * Klaviyo → Audience → Lists → your list → Settings → "List ID".
+     * Until set, the form still works for testing but does NOT save to Klaviyo. */
     var KLAVIYO_LIST_ID = 'REPLACE_LIST_ID';
 
     /* Where to send them after opting in (the VSL). Email is appended so the
-     * downstream form/booking can be pre-filled and so we never ask twice. */
-    var NEXT_URL = '/free-training';
+     * booking step can be pre-filled and we never ask twice. */
+    var NEXT_URL = '/vsl';
     /* ========================================= */
 
     var form   = document.getElementById('optin');
     var input  = document.getElementById('email');
     var button = document.getElementById('submit');
     var errEl  = document.getElementById('err');
-
     var EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
-    function showError(msg) {
-      errEl.textContent = msg;
-      input.classList.add('invalid');
-    }
-
     function goNext(email) {
-      // fire the opt-in conversion (distinct from the later application Lead)
       if (window.fbq) fbq('trackCustom', 'OptIn');
       var sep = NEXT_URL.indexOf('?') > -1 ? '&' : '?';
       window.location.href = NEXT_URL + sep + 'email=' + encodeURIComponent(email);
@@ -141,7 +173,6 @@
 
     function subscribe(email) {
       if (!KLAVIYO_LIST_ID || KLAVIYO_LIST_ID === 'REPLACE_LIST_ID') {
-        // not configured yet - let the flow proceed so it can still be tested
         console.warn('[optin] KLAVIYO_LIST_ID not set - skipping Klaviyo, redirecting anyway');
         return Promise.resolve({ ok: true, skipped: true });
       }
@@ -161,27 +192,14 @@
       e.preventDefault();
       errEl.textContent = '';
       input.classList.remove('invalid');
-
       var email = (input.value || '').trim();
-      if (!EMAIL_RE.test(email)) { showError('Please enter a valid email address.'); return; }
+      if (!EMAIL_RE.test(email)) { errEl.textContent = 'Please enter a valid email address.'; input.classList.add('invalid'); return; }
 
       button.disabled = true;
       button.textContent = 'Unlocking…';
-
       subscribe(email)
-        .then(function (res) {
-          if (res.ok) { goNext(email); }
-          else {
-            // Klaviyo rejected it (rare) - don't trap the visitor, still proceed
-            console.warn('[optin] Klaviyo did not confirm success', res.data);
-            goNext(email);
-          }
-        })
-        .catch(function (err) {
-          // network error: proceed rather than lose the lead, but surface it
-          console.error('[optin] subscribe failed', err);
-          goNext(email);
-        });
+        .then(function () { goNext(email); })
+        .catch(function (err) { console.error('[optin] subscribe failed', err); goNext(email); });
     });
   })();
   </script>

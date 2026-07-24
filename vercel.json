@@ -256,6 +256,14 @@
       "destination": "/optin.html"
     },
     {
+      "source": "/vsl",
+      "destination": "/vsl.html"
+    },
+    {
+      "source": "/vsl.html",
+      "destination": "/vsl.html"
+    },
+    {
       "source": "/congrats",
       "destination": "/congrats.html"
     },
