@@ -5,7 +5,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Your strategy call is booked | YTA Chads</title>
   <meta name="description" content="Your strategy call is confirmed. Watch this before we speak." />
-  <!-- post-conversion page: keep it out of search results -->
   <meta name="robots" content="noindex,nofollow" />
 
   <!-- Vercel Web Analytics -->
@@ -32,6 +31,7 @@
     }
     img{max-width:100%;display:block}
     .wrap{max-width:760px;margin:0 auto;padding:0 20px}
+    .wide{max-width:900px}
 
     /* Confirmation banner */
     .banner{background:var(--accent);color:#fff;text-align:center;padding:18px 20px}
@@ -39,7 +39,6 @@
     .banner .eyebrow b{font-weight:800;letter-spacing:.06em}
     .banner h1{font-size:clamp(17px,3.4vw,22px);font-weight:800;margin:6px 0 0;letter-spacing:-.01em}
 
-    /* Header */
     header.site{border-bottom:1px solid var(--line)}
     .bar{display:flex;align-items:center;justify-content:center;height:60px;gap:9px;
       font-weight:800;font-size:18px;letter-spacing:-.02em}
@@ -57,49 +56,63 @@
       margin:16px auto 0;font-weight:700;font-size:15px;color:var(--accent)}
     .cue svg{width:18px;height:18px;flex:0 0 auto}
 
-    /* Video slots */
+    /* Responsive YouTube embeds */
     .video-shell{margin:20px auto 0;max-width:660px;border-radius:var(--radius);
       overflow:hidden;border:1px solid var(--line);box-shadow:0 18px 50px rgba(11,11,18,.13)}
-    .video-slot{
-      position:relative;aspect-ratio:16/9;display:grid;place-items:center;text-align:center;
-      background:repeating-linear-gradient(45deg,#fafafd,#fafafd 14px,#f2f2f8 14px,#f2f2f8 28px);
-      color:#8a8fa0;font-size:14px;font-weight:600;padding:20px;
-    }
-    .video-slot .tag{display:inline-block;background:#fff;border:1px solid #d9dbe6;border-radius:999px;
-      padding:3px 12px;font-size:11px;letter-spacing:.06em;text-transform:uppercase;
-      color:var(--accent);margin-bottom:10px}
-    .video-slot code{background:#fff;border:1px solid #e2e3ec;border-radius:6px;
-      padding:1px 6px;font-size:12px;color:#5b6170}
+    .yt{position:relative;aspect-ratio:16/9;background:#000}
+    .yt iframe{position:absolute;inset:0;width:100%;height:100%;border:0;display:block}
 
     .note{max-width:620px;margin:16px auto 0;text-align:center;
       background:#fffbeb;border:1px solid #fde68a;color:var(--amber);
       border-radius:12px;padding:12px 16px;font-size:14px;font-weight:600}
 
     /* Prep checklist */
-    .checklist{max-width:620px;margin:26px auto 0;display:grid;gap:10px}
-    .checklist li{list-style:none;display:flex;gap:11px;align-items:flex-start;
+    .checklist{max-width:620px;margin:26px auto 0;display:grid;gap:10px;padding:0;list-style:none}
+    .checklist li{display:flex;gap:11px;align-items:flex-start;
       background:#fff;border:1px solid var(--line);border-radius:12px;padding:14px 16px;font-size:15px}
-    .checklist ul{margin:0;padding:0}
     .tick{flex:0 0 auto;width:22px;height:22px;border-radius:50%;
       background:rgba(22,163,74,.12);color:var(--green);display:grid;place-items:center;margin-top:1px}
     .tick svg{width:12px;height:12px}
 
+    /* What happens on the call */
+    .expect{max-width:720px;margin:26px auto 0;display:grid;grid-template-columns:1fr 1fr;gap:12px}
+    .expect .card{background:#fff;border:1px solid var(--line);border-radius:14px;padding:18px}
+    .expect .card h3{margin:0 0 6px;font-size:15px}
+    .expect .card p{margin:0;font-size:14px;color:var(--muted)}
+    @media (max-width:620px){ .expect{grid-template-columns:1fr} }
+
+    /* Proof: stats + testimonials */
+    .stats-pill{max-width:640px;margin:0 auto 22px;text-align:center;background:#fff;
+      border:1px solid var(--line);border-radius:12px;padding:14px 18px;font-size:15px;color:var(--muted);font-weight:600}
+    .stats-pill strong{color:var(--ink)}
+    .t-grid{max-width:900px;margin:0 auto;display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+    @media (max-width:760px){ .t-grid{grid-template-columns:1fr} }
+    .t-card{background:#fff;border:1px solid var(--line);border-radius:14px;padding:16px;text-align:left}
+    .t-head{display:flex;align-items:center;gap:10px;margin-bottom:8px}
+    .t-avatar{width:40px;height:40px;border-radius:50%;object-fit:cover;border:2px solid var(--line);flex:0 0 auto}
+    .t-name{font-weight:800;font-size:14px}
+    .t-role{font-size:11px;color:var(--muted);font-weight:600}
+    .t-stars{color:#f5a623;font-size:12px;letter-spacing:1px;margin-bottom:5px}
+    .t-quote{font-size:14px;color:#2b2f3a;font-style:italic;line-height:1.5;margin:0 0 10px}
+    .t-result{font-size:13px;font-weight:800;color:var(--green)}
+
     /* FAQ video rows */
-    .faq-list{max-width:820px;margin:26px auto 0;display:grid;gap:14px}
+    .faq-list{max-width:900px;margin:26px auto 0;display:grid;gap:14px}
     .faq-row{display:grid;grid-template-columns:1fr 1fr;gap:18px;align-items:center;
       background:#fff;border:1px solid var(--line);border-radius:14px;padding:18px}
     .faq-row .q .n{font-size:12px;font-weight:800;letter-spacing:.08em;
       text-transform:uppercase;color:var(--accent);margin-bottom:6px}
     .faq-row .q h3{margin:0;font-size:17px;letter-spacing:-.01em}
+    .faq-row .q p{margin:8px 0 0;font-size:13.5px;color:var(--muted)}
     .faq-row .v{border-radius:10px;overflow:hidden;border:1px solid var(--line)}
-
-    footer{background:#0b0b12;color:#8b90a0;font-size:12px;padding:30px 0 36px;text-align:center}
-    footer a{color:#d6d9e4;text-decoration:none;font-weight:600;margin:0 10px}
-
     @media (max-width:640px){
       .faq-row{grid-template-columns:1fr;gap:12px}
       .faq-row .q{text-align:center}
     }
+
+    footer{background:#0b0b12;color:#8b90a0;font-size:12px;padding:30px 0 36px;text-align:center}
+    footer a{color:#d6d9e4;text-decoration:none;font-weight:600;margin:0 10px}
+    .disclaimer{max-width:760px;margin:0 auto 16px;color:#7f8496;font-size:11.5px;line-height:1.7}
   </style>
 </head>
 <body>
@@ -117,31 +130,25 @@
     </div>
   </header>
 
-  <!-- ============ STEP 1 — PREP VIDEO ============ -->
+  <!-- ============ STEP 1 — PREP / INTRO VIDEO ============ -->
   <section>
     <div class="wrap">
       <p class="step">First step</p>
-      <h2>Watch this quick video before our call</h2>
-      <p class="lede">It takes two minutes and makes sure you get the most out of the session.</p>
+      <h2>Watch this before our call</h2>
+      <p class="lede">A quick breakdown of what YouTube <em>Search</em> actually is — and why it's different and so powerful. It'll make the call 10× more useful.</p>
 
       <div class="cue">
         <svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
         Press play to turn on sound
       </div>
 
-      <!-- ============================================================
-           REPLACE THIS SLOT WITH THE PREP VIDEO.
-           Wistia:  <wistia-player media-id="XXXXXXXX" aspect="1.7777"></wistia-player>
-                    (also add the two Wistia <script> tags to <head>)
-           YouTube: <iframe width="100%" height="100%" style="aspect-ratio:16/9;border:0"
-                      src="https://www.youtube.com/embed/VIDEO_ID" allowfullscreen></iframe>
-           ============================================================ -->
       <div class="video-shell">
-        <div class="video-slot">
-          <div>
-            <span class="tag">Add prep video</span><br>
-            Drop the embed here — replace the <code>.video-slot</code> div
-          </div>
+        <div class="yt">
+          <iframe src="https://www.youtube-nocookie.com/embed/xf_ncVJ0sQQ?rel=0"
+            title="What YouTube Search is and why it's so powerful"
+            loading="lazy" referrerpolicy="strict-origin-when-cross-origin"
+            allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            allowfullscreen></iframe>
         </div>
       </div>
 
@@ -149,63 +156,102 @@
     </div>
   </section>
 
-  <!-- ============ WHAT TO DO BEFORE THE CALL ============ -->
+  <!-- ============ WHAT HAPPENS ON THE CALL ============ -->
   <section class="soft">
     <div class="wrap">
-      <p class="step">Before we speak</p>
-      <h2>Three things to have ready</h2>
-      <ul class="checklist">
-        <li><span class="tick"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M20 6L9 17l-5-5"/></svg></span>
-          <div><b>Be somewhere quiet</b> with a stable connection — it's a working session, not a webinar.</div></li>
-        <li><span class="tick"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M20 6L9 17l-5-5"/></svg></span>
-          <div><b>Know your starting point</b> — how much time per week you can commit, and your rough budget.</div></li>
-        <li><span class="tick"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M20 6L9 17l-5-5"/></svg></span>
-          <div><b>Bring your questions</b> — you'll leave with a plan whether or not we work together.</div></li>
-      </ul>
+      <p class="step">What to expect</p>
+      <h2>What happens on the call</h2>
+      <p class="lede">It's not a pitch. You'll leave with a real plan whether or not we end up working together.</p>
+      <div class="expect">
+        <div class="card"><h3>Who you'll speak to</h3><p>A real coach from our team — not a commission-only setter reading a script.</p></div>
+        <div class="card"><h3>What we'll cover</h3><p>Where you're starting from, the right niche direction for you, and your exact next steps.</p></div>
+        <div class="card"><h3>How long it takes</h3><p>About 45 minutes. Be somewhere quiet with a stable connection — it's a working session.</p></div>
+        <div class="card"><h3>What to bring</h3><p>Your rough weekly time and budget, and any questions you want answered.</p></div>
+      </div>
     </div>
   </section>
 
-  <!-- ============ STEP 2 — FAQ VIDEOS ============
-       NOTE: this whole section is placeholder until the FAQ videos exist.
-       Either drop the embeds in, or delete the <section> until they're ready.
-       ============================================== -->
+  <!-- ============ PROOF (pulled from the VSL) ============ -->
   <section>
-    <div class="wrap" style="max-width:860px">
+    <div class="wrap wide">
+      <p class="step">You're in good hands</p>
+      <h2>Real results from students</h2>
+      <p class="lede">Results are not typical — see the disclaimer below. But this is what's possible with the search-based system.</p>
+      <p class="stats-pill"><strong>$300,000+</strong> generated by students &middot; <strong>2 channel exits</strong> ($20k + $53k) &middot; Students hitting <strong>$1k&ndash;$6k/month</strong></p>
+      <div class="t-grid">
+        <article class="t-card">
+          <div class="t-head">
+            <img src="assets/bautista-p-500.png" alt="" class="t-avatar" width="40" height="40" loading="lazy">
+            <div><div class="t-name">Bautista</div><div class="t-role">YTA Chads member</div></div>
+          </div>
+          <div class="t-stars">★★★★★</div>
+          <p class="t-quote">&ldquo;I&rsquo;m making $2k/m passively and I&rsquo;m about to get another channel monetized which will start at at least $1k a month.&rdquo;</p>
+          <div class="t-result">$2k/month+</div>
+        </article>
+        <article class="t-card">
+          <div class="t-head">
+            <img src="assets/atte-p-500.png" alt="" class="t-avatar" width="40" height="40" loading="lazy">
+            <div><div class="t-name">Atte</div><div class="t-role">YTA Chads member</div></div>
+          </div>
+          <div class="t-stars">★★★★★</div>
+          <p class="t-quote">&ldquo;I&rsquo;ve spent over $20,000 on YouTube courses and freelancers. This is the first system that produced consistent results instead of guesswork.&rdquo;</p>
+          <div class="t-result">Consistent results</div>
+        </article>
+        <article class="t-card">
+          <div class="t-head">
+            <img src="assets/ck-jake-p-500.png" alt="" class="t-avatar" width="40" height="40" loading="lazy">
+            <div><div class="t-name">CK Jake</div><div class="t-role">YTA Chads member</div></div>
+          </div>
+          <div class="t-stars">★★★★★</div>
+          <p class="t-quote">&ldquo;Today I received my first payment in my bank account. Slow and steady growth. The only method that worked for me.&rdquo;</p>
+          <div class="t-result">Payment received</div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ STEP 2 — GET CAUGHT UP (FAQ videos) ============ -->
+  <section class="soft">
+    <div class="wrap wide">
       <p class="step">Next step</p>
-      <h2>Get caught up on faceless YouTube</h2>
-      <p class="lede">Watch these before your strategy call so we can skip the basics and get straight to your plan.</p>
+      <h2>Get caught up before your call</h2>
+      <p class="lede">Watch a few of these so we can skip the basics and get straight to your plan.</p>
 
       <div class="faq-list">
         <article class="faq-row">
           <div class="q">
-            <div class="n">FAQ #1</div>
-            <h3>Simplified: what is faceless YouTube?</h3>
+            <div class="n">Watch #1</div>
+            <h3>How I built this into a 6-figure/year business</h3>
+            <p>The full picture of what a real search-based YouTube business looks like.</p>
           </div>
-          <div class="v"><div class="video-slot"><div><span class="tag">Add video</span><br>FAQ #1</div></div></div>
+          <div class="v"><div class="yt"><iframe src="https://www.youtube-nocookie.com/embed/ctG4Jx1EatA?rel=0" title="I built a $100k/yr YouTube business" loading="lazy" referrerpolicy="strict-origin-when-cross-origin" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe></div></div>
         </article>
 
         <article class="faq-row">
           <div class="q">
-            <div class="n">FAQ #2</div>
-            <h3>Why should I start now?</h3>
+            <div class="n">Watch #2</div>
+            <h3>You can build <em>and sell</em> these channels</h3>
+            <p>How I built a channel and sold it — the "exit" side most people miss.</p>
           </div>
-          <div class="v"><div class="video-slot"><div><span class="tag">Add video</span><br>FAQ #2</div></div></div>
+          <div class="v"><div class="yt"><iframe src="https://www.youtube-nocookie.com/embed/GgJRoYazJSo?rel=0" title="How I built and sold a channel" loading="lazy" referrerpolicy="strict-origin-when-cross-origin" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe></div></div>
         </article>
 
         <article class="faq-row">
           <div class="q">
-            <div class="n">FAQ #3</div>
+            <div class="n">Watch #3</div>
+            <h3>What these channels actually look like</h3>
+            <p>A breakdown of real channels so you can see the model in action.</p>
+          </div>
+          <div class="v"><div class="yt"><iframe src="https://www.youtube-nocookie.com/embed/L34YI531L0k?rel=0&start=28" title="Channel breakdowns" loading="lazy" referrerpolicy="strict-origin-when-cross-origin" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe></div></div>
+        </article>
+
+        <article class="faq-row">
+          <div class="q">
+            <div class="n">Watch #4</div>
             <h3>How much time does this actually take?</h3>
+            <p>What a realistic daily workload looks like when you're starting out.</p>
           </div>
-          <div class="v"><div class="video-slot"><div><span class="tag">Add video</span><br>FAQ #3</div></div></div>
-        </article>
-
-        <article class="faq-row">
-          <div class="q">
-            <div class="n">FAQ #4</div>
-            <h3>What does the process look like?</h3>
-          </div>
-          <div class="v"><div class="video-slot"><div><span class="tag">Add video</span><br>FAQ #4</div></div></div>
+          <div class="v"><div class="yt"><iframe src="https://www.youtube-nocookie.com/embed/LrTP3yG0Muk?rel=0&start=5" title="Time commitment" loading="lazy" referrerpolicy="strict-origin-when-cross-origin" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe></div></div>
         </article>
       </div>
     </div>
@@ -213,6 +259,7 @@
 
   <footer>
     <div class="wrap">
+      <p class="disclaimer">Results are not typical and are not a guarantee of future earnings. The income figures and student results shown reflect exceptional outcomes and depend on your effort, skill, experience, and market conditions. This site is not affiliated with or endorsed by YouTube, Google, or Meta.</p>
       <div style="margin-bottom:10px">
         <a href="/privacy">Privacy Policy</a>
         <a href="/terms">Terms of Service</a>
@@ -224,9 +271,8 @@
 
   <script>
     /* Calendly appends invitee details to the redirect URL, e.g.
-       ?name=Harvey&last_name=Causer&email=...&a1=%2B44...
-       Use the first name to personalise the banner. Read-only: nothing
-       here stores or transmits the visitor's details. */
+       ?name=Harvey&last_name=Causer&email=…&a1=%2B44…
+       Use the first name to personalise the banner. Read-only. */
     (function () {
       try {
         var p = new URLSearchParams(window.location.search);
