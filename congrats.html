@@ -10,6 +10,10 @@
   <!-- Vercel Web Analytics -->
   <script defer src="/_vercel/insights/script.js"></script>
 
+  <!-- Wistia pre-call prep video -->
+  <script src="https://fast.wistia.com/player.js" async></script>
+  <script src="https://fast.wistia.com/embed/w2f1yu1ztf.js" async type="module"></script>
+
   <!-- Meta Pixel -->
   <script src="/assets/yta-pixel.js"></script>
   <noscript><img height="1" width="1" style="display:none" alt=""
@@ -61,6 +65,9 @@
       overflow:hidden;border:1px solid var(--line);box-shadow:0 18px 50px rgba(11,11,18,.13)}
     .yt{position:relative;aspect-ratio:16/9;background:#000}
     .yt iframe{position:absolute;inset:0;width:100%;height:100%;border:0;display:block}
+    wistia-player[media-id='w2f1yu1ztf']:not(:defined){
+      background:center / contain no-repeat url('https://fast.wistia.com/embed/medias/w2f1yu1ztf/swatch');
+      display:block;filter:blur(5px);padding-top:56.25%}
 
     .note{max-width:620px;margin:16px auto 0;text-align:center;
       background:#fffbeb;border:1px solid #fde68a;color:var(--amber);
@@ -119,8 +126,8 @@
 
   <!-- ============ CONFIRMATION BANNER ============ -->
   <div class="banner">
-    <p class="eyebrow"><b>CONGRATS!</b> <span id="who">Your strategy call is booked…</span></p>
-    <h1>Let's make sure you're prepared for it</h1>
+    <p class="eyebrow"><b>CONGRATS!</b> <span id="who">Your strategy call's booked…</span></p>
+    <h1>Let's Make Sure You're Prepared For Your Strategy Call!</h1>
   </div>
 
   <header class="site">
@@ -133,26 +140,18 @@
   <!-- ============ STEP 1 — PREP / INTRO VIDEO ============ -->
   <section>
     <div class="wrap">
-      <p class="step">First step</p>
-      <h2>Watch this before our call</h2>
-      <p class="lede">A quick breakdown of what YouTube <em>Search</em> actually is — and why it's different and so powerful. It'll make the call 10× more useful.</p>
+      <h2 style="max-width:36ch">First Step: Watch This Quick, 2-Minute Video To Make Sure You're Prepared For Our Strategy Call&hellip;</h2>
 
       <div class="cue">
         <svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
-        Press play to turn on sound
+        Play the video to turn on sound
       </div>
 
       <div class="video-shell">
-        <div class="yt">
-          <iframe src="https://www.youtube-nocookie.com/embed/xf_ncVJ0sQQ?rel=0"
-            title="What YouTube Search is and why it's so powerful"
-            loading="lazy" referrerpolicy="strict-origin-when-cross-origin"
-            allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-            allowfullscreen></iframe>
-        </div>
+        <wistia-player media-id="w2f1yu1ztf" aspect="1.7777777777777777"></wistia-player>
       </div>
 
-      <p class="note">A member of the team will reach out before your call — keep an eye on your email and phone so you don't miss it.</p>
+      <p class="note">A member of my team will reach out soon &mdash; don't miss it or your spot may be given to someone else!</p>
     </div>
   </section>
 
@@ -213,14 +212,22 @@
   <!-- ============ STEP 2 — GET CAUGHT UP (FAQ videos) ============ -->
   <section class="soft">
     <div class="wrap wide">
-      <p class="step">Next step</p>
-      <h2>Get caught up before your call</h2>
-      <p class="lede">Watch a few of these so we can skip the basics and get straight to your plan.</p>
+      <h2 style="max-width:34ch">Next Step: Let's Get You Caught Up On Everything About Faceless YouTube&hellip;</h2>
+      <p class="step" style="margin:14px 0 0">&#9673; Be sure to watch these FAQ videos before your strategy call:</p>
 
       <div class="faq-list">
         <article class="faq-row">
           <div class="q">
             <div class="n">Watch #1</div>
+            <h3>What YouTube <em>Search</em> actually is</h3>
+            <p>Why it's different from normal YouTube — and why it's so powerful.</p>
+          </div>
+          <div class="v"><div class="yt"><iframe src="https://www.youtube-nocookie.com/embed/xf_ncVJ0sQQ?rel=0" title="What YouTube Search is and why it's so powerful" loading="lazy" referrerpolicy="strict-origin-when-cross-origin" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe></div></div>
+        </article>
+
+        <article class="faq-row">
+          <div class="q">
+            <div class="n">Watch #2</div>
             <h3>How I built this into a 6-figure/year business</h3>
             <p>The full picture of what a real search-based YouTube business looks like.</p>
           </div>
@@ -229,7 +236,7 @@
 
         <article class="faq-row">
           <div class="q">
-            <div class="n">Watch #2</div>
+            <div class="n">Watch #3</div>
             <h3>You can build <em>and sell</em> these channels</h3>
             <p>How I built a channel and sold it — the "exit" side most people miss.</p>
           </div>
@@ -238,7 +245,7 @@
 
         <article class="faq-row">
           <div class="q">
-            <div class="n">Watch #3</div>
+            <div class="n">Watch #4</div>
             <h3>What these channels actually look like</h3>
             <p>A breakdown of real channels so you can see the model in action.</p>
           </div>
@@ -247,7 +254,7 @@
 
         <article class="faq-row">
           <div class="q">
-            <div class="n">Watch #4</div>
+            <div class="n">Watch #5</div>
             <h3>How much time does this actually take?</h3>
             <p>What a realistic daily workload looks like when you're starting out.</p>
           </div>
