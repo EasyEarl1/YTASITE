@@ -77,6 +77,13 @@
       background:#fffbeb;border:1px solid #fde68a;color:var(--amber);
       border-radius:12px;padding:12px 16px;font-size:14px;font-weight:600}
 
+    /* Add-to-calendar buttons */
+    .atc-btn{display:inline-flex;align-items:center;gap:6px;background:#fff;
+      border:1.5px solid var(--line);border-radius:10px;padding:10px 16px;
+      font-size:14px;font-weight:700;color:var(--ink);text-decoration:none;
+      cursor:pointer;transition:border-color .12s ease,transform .12s ease}
+    .atc-btn:hover{border-color:var(--accent);transform:translateY(-1px)}
+
     /* Prep checklist */
     .checklist{max-width:620px;margin:26px auto 0;display:grid;gap:10px;padding:0;list-style:none}
     .checklist li{display:flex;gap:11px;align-items:flex-start;
@@ -149,6 +156,20 @@
       </div>
 
       <p class="note">A member of my team will reach out soon &mdash; don't miss it or your spot may be given to someone else!</p>
+
+      <!-- Add-to-calendar: real buttons when Calendly passes the booking time
+           in the redirect; otherwise a plain "get it in your diary" nudge. -->
+      <div id="atc" style="max-width:620px;margin:14px auto 0;text-align:center;">
+        <p id="atc-when" style="font-weight:800;font-size:15px;margin:0 0 10px;display:none;"></p>
+        <div id="atc-btns" style="display:none;gap:8px;justify-content:center;flex-wrap:wrap;">
+          <a id="atc-g" target="_blank" rel="noopener" class="atc-btn">&#128197; Google Calendar</a>
+          <a id="atc-a" class="atc-btn">&#63743; Apple / iCal</a>
+          <a id="atc-o" target="_blank" rel="noopener" class="atc-btn">&#128231; Outlook</a>
+        </div>
+        <p id="atc-fallback" style="font-size:14px;color:var(--muted);margin:0;">
+          <b>Put the call in your diary now</b> &mdash; the calendar invite is in your confirmation email.
+        </p>
+      </div>
     </div>
   </section>
 
@@ -232,6 +253,65 @@
           if (el) el.textContent = first + ', your strategy call is booked…';
         }
       } catch (e) { /* leave the default wording */ }
+    })();
+
+    /* Add-to-calendar: Calendly's redirect includes the booked slot as
+       event_start_time / event_end_time (ISO 8601) when "pass event details"
+       is on. Build one-click calendar links for that exact slot; if the
+       params are missing, the plain "put it in your diary" line stays. */
+    (function () {
+      try {
+        var p = new URLSearchParams(window.location.search);
+        var startRaw = p.get('event_start_time');
+        var endRaw = p.get('event_end_time');
+        if (!startRaw) return;
+        var start = new Date(startRaw);
+        if (isNaN(start)) return;
+        var end = endRaw && !isNaN(new Date(endRaw)) ? new Date(endRaw)
+                : new Date(start.getTime() + 45 * 60000); // default 45 min
+
+        var TITLE = 'Strategy Call — YTA Chads';
+        var DESC = 'Your free YouTube strategy call with the YTA Chads team. Be somewhere quiet with a stable connection.';
+
+        function utc(d) { return d.toISOString().replace(/[-:]|\.\d{3}/g, ''); }
+
+        // Google
+        document.getElementById('atc-g').href =
+          'https://calendar.google.com/calendar/render?action=TEMPLATE' +
+          '&text=' + encodeURIComponent(TITLE) +
+          '&dates=' + utc(start) + '/' + utc(end) +
+          '&details=' + encodeURIComponent(DESC);
+
+        // Outlook (web)
+        document.getElementById('atc-o').href =
+          'https://outlook.live.com/calendar/0/deeplink/compose?path=/calendar/action/compose' +
+          '&subject=' + encodeURIComponent(TITLE) +
+          '&startdt=' + encodeURIComponent(start.toISOString()) +
+          '&enddt=' + encodeURIComponent(end.toISOString()) +
+          '&body=' + encodeURIComponent(DESC);
+
+        // Apple / iCal (.ics download)
+        var ics = ['BEGIN:VCALENDAR','VERSION:2.0','PRODID:-//YTA Chads//EN','BEGIN:VEVENT',
+          'UID:' + utc(start) + '@ytachads.com',
+          'DTSTAMP:' + utc(new Date()),
+          'DTSTART:' + utc(start),
+          'DTEND:' + utc(end),
+          'SUMMARY:' + TITLE,
+          'DESCRIPTION:' + DESC,
+          'END:VEVENT','END:VCALENDAR'].join('\r\n');
+        var a = document.getElementById('atc-a');
+        a.href = 'data:text/calendar;charset=utf-8,' + encodeURIComponent(ics);
+        a.setAttribute('download', 'yta-strategy-call.ics');
+
+        // Show the local time + buttons, swap out the fallback line
+        var whenEl = document.getElementById('atc-when');
+        whenEl.textContent = '📅 Your call: ' + start.toLocaleString(undefined,
+          { weekday:'long', day:'numeric', month:'long', hour:'2-digit', minute:'2-digit' }) +
+          ' — lock it in:';
+        whenEl.style.display = 'block';
+        document.getElementById('atc-btns').style.display = 'flex';
+        document.getElementById('atc-fallback').style.display = 'none';
+      } catch (e) { /* fallback line stays visible */ }
     })();
   </script>
 </body>
