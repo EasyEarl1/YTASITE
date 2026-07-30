@@ -232,11 +232,11 @@
         <wistia-player media-id="muvek5h6xr" aspect="1.7777"></wistia-player>
       </div>
 
-      <!-- Calendly booking calendar, embedded right under the VSL -->
-      <div id="book" style="max-width:720px;margin:34px auto 0;scroll-margin-top:16px;">
-        <p style="font-weight:800;font-size:20px;letter-spacing:-.01em;margin:0 0 4px;">Book your free strategy call</p>
-        <p class="btn-note" style="margin:0 0 12px;">Pick a time below &mdash; 45-minute session &middot; limited spots each month. No pitch fest &mdash; you'll leave with a real plan whether you enroll or not.</p>
-        <div id="calendly-inline" style="min-width:320px;height:720px;"></div>
+      <div class="cta-block">
+        <button class="btn block js-book">Book Your Free Strategy Call
+          <small>45-minute session · limited spots each month</small>
+        </button>
+        <p class="btn-note">No pitch fest. You'll leave with a real plan whether you enroll or not.</p>
       </div>
     </div>
   </section>
@@ -281,7 +281,7 @@
         <figure><img src="revv/REV%204.png" alt="Estimated revenue screenshot" loading="lazy" decoding="async"></figure>
         <figure><img src="revv/rev%207.jpeg" alt="Payment proof screenshot" loading="lazy" decoding="async"></figure>
       </div>
-      <div class="cta-block"><a href="#book" class="btn block js-book">Book Your Free Strategy Call</a></div>
+      <div class="cta-block"><button class="btn block js-book">Book Your Free Strategy Call</button></div>
     </div>
   </section>
 
@@ -487,9 +487,9 @@
           <p>The call is about 45 minutes. Building a real channel takes consistent effort over weeks and months — results depend entirely on the work you put in.</p>
         </details>
       </div>
-      <div class="cta-block final"><a href="#book" class="btn block js-book">Book Your Free Strategy Call
+      <div class="cta-block final"><button class="btn block js-book">Book Your Free Strategy Call
         <small>Limited spots each month</small>
-      </a></div>
+      </button></div>
     </div>
   </section>
 
@@ -512,7 +512,7 @@
 
   <!-- ============ STICKY MOBILE CTA ============ -->
   <div class="sticky-cta">
-    <a href="#book" class="btn block js-book">Book Your Free Strategy Call</a>
+    <button class="btn block js-book">Book Your Free Strategy Call</button>
   </div>
 
   <script>
@@ -527,26 +527,19 @@
         if (e && /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(e.trim())) email = e.trim();
       } catch (err) { /* no param */ }
 
-      // Embed the Calendly calendar inline. widget.js loads async, so poll
-      // until it's ready, then init once with the pre-filled email.
-      function initInline() {
-        var parent = document.getElementById('calendly-inline');
-        if (!parent || parent.getAttribute('data-done')) return;
-        parent.setAttribute('data-done', '1');
-        // Calendly reads email/name from the URL query — most reliable prefill.
-        var url = email ? CAL_URL + (CAL_URL.indexOf('?') > -1 ? '&' : '?') + 'email=' + encodeURIComponent(email) : CAL_URL;
-        Calendly.initInlineWidget({
-          url: url,
-          parentElement: parent,
-          prefill: email ? { email: email } : {}
-        });
+      function openCal(e) {
+        if (e) e.preventDefault();
+        if (window.Calendly && Calendly.initPopupWidget) {
+          var opts = { url: CAL_URL };
+          if (email) opts.prefill = { email: email };
+          Calendly.initPopupWidget(opts);
+        } else {
+          window.open(email ? CAL_URL + '?email=' + encodeURIComponent(email) : CAL_URL, '_blank');
+        }
       }
-      (function ready() {
-        if (window.Calendly && Calendly.initInlineWidget) initInline();
-        else setTimeout(ready, 100);
-      })();
-      // The "Book" buttons are now <a href="#book"> — the browser scrolls to
-      // the embedded calendar natively (html { scroll-behavior: smooth }).
+      document.querySelectorAll('.js-book').forEach(function (b) {
+        b.addEventListener('click', openCal);
+      });
     })();
   </script>
 </body>
