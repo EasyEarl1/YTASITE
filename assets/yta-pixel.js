@@ -19,7 +19,7 @@
  * Diagnostic events are deduped per PAGE LOAD.
  */
 (function () {
-  var PIXEL_ID = '2258815231190030';
+  var PIXEL_ID = '28459174677013016';
 
   /* Fire ONLY on the live domain. Preview deployments (*.vercel.app) and
    * localhost load this exact same script with the same pixel id, so without
