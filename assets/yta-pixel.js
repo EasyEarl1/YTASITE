@@ -82,8 +82,13 @@
    *   SubmitApplication application submitted  (optional middle step)
    *   Schedule          call booked            (bottom of funnel)
    * Each deduped across tabs so one person counts once per stage. */
-  function trackLead() {
-    if (!claim('yta_lead_fired')) return;
+  /* Dedupe per EMAIL when the caller provides one (the opt-in form does):
+   * the same address can't produce two Leads, but a different address is a
+   * different Klaviyo profile and rightly counts as a new Lead. Falls back
+   * to the browser-wide key when no email is available. */
+  function trackLead(email) {
+    var key = 'yta_lead_fired' + (email ? '::' + String(email).trim().toLowerCase() : '');
+    if (!claim(key)) return;
     fbq('track', 'Lead');
   }
   window.ytaTrackLead = trackLead;

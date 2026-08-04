@@ -231,7 +231,7 @@
           // skipped submit still redirects, but is NOT counted as a Lead.
           var fired = false;
           if (res && res.ok && !res.skipped) {
-            if (window.ytaTrackLead) window.ytaTrackLead(); // standard event first
+            if (window.ytaTrackLead) window.ytaTrackLead(email); // standard event first, deduped per email
             if (window.fbq) fbq('trackCustom', 'OptIn');
             fired = true;
           }
