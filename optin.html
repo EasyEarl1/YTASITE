@@ -229,11 +229,15 @@
           // Lead fires ONLY when Klaviyo accepts the submission, so a Meta
           // Lead always corresponds to a real Klaviyo profile. A failed or
           // skipped submit still redirects, but is NOT counted as a Lead.
+          var fired = false;
           if (res && res.ok && !res.skipped) {
+            if (window.ytaTrackLead) window.ytaTrackLead(); // standard event first
             if (window.fbq) fbq('trackCustom', 'OptIn');
-            if (window.ytaTrackLead) window.ytaTrackLead();
+            fired = true;
           }
-          goNext(email);
+          // Hold the redirect briefly so the pixel requests leave before the
+          // page unloads — an instant navigation cancels events in flight.
+          setTimeout(function () { goNext(email); }, fired ? 400 : 0);
         })
         .catch(function (err) { console.error('[optin] subscribe failed', err); goNext(email); });
     });
