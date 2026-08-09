@@ -80,8 +80,9 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   .discover li:last-child{border-bottom:none}
   .discover .tick{flex:none;width:26px;height:26px;border-radius:50%;background:var(--wash);color:var(--purple);display:flex;align-items:center;justify-content:center;font-weight:800;margin-top:1px;font-size:11px}
   /* proof cards */
-  .grid{max-width:760px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:16px;align-items:start}
-  .shot{border:1px solid var(--line);border-radius:14px;overflow:hidden;background:#fff}
+  /* masonry: cards stack directly beneath each other, no row gaps */
+  .grid{max-width:820px;margin:0 auto;column-count:2;column-gap:16px}
+  .shot{border:1px solid var(--line);border-radius:14px;overflow:hidden;background:#fff;break-inside:avoid;margin-bottom:16px}
   .shot .img{background:#f7f6fc}
   .shot .img img{width:100%;height:auto;display:block} /* full screenshot, never cropped */
   .shot .cap{padding:12px 14px;font-weight:600;font-size:14.5px}
@@ -144,7 +145,8 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     .sec.tight{padding:26px 16px}
     h2{font-size:21px}
     .discover li{font-size:15px}
-    .grid,.fornot,.t-grid{grid-template-columns:1fr}
+    .grid{column-count:1}
+    .fornot,.t-grid{grid-template-columns:1fr}
     .panel p{font-size:14.5px}
     .quote{font-size:15px}
     .faq .q h4{font-size:15px}
@@ -201,12 +203,23 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <div class="eyebrow">Real Numbers, Real Screenshots</div>
     <h2>Straight from YouTube Studio and real channel sales</h2>
     <div class="grid">
-      <div class="shot"><div class="img"><img src="assets/joel-44k.png" alt="AdSense payout history totalling $44,021.24" loading="lazy"></div><div class="cap">Joel's first channel. <span>$44,021 paid out to date</span> &mdash; month by month, from a $43 first payout to $8.2k months.</div></div>
+      <div class="shot"><div class="img"><img src="rs6.png" alt="YouTube Studio: 8.2M lifetime views and $64,133.97 estimated revenue" loading="lazy"></div><div class="cap">One channel, lifetime. <span>8.2M views &middot; $64,133.97</span> &mdash; from a flat line to $225 days.</div></div>
       <div class="shot"><div class="img"><img src="revv/REV%204.png" alt="YouTube Studio estimated revenue $47,660.77 over 365 days" loading="lazy"></div><div class="cap"><span>$47,660.77 in 365 days</span> on one channel &mdash; steady daily revenue, no viral spikes needed.</div></div>
+      <div class="shot"><div class="img"><img src="assets/joel-44k.png" alt="AdSense payout history totalling $44,021.24" loading="lazy"></div><div class="cap">Joel's first channel. <span>$44,021 paid out to date</span> &mdash; month by month, from a $43 first payout to $8.2k months.</div></div>
       <div class="shot"><div class="img"><img src="revv/REV%203.png" alt="YouTube Studio: 4.2M views and $31,005.81 estimated revenue in 365 days" loading="lazy"></div><div class="cap"><span>4.2M views &middot; $31,005.81</span> in 365 days &mdash; up 384% on the year before.</div></div>
-      <div class="shot"><div class="img"><img src="assets/member-8k-july.png" alt="Monthly payout showing $8,202.52 in July" loading="lazy"></div><div class="cap">Member channel: <span>$8,202 in July</span> &mdash; with zero new uploads that month.</div></div>
-      <div class="shot"><div class="img"><img src="rs1.png" alt="Joel's YouTube Studio: 1.1M views and £10,799 estimated revenue in 90 days" loading="lazy"></div><div class="cap">Joel's Studio, one 90-day window. <span>1.1M views &middot; &pound;10,799</span> &mdash; up 121% on the previous 90 days.</div></div>
       <div class="shot"><div class="img"><img src="rs4.png" alt="YouTube Studio: 985k views and $10,567.86 estimated revenue in 365 days" loading="lazy"></div><div class="cap"><span>985k views &middot; $10,567.86</span> in 365 days &mdash; watch time and subs all climbing.</div></div>
+      <div class="shot"><div class="img"><img src="rs1.png" alt="Joel's YouTube Studio: 1.1M views and £10,799 estimated revenue in 90 days" loading="lazy"></div><div class="cap">Joel's Studio, one 90-day window. <span>1.1M views &middot; &pound;10,799</span> &mdash; up 121% on the previous 90 days.</div></div>
+      <div class="shot"><div class="img"><img src="rs3.png" alt="YouTube Studio: 1.5M views and $9,234.05 estimated revenue in 365 days" loading="lazy"></div><div class="cap"><span>1.5M views &middot; $9,234.05</span> in 365 days &mdash; watch time up over 999%.</div></div>
+      <div class="shot"><div class="img"><img src="assets/member-8k-july.png" alt="Monthly payout showing $8,202.52 in July" loading="lazy"></div><div class="cap">Member channel: <span>$8,202 in July</span> &mdash; with zero new uploads that month.</div></div>
+      <div class="shot"><div class="img"><img src="revv/rev%207.jpeg" alt="YouTube Studio: 1.7M views and $6,648.58 estimated revenue in 365 days" loading="lazy"></div><div class="cap"><span>1.7M views &middot; $6,648.58</span> in 365 days &mdash; the slow, steady climb.</div></div>
+      <div class="shot"><div class="img"><img src="rs5.png" alt="YouTube Studio: 327.8k views and $3,816.74 estimated revenue in 28 days" loading="lazy"></div><div class="cap"><span>327.8k views &middot; $3,816.74</span> in a single 28-day window.</div></div>
+      <div class="shot"><div class="img"><img src="revv/REV2.png" alt="Monthly earnings climbing from $1,440 to $5,478 over six months" loading="lazy"></div><div class="cap"><span>$1,440 &rarr; $5,478 a month</span> in five months &mdash; every bar bigger than the last.</div></div>
+      <div class="shot"><div class="img"><img src="revv/rev%208.png" alt="Monthly earnings climbing from £273 to £2,002 over six months" loading="lazy"></div><div class="cap"><span>&pound;273 &rarr; &pound;2,002 a month</span> in six months on a UK channel.</div></div>
+      <div class="shot"><div class="img"><img src="rs9.png" alt="YouTube Studio: 220k views and $1,942.04 in 28 days" loading="lazy"></div><div class="cap"><span>220k views &middot; $1,942</span> in 28 days &mdash; $110 days landing.</div></div>
+      <div class="shot"><div class="img"><img src="revv/rev%205.png" alt="AdSense payment notice for $1,662.39" loading="lazy"></div><div class="cap">AdSense: &ldquo;a payment is headed your way.&rdquo; <span>$1,662.39.</span></div></div>
+      <div class="shot"><div class="img"><img src="rs7.png" alt="YouTube Studio: 134.4k views and $1,001.48 in 28 days" loading="lazy"></div><div class="cap"><span>134k views &middot; $1,001</span> in 28 days &mdash; 76% above usual.</div></div>
+      <div class="shot"><div class="img"><img src="rs11.png" alt="Mobile analytics showing €625.15 estimated revenue over 90 days" loading="lazy"></div><div class="cap">Member in the EU: <span>&euro;625 in 90 days</span> &mdash; and curving upward.</div></div>
+      <div class="shot"><div class="img"><img src="rs8.png" alt="Member's chart showing $449.42 in 28 days" loading="lazy"></div><div class="cap">Member's 28 days: <span>$449</span> &mdash; &ldquo;looking like it's about to pop off.&rdquo;</div></div>
       <div class="shot"><div class="img"><img src="revv/exit%202.png" alt="Channel exit proof" loading="lazy"></div><div class="cap">Channel exit #1. <span>Sold for $20,000.</span></div></div>
       <div class="shot"><div class="img"><img src="revv/exit1.png" alt="Channel sale proof" loading="lazy"></div><div class="cap">Channel exit #2. <span>Sold for $53,000.</span></div></div>
     </div>
