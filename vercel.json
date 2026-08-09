@@ -252,6 +252,14 @@
       "destination": "/dropship.html"
     },
     {
+      "source": "/dropship-vsl",
+      "destination": "/dropship-vsl.html"
+    },
+    {
+      "source": "/dropship-vsl.html",
+      "destination": "/dropship-vsl.html"
+    },
+    {
       "source": "/dropship.html",
       "destination": "/dropship.html"
     },
