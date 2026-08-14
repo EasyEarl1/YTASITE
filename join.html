@@ -132,6 +132,14 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   footer p{margin-bottom:14px}footer b{color:#d1d5db}
   footer .links a{color:#d1d5db;text-decoration:none;margin:0 8px}
   html{scroll-behavior:smooth}
+  /* floating Telegram widget */
+  .tg-fab{position:fixed;right:18px;bottom:18px;z-index:90;display:flex;align-items:center;gap:9px;
+    background:#229ED9;color:#fff;text-decoration:none;font-weight:700;font-size:14.5px;
+    padding:13px 18px;border-radius:999px;box-shadow:0 10px 26px -6px rgba(34,158,217,.65);
+    transition:transform .08s ease,box-shadow .2s}
+  .tg-fab:hover{transform:translateY(-2px);box-shadow:0 14px 30px -6px rgba(34,158,217,.75)}
+  .tg-fab svg{width:19px;height:19px;flex:none}
+  @media(max-width:640px){.tg-fab{padding:12px 15px;font-size:13.5px;right:12px;bottom:12px}}
   @media(max-width:640px){
     .callout{font-size:10.5px;padding:8px 12px}
     .hero{padding:26px 16px 6px}
@@ -395,6 +403,12 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     </div>
   </footer>
 
+  <!-- floating Telegram "ask me" widget -->
+  <a class="tg-fab" href="https://t.me/ytavision" target="_blank" rel="noopener" id="tg-fab">
+    <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M21.9 4.6c.3-1.2-.9-2.2-2-1.7L2.7 9.6c-1.2.5-1.1 2.2.1 2.6l4.4 1.4 1.7 5.5c.3 1 1.6 1.3 2.3.5l2.4-2.4 4.5 3.3c.9.7 2.2.2 2.4-.9l3-14.9zM9.4 13.1l8.7-5.5c.4-.2.8.3.4.6l-7.2 6.5-.3 3-1.6-4.6z"/></svg>
+    Ask me a question
+  </a>
+
   <script>
   (function () {
     // Countdown to Thursday 20 August 2026, 23:59 UK time (BST, UTC+1)
@@ -422,6 +436,12 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     }
     var iv = setInterval(tick, 1000);
     tick();
+
+    // Track Telegram widget clicks
+    var tg = document.getElementById('tg-fab');
+    if (tg) tg.addEventListener('click', function () {
+      if (window.fbq) fbq('trackCustom', 'TelegramClick');
+    });
 
     // Fire InitiateCheckout when someone heads to the checkout
     document.querySelectorAll('.js-checkout').forEach(function (a) {
