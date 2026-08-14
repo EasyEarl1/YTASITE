@@ -98,6 +98,12 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   .col.no li:before{content:"\2715";position:absolute;left:0;color:#b0433a;font-weight:800}
   .catch{max-width:680px;margin:18px auto 0;background:#fff8e1;border:1px solid #f4e2a8;border-radius:12px;padding:16px 20px;text-align:center;color:#8a6d1a;font-size:14.5px;line-height:1.6}
   /* testimonial */
+  /* results cards */
+  .results{max-width:760px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr 1fr;gap:14px;align-items:start}
+  .rcard{border:1px solid var(--line);border-radius:14px;overflow:hidden;background:#fff}
+  .rcard img{width:100%;height:auto;display:block;background:#f7f6fc}
+  .rcap{padding:12px 14px;font-weight:600;font-size:14px}
+  .rcap span{color:var(--purple)}
   .tcard{max-width:600px;margin:24px auto 0;border:1px solid var(--line);border-radius:16px;padding:24px;background:#fff}
   .thead{display:flex;align-items:center;gap:14px}
   .avatar{width:50px;height:50px;border-radius:50%;object-fit:cover;border:2px solid var(--line);flex:none}
@@ -128,6 +134,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     .proof .row{font-size:12.5px;line-height:1.9}
     .item b{font-size:15px}
     .quote{font-size:15px}
+    .results{grid-template-columns:1fr}
   }
 </style>
 </head>
@@ -143,7 +150,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   <!-- 2. headline + price + countdown -->
   <section class="hero">
     <h1>Build a faceless channel that pays you <span class="hl">every single month</span>. And can sell for five figures when you're done with it.</h1>
-    <p class="sub">The full system, the tool, my team making your videos for about a dollar each, and me in your corner every week. <b>Doors close Thursday night.</b></p>
+    <p class="sub">The full system, the tool that makes your videos for about a dollar each, the exact roadmap to build your own team, and me in your corner every week. <b>Doors close Thursday night.</b></p>
 
     <div class="pricebox">
       <div class="price"><span class="old">$3,000</span>$2,000
@@ -176,12 +183,13 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <div class="stack">
       <div class="item"><span class="tick">&#10003;</span><div><b>The full Search First system</b><p>Niche selection to scaling, step by step. The exact process behind my channels.</p></div></div>
       <div class="item"><span class="tick">&#10003;</span><div><b>The AI Keyword Tool</b><p>It finds untapped keywords and video ideas for you. You see the demand BEFORE you make anything.</p></div></div>
-      <div class="item"><span class="tick">&#10003;</span><div><b>The $1 Production System</b><p>The tool plus my trained team. Videos get made for about a dollar each. No camera, no editing.</p></div></div>
+      <div class="item"><span class="tick">&#10003;</span><div><b>The $1 Production System</b><p>The tool that gets your videos made for about a dollar each, plus our full team-building roadmap and SOPs, so you can hire, train, and run your own production team exactly like we do. No camera, no editing.</p></div></div>
       <div class="item"><span class="tick">&#10003;</span><div><b>Weekly live group coaching with me</b><p>Bring your channel, your numbers, your questions. We fix it live.</p></div></div>
       <div class="item"><span class="tick">&#10003;</span><div><b>Direct access in the Telegram community</b><p>Me and the other members, every day. No dead forum.</p></div></div>
       <div class="item"><span class="tick">&#10003;</span><div><b>Every SOP and system, documented</b><p>So you can hand the whole thing to someone else later and keep the profit.</p></div></div>
-      <div class="item"><span class="tick">&#10003;</span><div><b>Training and tools for LIFE</b><p>Coaching and community for the length of the program.</p></div></div>
+      <div class="item"><span class="tick">&#10003;</span><div><b>Access that outlasts the program</b><p>Coaching and community for 12 months. Training and tools are yours for life.</p></div></div>
     </div>
+    <p style="text-align:center;margin:18px auto 0;max-width:520px;font-weight:600;font-size:15px">Coaching and community for 12 months. Training and tools are yours for life.</p>
   </section>
 
   <div class="ctaband">
@@ -214,6 +222,12 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   </div>
 
   <!-- testimonial (real) -->
+  <!-- SWAP TARGET: when you have a REAL member quote in this shape, replace
+       Joel's quote below with it (real name, real numbers, their words):
+       "I burned [amount] on [ecom/dropshipping] and had nothing. [Timeframe]
+        into this my channel is doing [result]. First time I have felt like I
+        actually know what I am doing."
+       Until then the page shows Joel's real, verifiable quote. -->
   <section class="sec">
     <div class="eyebrow">From A Member</div>
     <div class="tcard">
@@ -250,9 +264,24 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <div class="catch">Straight up: this is real work. It's not passive and it's not overnight. Some videos will flop, that's part of it. If you want a magic money button, keep your $2,000.</div>
   </section>
 
+  <!-- proof / results section -->
+  <section class="sec">
+    <div class="eyebrow">Proof</div>
+    <h2>Real results, real channels.</h2>
+    <div class="block" style="background:#fff;border:1px solid var(--line);margin-bottom:22px">
+      <p>I did over $2 million in dropshipping sales and was still broke. I walked away, built this, and now make over $100,000 a year in profit from these channels. I've sold two of them, one for $20,000 and one for $53,000. Same system you're getting here.</p>
+    </div>
+    <div class="results">
+      <div class="rcard"><img src="assets/joel-44k.png" alt="AdSense payout history totalling $44,021.24" loading="lazy"><div class="rcap">Joel's first channel. <span>$44,021 paid out so far</span>, month by month.</div></div>
+      <div class="rcard"><img src="assets/member-8k-july.png" alt="Monthly payout showing $8,202.52 in July" loading="lazy"><div class="rcap">Member channel. <span>$8,202 in July</span>, with zero new uploads that month.</div></div>
+      <div class="rcard"><img src="revv/rev%208.png" alt="Monthly earnings climbing from £273 to £2,002 over six months" loading="lazy"><div class="rcap">UK member channel. <span>&pound;273 to &pound;2,002 a month</span> in six months.</div></div>
+    </div>
+  </section>
+
   <!-- 10. final CTA + countdown -->
-  <section class="sec" style="text-align:center">
+  <section class="sec wash" style="text-align:center">
     <h2>The price goes up Thursday night</h2>
+    <p style="max-width:520px;margin:0 auto 18px;font-weight:600;font-size:15px">Coaching and community for 12 months. Training and tools are yours for life.</p>
     <div class="pricebox" style="margin-top:0">
       <div class="price"><span class="old">$3,000</span>$2,000
         <span class="note">Thursday 20 August, 23:59 UK time. Then it's $3,000.</span>
