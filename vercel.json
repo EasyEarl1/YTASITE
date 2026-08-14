@@ -248,6 +248,14 @@
       "destination": "/yta-chads-masterclass-thank-you.html"
     },
     {
+      "source": "/join",
+      "destination": "/join.html"
+    },
+    {
+      "source": "/join.html",
+      "destination": "/join.html"
+    },
+    {
       "source": "/dropship",
       "destination": "/dropship.html"
     },
