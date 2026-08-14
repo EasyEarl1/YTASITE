@@ -26,6 +26,10 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <!-- Vercel Web Analytics -->
 <script defer src="/_vercel/insights/script.js"></script>
 
+<!-- Wistia: "it's open" video -->
+<script src="https://fast.wistia.com/player.js" async></script>
+<script src="https://fast.wistia.com/embed/97oeaty4d7.js" async type="module"></script>
+
 <!-- Meta Pixel -->
 <script src="/assets/yta-pixel.js?v=3"></script>
 <noscript><img height="1" width="1" style="display:none" alt=""
@@ -59,9 +63,12 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   .btn{display:inline-block;background:var(--purple);color:#fff;text-decoration:none;border:none;border-radius:12px;padding:18px 40px;font-family:inherit;font-weight:700;font-size:19px;letter-spacing:.02em;cursor:pointer;text-transform:uppercase;box-shadow:0 12px 26px -8px rgba(124,58,237,.6);transition:transform .06s, background .2s}
   .btn:hover{background:var(--purple-dark);transform:translateY(-1px)}
   .ctaband .small{margin-top:12px;color:var(--grey);font-size:14px;max-width:520px;margin-left:auto;margin-right:auto}
-  /* video placeholder */
+  /* video */
   .videoblock{max-width:780px;margin:28px auto 0;padding:0 20px}
-  .video-ph{aspect-ratio:16/9;background:#0a0a0c;border-radius:16px;border:1px dashed #3a3a44;display:flex;align-items:center;justify-content:center;color:#8b8b96;font-size:14px;text-align:center;padding:20px}
+  .video{width:100%;background:#0a0a0c;border-radius:16px;overflow:hidden;border:1px solid #1c1c22;box-shadow:0 18px 50px rgba(11,11,18,.18)}
+  wistia-player[media-id='97oeaty4d7']:not(:defined){
+    background:center / contain no-repeat url('https://fast.wistia.com/embed/medias/97oeaty4d7/swatch');
+    display:block;filter:blur(5px);padding-top:56.25%}
   /* sections */
   .sec{padding:44px 20px}
   .sec.wash{background:var(--wash)}
@@ -181,9 +188,11 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <div class="small">Card checkout. You get access straight away.</div>
   </div>
 
-  <!-- 4. video placeholder -->
+  <!-- 4. "it's open" video -->
   <div class="videoblock">
-    <div class="video-ph">Short &ldquo;it's open&rdquo; video from me goes here (16:9). Swap this block for the embed.</div>
+    <div class="video">
+      <wistia-player media-id="97oeaty4d7" aspect="1.7777777777777777"></wistia-player>
+    </div>
   </div>
 
   <!-- 5. the stack -->
