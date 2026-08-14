@@ -98,12 +98,21 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   .col.no li:before{content:"\2715";position:absolute;left:0;color:#b0433a;font-weight:800}
   .catch{max-width:680px;margin:18px auto 0;background:#fff8e1;border:1px solid #f4e2a8;border-radius:12px;padding:16px 20px;text-align:center;color:#8a6d1a;font-size:14.5px;line-height:1.6}
   /* testimonial */
-  /* results cards */
-  .results{max-width:760px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr 1fr;gap:14px;align-items:start}
-  .rcard{border:1px solid var(--line);border-radius:14px;overflow:hidden;background:#fff}
+  /* results cards: masonry, no row gaps */
+  .results{max-width:780px;margin:0 auto;column-count:2;column-gap:14px}
+  .rcard{border:1px solid var(--line);border-radius:14px;overflow:hidden;background:#fff;break-inside:avoid;margin-bottom:14px}
   .rcard img{width:100%;height:auto;display:block;background:#f7f6fc}
   .rcap{padding:12px 14px;font-weight:600;font-size:14px}
   .rcap span{color:var(--purple)}
+  /* member testimonials */
+  .t-grid{max-width:780px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:14px;align-items:start}
+  .t-sm{border:1px solid var(--line);border-radius:14px;padding:18px;background:#fff}
+  .t-sm .thead{display:flex;align-items:center;gap:11px}
+  .t-sm .avatar{width:42px;height:42px}
+  .t-sm .tname{font-size:15px}
+  .t-sm .trole{font-size:12.5px}
+  .t-sm .stars{font-size:13px;margin-top:9px}
+  .t-sm .quote{font-size:14.5px;margin-top:8px}
   .tcard{max-width:600px;margin:24px auto 0;border:1px solid var(--line);border-radius:16px;padding:24px;background:#fff}
   .thead{display:flex;align-items:center;gap:14px}
   .avatar{width:50px;height:50px;border-radius:50%;object-fit:cover;border:2px solid var(--line);flex:none}
@@ -134,7 +143,8 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     .proof .row{font-size:12.5px;line-height:1.9}
     .item b{font-size:15px}
     .quote{font-size:15px}
-    .results{grid-template-columns:1fr}
+    .results{column-count:1}
+    .t-grid{grid-template-columns:1fr}
   }
 </style>
 </head>
@@ -221,21 +231,11 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     </div>
   </div>
 
-  <!-- testimonial (real) -->
-  <!-- SWAP TARGET: when you have a REAL member quote in this shape, replace
-       Joel's quote below with it (real name, real numbers, their words):
+  <!-- SWAP TARGET: when you have a REAL member quote in this shape, add it as
+       a featured card here (real name, real numbers, their words):
        "I burned [amount] on [ecom/dropshipping] and had nothing. [Timeframe]
         into this my channel is doing [result]. First time I have felt like I
-        actually know what I am doing."
-       Until then the page shows Joel's real, verifiable quote. -->
-  <section class="sec">
-    <div class="eyebrow">From A Member</div>
-    <div class="tcard">
-      <div class="thead"><img src="assets/joel-p-500.png" alt="" class="avatar" width="50" height="50" loading="lazy"><div><div class="tname">Joel</div><div class="trole">YTA Chads member</div></div></div>
-      <div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
-      <div class="quote">"I tried ecom, freelancing, side hustles. Nothing clicked like YouTube automation. The difference was YTA Chads."</div>
-    </div>
-  </section>
+        actually know what I am doing." -->
 
   <!-- 9. who it's for -->
   <section class="sec wash">
@@ -272,9 +272,86 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       <p>I did over $2 million in dropshipping sales and was still broke. I walked away, built this, and now make over $100,000 a year in profit from these channels. I've sold two of them, one for $20,000 and one for $53,000. Same system you're getting here.</p>
     </div>
     <div class="results">
+      <div class="rcard"><img src="rs6.png" alt="YouTube Studio: 8.2M lifetime views and $64,133.97 estimated revenue" loading="lazy"><div class="rcap">One channel, lifetime. <span>8.2M views &middot; $64,133</span>, from a flat line to $225 days.</div></div>
+      <div class="rcard"><img src="revv/REV%204.png" alt="YouTube Studio estimated revenue $47,660.77 over 365 days" loading="lazy"><div class="rcap"><span>$47,660 in 365 days</span> on one channel. Steady daily revenue.</div></div>
       <div class="rcard"><img src="assets/joel-44k.png" alt="AdSense payout history totalling $44,021.24" loading="lazy"><div class="rcap">Joel's first channel. <span>$44,021 paid out so far</span>, month by month.</div></div>
+      <div class="rcard"><img src="revv/REV%203.png" alt="YouTube Studio: 4.2M views and $31,005.81 in 365 days" loading="lazy"><div class="rcap"><span>4.2M views &middot; $31,005</span> in 365 days. Up 384% on the year before.</div></div>
+      <div class="rcard"><img src="rs4.png" alt="YouTube Studio: 985k views and $10,567.86 in 365 days" loading="lazy"><div class="rcap"><span>985k views &middot; $10,567</span> in 365 days.</div></div>
+      <div class="rcard"><img src="rs1.png" alt="Joel's YouTube Studio: 1.1M views and £10,799 in 90 days" loading="lazy"><div class="rcap">Joel's Studio, one 90-day window. <span>1.1M views &middot; &pound;10,799</span>.</div></div>
+      <div class="rcard"><img src="rs3.png" alt="YouTube Studio: 1.5M views and $9,234.05 in 365 days" loading="lazy"><div class="rcap"><span>1.5M views &middot; $9,234</span> in 365 days.</div></div>
       <div class="rcard"><img src="assets/member-8k-july.png" alt="Monthly payout showing $8,202.52 in July" loading="lazy"><div class="rcap">Member channel. <span>$8,202 in July</span>, with zero new uploads that month.</div></div>
+      <div class="rcard"><img src="revv/rev%207.jpeg" alt="YouTube Studio: 1.7M views and $6,648.58 in 365 days" loading="lazy"><div class="rcap"><span>1.7M views &middot; $6,648</span> in 365 days. The slow, steady climb.</div></div>
+      <div class="rcard"><img src="rs5.png" alt="YouTube Studio: 327.8k views and $3,816.74 in 28 days" loading="lazy"><div class="rcap"><span>327.8k views &middot; $3,816</span> in a single 28-day window.</div></div>
+      <div class="rcard"><img src="revv/REV2.png" alt="Monthly earnings climbing from $1,440 to $5,478 over six months" loading="lazy"><div class="rcap"><span>$1,440 to $5,478 a month</span> in five months. Every bar bigger than the last.</div></div>
       <div class="rcard"><img src="revv/rev%208.png" alt="Monthly earnings climbing from £273 to £2,002 over six months" loading="lazy"><div class="rcap">UK member channel. <span>&pound;273 to &pound;2,002 a month</span> in six months.</div></div>
+      <div class="rcard"><img src="revv/exit%202.png" alt="Channel exit proof" loading="lazy"><div class="rcap">Channel exit #1. <span>Sold for $20,000.</span></div></div>
+      <div class="rcard"><img src="revv/exit1.png" alt="Channel sale proof" loading="lazy"><div class="rcap">Channel exit #2. <span>Sold for $53,000.</span></div></div>
+    </div>
+  </section>
+
+  <!-- member testimonials -->
+  <section class="sec wash">
+    <div class="eyebrow">What Members Say</div>
+    <h2>In their own words</h2>
+    <div class="t-grid">
+      <div class="t-sm">
+        <div class="thead"><img src="assets/bautista-p-500.png" alt="" class="avatar" loading="lazy"><div><div class="tname">Bautista</div><div class="trole">YTA Chads member</div></div></div>
+        <div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+        <div class="quote">"I'm making $2k/m passively and I'm about to get another channel monetized which will start at at least $1k a month. I'm following the process just like I'm taught."</div>
+      </div>
+      <div class="t-sm">
+        <div class="thead"><img src="assets/atte-p-500.png" alt="" class="avatar" loading="lazy"><div><div class="tname">Atte</div><div class="trole">YTA Chads member</div></div></div>
+        <div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+        <div class="quote">"I've spent over $20,000 on YouTube courses and freelancers. This is the first system that produced consistent results instead of guesswork."</div>
+      </div>
+      <div class="t-sm">
+        <div class="thead"><img src="assets/mtt-p-500.png" alt="" class="avatar" loading="lazy"><div><div class="tname">MotoTube</div><div class="trole">YTA Chads member</div></div></div>
+        <div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+        <div class="quote">"Boring videos that get 100 views and generate $600 are amazing. This method works."</div>
+      </div>
+      <div class="t-sm">
+        <div class="thead"><img src="assets/ck-jake-p-500.png" alt="" class="avatar" loading="lazy"><div><div class="tname">CK Jake</div><div class="trole">YTA Chads member</div></div></div>
+        <div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+        <div class="quote">"Today I received my first payment in my bank account. Slow and steady growth. The only method that worked for me."</div>
+      </div>
+      <div class="t-sm">
+        <div class="thead"><img src="assets/adarsh-p-500.png" alt="" class="avatar" loading="lazy"><div><div class="tname">Adarsh</div><div class="trole">YTA Chads member</div></div></div>
+        <div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+        <div class="quote">"YTA Chads gave me a clear, repeatable path to income without relying on luck or the algorithm. Best value I found."</div>
+      </div>
+      <div class="t-sm">
+        <div class="thead"><img src="assets/jono-p-500.png" alt="" class="avatar" loading="lazy"><div><div class="tname">Jono</div><div class="trole">YTA Chads member</div></div></div>
+        <div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+        <div class="quote">"Joining YTA Chads changed how I see YouTube. Not a side hustle, but a real, scalable business if you put the work in."</div>
+      </div>
+      <div class="t-sm">
+        <div class="thead"><img src="assets/g-we.png" alt="" class="avatar" loading="lazy"><div><div class="tname">G We</div><div class="trole">YTA Chads member</div></div></div>
+        <div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+        <div class="quote">"Members moving from cents a day to $100+ days in a few months. Channels hitting first &pound;10 days and 1,000-view days. The snowball effect is real."</div>
+      </div>
+      <div class="t-sm">
+        <div class="thead"><img src="assets/hanees-p-500.png" alt="" class="avatar" loading="lazy"><div><div class="tname">Hannes</div><div class="trole">YTA Chads member</div></div></div>
+        <div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+        <div class="quote">"I applied Harvey's tips on a channel that wasn't even fully search-based, and they still worked in my niche."</div>
+      </div>
+      <div class="t-sm">
+        <div class="thead"><img src="assets/Jon-p-500.png" alt="" class="avatar" loading="lazy"><div><div class="tname">Jon</div><div class="trole">YTA Chads member</div></div></div>
+        <div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+        <div class="quote">"I hardly put work into the channel and it still brings good money every month. Data-driven and systemized. Anyone can do it."</div>
+      </div>
+      <div class="t-sm">
+        <div class="thead"><img src="assets/lrs-p-500.png" alt="" class="avatar" loading="lazy"><div><div class="tname">Lars Bloom</div><div class="trole">YTA Chads member</div></div></div>
+        <div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+        <div class="quote">"I needed structure, tools, and guidance. Friends said it wouldn't work. Inside the program it opened my mind to what's possible."</div>
+      </div>
+      <div class="t-sm">
+        <div class="thead"><img src="assets/joel-p-500.png" alt="" class="avatar" loading="lazy"><div><div class="tname">Joel</div><div class="trole">YTA Chads member</div></div></div>
+        <div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+        <div class="quote">"I tried ecom, freelancing, side hustles. Nothing clicked like YouTube automation. The difference was YTA Chads."</div>
+      </div>
+    </div>
+    <div class="ctaband">
+      <a href="[CHECKOUT LINK]" class="btn js-checkout">Get In At $2,000</a>
     </div>
   </section>
 
