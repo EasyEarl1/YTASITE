@@ -47,22 +47,23 @@
     }
     img{max-width:100%;display:block}
 
-    main{flex:1;display:flex;align-items:center;padding:36px 0}
+    main{flex:1;display:flex;align-items:flex-start;padding:30px 0 40px}
     .stack{max-width:640px;margin:0 auto;padding:0 22px;text-align:center}
 
     .eyebrow{color:var(--accent);font-weight:800;text-transform:uppercase;
-      letter-spacing:.16em;font-size:12px;margin:0 0 14px}
+      letter-spacing:.16em;font-size:12px;margin:0 0 12px}
     h1{font-size:clamp(30px,5.4vw,46px);line-height:1.08;letter-spacing:-.025em;margin:0 auto;font-weight:800}
-    .lead{color:var(--ink);font-size:clamp(16px,2.3vw,18.5px);max-width:52ch;margin:16px auto 0}
+    .lead{color:var(--ink);font-size:clamp(16px,2.3vw,18.5px);max-width:52ch;margin:14px auto 0}
 
-    .shot{margin:24px auto 0;border-radius:var(--radius);overflow:hidden;border:1px solid var(--line);
-      box-shadow:0 22px 56px rgba(11,11,18,.15)}
-    .shot img{width:100%;height:auto;display:block}
-
-    .promise{color:var(--muted);font-size:clamp(15px,2.2vw,17px);max-width:48ch;margin:22px auto 0}
+    .promise{color:var(--muted);font-size:clamp(15px,2.2vw,17px);max-width:48ch;margin:14px auto 0}
     .promise b{color:var(--ink);font-weight:700}
 
-    form{margin:18px auto 0;max-width:440px}
+    form{margin:16px auto 0;max-width:440px}
+
+    .shot{margin:30px auto 0;border-radius:var(--radius);overflow:hidden;border:1px solid var(--line);
+      box-shadow:0 22px 56px rgba(11,11,18,.15)}
+    .shot img{width:100%;height:auto;display:block}
+    .shot-cap{color:var(--muted);font-size:13.5px;margin:12px auto 0}
     .field{width:100%;font-size:16px;padding:16px 18px;border:1.5px solid var(--line);
       border-radius:12px;outline:none;transition:border-color .12s ease;text-align:center}
     .field:focus{border-color:var(--accent)}
@@ -79,14 +80,18 @@
     footer a{color:#8b90a0;text-decoration:none;margin:0 8px}
 
     @media (max-width:640px){
-      main{padding:24px 0}
-      h1{font-size:28px;line-height:1.12}
-      .lead{font-size:15px;margin-top:12px}
-      .shot{margin-top:18px}
-      .promise{font-size:14.5px;margin-top:16px}
-      form{margin-top:14px}
-      .field{padding:13px 15px}
-      .btn{padding:14px 20px;font-size:15.5px}
+      main{padding:18px 0 28px}
+      .stack{padding:0 16px}
+      .eyebrow{font-size:10.5px;margin-bottom:8px}
+      h1{font-size:27px;line-height:1.1}
+      .lead{font-size:14.5px;margin-top:10px}
+      .promise{font-size:14px;margin-top:10px}
+      form{margin-top:12px}
+      .field{padding:12px 14px}
+      .btn{margin-top:9px;padding:13px 18px;font-size:15px}
+      .err{margin-top:6px}
+      .trust{font-size:12px;margin-top:8px}
+      .shot{margin-top:22px}
     }
   </style>
 </head>
@@ -102,12 +107,6 @@
       <h1>$2m in sales. $6k left in the bank.</h1>
       <p class="lead">I quit dropshipping and found a much simpler online business. No products, no paid ads, and no gambling money just to see if something works.</p>
 
-      <div class="shot">
-        <img src="assets/training-preview.webp"
-             alt="YouTube channel analytics showing 5.9M views and $71,534 estimated revenue"
-             width="1217" height="879" fetchpriority="high" decoding="async" />
-      </div>
-
       <p class="promise">In this free training, I'll show you <b>exactly what I switched to and how it works.</b></p>
 
       <form id="optin" novalidate>
@@ -117,6 +116,13 @@
         <p class="err" id="err" role="alert"></p>
       </form>
       <p class="trust">100% free. No spam. Unsubscribe anytime.</p>
+
+      <div class="shot">
+        <img src="assets/training-preview.webp"
+             alt="YouTube channel analytics showing 5.9M views and $71,534 estimated revenue"
+             width="1217" height="879" loading="lazy" decoding="async" />
+      </div>
+      <p class="shot-cap">This is what I do now. Real views, real revenue, no paid ads.</p>
     </div>
   </main>
 
