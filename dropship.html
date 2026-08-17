@@ -63,9 +63,11 @@
       margin:0;max-width:19ch;font-weight:800}
     h1 .hl{color:var(--accent)}
     .sub{color:var(--muted);font-size:clamp(15.5px,2.2vw,17px);max-width:52ch;margin:16px 0 0}
+    .bridge{color:var(--ink);font-weight:600;font-size:clamp(15.5px,2.2vw,17px);max-width:52ch;margin:12px 0 0}
+    .list-label{font-weight:800;font-size:13px;letter-spacing:.06em;text-transform:uppercase;color:var(--accent);margin:20px 0 0}
 
     /* Bullet points */
-    ul.points{list-style:none;margin:20px 0 0;padding:0;display:grid;gap:11px}
+    ul.points{list-style:none;margin:10px 0 0;padding:0;display:grid;gap:10px}
     ul.points li{display:flex;gap:11px;align-items:flex-start;font-size:15px;font-weight:500}
     .tick{flex:0 0 auto;width:22px;height:22px;border-radius:50%;
       background:rgba(124,58,237,.12);color:var(--accent);display:grid;place-items:center;margin-top:1px}
@@ -99,7 +101,9 @@
       main{padding:26px 0}
       h1{font-size:25px;line-height:1.16}
       .sub{font-size:14.5px;margin-top:12px}
-      ul.points{margin-top:16px;gap:9px}
+      .bridge{font-size:14.5px;margin-top:10px}
+      .list-label{margin-top:16px;font-size:12px}
+      ul.points{margin-top:8px;gap:8px}
       ul.points li{font-size:14px}
       form{margin-top:18px}
       .field{padding:13px 15px}
@@ -122,23 +126,25 @@
         <div>
           <p class="eyebrow">Free 15-Minute Training For Burned Dropshippers</p>
           <h1>$2m in sales. $6k left in the bank. If dropshipping's bleeding you dry too, <span class="hl">watch this.</span></h1>
-          <p class="sub">You test product after product and watch the ad spend vanish. You keep telling yourself the next one's the winner. I did that for 4 years. It was never me, and it's not you. It's the model.</p>
+          <p class="sub">You test product after product and watch the ad spend vanish. You keep telling yourself the next one's the winner. I did that for 4 years. It was never you. It's the model.</p>
+          <p class="bridge">So I walked away and found a boring little business that changed everything. No ads. No products. No paying just to find out if something works.</p>
 
+          <p class="list-label">In the free 15 minutes you'll see:</p>
           <ul class="points">
             <li><span class="tick"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M20 6L9 17l-5-5"/></svg></span>
-              <span>Why even a "winning" product leaves you with next to nothing after ad costs, refunds and fees</span></li>
+              <span>A different way to make money online that doesn't need paid ads or a winning product</span></li>
             <li><span class="tick"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M20 6L9 17l-5-5"/></svg></span>
-              <span>The real reason you always feel one product away, and why that feeling never stops</span></li>
+              <span>How to build something once that keeps paying, instead of resetting to zero every month</span></li>
             <li><span class="tick"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M20 6L9 17l-5-5"/></svg></span>
-              <span>How I stopped paying Facebook just to find out if something works</span></li>
+              <span>No inventory, no suppliers, no refunds, no customer service nightmares</span></li>
             <li><span class="tick"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M20 6L9 17l-5-5"/></svg></span>
-              <span>No ads, no products, no showing your face</span></li>
+              <span>The exact boring little business I switched to, and how it actually works</span></li>
           </ul>
 
           <form id="optin" novalidate>
             <input id="email" class="field" type="email" name="email" inputmode="email"
                    autocomplete="email" placeholder="Enter your best email" required />
-            <button id="submit" class="btn" type="submit">Unlock Free Training Now &rarr;</button>
+            <button id="submit" class="btn" type="submit">Show Me What I Do Instead &rarr;</button>
             <p class="err" id="err" role="alert"></p>
           </form>
           <p class="trust">100% free. No spam. Unsubscribe anytime.</p>
@@ -151,7 +157,7 @@
                  alt="YouTube channel analytics showing 5.9M views and $71,534 estimated revenue"
                  width="1217" height="879" fetchpriority="high" decoding="async" />
           </div>
-          <p class="shot-cap">This is what I do now. A real search channel, <b>5.9M views, zero paid ads.</b> Not typical, but real.</p>
+          <p class="shot-cap">This is what I do now. <b>Real views, real revenue,</b> and I never spent a penny on ads to get them.</p>
         </div>
 
       </div>
