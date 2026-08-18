@@ -140,7 +140,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <div class="eyebrow">Who's Showing You This</div>
     <h2>Meet Harvey</h2>
     <div class="bio" id="bio">
-      <div class="photo"><img src="assets/harvey.jpg" alt="Harvey Causer" width="150" height="150" loading="lazy" onerror="var b=document.getElementById('bio');this.parentNode.remove();if(b)b.classList.add('no-photo');"></div>
+      <div class="photo" id="bio-photo"><img src="assets/harvey.jpg" alt="Harvey Causer" width="150" height="150" id="bio-img"></div>
       <div>
         <div class="name">Harvey Causer</div>
         <div class="role">Ex-dropshipper turned faceless YouTube operator</div>
@@ -203,6 +203,19 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   </footer>
 
   <script>
+    // Bio photo: only keep the photo column if a REAL image loads. The site's
+    // catch-all rewrite returns an HTML page (HTTP 200) for missing files, so
+    // onerror never fires - we have to check the decoded image has real pixels.
+    (function () {
+      var img = document.getElementById('bio-img'), bio = document.getElementById('bio');
+      if (!img || !bio) return;
+      function dropPhoto() { var ph = document.getElementById('bio-photo'); if (ph) ph.remove(); bio.classList.add('no-photo'); }
+      function check() { if (!img.naturalWidth || img.naturalWidth < 2) dropPhoto(); }
+      img.addEventListener('error', dropPhoto);
+      img.addEventListener('load', check);
+      if (img.complete) check();
+    })();
+
     (function () {
       var CAL_URL = 'https://calendly.com/sigmayt/discovery-call-clone';
 
