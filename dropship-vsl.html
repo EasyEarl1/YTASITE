@@ -69,6 +69,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   h2{text-align:center;font-weight:800;font-size:28px;margin-bottom:24px}
   /* bio */
   .bio{max-width:720px;margin:0 auto;display:grid;grid-template-columns:150px 1fr;gap:26px;align-items:center;border:1px solid var(--line);border-radius:16px;padding:26px}
+  .bio.no-photo{grid-template-columns:1fr}   /* text spans full width if the photo is missing */
   .bio .photo{width:150px;height:150px;border-radius:14px;overflow:hidden;background:var(--wash)}
   .bio .photo img{width:100%;height:100%;object-fit:cover;object-position:center 20%;display:block}
   .bio .name{font-weight:800;font-size:20px}
@@ -138,8 +139,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   <section class="sec">
     <div class="eyebrow">Who's Showing You This</div>
     <h2>Meet Harvey</h2>
-    <div class="bio">
-      <div class="photo"><img src="assets/harvey.jpg" alt="Harvey Causer" width="150" height="150" loading="lazy" onerror="this.parentNode.style.display='none'"></div>
+    <div class="bio" id="bio">
+      <div class="photo"><img src="assets/harvey.jpg" alt="Harvey Causer" width="150" height="150" loading="lazy" onerror="var b=document.getElementById('bio');this.parentNode.remove();if(b)b.classList.add('no-photo');"></div>
       <div>
         <div class="name">Harvey Causer</div>
         <div class="role">Ex-dropshipper turned faceless YouTube operator</div>
