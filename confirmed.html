@@ -45,6 +45,13 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <!-- Wistia: welcome video -->
 <script src="https://fast.wistia.com/player.js" async></script>
 <script src="https://fast.wistia.com/embed/0l3fx7vul7.js" async type="module"></script>
+<!-- Wistia: breakout videos -->
+<script src="https://fast.wistia.com/embed/3sw97p3qum.js" async type="module"></script>
+<script src="https://fast.wistia.com/embed/vskcppew1o.js" async type="module"></script>
+<script src="https://fast.wistia.com/embed/82ywan8kpx.js" async type="module"></script>
+<script src="https://fast.wistia.com/embed/7up2mpnftb.js" async type="module"></script>
+<script src="https://fast.wistia.com/embed/jnpn1ar6zr.js" async type="module"></script>
+<script src="https://fast.wistia.com/embed/1vr1h9ppeg.js" async type="module"></script>
 
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
 <style>
@@ -70,6 +77,12 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   .video .frame{border-radius:16px;overflow:hidden;box-shadow:0 30px 60px -30px rgba(30,20,60,.55);border:1px solid var(--line);background:var(--black)}
   wistia-player[media-id='0l3fx7vul7']:not(:defined){background:center / contain no-repeat url('https://fast.wistia.com/embed/medias/0l3fx7vul7/swatch');display:block;filter:blur(5px);padding-top:56.25%}
   .cap{text-align:center;color:var(--grey);font-size:14px;margin-top:10px}
+  wistia-player[media-id='3sw97p3qum']:not(:defined){background:center / contain no-repeat url('https://fast.wistia.com/embed/medias/3sw97p3qum/swatch');display:block;filter:blur(5px);padding-top:56.25%}
+  wistia-player[media-id='vskcppew1o']:not(:defined){background:center / contain no-repeat url('https://fast.wistia.com/embed/medias/vskcppew1o/swatch');display:block;filter:blur(5px);padding-top:56.25%}
+  wistia-player[media-id='82ywan8kpx']:not(:defined){background:center / contain no-repeat url('https://fast.wistia.com/embed/medias/82ywan8kpx/swatch');display:block;filter:blur(5px);padding-top:56.25%}
+  wistia-player[media-id='7up2mpnftb']:not(:defined){background:center / contain no-repeat url('https://fast.wistia.com/embed/medias/7up2mpnftb/swatch');display:block;filter:blur(5px);padding-top:56.25%}
+  wistia-player[media-id='jnpn1ar6zr']:not(:defined){background:center / contain no-repeat url('https://fast.wistia.com/embed/medias/jnpn1ar6zr/swatch');display:block;filter:blur(5px);padding-top:56.25%}
+  wistia-player[media-id='1vr1h9ppeg']:not(:defined){background:center / contain no-repeat url('https://fast.wistia.com/embed/medias/1vr1h9ppeg/swatch');display:block;filter:blur(5px);padding-top:56.25%}
   /* 3. check email block */
   .sec{padding:44px 20px}
   .emailbox{max-width:680px;margin:0 auto;background:var(--wash);border:1px solid #e6def8;border-radius:16px;padding:26px 28px}
@@ -92,6 +105,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   .ph{position:relative;aspect-ratio:16/9;border-radius:14px;overflow:hidden;background:repeating-linear-gradient(45deg,#141018,#141018 14px,#191220 14px,#191220 28px);border:1px solid #1c1c22;display:flex;align-items:center;justify-content:center}
   .ph .play{width:64px;height:64px;border-radius:50%;background:var(--purple);display:flex;align-items:center;justify-content:center;box-shadow:0 12px 30px -8px rgba(124,58,237,.8)}
   .ph .play:after{content:"";border-left:19px solid #fff;border-top:12px solid transparent;border-bottom:12px solid transparent;margin-left:5px}
+  .bo .frame{border-radius:14px;overflow:hidden;border:1px solid var(--line);background:var(--black);box-shadow:0 20px 44px -26px rgba(30,20,60,.5)}
   .ph .note{position:absolute;bottom:10px;left:0;right:0;text-align:center;font-size:11.5px;color:#8a7ca8}
   /* 5. testimonials */
   .tgrid{max-width:900px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr 1fr;gap:16px;align-items:start}
@@ -175,12 +189,12 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <h2>Get Answers To Your Questions</h2>
     <p class="lede">Short answers to the things most people ask before the call.</p>
     <div class="breakouts">
-      <!-- Breakout videos: replace each .ph block with the video embed (Wistia/YouTube iframe, 16:9). -->
-      <div class="bo"><div class="label"><span class="num">Breakout video 1</span><span class="q">Can I do this with zero experience?</span></div><div class="ph"><div class="play"></div><div class="note">Paste video 1 embed here</div></div></div>
-      <div class="bo"><div class="label"><span class="num">Breakout video 2</span><span class="q">Isn't YouTube saturated?</span></div><div class="ph"><div class="play"></div><div class="note">Paste video 2 embed here</div></div></div>
-      <div class="bo"><div class="label"><span class="num">Breakout video 3</span><span class="q">How long until it actually pays?</span></div><div class="ph"><div class="play"></div><div class="note">Paste video 3 embed here</div></div></div>
-      <div class="bo"><div class="label"><span class="num">Breakout video 4</span><span class="q">Isn't this the YouTube automation scam?</span></div><div class="ph"><div class="play"></div><div class="note">Paste video 4 embed here</div></div></div>
-      <div class="bo"><div class="label"><span class="num">Breakout video 5</span><span class="q">What do I get, and how does the call work?</span></div><div class="ph"><div class="play"></div><div class="note">Paste video 5 embed here</div></div></div>
+      <div class="bo"><div class="label"><span class="num">Breakout video 1</span><span class="q">Can I do this with zero experience?</span></div><div class="frame"><wistia-player media-id="3sw97p3qum" aspect="1.7777777777777777"></wistia-player></div></div>
+      <div class="bo"><div class="label"><span class="num">Breakout video 2</span><span class="q">Isn't YouTube saturated?</span></div><div class="frame"><wistia-player media-id="vskcppew1o" aspect="1.7777777777777777"></wistia-player></div></div>
+      <div class="bo"><div class="label"><span class="num">Breakout video 3</span><span class="q">How long until it actually pays?</span></div><div class="frame"><wistia-player media-id="82ywan8kpx" aspect="1.7777777777777777"></wistia-player></div></div>
+      <div class="bo"><div class="label"><span class="num">Breakout video 4</span><span class="q">Isn't this the YouTube automation scam?</span></div><div class="frame"><wistia-player media-id="7up2mpnftb" aspect="1.7777777777777777"></wistia-player></div></div>
+      <div class="bo"><div class="label"><span class="num">Breakout video 5</span><span class="q">What do I get, and how does the call work?</span></div><div class="frame"><wistia-player media-id="jnpn1ar6zr" aspect="1.7777777777777777"></wistia-player></div></div>
+      <div class="bo"><div class="label"><span class="num">Bonus video</span><span class="q">One more thing worth watching before the call</span></div><div class="frame"><wistia-player media-id="1vr1h9ppeg" aspect="1.7777777777777777"></wistia-player></div></div>
     </div>
   </section>
 
