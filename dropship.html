@@ -151,17 +151,21 @@
       window.location.href = NEXT_URL + sep + 'email=' + encodeURIComponent(email) + '&src=dropship';
     }
 
+    // Fire-and-forget: keepalive lets the request complete even after the
+    // page navigates away, so we never make the visitor wait on Klaviyo.
     function subscribe(email) {
       var body = new URLSearchParams();
       body.set('g', KLAVIYO_LIST_ID);
       body.set('email', email);
       body.set('$source', SOURCE);
-      return fetch('https://manage.kmail-lists.com/ajax/subscriptions/subscribe', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/x-www-form-urlencoded', 'Cache-Control': 'no-cache' },
-        body: body.toString()
-      }).then(function (r) { return r.json(); })
-        .then(function (data) { return { ok: !!(data && data.success), data: data }; });
+      try {
+        fetch('https://manage.kmail-lists.com/ajax/subscriptions/subscribe', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+          body: body.toString(),
+          keepalive: true
+        }).catch(function () {});
+      } catch (err) { /* ignore */ }
     }
 
     form.addEventListener('submit', function (e) {
@@ -173,18 +177,12 @@
 
       button.disabled = true;
       button.textContent = 'One sec…';
-      subscribe(email)
-        .then(function (res) {
-          // Lead fires only when Klaviyo accepts; deduped per email.
-          var fired = false;
-          if (res && res.ok) {
-            if (window.ytaTrackLead) window.ytaTrackLead(email);
-            if (window.fbq) fbq('trackCustom', 'OptIn');
-            fired = true;
-          }
-          setTimeout(function () { goNext(email); }, fired ? 400 : 0);
-        })
-        .catch(function (err) { console.error('[optin] subscribe failed', err); goNext(email); });
+
+      subscribe(email);                                   // background, no waiting
+      if (window.ytaTrackLead) window.ytaTrackLead(email); // deduped per email
+      if (window.fbq) fbq('trackCustom', 'OptIn');
+      // Short hold so the pixel beacons leave before unload, then go.
+      setTimeout(function () { goNext(email); }, 250);
     });
   })();
   </script>
