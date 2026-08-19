@@ -288,6 +288,14 @@
       "destination": "/vsl.html"
     },
     {
+      "source": "/confirmed",
+      "destination": "/confirmed.html"
+    },
+    {
+      "source": "/confirmed.html",
+      "destination": "/confirmed.html"
+    },
+    {
       "source": "/congrats",
       "destination": "/congrats.html"
     },

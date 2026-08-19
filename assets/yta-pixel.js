@@ -116,7 +116,7 @@
   });
 
   /* 2. a booking confirmation page (Calendly redirect target) */
-  if (/yta-call-thank-you|congrats/i.test(window.location.pathname)) trackBooking();
+  if (/yta-call-thank-you|congrats|confirmed/i.test(window.location.pathname)) trackBooking();
 
   /* --- InitiateCheckout: clicked through to Calendly --------------
    * Covers BOTH patterns used across the site:
