@@ -59,6 +59,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   h1 .hl{color:var(--purple)}
   .sub{max-width:620px;margin:18px auto 0;color:var(--grey);font-size:18px}
   .sub b{color:var(--ink);font-weight:600}
+  .btn-closed{background:#3a3a44 !important;color:#c7c7d1 !important;cursor:default;box-shadow:none !important;pointer-events:none}
   /* price + countdown */
   .pricebox{max-width:460px;margin:26px auto 0;border:1px solid var(--line);border-radius:16px;padding:22px;box-shadow:0 18px 40px -24px rgba(80,40,160,.35)}
   .price{font-weight:800;font-size:38px}
@@ -186,25 +187,17 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   <!-- 2. headline + price + countdown -->
   <section class="hero">
     <h1>Build a faceless channel that pays you <span class="hl">every single month</span>. And can sell for five figures when you're done with it.</h1>
-    <p class="sub">The full system, the tool that makes your videos for about a dollar each, the exact roadmap to build your own team, and me in your corner every week. <b>Doors close Thursday night.</b></p>
+    <p class="sub">The full system, the tool that makes your videos for about a dollar each, the exact roadmap to build your own team, and me in your corner every week. <b>Doors are closed.</b></p>
 
     <div class="pricebox">
-      <div class="price"><span class="old">$3,000</span>$2,000
-        <span class="note">The price rises to $3,000 when it closes. Thursday 20 August, 23:59 UK time.</span>
-      </div>
-      <div class="timer" id="timer">
-        <div class="t-cell"><div class="t-num" id="t-d">--</div><div class="t-lab">Days</div></div>
-        <div class="t-cell"><div class="t-num" id="t-h">--</div><div class="t-lab">Hours</div></div>
-        <div class="t-cell"><div class="t-num" id="t-m">--</div><div class="t-lab">Mins</div></div>
-        <div class="t-cell"><div class="t-num" id="t-s">--</div><div class="t-lab">Secs</div></div>
-      </div>
+      <div class="timer-done">Doors closed Thursday 20 August at 23:59 UK time.</div>
     </div>
   </section>
 
   <!-- 3. primary CTA -->
   <div class="ctaband">
-    <a href="https://buy.stripe.com/bJe14hc8i44S0Km0IceEo05" class="btn js-checkout">Get In At $2,000</a>
-    <div class="small">Card checkout. You get access straight away.</div>
+    <span class="btn btn-closed">Doors Are Closed</span>
+    <div class="small">Enrollment for this round has ended.</div>
   </div>
 
   <!-- 4. "it's open" video -->
@@ -231,7 +224,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   </section>
 
   <div class="ctaband">
-    <a href="https://buy.stripe.com/bJe14hc8i44S0Km0IceEo05" class="btn js-checkout">Get In At $2,000</a>
+    <span class="btn btn-closed">Doors Are Closed</span>
   </div>
 
   <!-- 6. guarantee -->
@@ -379,28 +372,20 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       </div>
     </div>
     <div class="ctaband">
-      <a href="https://buy.stripe.com/bJe14hc8i44S0Km0IceEo05" class="btn js-checkout">Get In At $2,000</a>
+      <span class="btn btn-closed">Doors Are Closed</span>
     </div>
   </section>
 
   <!-- 10. final CTA + countdown -->
   <section class="sec wash" style="text-align:center">
-    <h2>The price goes up Thursday night</h2>
+    <h2>Doors are closed</h2>
     <p style="max-width:520px;margin:0 auto 18px;font-weight:600;font-size:15px">Coaching and community for 12 months. Training and tools are yours for life.</p>
     <div class="pricebox" style="margin-top:0">
-      <div class="price"><span class="old">$3,000</span>$2,000
-        <span class="note">Thursday 20 August, 23:59 UK time. Then it's $3,000.</span>
-      </div>
-      <div class="timer" id="timer2">
-        <div class="t-cell"><div class="t-num" id="t2-d">--</div><div class="t-lab">Days</div></div>
-        <div class="t-cell"><div class="t-num" id="t2-h">--</div><div class="t-lab">Hours</div></div>
-        <div class="t-cell"><div class="t-num" id="t2-m">--</div><div class="t-lab">Mins</div></div>
-        <div class="t-cell"><div class="t-num" id="t2-s">--</div><div class="t-lab">Secs</div></div>
-      </div>
+      <div class="timer-done">This round closed on Thursday 20 August. If you missed it, message me on Telegram and I'll let you know when the next one opens.</div>
     </div>
     <div class="ctaband">
-      <a href="https://buy.stripe.com/bJe14hc8i44S0Km0IceEo05" class="btn js-checkout">Get In At $2,000</a>
-      <div class="small">Questions first? Dm me -> @ytavision</div>
+      <span class="btn btn-closed">Doors Are Closed</span>
+      <div class="small">Want in on the next round? DM me -> @ytavision</div>
     </div>
   </section>
 
@@ -422,32 +407,6 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
   <script>
   (function () {
-    // Countdown to Thursday 20 August 2026, 23:59 UK time (BST, UTC+1)
-    var DEADLINE = new Date('2026-08-20T23:59:59+01:00').getTime();
-
-    function pad(n){ return n < 10 ? '0' + n : '' + n; }
-    function tick() {
-      var left = DEADLINE - Date.now();
-      if (left <= 0) {
-        ['timer','timer2'].forEach(function(id){
-          var el = document.getElementById(id);
-          if (el) el.outerHTML = '<div class="timer-done">The price has gone up to $3,000.</div>';
-        });
-        clearInterval(iv);
-        return;
-      }
-      var d = Math.floor(left / 86400000);
-      var h = Math.floor(left % 86400000 / 3600000);
-      var m = Math.floor(left % 3600000 / 60000);
-      var s = Math.floor(left % 60000 / 1000);
-      [['t-d',d],['t-h',h],['t-m',m],['t-s',s],['t2-d',d],['t2-h',h],['t2-m',m],['t2-s',s]].forEach(function(p){
-        var el = document.getElementById(p[0]);
-        if (el) el.textContent = pad(p[1]);
-      });
-    }
-    var iv = setInterval(tick, 1000);
-    tick();
-
     // Track Telegram widget clicks
     var tg = document.getElementById('tg-fab');
     if (tg) tg.addEventListener('click', function () {
